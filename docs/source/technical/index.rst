@@ -15,8 +15,4 @@ This website is a "wiki", meaning that anyone can edit its contents in any way--
    :hidden:
    :glob:
 
-   admin/index
-   engine/index
-   modding/index
-   networking/index
-   python/index
+   */index
