@@ -1,8 +1,0 @@
-
-Battlefield Engine
-==================
-
-.. toctree::
-   :glob:
-
-   *

@@ -1,8 +1,0 @@
-
-Networking
-==========
-
-.. toctree::
-   :glob:
-
-   *

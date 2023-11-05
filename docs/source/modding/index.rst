@@ -1,8 +1,0 @@
-
-Modding
-=======
-
-.. toctree::
-   :glob:
-
-   *
