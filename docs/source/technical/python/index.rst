@@ -5,5 +5,5 @@ Battlefield Python
 .. toctree::
    :glob:
 
-   reference/index
    *
+   reference/index
