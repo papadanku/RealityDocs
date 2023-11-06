@@ -6,17 +6,13 @@ BF2 Objects
 
    ``PhysicalObject`` represent physical things in the BF2 game world; as such, they have the properties of real objects in the physical world: properties like position (X, Y, Z coordinates) and orientation (rotation), and can contain, and be contained by, other ``PhysicalObject`` objects. A ``PhysicalObject`` appears to be implemented as C++ objects in the game engine which the embedded Python engine has access to, but since they are game engine objects, they are not defined anywhere in Python, and cannot be created directly in Python - but they can be accessed from Python. No special imports are necessary to manipulate these objects.
 
-   Please note that since these are not native Python objects, we don't know what they are actually named inside the game engine; ``PhysicalObject``, as well as the names of other types of objects that inherit from that class, are made up for convienience. We also can't see into the game engine code to see if the hierarchial structure of these classes is what is presented here - for example, ``vehicleObject`` and ``soldierObject`` may, in fact, be a single class; the hierarchy of ``PhysicalObject``'s decendents given here should nevertheless be equivalent to whatever the real hierarchy is.
-
-   **Attributes**
+   Please note that since these are not native Python objects, we don't know what they are actually named inside the game engine; ``PhysicalObject``, as well as the names of other types of objects that inherit from that class, are made up for convienience. We also can't see into the game engine code to see if the hierarchial structure of these classes is what is presented here - for example, :py:class:`vehicleObject` and :py:class:`soldierObject` may, in fact, be a single class; the hierarchy of ``PhysicalObject``'s decendents given here should nevertheless be equivalent to whatever the real hierarchy is.
 
    .. py:attribute:: templateName
    .. py:attribute:: isControlPoint
    .. py:attribute:: isPlayerControlObject
    .. py:attribute:: hasArmor
    .. py:attribute:: token
-
-   **Methods**
 
    .. py:method:: isValid()
    .. py:method:: getTemplateProperty()
@@ -37,11 +33,11 @@ BF2 Objects
    .. py:method:: setRotation((A, B, C))
    .. py:method:: getParent()
 
-      Returns ``PhysicalObject`` that contains this instance, if any.
+      :returns: ``PhysicalObject`` that contains this instance, if any.
 
    .. py:method:: getChildren()
 
-      Returns a tuple of multiple ``PhysicalObject`` contained by this instance
+      :returns: A tuple of multiple ``PhysicalObject`` contained by this instance.
 
    For information about the coordinate system used by the Position and Rotation methods, see the page on :doc:`BF2 Coordinates <../../engine/coordinates>`.
 
@@ -57,8 +53,6 @@ BF2 Objects
 
    A ``controlPointObject`` is used to represent a control point in BF2. The ``controlPointObject`` class inherits the methods and attributes of ``physicalObject``, with the following additional methods and attributes:
 
-   **Attributes**
-
    .. py:attribute:: flagPosition
 
       Returns:
@@ -70,12 +64,8 @@ BF2 Objects
    .. py:attribute:: lastAttackingTeam
    .. py:attribute:: triggerId
 
-   **Methods**
-
    .. py:method:: cp_getParam(parameter)
    .. py:method:: cp_setParam(parameter, value)
-
-   **Internal Properties**
 
    ``controlPointObject`` also have a number of internal properties that are accessed through the ``cp_getParam`` and ``cp_setParam`` methods:
 
@@ -125,28 +115,26 @@ BF2 Objects
 
 .. py:class:: vehicleObject
 
-   A ``vehicleObject`` represents a BF2 vehicle. The ``vehicleObject`` class inherits the methods and attributes of :py:class:`PhysicalObject`, with several additional methods. ``soldierObject``, used to represent the physical body of player, is a sub-class of ``vehicleObject``.
-
-   **Methods**
+   A :py:class:`vehicleObject` represents a BF2 vehicle. The :py:class:`vehicleObject` class inherits the methods and attributes of :py:class:`PhysicalObject`, with several additional methods. :py:class:`soldierObject`, used to represent the physical body of player, is a sub-class of :py:class:`vehicleObject`.
 
    .. py:method:: getDamage()
    .. py:method:: setDamage(intValue)
    .. py:method:: getIsWreck()
 
-      Returns boolean, 1 if the vehicle is destroyed
+      :returns: Boolean, 1 if the vehicle is destroyed.
 
    .. py:method:: getOccupyingPlayers()
 
-      Returns an array with index 0 being the driver
+      :returns: An array with index 0 being the driver.
 
    .. py:method:: getIsRemoteControlled()
 
-   The ``getDamage()`` and ``setDamage()`` methods actually read/set the health of the vehicle. Transport helicopters start with 1500, tanks with 1000 and light jeeps with 750. They all explode when the damage reaches 0.
+   The :py:meth:`getDamage` and :py:meth:`setDamage` methods actually read/set the health of the vehicle. Transport helicopters start with 1500, tanks with 1000 and light jeeps with 750. They all explode when the damage reaches 0.
 
 .. py:class:: soldierObject
 
-   A ``soldierObject`` represents the physical body of a human or AI player in BF2. The ``soldierObject`` class inherits the methods and attributes of ``vehicleObject``, with no additonal methods or attributes. (Note: it appears that within the game engine, ``soldierObject`` and ``vehicleObject`` may actually be the exact same thing; conceptually, though, it helps to think of ``soldierObject`` as a subclass of ``vehicleObject``).
+   A :py:class:`soldierObject` represents the physical body of a human or AI player in BF2. The :py:class:`soldierObject` class inherits the methods and attributes of :py:class:`vehicleObject`, with no additonal methods or attributes. (Note - it appears that within the game engine, :py:class:`soldierObject` and :py:class:`vehicleObject` may actually be the exact same thing; conceptually, though, it helps to think of :py:class:`soldierObject` as a subclass of :py:class:`vehicleObject`).
 
-   It is important to pay attention to the destinction between a player's “physical” body in the game, which is represented by an instance of the ``soldierObject`` class, having position, orientation, health, etc., and the in-game “spirit” of that player, which is represented by an instance of the ``bf2.PlayerManager.Player`` class, having properties like a name, squad, profile ID, etc. ``The bf2.PlayerManager.Player`` (“spirit”) is created when a player connects to the server, and persists as long as the server continues running, even across game rounds (and disconnect/reconnects - if the player disconnects and then reconnects, the server tries to match them up with an existing ``bf2.PlayerManager.Player`` object). By contrast, a player remains associated with a ``soldierObject`` only as long as they remain alive; as soon as they die, their association with the ``soldierObject`` is broken; when they respawn, a new ``soldierObject`` instance is created, and becomes associated with the player. That is to say, between dying and respawning, the player's “spirit” leaves their first “body” and is “reincarnated” in a new “body”.
+   It is important to pay attention to the destinction between a player's “physical” body in the game, which is represented by an instance of the :py:class:`soldierObject` class, having position, orientation, health, etc., and the in-game “spirit” of that player, which is represented by an instance of the :py:class:`bf2.PlayerManager.Player` class, having properties like a name, squad, profile ID, etc. The :py:class:`bf2.PlayerManager.Player` (“spirit”) is created when a player connects to the server, and persists as long as the server continues running, even across game rounds (and disconnect/reconnects - if the player disconnects and then reconnects, the server tries to match them up with an existing :py:class:`bf2.PlayerManager.Player` object). By contrast, a player remains associated with a :py:class:`soldierObject` only as long as they remain alive; as soon as they die, their association with the :py:class:`soldierObject` is broken; when they respawn, a new :py:class:`soldierObject` instance is created, and becomes associated with the player. That is to say, between dying and respawning, the player's “spirit” leaves their first “body” and is “reincarnated” in a new “body”.
 
    Is that metaphysical enough for you?

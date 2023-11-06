@@ -301,14 +301,14 @@ Class attributes stored in the BF2 engine
 
    Objects in this class are timers that can cause [[Event Reference#Timer Events|timer events]] to be generated when a fixed amount of time has elapsed.
 
-   .. code-block:: python
-      :caption: Instance creation
+   .. py:method:: bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
 
-      timer = bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
+      -  Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work.
+      -  You must ``import bf2.Timer`` to create timer objects.
 
-   ``timerEventHandler`` is the handler to be called when ``delta`` seconds have elapsed since the creation of the timer; ``alwaysTrigger`` should be ``1`` *(not sure what the alternative is)*. ``data`` is an optional item (typically a tuple) that will be passed to ``timerEventHandler``. (Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work).
-
-   You must ``import bf2.Timer`` to create timer objects.
+      :param timerEventHandler: Handler to be called when ``delta`` seconds have elapsed since the creation of the timer.
+      :param alwaysTrigger: Should be 1 *(not sure what the alternative is)*
+      :param data: Optional item (typically a tuple) that will be passed to ``timerEventHandler``.
 
    .. py:method:: destroy()
 
@@ -331,23 +331,23 @@ Class attributes stored in the BF2 engine
       For internal use only; calls ``timerEventHandler``.
 
 .. py:class:: realitytimer.py
-   
+
    Project Reality timer (``realitytimer.py``) expands the default interface with the following:
 
    -  Exception catching with a debug message when an exception is not caught in the handler
 
       No need to worry about bad code crashing the server.
 
-   -  Internal check to make sure timers don't fire after destroy() was called
+   -  Internal check to make sure timers don't fire after :py:meth:`bf2.Timer.destroy` was called
 
-      Can happen when ``Destroy()`` is called on the same tick
+      Can happen when :py:meth:`bf2.Timer.destroy` is called on the same tick
 
    .. py:method:: fireOnce(targetFunc, delay, data=None)
 
       Class that can fire an event once after delay and then destroy itself. No need to store reference.
-   
+
    .. py:method:: fireNextTick(targetFunc, data=None)
-      
+
       Class that will fire the event at the next game tick and then destroy itself. No need to store reference
 
 .. py:class:: bf2.TriggerManager.TriggerManager
@@ -362,7 +362,7 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: createHemiSphericalTrigger(object, callback, objName, radius, data=None)
 
-      Same as ``bf2.triggerManager.createRadiusTrigger``, except that instead of a spherical trigger region, the trigger region is a flat circle lying along the ground (yes, it's badly named).
+      Same as :py:meth:`createRadiusTrigger`, except that instead of a spherical trigger region, the trigger region is a flat circle lying along the ground (yes, it's badly named).
 
    .. py:method:: destroyAllTriggers()
 
@@ -396,6 +396,6 @@ Class attributes stored in the BF2 engine
 
       Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.
 
-      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in ``bf2.stats.constants``) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in ``bf2.stats.constants``, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the [[Game Engine Object Templates]] page.
+      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the [[Game Engine Object Templates]] page.
 
       These constant values appear to be the same as those used in the [[BF2Stats|statistics server]], specifically the [[BF2Stats_LookUp_Values|look up values]].

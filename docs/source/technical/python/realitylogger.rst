@@ -7,27 +7,23 @@ The Reality Logger is used to easily log to a file.
 Creating a logger
 -----------------
 
-.. code-block:: python
+.. py:function:: realitylogger.createLogger(name, path, fileName, continous)
 
-   realitylogger.createLogger(name, path, fileName, continous)
+   :param name: A unique key used to select the logger
+   :param path: Directory the log file gets created in
+   :param fileName: Name of the file created. If not contionous should specify a date format (strftime format)
+   :param continous: Whether to log to one file all the time or create new one every round
 
--  ``name``: a unique key used to select the logger
--  ``Path``: Diretory the log file gets created in
--  ``fileName``: Name of the file created. If not contionous should specify a date format (strftime format)
--  ``continous``: Whether to log to one file all the time or create new one every round
-
-``createLogger`` may be called many times with the same key, repeating calls will be properly filtered out. It is not required to put it in an init() function.
+   May be called many times with the same key, repeating calls will be properly filtered out. It is not required to put it in an init() function.
 
 Using a logger
 --------------
 
 .. code-block:: python
-   :caption: To acquire a logger
 
+      # Aquire a logger
       X = realitylogger.RealityLogger[key]
 
-.. code-block:: python
-   :caption: Basic logging commands
-
+      # Basic logging commands
       X.logLine(line)
       X.logLines(lines)
