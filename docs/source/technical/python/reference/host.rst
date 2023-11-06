@@ -122,7 +122,7 @@ Global Stats Methods
 
 .. py:method:: ss_getParam(parameter)
 
-   You cannot find out server name, port and other similar information this way. Instead, use f.e. host.rcon_invoke('sv.serverName') to get the server name.
+   You cannot find out server name, port and other similar information this way. Instead, use f.e. :py:meth:`host.rcon_invoke` to get the server name.
 
    :returns: Value of specified setting
 
