@@ -2,24 +2,15 @@
 Server System Requirements
 ==========================
 
-According to EA the following are the system requirements for running a BF2 server:
+These are some rough gidelines for minimum server requirements
 
-Linux
+Linux & Windows
 -----
 
-======== =============== ===================== ======================================================
-Hardware Minimum         Maximum
-======== =============== ===================== ======================================================
-CPU                      1 Ghz Processor       3,4 Ghz Pentium 4 or Athlon XP, or a 2 Ghz 64 Opteron.
-RAM                      256 Mb                1 Gb
-======== =============== ===================== ======================================================
-
-Windows
--------
-
-======== =============== ==============================
-Hardware Minimum         Maximum
-======== =============== ==============================
-CPU      1 Ghz Processor 3,6 Ghz Pentium 4 or Athlon XP
-RAM      384 Mb          1 Gb
-======== =============== ==============================
+======== =============== ============================================================
+Hardware Minimum         Note
+======== =============== ============================================================
+CPU      3Ghz Processor  PR likes CPU so get as fast as you can reasonably buy                     
+RAM      2GB             1GB * server instances + 1GB of overhead minimum
+DISK     40GB            ~15GB for server files and install, more for battlerecorder
+======== =============== ============================================================
