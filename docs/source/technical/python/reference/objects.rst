@@ -2,177 +2,151 @@
 BF2 Objects
 ===========
 
-.. _physicalobject:
+.. py:class:: PhysicalObject
 
-``PhysicalObject``
-------------------
+   ``PhysicalObject`` represent physical things in the BF2 game world; as such, they have the properties of real objects in the physical world: properties like position (X, Y, Z coordinates) and orientation (rotation), and can contain, and be contained by, other ``PhysicalObject`` objects. A ``PhysicalObject`` appears to be implemented as C++ objects in the game engine which the embedded Python engine has access to, but since they are game engine objects, they are not defined anywhere in Python, and cannot be created directly in Python - but they can be accessed from Python. No special imports are necessary to manipulate these objects.
 
-``PhysicalObject`` represent physical things in the BF2 game world; as such, they have the properties of real objects in the physical world: properties like position (X, Y, Z coordinates) and orientation (rotation), and can contain, and be contained by, other ``PhysicalObject`` objects. A ``PhysicalObject`` appears to be implemented as C++ objects in the game engine which the embedded Python engine has access to, but since they are game engine objects, they are not defined anywhere in Python, and cannot be created directly in Python - but they can be accessed from Python. No special imports are necessary to manipulate these objects.
+   Please note that since these are not native Python objects, we don't know what they are actually named inside the game engine; ``PhysicalObject``, as well as the names of other types of objects that inherit from that class, are made up for convienience. We also can't see into the game engine code to see if the hierarchial structure of these classes is what is presented here - for example, ``vehicleObject`` and ``soldierObject`` may, in fact, be a single class; the hierarchy of ``PhysicalObject``'s decendents given here should nevertheless be equivalent to whatever the real hierarchy is.
 
-Please note that since these are not native Python objects, we don't know what they are actually named inside the game engine; ``PhysicalObject``, as well as the names of other types of objects that inherit from that class, are made up for convienience. We also can't see into the game engine code to see if the hierarchial structure of these classes is what is presented here - for example, ``VehicleObject`` and ``SoldierObject`` may, in fact, be a single class; the hierarchy of ``PhysicalObject``'s decendents given here should nevertheless be equivalent to whatever the real hierarchy is.
+   **Attributes**
 
-Methods
-~~~~~~~
+   .. py:attribute:: physicalObject.templateName
+   .. py:attribute:: physicalObject.isControlPoint
+   .. py:attribute:: physicalObject.isPlayerControlObject
+   .. py:attribute:: physicalObject.hasArmor
+   .. py:attribute:: physicalObject.token
 
--  ``physicalObject.isValid()``
+   **Methods**
 
--  ``physicalObject.getTemplateProperty()``
+   .. py:method:: isValid()
+   .. py:method:: getTemplateProperty()
 
--  ``physicalObject.getPosition()``
+      The known properties available via the ``getTemplateProperty`` method are:
 
--  ``physicalObject.setPosition( (X, Y, Z) )``
+      -  ``radius``
 
--  ``physicalObject.getRotation()``
+         For control points only.
 
--  ``physicalObject.setRotation( (A, B, C) )``
+      -  ``ControlPointID``
 
--  ``physicalObject.getParent()``
+         For control points only.
 
-   Returns ``PhysicalObject`` that contains this instance, if any.
+   .. py:method:: getPosition()
+   .. py:method:: setPosition((X, Y, Z))
+   .. py:method:: getRotation()
+   .. py:method:: setRotation((A, B, C))
+   .. py:method:: getParent()
 
--  ``physicalObject.getChildren()``
+      Returns ``PhysicalObject`` that contains this instance, if any.
 
-   Returns a tuple of multiple ``PhysicalObject`` contained by this instance
+   .. py:method:: getChildren()
 
-For information about the coordinate system used by the Position and Rotation methods, see the page on :doc:`BF2 Coordinates <../../engine/coordinates>`.
+      Returns a tuple of multiple ``PhysicalObject`` contained by this instance
 
-The known properties available via the ``getTemplateProperty`` method are:
+   For information about the coordinate system used by the Position and Rotation methods, see the page on :doc:`BF2 Coordinates <../../engine/coordinates>`.
 
--  ``radius``
+.. py:class:: weaponObject
 
-   For control points only.
+   A ``weaponObject`` is used to represent a weapon in BF2. The ``weaponObject`` class inherits the methods and attributes of ``physicalObject``, with no additonal methods or attributes.
 
--  ``ControlPointID``
+.. py:class:: kitObject
 
-   For control points only.
+   A ``kitObject`` is used to represent a “kit” in BF2. The ``kitObject`` class inherits the methods and attributes of ``physicalObject``, with no additonal methods or attributes.
 
-Attributes
-~~~~~~~~~~
+.. py:class:: controlPointObject
 
--  ``physicalObject.templateName``
--  ``physicalObject.isControlPoint``
--  ``physicalObject.isPlayerControlObject``
--  ``physicalObject.hasArmor``
--  ``physicalObject.token``
+   A ``controlPointObject`` is used to represent a control point in BF2. The ``controlPointObject`` class inherits the methods and attributes of ``physicalObject``, with the following additional methods and attributes:
 
-.. _weaponobject:
+   **Attributes**
 
-``WeaponObject``
-----------------
+   .. py:attribute:: flagPosition
 
-A ``WeaponObject`` is used to represent a weapon in BF2. The ``WeaponObject`` class inherits the methods and attributes of ``physicalObject``, with no additonal methods or attributes.
+      Returns:
 
-.. _kitobject:
+      -  ``0`` = top
+      -  ``1`` = middle
+      -  ``2`` = bottom
 
-``KitObject``
--------------
+   .. py:attribute:: lastAttackingTeam
+   .. py:attribute:: triggerId
 
-A ``KitObject`` is used to represent a “kit” in BF2. The ``KitObject`` class inherits the methods and attributes of ``physicalObject``, with no additonal methods or attributes.
+   **Methods**
 
-.. _controlpointobject:
+   .. py:method:: cp_getParam(parameter)
+   .. py:method:: cp_setParam(parameter, value)
 
-``ControlPointObject``
-----------------------
+   **Internal Properties**
 
-A ``ControlPointObject`` is used to represent a control point in BF2. The ``ControlPointObject`` class inherits the methods and attributes of ``physicalObject``, with the following additional methods and attributes:
+   ``controlPointObject`` also have a number of internal properties that are accessed through the ``cp_getParam`` and ``cp_setParam`` methods:
 
--  ``ControlPointObject.cp_getParam('parameter')``
--  ``ControlPointObject.cp_setParam('parameter', value)``
+   .. py:property:: isHemisphere
 
-Attributes
-~~~~~~~~~~
+      0 or 1, indicating if the control point capture area is a hemisphere or not.
 
--  ``ControlPointObject.flagPosition``
+   .. py:property:: team
 
-   Returns:
+      Team the capture point belongs to: 0 for neutral, 1 for team 1, and 2 for team 2. Updating this value also changes the minimap and flag tag indicator.
 
-   -  ``0`` = top
-   -  ``1`` = middle
-   -  ``2`` = bottom
+   .. py:property:: flag
 
--  ``ControlPointObject.lastAttackingTeam``
+      The flag image used in the control point; 1 for team 1's flag, 2 for team 2's.
 
--  ``ControlPointObject.triggerId``
+   .. py:property:: areaValue
 
-Internal Properties
-~~~~~~~~~~~~~~~~~~~
+      The weighting value for this control point
 
-``ControlPointObject`` also have a number of internal properties that are accessed through the ``cp_getParam`` and ``cp_setParam`` methods:
+   .. py:property:: unableToChangeTeam
 
--  ``isHemisphere``
+      Whether or not this control point is capturable (0) or not (1)
 
-   0 or 1, indicating if the control point capture area is a hemisphere or not.
+   .. py:property:: timeToGetControl
 
--  ``team``
+      How many seconds it takes to get control of this control point
 
-   Team the capture point belongs to: 0 for neutral, 1 for team 1, and 2 for team 2. Updating this value also changes the minimap and flag tag indicator.
+   .. py:property:: timeToLoseControl
 
--  ``flag``
+      How many seconds it takes to get control of this control point
 
-   The flag image used in the control point; 1 for team 1's flag, 2 for team 2's.
+   .. py:property:: onlyTakeableByTeam
 
--  ``areaValue``
+      Whether (1) or not (0) this control point is only capturable by one team
 
-   The weighting value for this control point
+   .. py:property:: takeOverChangePerSecond
 
--  ``unableToChangeTeam``
+      Capture speed; speed at which the flag at this control point raises or lowers.
 
-   Whether or not this control point is capturable (0) or not (1)
+   .. py:property:: enemyTicketLossWhenCaptured
 
--  ``timeToGetControl``
+      Ticket loss caused to the enemy when this control point is captured *(needs to be verified)*
 
-   How many seconds it takes to get control of this control point
+   .. py:property:: playerId
 
--  ``timeToLoseControl``
+      *Unknown; may set the ``playerID`` of the player that captured this control point first (the first player to arrive, not assisting players?)*
 
-   How many seconds it takes to get control of this control point
+.. py:class:: vehicleObject
 
--  ``onlyTakeableByTeam``
+   A ``vehicleObject`` represents a BF2 vehicle. The ``vehicleObject`` class inherits the methods and attributes of :py:class:`PhysicalObject`, with several additional methods. ``soldierObject``, used to represent the physical body of player, is a sub-class of ``vehicleObject``.
 
-   Whether (1) or not (0) this control point is only capturable by one team
+   **Methods**
 
--  ``takeOverChangePerSecond``
+   .. py:method:: getDamage()
+   .. py:method:: setDamage(intValue)
+   .. py:method:: getIsWreck()
 
-   Capture speed; speed at which the flag at this control point raises or lowers.
+      Returns boolean, 1 if the vehicle is destroyed
 
--  ``enemyTicketLossWhenCaptured``
+   .. py:method:: getOccupyingPlayers()
 
-   Ticket loss caused to the enemy when this control point is captured *(needs to be verified)*
+      Returns an array with index 0 being the driver
 
--  ``playerId``
+   .. py:method:: getIsRemoteControlled()
 
-   *Unknown; may set the ``playerID`` of the player that captured this control point first (the first player to arrive, not assisting players?)*
+   The ``getDamage()`` and ``setDamage()`` methods actually read/set the health of the vehicle. Transport helicopters start with 1500, tanks with 1000 and light jeeps with 750. They all explode when the damage reaches 0.
 
-.. _vehicleobject:
+.. py:class:: soldierObject
 
-``VehicleObject``
------------------
+   A ``soldierObject`` represents the physical body of a human or AI player in BF2. The ``soldierObject`` class inherits the methods and attributes of ``vehicleObject``, with no additonal methods or attributes. (Note: it appears that within the game engine, ``soldierObject`` and ``vehicleObject`` may actually be the exact same thing; conceptually, though, it helps to think of ``soldierObject`` as a subclass of ``vehicleObject``).
 
-A ``VehicleObject`` represents a BF2 vehicle. The ``VehicleObject`` class inherits the methods and attributes of PhysicalObject, with several additional methods. ``SoldierObject``, used to represent the physical body of player, is a sub-class of ``VehicleObject``.
+   It is important to pay attention to the destinction between a player's “physical” body in the game, which is represented by an instance of the ``soldierObject`` class, having position, orientation, health, etc., and the in-game “spirit” of that player, which is represented by an instance of the ``bf2.PlayerManager.Player`` class, having properties like a name, squad, profile ID, etc. ``The bf2.PlayerManager.Player`` (“spirit”) is created when a player connects to the server, and persists as long as the server continues running, even across game rounds (and disconnect/reconnects - if the player disconnects and then reconnects, the server tries to match them up with an existing ``bf2.PlayerManager.Player`` object). By contrast, a player remains associated with a ``soldierObject`` only as long as they remain alive; as soon as they die, their association with the ``soldierObject`` is broken; when they respawn, a new ``soldierObject`` instance is created, and becomes associated with the player. That is to say, between dying and respawning, the player's “spirit” leaves their first “body” and is “reincarnated” in a new “body”.
 
--  ``vehicleObject.getDamage()``
-
--  ``vehicleObject.setDamage(intValue)``
-
--  ``vehicleObject.getIsWreck()``
-
-   Returns boolean, 1 if the vehicle is destroyed
-
--  ``vehicleObject.getOccupyingPlayers()``
-
-   Returns an array with index 0 being the driver
-
--  ``vehicleObject.getIsRemoteControlled()``
-
-The ``getDamage()`` and ``setDamage()`` methods actually read/set the health of the vehicle. Transport helicopters start with 1500, tanks with 1000 and light jeeps with 750. They all explode when the damage reaches 0.
-
-.. _soldierobject:
-
-``SoldierObject``
------------------
-
-A ``SoldierObject`` represents the physical body of a human or AI player in BF2. The ``SoldierObject`` class inherits the methods and attributes of ``vehicleObject``, with no additonal methods or attributes. (Note: it appears that within the game engine, ``SoldierObject`` and ``vehicleObject`` may actually be the exact same thing; conceptually, though, it helps to think of ``SoldierObject`` as a subclass of ``vehicleObject``).
-
-It is important to pay attention to the destinction between a player's “physical” body in the game, which is represented by an instance of the ``SoldierObject`` class, having position, orientation, health, etc., and the in-game “spirit” of that player, which is represented by an instance of the ``bf2.PlayerManager.Player`` class, having properties like a name, squad, profile ID, etc. ``The bf2.PlayerManager.Player`` (“spirit”) is created when a player connects to the server, and persists as long as the server continues running, even across game rounds (and disconnect/reconnects - if the player disconnects and then reconnects, the server tries to match them up with an existing ``bf2.PlayerManager.Player`` object). By contrast, a player remains associated with a ``SoldierObject`` only as long as they remain alive; as soon as they die, their association with the ``SoldierObject`` is broken; when they respawn, a new ``SoldierObject`` instance is created, and becomes associated with the player. That is to say, between dying and respawning, the player's “spirit” leaves their first “body” and is “reincarnated” in a new “body”.
-
-Is that metaphysical enough for you?
+   Is that metaphysical enough for you?

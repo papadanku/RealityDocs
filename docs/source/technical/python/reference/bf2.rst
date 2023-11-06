@@ -274,7 +274,7 @@ Class attributes stored in the BF2 engine
    .. py:method:: setIsInsideCP(val)
    .. py:method:: getIsInsideCP()
 
-.. py:class:: bf2.PlayerManager.PlayerManager
+.. py:class:: bf2.PlayerManager
 
    This class is a wrapper around some player management functions in the BF2 engine, and also adds some simple calculations and logic to those functions. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.playerManager``.
 
