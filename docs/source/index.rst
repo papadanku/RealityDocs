@@ -4,6 +4,7 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Technical Documentation
+   :hidden:
    :glob:
 
    technical/index
