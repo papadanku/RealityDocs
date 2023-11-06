@@ -35,7 +35,7 @@ If you want to know the name, score, ping, or other properties of a player, you 
 Soldier Object
 --------------
 
-Player Objects are abstractions in the BF2 world-they can be thought of as corresponding to the "spirit" or "ghost" of a player. Soldier Objects ("soldierObjects"), on the other hand, are instances of the :py:class:`SoldierObject` class, and correspond to "physical" objects in the BF2 world, complete with geographic coordinates, orientation, the ability to contain, and be contained by, other physical objects, etc. When a player spawns into a game, a new Soldier Object is created, and their Player Object becomes associated with it. When a player dies, the Soldier Object is destroyed, but the Player Object continues to exist, until the player spawns into the game again.
+Player Objects are abstractions in the BF2 world-they can be thought of as corresponding to the "spirit" or "ghost" of a player. Soldier Objects ("soldierObjects"), on the other hand, are instances of the :py:class:`soldierObject` class, and correspond to "physical" objects in the BF2 world, complete with geographic coordinates, orientation, the ability to contain, and be contained by, other physical objects, etc. When a player spawns into a game, a new Soldier Object is created, and their Player Object becomes associated with it. When a player dies, the Soldier Object is destroyed, but the Player Object continues to exist, until the player spawns into the game again.
 
 If you want to know the location of a player, their current kit and weapon (contained "child" objects), or what vehicle their are riding in (a containing "parent" object), you look at the player's Soldier Object.
 

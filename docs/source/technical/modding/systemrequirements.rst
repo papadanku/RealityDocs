@@ -5,7 +5,7 @@ Server System Requirements
 These are some rough gidelines for minimum server requirements
 
 Linux & Windows
------
+---------------
 
 ======== =============== ============================================================
 Hardware Minimum         Note
