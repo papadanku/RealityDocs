@@ -4,7 +4,7 @@ Player Identity
 
 There are several ways a player's identity can be represented in Battlefield 2; this page discusses them, explains some of their different uses, and shows how to access them and convert one to another.
 
-Player ID
+Player ID (index)
 ---------
 
 ``Player ID`` ("playerID", also known as "index") is the simplist and most basic way of identifying players, and is the most commonly used throughout the game. The first player to connect to the server is given a Player ID of "0"; the second gets a Player ID of "1", and so on. At the beginning of the next round the server goes through and re-assigns Player IDs for each player, again beginning at 0, so as to fill in any "holes" in the numbering system created by players who have disconnected.
@@ -46,28 +46,18 @@ If you want to know the location of a player, their current kit and weapon (cont
 
 Other than searching through all possible players, there is no known way to go directly from a Soldier Object to it's corresponding Player Object. Instead, most of the :doc:`game events <../python/reference/events>` for which you would want to do this send **both** the relevent Player Object and Soldier Object in their callbacks.
 
-Profile ID
-----------
-
-Profile ID is a `GameSpy <https://www.gamespy.net/>`__ ID number that is unique to a specific BF2 player login; no matter what computer, no matter what CD key, no matter what server that player uses, if they login with the same name and password, they will be assigned the same Profile ID. Profile ID can therefore be used to uniquely identify particular players, and is the basis for the EA ranking system: player statistics are tracked by Profile ID.
-
-.. code-block:: python
-   :caption: How to retrieve the Profile ID for a player
-
-      playerObj.getProfileId()
-
-The profile ID is also stored between the square brackets on the 2nd line of the "gp.info" file, which resides in the root of the BF2 client folder. Note that the file is cumulative so it may contain the info for all the players that have been using the client computer; if so then each player info block is separated by a blank line. \-\-- Dimmer (2005-07-29)
-
-CD Key Hash
+PlayerID (Hash)
 -----------
 
-As part of the BF2 client installation process, the user must enter a "CD key" that was provided along with their copy of the game, along with their CDs or DVD. The CD key is supposed to be unique to one specific copy of the game; more than one game can be installed with the same CD key, but EA has various anti-piracy safeguards that will block game copies with duplicate CD keys from functioning in most cases.
+PlayerID, formerly and known as CDKey and hash, not to be confused with index PlayerID.
 
-Because the CD key uniquely (for the most part) identifies a particular computer and not any particular player, it can be a useful tool-for example, as a way to ban jerks (*smaktards*, in technical language) from a server, so that they will be blocked regardless of what login (Profile ID) they use.
+This number uniquely identifies players to the master server. Each Steam login is associated with a 32 digit 128-bit hexidecimal number. On logging into the PR server, the MSProxy_ contacts the master server and authenticates the users account, and will pass back a verified or unverified value to the proxy. The PlayerID is entered into logs in the connection, banlog and banlist, and is used to identify accounts with multiple usernames. The commands !banid, !timebanid and !unbanid take a PlayerID to manually ban or unban a player.
 
-For security reasons, a player's CD key is never accessible within BF2, but for virtually all purposes, their "CD key hash", which is available, serves just as well. This "hash" uses the obsolete `MD5 <https://en.wikipedia.org/wiki/MD5>`__ algorithm to create a `crytographic hash <https://en.wikipedia.org/wiki/Cryptographic_hash_function>`__ of the player's CD key (after removing any dashes, and converting it to upper-case). CD key hashes in BF2 are 128-bit numbers, which are typically represented in `hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_; for example: ``5e851bd2ce31a2b885266537a9c704aa``
+.. _MSProxy: https://gitlab.com/realitymod/public/prserverproxy/
 
-There is no built-in means of determining a player's CD key hash, but the [playerData](Cookbook:Accessing_CD_Key_Hash "wikilink") function provides a quick and easy way to get at it. Conversely, the [keyHash](Cookbook:Computing_CD_Key_Hashes "wikilink") function provides an easy way to convert a CD key into it's corresponding hash; if you just want to find out what your own key hash is, the fastest way to do that is to use this standalone [key-hashing program](BF2_Key_Hasher "wikilink").
+In Python, PlayerId is available through realityserver.getPlayerHash(player), and is primarily used in the bansystem.
+
+Example hash: ``ec74c4b5dcc40a1962cfd61e1d062ea3``
 
 IP Address
 ----------
@@ -80,10 +70,3 @@ IP Address
       playerObject.getAddress()
 
 You can also use the [playerData](Scripts:playerData "wikilink") function to retrieve the same information, along with [CD key hashes](Player_Identity#CD_Key_Hash "wikilink").
-
-PunkBuster GUID 
----------------
-
-The `PunkBuster <http://www.evenbalance.com/index.php?page=support-bf2.php>`__ anti-cheating system is built into Battlefield 2. PunkBuster assigns a "Globally Unique ID", or GUID, to each user, and uses this for the purpose of tracking and banning players that it detects cheating. In principle, GUIDs are pretty much the same thing as BF2's [CD key hashes](Player_Identity#CD_Key_Hash "wikilink"), but appear to initialize the MD5 algorithm differently. For all practical purposes, you can think of a player's GUID as just being a second (and different) CD key hash. Just like CD key hashes, they uniquely identify installed copies of BF2, and so can be used for all the same purposes as CD key hashes.
-
-PunkBuster GUIDs for players on a server can easily be determined by using the ``pb_sv_plist`` command from the console. Unfortunately, the "wiring" between BF2 and PunkBuster is such that RCon clients and Python scripts trying to run this command cannot receive any data back; there is therefore no way at present to access GUID information from within a script or from RCon.
