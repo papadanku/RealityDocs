@@ -3,7 +3,7 @@ Welcome to Project Reality's Official Documentation!
 ====================================================
 
 .. toctree::
-   :caption: Technical Information Wiki
+   :caption: Technical Documentation
    :glob:
 
    technical/index

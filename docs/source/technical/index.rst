@@ -1,6 +1,9 @@
 
+Technical Information Wiki
+==========================
+
 .. toctree::
-   :hidden:
+   :titlesonly:
    :glob:
 
    */index
