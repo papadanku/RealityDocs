@@ -4,7 +4,7 @@ BF2 Coordinates
 
 Battlefield 2 uses basic a basic 3-dimensional coordinate system to specify the position and orientation of objects within the game world.
 
-Note that only objects of the :ref:`PhysicalObject` class and classes that inherit from it (:ref:`SoldierObject`, :ref:`ControlPointObject`, and so on) that “exist” in the game world and posssess positons and orientations. So, for example, instances of :ref:`bf2.PlayerManager.Player <bf2-playermanager-player>` do **not** have positions or orientations.
+Note that only objects of the :py:class:`PhysicalObject` class and classes that inherit from it (:py:class:`soldierObject`, :py:class:`ControlPointObject`, and so on) that “exist” in the game world and posssess positons and orientations. So, for example, instances of :py:class:`PlayerManager.Player` do **not** have positions or orientations.
 
 So, to retrieve position and orientation for a vehicle (say, an Abrams tank), representated by the :ref:`VehicleObject` ``tank``:
 
@@ -13,7 +13,7 @@ So, to retrieve position and orientation for a vehicle (say, an Abrams tank), re
    position = tank.getPosition()
    rotation = tank.getRotation()
 
-On the other hand, to get the position and orientation of a player, representated by the :ref:`bf2.PlayerManager.Player <bf2-playermanager-player>` object ``andreas``:
+On the other hand, to get the position and orientation of a player, representated by the :py:class:`PlayerManager.Player` object ``andreas``:
 
 .. code-block:: python
 
@@ -41,9 +41,9 @@ These coordinates spell out a position along three axes:
 
 In all BF2 maps, the origin of the coordinate system (0, 0) is at the point in the very center of the map. Each unit in the coordinate system equals approximately 1 meter in the game world. Therefore, the example coordinate listed above will be a point 160.96 meters east and 266.02 meters south of map center, at an altitude of 162.55 meters. Note, however, that this is an “absolute” altitude; the altitude relative to the ground will depend on how high the surface of the ground is at that point; “sea level” varies quite a bit from map to map.
 
-There are two sizes of map included with the basic Battlefield 2 game; the size of map may be determined by using the ``bf2.gameLogic.getWorldSize()`` method. This method returns a two-element tuple that gives the number of meters E/W and N/S along the edges of the map. All maps except Strike at Karkand return (2048, 2048), indicating the maps cover 4 square kilometers (2048x2048 meters), with coordinates running from -1024 to +1024 along each dimension. Strike at Karkand is the only map of a different size, and returns (1024, 1024), indicating a map covering 1 square kilometer, with coordinates running from -512 to +512 along each dimension.
+There are two sizes of map included with the basic Battlefield 2 game; the size of map may be determined by using the :py:meth:`bf2.gameLogic.getWorldSize()` method. This method returns a two-element tuple that gives the number of meters E/W and N/S along the edges of the map. All maps except Strike at Karkand return (2048, 2048), indicating the maps cover 4 square kilometers (2048x2048 meters), with coordinates running from -1024 to +1024 along each dimension. Strike at Karkand is the only map of a different size, and returns (1024, 1024), indicating a map covering 1 square kilometer, with coordinates running from -512 to +512 along each dimension.
 
-   ``bf2.gameLogic.getWorldSize()`` appears to get it’s information from the ``heightmapcluster.setHeightmapSize`` parameter in the file ``Battlefield 2/mods/bf2/Levels/<name of map>/server.zip/Heightdata.con``.
+   :py:meth:`bf2.gameLogic.getWorldSize()` appears to get it’s information from the ``heightmapcluster.setHeightmapSize`` parameter in the file ``Battlefield 2/mods/bf2/Levels/<name of map>/server.zip/Heightdata.con``.
 
 .. code-block:: python
    :caption: The distance between any two points can easily be found by using the Pythagorean Theorem

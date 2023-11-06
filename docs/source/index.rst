@@ -7,7 +7,7 @@ Welcome to Project Reality's Official Documentation!
    :hidden:
    :glob:
 
-   technical/index
+   technical/*/index
 
 The Technical Information Wiki is a resource for the BF2 community, a repository of technical information related to the games Battlefield 2 and the modification Project Reality. Specifically, we hope to collect a lot of useful information here related to using the embedded Python capabilities of these games, modding, game statistics, administration, etc.
 
