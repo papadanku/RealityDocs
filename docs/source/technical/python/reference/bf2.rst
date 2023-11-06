@@ -2,526 +2,400 @@
 bf2
 ===
 
-``bf2.GameStatus``
-------------------
+.. py:class:: bf2.GameStatus
 
-Just used as a container for the constant values returned by callbacks from the ``GameStatusChanged`` event:
+   Just used as a container for the constant values returned by callbacks from the ``GameStatusChanged`` event
 
--  ``bf2.GameStatus.Playing``
--  ``bf2.GameStatus.EndGame``
--  ``bf2.GameStatus.PreGame``
--  ``bf2.GameStatus.Paused``
--  ``bf2.GameStatus.RestartServer``
--  ``bf2.GameStatus.NotConnected``
+   .. py:attribute:: Playing
+   .. py:attribute:: EndGame
+   .. py:attribute:: PreGame
+   .. py:attribute:: Paused
+   .. py:attribute:: RestartServer
+   .. py:attribute:: NotConnected
 
-You must ``import bf2`` to access these class attributes.
+   You must ``import bf2`` to access these class attributes.
 
-``bf2.GameLogic.GameLogic``
----------------------------
+.. py:class:: bf2.GameLogic.GameLogic
 
-A wrapper around lots of BF2 engine stuff accessible through host, apparently to make it more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.gameLogic``.
+   A wrapper around lots of BF2 engine stuff accessible through host, apparently to make it more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.gameLogic``.
 
-You must ``import bf2`` to access the methods and attributes of this object.
+   You must ``import bf2`` to access the methods and attributes of this object.
 
-Methods for the singleton object:
+   .. py:method:: getModDir()
+   .. py:method:: getMapName()
+   .. py:method:: getWorldSize()
 
--  ``bf2.gameLogic.getModDir()``
+      returns a tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.
 
--  ``bf2.gameLogic.getMapName()``
+   .. py:method:: getTeamName(team)
+   .. py:method:: isAIGame()
+   .. py:method:: sendClientCommand(playerId, command, args)
 
--  ``bf2.gameLogic.getWorldSize()``
+      Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a ```ClientCommand`` <../events.rst#command-events>`__ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
 
-   returns a tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.
+   .. py:method:: sendGameEvent(playerObject, event, data)
 
--  ``bf2.gameLogic.getTeamName(team)``
+      Tells the BF2 game engine to cause a [[GameEvent]] to occur.
 
--  ``bf2.gameLogic.isAIGame()``
+   .. py:method:: sendMedalEvent(playerObject, type, value)
+   .. py:method:: sendRankEvent(playerObject, rank, score)
+   .. py:method:: sendHudEvent(playerObject, event, data)
 
--  ``bf2.gameLogic.sendClientCommand(playerId, command, args)``
+      Tells the BF2 game engine to cause a [[HudEvent]] to occur.
 
-   Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a ```ClientCommand`` <../events.rst#command-events>`__ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
+   .. py:method:: sendServerMessage(playerId, message)
+   .. py:method:: getTicketState(team)
+   .. py:method:: setTicketState(team, value)
+   .. py:method:: getTickets(team)
+   .. py:method:: setTickets(team, value)
+   .. py:method:: getDefaultTickets(team)
+   .. py:method:: getTicketChangePerSecond(team)
+   .. py:method:: setTicketChangePerSecond(team, value)
+   .. py:method:: getTicketLimit(team, id)
+   .. py:method:: setTicketLimit(team, id, value)
+   .. py:method:: getDefaultTicketLossPerMin(team)
+   .. py:method:: getDefaultTicketLossAtEndPerMin()
+   .. py:method:: getWinner()
+   .. py:method:: getVictoryType()
+   .. py:method:: setHealPointLimit(value)
 
--  ``bf2.gameLogic.sendGameEvent(playerObject, event, data)``
+      Percentage heal required to trigger a ```PlayerHealPoint`` <../events.rst#player-events>`__ event.
 
-   Tells the BF2 game engine to cause a [[GameEvent]] to occur.
+   .. py:method:: setRepairPointLimit(value)
 
--  ``bf2.gameLogic.sendMedalEvent(playerObject, type, value)``
+      Percentage heal required to trigger a ```PlayerRepairPoint`` <../events.rst#player-events>`__ event.
 
--  ``bf2.gameLogic.sendRankEvent(playerObject, rank, score)``
+   .. py:method:: setGiveAmmoPointLimit(value)
 
--  ``bf2.gameLogic.sendHudEvent(playerObject, event, data)``
+      Percentage heal required to trigger a ```PlayerGiveAmmoPoint`` <../events.rst#player-events>`__ event.
 
-   Tells the BF2 game engine to cause a [[HudEvent]] to occur.
+   .. py:method:: setTeamDamagePointLimit(value)
 
--  ``bf2.gameLogic.sendServerMessage(playerId, message)``
+      Percentage heal required to trigger a ```PlayerTeamDamagePoint`` <../events.rst#player-events>`__ event.
 
--  ``bf2.gameLogic.getTicketState(team)``
+   .. py:method:: setTeamVehicleDamagePointLimit(value)
 
--  ``bf2.gameLogic.setTicketState(team, value)``
+.. py:class:: bf2.GameLogic.ServerSettings
 
--  ``bf2.gameLogic.getTickets(team)``
+   Another wrapper around more BF2 engine stuff that's accessible through host; this class makes it accessing these things cleaner and more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.serverSettings``.
 
--  ``bf2.gameLogic.setTickets(team, value)``
+   You must ``import bf2`` to access the methods and attributes of this object.
 
--  ``bf2.gameLogic.getDefaultTickets(team)``
+   .. py:method:: getTicketRatio()
+   .. py:method:: getTeamRatioPercent()
+   .. py:method:: getMaxPlayers()
+   .. py:method:: getGameMode()
+   .. py:method:: getMapName()
+   .. py:method:: getTimeLimit()
+   .. py:method:: getScoreLimit()
+   .. py:method:: getAutoBalanceTeam()
+   .. py:method:: getTKPunishEnabled()
+   .. py:method:: getTKNumPunishToKick()
+   .. py:method:: getTKPunishByDefault()
+   .. py:method:: getUseGlobalRank()
+   .. py:method:: getUseGlobalUnlocks()
 
--  ``bf2.gameLogic.getTicketChangePerSecond(team)``
+   You cannot find out server name, port and other similar information this way. Instead, use f.e. ``host.rcon_invoke('sv.serverName')`` to get the server name.
 
--  ``bf2.gameLogic.setTicketChangePerSecond(team, value)``
+.. py:class:: bf2.ObjectManager.ObjectManager
 
--  ``bf2.gameLogic.getTicketLimit(team, id)``
+   During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found [[Game Engine Object Types|here]], and a list of available object templates can be found [[Game Engine Object Templates|here]].
 
--  ``bf2.gameLogic.setTicketLimit(team, id, value)``
+   You must ``import bf2`` to access the methods and attributes of this object.
 
--  ``bf2.gameLogic.getDefaultTicketLossPerMin(team)``
+   .. py:method:: getObjectsOfType(object type)
+   .. py:method:: getObjectsOfTemplate(object template)
 
--  ``bf2.gameLogic.getDefaultTicketLossAtEndPerMin()``
+.. py:class:: bf2.PlayerManager.PlayerScore
 
--  ``bf2.gameLogic.getWinner()``
+   Objects of this class maintain a long list of player score attributes. They are used inside of objects of the ``Player`` class; for any ``Player`` object x, ``x.score`` is an object of class ``PlayerScore``.
 
--  ``bf2.gameLogic.getVictoryType()``
+   You will not normally create objects of this class; they are created automatically as part of the ``Player`` class when ``Player`` objects are created. No special imports are necessary to access methods and attributes of these objects.
 
--  ``bf2.gameLogic.setHealPointLimit(value)``
+   There is also a separate ``player.stats`` object, which tracks different information. You can use the following code fragment to see all of the variables in the ``player.stats`` object.
 
-   Percentage heal required to trigger a ```PlayerHealPoint`` <../events.rst#player-events>`__ event.
+   .. code-block:: python
 
--  ``bf2.gameLogic.setRepairPointLimit(value)``
+      for s in vars(player.stats):
+         print str(s)
 
-   Percentage heal required to trigger a ```PlayerRepairPoint`` <../events.rst#player-events>`__ event.
+   .. py:method:: reset()
 
--  ``bf2.gameLogic.setGiveAmmoPointLimit(value)``
+      Resets all score attributes stored within the object itself.
 
-   Percentage heal required to trigger a ```PlayerGiveAmmoPoint`` <../events.rst#player-events>`__ event.
+   .. py:attribute:: index
+   .. py:attribute:: heals
+   .. py:attribute:: ammos
+   .. py:attribute:: repairs
+   .. py:attribute:: damageAssists
+   .. py:attribute:: passengerAssists
+   .. py:attribute:: driverAssists
+   .. py:attribute:: targetAssists
+   .. py:attribute:: driverSpecials
+   .. py:attribute:: revives
+   .. py:attribute:: teamDamages
+   .. py:attribute:: teamVehicleDamages
+   .. py:attribute:: cpCaptures
+   .. py:attribute:: cpDefends
+   .. py:attribute:: cpAssists
+   .. py:attribute:: suicides
+   .. py:attribute:: cpNeutralizes
+   .. py:attribute:: cpNeutralizeAssists
+   .. py:attribute:: rplScore
 
--  ``bf2.gameLogic.setTeamDamagePointLimit(value)``
+      This attribute may not be in all versions of BF2
 
-   Percentage heal required to trigger a ```PlayerTeamDamagePoint`` <../events.rst#player-events>`__ event.
-
--  ``bf2.gameLogic.setTeamVehicleDamagePointLimit(value)``
-
-``bf2.GameLogic.ServerSettings``
---------------------------------
-
-Another wrapper around more BF2 engine stuff that's accessible through host; this class makes it accessing these things cleaner and more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.serverSettings``.
-
-You must ``import bf2`` to access the methods and attributes of this object.
-
-Methods for the singleton object:
-
--  ``bf2.serverSettings.getTicketRatio()``
--  ``bf2.serverSettings.getTeamRatioPercent()``
--  ``bf2.serverSettings.getMaxPlayers()``
--  ``bf2.serverSettings.getGameMode()``
--  ``bf2.serverSettings.getMapName()``
--  ``bf2.serverSettings.getTimeLimit()``
--  ``bf2.serverSettings.getScoreLimit()``
--  ``bf2.serverSettings.getAutoBalanceTeam()``
--  ``bf2.serverSettings.getTKPunishEnabled()``
--  ``bf2.serverSettings.getTKNumPunishToKick()``
--  ``bf2.serverSettings.getTKPunishByDefault()``
--  ``bf2.serverSettings.getUseGlobalRank()``
--  ``bf2.serverSettings.getUseGlobalUnlocks()``
-
-You cannot find out server name, port and other similar information this way. Instead, use f.e. ``host.rcon_invoke('sv.serverName')`` to get the server name.
-
-``bf2.ObjectManager.ObjectManager``
------------------------------------
-
-During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found [[Game Engine Object Types|here]], and a list of available object templates can be found [[Game Engine Object Templates|here]].
-
-You must ``import bf2`` to access the methods and attributes of this object.
-
-Methods for the singleton object:
-
--  ``bf2.objectManager.getObjectsOfType('object type')``
--  ``bf2.objectManager.getObjectsOfTemplate('object template')``
-
-``bf2.PlayerManager.PlayerScore``
----------------------------------
-
-Objects of this class maintain a long list of player score attributes. They are used inside of objects of the ``Player`` class; for any ``Player`` object x, ``x.score`` is an object of class ``PlayerScore``.
-
-You will not normally create objects of this class; they are created automatically as part of the ``Player`` class when ``Player`` objects are created. No special imports are necessary to access methods and attributes of these objects.
-
-There is also a separate ``player.stats`` object, which tracks different information. You can use the following code fragment to see all of the variables in the ``player.stats`` object.
-
-.. code-block:: python
-
-   for s in vars(player.stats):
-      print str(s)
-
-Class Methods
-~~~~~~~~~~~~~
-
--  ``reset()``
-
-   Resets all score attributes stored within the object itself.
-
-Class attributes stored in the ``PlayerScore`` object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  ``index``
-
--  ``heals``
-
--  ``ammos``
-
--  ``repairs``
-
--  ``damageAssists``
-
--  ``passengerAssists``
-
--  ``driverAssists``
-
--  ``targetAssists``
-
--  ``driverSpecials``
-
--  ``revives``
-
--  ``teamDamages``
-
--  ``teamVehicleDamages``
-
--  ``cpCaptures``
-
--  ``cpDefends``
-
--  ``cpAssists``
-
--  ``suicides``
-
--  ``cpNeutralizes``
-
--  ``cpNeutralizeAssists``
-
--  ``rplScore``
-
-   This attribute may not be in all versions of BF2
-
--  ``skillScore``
-
--  ``cmdScore``
+   .. py:attribute:: skillScore
+   .. py:attribute:: cmdScore
 
 Class attributes stored in the BF2 engine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``deaths``
+   .. py:attribute:: deaths
+   .. py:attribute:: kills
+   .. py:attribute:: TKs
+   .. py:attribute:: score
+   .. py:attribute:: skillScore
+   .. py:attribute:: rplScore
+   .. py:attribute:: cmdScore
+   .. py:attribute:: fracScore
+   .. py:attribute:: rank
+   .. py:attribute:: firstPlace
+   .. py:attribute:: secondPlace
+   .. py:attribute:: thirdPlace
+   .. py:attribute:: bulletsFired
 
--  ``kills``
+      Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
 
--  ``TKs``
+      ``(("uspi-m16", 30), ("knife", 3))``
 
--  ``score``
+      Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
 
--  ``skillScore``
+   .. py:attribute:: bulletsGivingDamage
 
--  ``rplScore``
+      Same as above, but only with bullets giving damage
 
--  ``cmdScore``
+   .. py:attribute:: bulletsFiredAndClear
 
--  ``fracScore``
+      The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
 
--  ``rank``
+   .. py:attribute:: bulletsGivingDamageAndClear
+   .. py:attribute:: dkRatio
 
--  ``firstPlace``
+.. py:class:: bf2.PlayerManager.Player
 
--  ``secondPlace``
+   An object of this class is created for each player in the game. When they are initialized, ``Player`` objects automatically instantiate a ``PlayerScore`` object and assign it to their score attribute.
 
--  ``thirdPlace``
+   You must ``import bf2.PlayerManager`` if you wish to create objects of this class; normally, however, you will just access methods and attributes of already existing ``Player`` objects that are returned to you by other calls, which requires no special import statement.
 
--  ``bulletsFired``
+   .. code-block:: python
+      :caption: Instance creation
 
-   Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
+      x = bf2.PlayerManager.Player(index)
 
-   ``(("uspi-m16", 30), ("knife", 3))``
+   .. py:attribute:: index
 
-   Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
+      ``playerID`` for this player.
 
--  ``bulletsGivingDamage``
+   .. py:attribute:: score
 
-   Same as above, but only with bullets giving damage
+      Current score for this player.
 
--  ``bulletsFiredAndClear``
+   .. py:method:: isValid()
+   .. py:method:: isRemote()
+   .. py:method:: isAIPlayer()
+   .. py:method:: isAlive()
+   .. py:method:: isManDown()
+   .. py:method:: isConnected()
+   .. py:method:: getProfileId()
+   .. py:method:: isFlagHolder()
+   .. py:method:: getTeam()
+   .. py:method:: setTeam(t)
+   .. py:method:: getPing()
 
-   The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
+      Returns the player's ping (network transit time from player to server and back) in milliseconds
 
--  ``bulletsGivingDamageAndClear``
+   .. py:method:: getSuicide()
 
-Class attributes computed from other attribute values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Returns 1 if the player suicided. Resets once the player spawns.
 
--  ``dkRatio``
+   .. py:method:: setSuicide(t)
+   .. py:method:: getTimeToSpawn()
 
-.. _bf2-PlayerManager-Player:
+      Returns 0 when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
 
-``bf2.PlayerManager.Player``
-----------------------------
+   .. py:method:: setTimeToSpawn(t)
 
-An object of this class is created for each player in the game. When they are initialized, ``Player`` objects automatically instantiate a ``PlayerScore`` object and assign it to their score attribute.
+      Appears to generate an exception if used on a player that is already spawned in; if used on a player that that is waiting to spawn it changes the time until they are allowed to spawn.
 
-You must ``import bf2.PlayerManager`` if you wish to create objects of this class; normally, however, you will just access methods and attributes of already existing ``Player`` objects that are returned to you by other calls, which requires no special import statement.
+   .. py:method:: getSquadId()
 
-.. code-block:: python
-   :caption: Instance creation
+      Returns the player's squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.
 
-   x = bf2.PlayerManager.Player(index)
+   .. py:method:: isSquadLeader()
 
-Class Attributes
-~~~~~~~~~~~~~~~~
+      Returns 1 if player is a squad leader.
 
--  ``index``
+   .. py:method:: isCommander()
 
-   ``playerID`` for this player.
+      Returns 1 if player is currently the commander.
 
--  ``score``
+   .. py:method:: getName()
 
-   Current score for this player.
+      Return's player's name
 
-Class Methods
-~~~~~~~~~~~~~
+   .. py:method:: setName(name)
 
--  ``isValid()``
+      Sets a player's name (at least, it changes what ``getName()`` returns), but the change doesn't show up in-game–everything in the game still shows the player's old name.
 
--  ``isRemote()``
+      It is working, but only sees that player who connected after the name change.
 
--  ``isAIPlayer()``
+   .. py:method:: getSpawnGroup()
+   .. py:method:: setSpawnGroup(t)
+   .. py:method:: getKit()
 
--  ``isAlive()``
+      Returns the current player's kit object.
 
--  ``isManDown()``
+   .. py:method:: getVehicle()
 
--  ``isConnected()``
+      Returns the current player's vehicle object. If the player is not in a vehicle at the time this returns the player's soldier object.
 
--  ``getProfileId()``
+   .. py:method:: getDefaultVehicle()
 
--  ``isFlagHolder()``
+      Returns the player's soldier object, no matter what vehicle they are in.
 
--  ``getTeam()``
+   .. py:method:: getPrimaryWeapon()
 
--  ``setTeam(t)``
+      Returns the weapon object for the player's currently selected weapon.
 
--  ``getPing()``
+   .. py:method:: getAddress()
 
-   Returns the player's ping (network transit time from player to server and back) in milliseconds
+      Returns player's IP address.
 
--  ``getSuicide()``
+   .. py:method:: setIsInsideCP(val)
+   .. py:method:: getIsInsideCP()
 
-   Returns 1 if the player suicided. Resets once the player spawns.
+.. py:class:: bf2.PlayerManager.PlayerManager
 
--  ``setSuicide(t)``
+   This class is a wrapper around some player management functions in the BF2 engine, and also adds some simple calculations and logic to those functions. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.playerManager``.
 
--  ``getTimeToSpawn()``
+   You must ``import bf2`` to access the methods and attributes of this object.
 
-   Returns 0 when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
+   .. py:method:: getNumberOfPlayers()
+   .. py:method:: getCommander(team)
+   .. py:method:: getPlayers()
+   .. py:method:: getPlayerByIndex(index)
+   .. py:method:: getNextPlayer(index)
+   .. py:method:: getNumberOfPlayersInTeam(team)
+   .. py:method:: getNumberOfAlivePlayersInTeam(team)
+   .. py:method:: enableScoreEvents()
 
--  ``setTimeToSpawn(t)``
+      Enables PlayerScore events
 
-   Appears to generate an exception if used on a player that is already spawned in; if used on a player that that is waiting to spawn it changes the time until they are allowed to spawn.
+   .. py:method:: disableScoreEvents()
 
--  ``getSquadId()``
+      Disables PlayerScore events
 
-   Returns the player's squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.
+.. py:class:: bf2.Timer
 
--  ``isSquadLeader()``
+   (Not available in PR, use the ``realitytimer`` below.)
 
-   Returns 1 if player is a squad leader.
+   Objects in this class are timers that can cause [[Event Reference#Timer Events|timer events]] to be generated when a fixed amount of time has elapsed.
 
--  ``isCommander()``
+   .. code-block:: python
+      :caption: Instance creation
 
-   Returns 1 if player is currently the commander.
+      timer = bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
 
--  ``getName()``
+   ``timerEventHandler`` is the handler to be called when ``delta`` seconds have elapsed since the creation of the timer; ``alwaysTrigger`` should be ``1`` *(not sure what the alternative is)*. ``data`` is an optional item (typically a tuple) that will be passed to ``timerEventHandler``. (Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work).
 
-   Return's player's name
+   You must ``import bf2.Timer`` to create timer objects.
 
--  ``setName(name)``
+   .. py:method:: destroy()
 
-   Sets a player's name (at least, it changes what ``getName()`` returns), but the change doesn't show up in-game–everything in the game still shows the player's old name.
+      Destroys the associated game engine timer (but not the Python instance.)
 
-   It is working, but only sees that player who connected after the name change.
+   .. py:method:: getTime()
 
--  ``getSpawnGroup()``
+      Returns the :doc:`wall time <../../engine/time>` at which this timer will fire.
 
--  ``setSpawnGroup(t)``
+   .. py:method:: setTime(time)
 
--  ``getKit()``
+      Changes the :doc:`wall time <../../engine/time>` at which this timer will fire.
 
-   Returns the current player's kit object.
+   .. py:method:: setRecurring(interval)
 
--  ``getVehicle()``
+      Specifies this this timer should fire repeatedly, every interval seconds.
 
-   Returns the current player's vehicle object. If the player is not in a vehicle at the time this returns the player's soldier object.
+   .. py:method:: onTrigger()
 
--  ``getDefaultVehicle()``
+      For internal use only; calls ``timerEventHandler``.
 
-   Returns the player's soldier object, no matter what vehicle they are in.
+.. py:class:: realitytimer.py
+   
+   Project Reality timer (``realitytimer.py``) expands the default interface with the following:
 
--  ``getPrimaryWeapon()``
+   -  Exception catching with a debug message when an exception is not caught in the handler
 
-   Returns the weapon object for the player's currently selected weapon.
+      No need to worry about bad code crashing the server.
 
--  ``getAddress()``
+   -  Internal check to make sure timers don't fire after destroy() was called
 
-   Returns player's IP address.
+      Can happen when ``Destroy()`` is called on the same tick
 
--  ``setIsInsideCP(val)``
+   .. py:method:: fireOnce(targetFunc, delay, data=None)
 
--  ``getIsInsideCP()``
+      Class that can fire an event once after delay and then destroy itself. No need to store reference.
+   
+   .. py:method:: fireNextTick(targetFunc, data=None)
+      
+      Class that will fire the event at the next game tick and then destroy itself. No need to store reference
 
-.. _bf2-playerManager-PlayerManager:
+.. py:class:: bf2.TriggerManager.TriggerManager
 
-``bf2.PlayerManager.PlayerManager``
------------------------------------
+   This class is a wraper around some player management functions in the BF2 engine. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.triggerManager``. This object is used to manage “triggers”, which are events that are fired when a PCO enters a defined spherical or hemispherical volume surrounding an object.
 
-This class is a wraper around some player management functions in the BF2 engine, and also adds some simple calculations and logic to those functions. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.playerManager``.
+   You must ``import bf2`` to access the methods and attributes of this object.
 
-You must ``import bf2`` to access the methods and attributes of this object.
+   .. py:method:: createRadiusTrigger(object, callback, objName, radius, data=None)
 
-Methods for the singleton object:
+      Creates a trigger that causes ``callback`` to be called if a player enters a spherical region of radius ``radius`` centered on ``object``, passing ``data`` as an argument.
 
--  ``bf2.playerManager.getNumberOfPlayers()``
+   .. py:method:: createHemiSphericalTrigger(object, callback, objName, radius, data=None)
 
--  ``bf2.playerManager.getCommander(team)``
+      Same as ``bf2.triggerManager.createRadiusTrigger``, except that instead of a spherical trigger region, the trigger region is a flat circle lying along the ground (yes, it's badly named).
 
--  ``bf2.playerManager.getPlayers()``
+   .. py:method:: destroyAllTriggers()
 
--  ``bf2.playerManager.getPlayerByIndex(index)``
+      Destroys all registered triggers.
 
--  ``bf2.playerManager.getNextPlayer(index)``
+   .. py:method:: destroy(trig_id)
 
--  ``bf2.playerManager.getNumberOfPlayersInTeam(team)``
+      Destroys a specific trigger.
 
--  ``bf2.playerManager.getNumberOfAlivePlayersInTeam(team)``
+   .. py:method:: getObjects(trig_id)
 
--  ``bf2.playerManager.enableScoreEvents()``
+      Returns a tuple containing all objects currently within the specified trigger region.
 
-   Enables PlayerScore events
+.. py:class:: bf2.stats.constants
 
--  ``bf2.playerManager.disableScoreEvents()``
+   This module appears intended to be imported with something like...
 
-   Disables PlayerScore events
+   .. code-block:: python
 
-``bf2.Timer``
--------------
+      from bf2.stats.constants import *
 
-(Not available in PR, use the ``realitytimer`` below.)
+   ... so that everything in it is loaded into the local namespace, rather than being a part of any object. The module includes a lot of constants and dictionaries, as well as some utility functions.
 
-Objects in this class are timers that can cause [[Event Reference#Timer Events|timer events]] to be generated when a fixed amount of time has elapsed.
+   .. py:method:: getVehicleType(templateName)
+   .. py:method:: getWeaponType(templateName)
+   .. py:method:: getKitType(templateName)
+   .. py:method:: getArmy(templateName)
+   .. py:method:: getMapId(mapName)
+   .. py:method:: getGameModeId(gameMode)
+   .. py:method:: getRootParent(physicalObject)
 
-.. code-block:: python
-   :caption: Instance creation
+      Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.
 
-   timer = bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
+      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in ``bf2.stats.constants``) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in ``bf2.stats.constants``, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the [[Game Engine Object Templates]] page.
 
-``timerEventHandler`` is the handler to be called when ``delta`` seconds have elapsed since the creation of the timer; ``alwaysTrigger`` should be ``1`` *(not sure what the alternative is)*. ``data`` is an optional item (typically a tuple) that will be passed to ``timerEventHandler``. (Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work).
-
-You must ``import bf2.Timer`` to create timer objects.
-
-Class Methods
-~~~~~~~~~~~~~
-
--  ``destroy()``
-
-   Destroys the associated game engine timer (but not the Python instance.)
-
--  ``getTime()``
-
-   Returns the :doc:`wall time <../../engine/time>` at which this timer will fire.
-
--  ``setTime(time)``
-
-   Changes the :doc:`wall time <../../engine/time>` at which this timer will fire.
-
--  ``setRecurring(interval)``
-
-   Specifies this this timer should fire repeatedly, every interval seconds.
-
--  ``onTrigger()``
-
-   For internal use only; calls ``timerEventHandler``.
-
-Project Reality Timer interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Project Reality timer (``realitytimer.py``) expands the default interface and adds:
-
--  Exception catching with a debug message when an exception is not caught in the handler
-
-   No need to worry about bad code crashing the server.
-
--  Internal check to make sure timers don't fire after destroy() was called
-
-   Can happen when ``Destroy()`` is called on the same tick
-
--  ``realitytimer.fireOnce(targetFunc, delay, data=None)`` class that can fire an event once after delay and then destroy itself
-
-   No need to store reference
-
--  ``realitytimer.fireNextTick(targetFunc, data=None)`` class that will fire the event at the next game tick and then destroy itself
-
-   Also no need to store
-
-``bf2.TriggerManager.TriggerManager``
--------------------------------------
-
-This class is a wraper around some player management functions in the BF2 engine. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.triggerManager``. This object is used to manage “triggers”, which are events that are fired when a PCO enters a defined spherical or hemispherical volume surrounding an object.
-
-You must ``import bf2`` to access the methods and attributes of this object.
-
-Methods for the singleton object:
-
--  ``bf2.triggerManager.createRadiusTrigger(object, callback, objName, radius, data=None)``
-
-   Creates a trigger that causes ``callback`` to be called if a player enters a spherical region of radius ``radius`` centered on ``object``, passing ``data`` as an argument.
-
--  ``bf2.triggerManager.createHemiSphericalTrigger(object, callback, objName, radius, data=None)``
-
-   Same as ``bf2.triggerManager.createRadiusTrigger``, except that instead of a spherical trigger region, the trigger region is a flat circle lying along the ground (yes, it's badly named).
-
--  ``bf2.triggerManager.destroyAllTriggers()``
-
-   Destroys all registered triggers.
-
--  ``bf2.triggerManager.destroy(trig_id)``
-
-   Destroys a specific trigger.
-
--  ``getObjects(trig_id)``
-
-   Returns a tuple containing all objects currently within the specified trigger region.
-
-``bf2.stats.constants``
------------------------
-
-This module appears intended to be imported with something like
-
-.. code-block:: python
-
-   from bf2.stats.constants import *
-
-so that everything in it is loaded into the local namespace, rather than being a part of any object. The module includes a lot of constants and dictionaries, as well as some utility functions.
-
-Functions
-~~~~~~~~~
-
--  ``getVehicleType(templateName)``
-
--  ``getWeaponType(templateName)``
-
--  ``getKitType(templateName)``
-
--  ``getArmy(templateName)``
-
--  ``getMapId(mapName)``
-
--  ``getGameModeId(gameMode)``
-
--  ``getRootParent(physicalObject)``
-
-   Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.
-
-For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in ``bf2.stats.constants``) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in ``bf2.stats.constants``, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the [[Game Engine Object Templates]] page.
-
-These constant values appear to be the same as those used in the [[BF2Stats|statistics server]], specifically the [[BF2Stats_LookUp_Values|look up values]].
+      These constant values appear to be the same as those used in the [[BF2Stats|statistics server]], specifically the [[BF2Stats_LookUp_Values|look up values]].
