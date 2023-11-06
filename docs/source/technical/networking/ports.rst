@@ -13,7 +13,7 @@ Protocol Ports       Function
 TCP      80,443      Battle Recorder
 TCP      22          SSH
 TCP      4712        PRISM RCON
-UDP      29901       Server status (Gamespy)
+UDP      29901       Server status (GameSpy)
 UDP      16567       Server Game Port
 TCP      64740       Mumble (Block UDP, TCP works better for PR Mumble)
 ======== =========== ===================================================
