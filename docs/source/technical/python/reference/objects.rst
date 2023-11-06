@@ -10,11 +10,11 @@ BF2 Objects
 
    **Attributes**
 
-   .. py:attribute:: physicalObject.templateName
-   .. py:attribute:: physicalObject.isControlPoint
-   .. py:attribute:: physicalObject.isPlayerControlObject
-   .. py:attribute:: physicalObject.hasArmor
-   .. py:attribute:: physicalObject.token
+   .. py:attribute:: templateName
+   .. py:attribute:: isControlPoint
+   .. py:attribute:: isPlayerControlObject
+   .. py:attribute:: hasArmor
+   .. py:attribute:: token
 
    **Methods**
 
