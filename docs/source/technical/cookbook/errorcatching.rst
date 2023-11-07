@@ -1,6 +1,6 @@
 
-How To Implement Better Error Catching
-======================================
+Better Error Catching
+=====================
 
 Submitted by *King of Camelot*.
 
