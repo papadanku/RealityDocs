@@ -99,7 +99,7 @@ bf2
 
 .. py:class:: bf2.ObjectManager.ObjectManager
 
-   During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found [[Game Engine Object Types|here]], and a list of available object templates can be found [[Game Engine Object Templates|here]].
+   During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found :doc:`here <../../engine/objecttemplates>`.
 
    You must ``import bf2`` to access the methods and attributes of this object.
 

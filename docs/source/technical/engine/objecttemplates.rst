@@ -1,6 +1,6 @@
 
-Game Engine Object Types
-========================
+Game Engine Object Templates
+============================
 
 This is a list of C++ game engine "object types" that can be used in the `bf2.objectManager.getObjectsOfType` method. As an example, to get a list of all control points, you could use: :py:class:`getChildren() <PhysicalObject.getChildren>`
 
@@ -10,8 +10,8 @@ This is a list of C++ game engine "object types" that can be used in the `bf2.ob
    for cp in controlPoints:
       # do stuff to each control point``
 
-Confirmed ObjectTypes
----------------------
+Confirmed ObjectTemplates
+-------------------------
 
 .. list-table::
    :header-rows: 1
@@ -65,8 +65,8 @@ Confirmed ObjectTypes
      - None
      - None
 
-Unconfirmed ObjectTypes
------------------------
+Unconfirmed ObjectTemplates
+---------------------------
 
 These objects are valid but return an empty tuple. They are probably not accessible from python, or only valid when these objects exist in the map. This is not tested. Any insight on these objects is highly appreciated.
 
