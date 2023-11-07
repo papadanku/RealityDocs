@@ -2,7 +2,7 @@
 Time in BF2
 ===========
 
-Time is principly measured within Battlefield 2 by means of “wall time”–the time in high-resolution seconds since the server started running (e.g. ``443.451488108``). Note that since the BF2 server does not restart between rounds (unlike the servers for *Battlefield: 1942* and *Battlefield: Vietnam*, which both practially reboot between rounds), wall time continues to increase from round to round.
+Time is principly measured within Battlefield 2 by means of “wall time”–the time in high-resolution seconds since the server started running (e.g. ``443.451488108``). Note that since the BF2 server does not restart between rounds (unlike the servers for *Battlefield: 1942* and *Battlefield: Vietnam*, which both practially reboot between rounds), wall time continues to increase from round to round.
 
 .. code-block:: python
    :caption: The current wall time can be determined this way

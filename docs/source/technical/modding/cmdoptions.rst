@@ -4,7 +4,7 @@ Command Line Options
 
 Battlefield 2 supports quite a few command line options. Most of you are probably already familiar with ones such as ``+fullscreen 1``. Incase some of you don't know, you can set a command line option by bringing up a shortcut's properties, going to the shorcut tab, and adding any of these options to the end of the 'Target' field. Command line options can only be set on shorcuts, which is useful because it allows you to have multiple shortcuts, all with different command line options. The following is a list of known command line options.
 
-NOTE: The following options were found with the debug version of the BF2.exe, so some of these options may not work with the normal BF2.exe. The debug build can be obtained by downloading and installing the Battlefield 2 Editor. Once installed the debug build is named BF2_r.exe in your main Battlefield 2 directory. The Battlefield 2 Editor can be downloaded at `Battlefield 2 Editor <http://www.fileplanet.com/155852/download/Battlefield-2-Editor>`__ Also, case does matter when using these options.
+NOTE: The following options were found with the debug version of the BF2.exe, so some of these options may not work with the normal BF2.exe. The debug build can be obtained by downloading and installing the Battlefield 2 Editor. Once installed the debug build is named BF2_r.exe in your main Battlefield 2 directory. The Battlefield 2 Editor can be downloaded at `Battlefield 2 Editor <http://www.fileplanet.com/155852/download/Battlefield-2-Editor>`__. Also, case does matter when using these options.
 
 Basic Options
 -------------

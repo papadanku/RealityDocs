@@ -2,7 +2,9 @@
 bf2
 ===
 
-.. py:class:: bf2.GameStatus
+.. py:module:: bf2
+
+.. py:class:: GameStatus
 
    Just used as a container for the constant values returned by callbacks from the ``GameStatusChanged`` event
 
@@ -15,7 +17,8 @@ bf2
 
    You must ``import bf2`` to access these class attributes.
 
-.. py:class:: bf2.GameLogic.GameLogic
+.. py:class:: GameLogic
+   :canonical: bf2.GameLogic.GameLogic
 
    A wrapper around lots of BF2 engine stuff accessible through host, apparently to make it more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.gameLogic``.
 
@@ -75,7 +78,8 @@ bf2
 
    .. py:method:: setTeamVehicleDamagePointLimit(value)
 
-.. py:class:: bf2.GameLogic.ServerSettings
+.. py:class:: ServerSettings
+   :canonical: bf2.GameLogic.ServerSettings
 
    Another wrapper around more BF2 engine stuff that's accessible through host; this class makes it accessing these things cleaner and more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.serverSettings``.
 
@@ -97,7 +101,8 @@ bf2
 
    You cannot find out server name, port and other similar information this way. Instead, use f.e. ``host.rcon_invoke('sv.serverName')`` to get the server name.
 
-.. py:class:: bf2.ObjectManager.ObjectManager
+.. py:class:: ObjectManager
+   :canonical: bf2.ObjectManager.ObjectManager
 
    During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found [[Game Engine Object Types|here]], and a list of available object templates can be found [[Game Engine Object Templates|here]].
 
@@ -106,7 +111,8 @@ bf2
    .. py:method:: getObjectsOfType(object type)
    .. py:method:: getObjectsOfTemplate(object template)
 
-.. py:class:: bf2.PlayerManager.PlayerScore
+.. py:class:: PlayerScore
+   :canonical: bf2.PlayerManager.PlayerScore
 
    Objects of this class maintain a long list of player score attributes. They are used inside of objects of the ``Player`` class; for any ``Player`` object x, ``x.score`` is an object of class ``PlayerScore``.
 
@@ -181,7 +187,8 @@ Class attributes stored in the BF2 engine
    .. py:attribute:: bulletsGivingDamageAndClear
    .. py:attribute:: dkRatio
 
-.. py:class:: bf2.PlayerManager.Player
+.. py:class:: Player
+   :canonical: bf2.PlayerManager.Player
 
    An object of this class is created for each player in the game. When they are initialized, ``Player`` objects automatically instantiate a ``PlayerScore`` object and assign it to their score attribute.
 
@@ -274,7 +281,7 @@ Class attributes stored in the BF2 engine
    .. py:method:: setIsInsideCP(val)
    .. py:method:: getIsInsideCP()
 
-.. py:class:: bf2.PlayerManager
+.. py:class:: PlayerManager
 
    This class is a wrapper around some player management functions in the BF2 engine, and also adds some simple calculations and logic to those functions. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.playerManager``.
 
@@ -295,7 +302,7 @@ Class attributes stored in the BF2 engine
 
       Disables PlayerScore events
 
-.. py:class:: bf2.Timer
+.. py:class:: Timer
 
    (Not available in PR, use the ``realitytimer`` below.)
 
@@ -350,7 +357,8 @@ Class attributes stored in the BF2 engine
 
       Class that will fire the event at the next game tick and then destroy itself. No need to store reference
 
-.. py:class:: bf2.TriggerManager.TriggerManager
+.. py:class:: TriggerManager
+   :canonical: bf2.TriggerManager.TriggerManager
 
    This class is a wraper around some player management functions in the BF2 engine. During its initialization the bf2 class instantiates this class as the singleton object ``bf2.triggerManager``. This object is used to manage “triggers”, which are events that are fired when a PCO enters a defined spherical or hemispherical volume surrounding an object.
 
@@ -376,7 +384,8 @@ Class attributes stored in the BF2 engine
 
       Returns a tuple containing all objects currently within the specified trigger region.
 
-.. py:class:: bf2.stats.constants
+.. py:class:: constants
+   :canonical: bf2.stats.constants
 
    This module appears intended to be imported with something like...
 

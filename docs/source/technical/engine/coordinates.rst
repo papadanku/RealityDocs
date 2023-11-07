@@ -99,4 +99,4 @@ Within .con files, these angles are written with slashes: ``A/P/R``.
 Note
 ~~~~
 
-Note: The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do **not** apply to players or vehicles on the ground. Ground players and vehicles **always** show ``P`` and ``R`` to be 0, regardless of their actual attitude (a soldier looking straight up in the air will still have a ``P`` value of 0, for example).
+The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do **not** apply to players or vehicles on the ground. Ground players and vehicles **always** show ``P`` and ``R`` to be 0, regardless of their actual attitude (a soldier looking straight up in the air will still have a ``P`` value of 0, for example).

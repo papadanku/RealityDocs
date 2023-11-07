@@ -60,8 +60,8 @@ BF2 Console Commands
    -  “AnimationSystem1p, AnimationSystem3p.inc”
    -  The length of the animation. Must match up with ObjectTemplate.ammo.reloadTime to sync.
 
-      -  If it’s a lower value, animation will be sped up.
-      -  If it’s a higher value, animation will be slowed down.
+      -  If it's a lower value, animation will be sped up.
+      -  If it's a higher value, animation will be slowed down.
 
 -  ``animationManager.looping`` bool -> bool
 
@@ -472,7 +472,7 @@ BF2 Console Commands
 
 -  ``game.lockFps`` int -> int
 
-   Sets a fps cap, makes it so that the fps can’t go higher than the given number.
+   Sets a fps cap, makes it so that the fps can't go higher than the given number.
 
 ``gameLogic``
 -------------
@@ -605,7 +605,7 @@ BF2 Console Commands
 
    Console ~ Command
 
-   Pauses the game. Pressing ‘P’ in COOP and Local does the same thing.
+   Pauses the game. Pressing ‘P' in COOP and Local does the same thing.
 
 -  ``gameLogic.vehicleDropHeight`` float -> float
 
@@ -1631,7 +1631,7 @@ BF2 Console Commands
    -  Weapons, Vehicles ``.tweak``
    -  Allows two weapons to share the same amount of bullets and magazines.
    -  Enter the weapon name to maglink.
-   -  The weapon that’s referenced must also have the same code.
+   -  The weapon that's referenced must also have the same code.
    -  Weapons with fire selector code causes it to not work properly (citation needed)
 
 -  ``objectTemplate.ammo.magSize`` int -> int
@@ -1643,7 +1643,7 @@ BF2 Console Commands
       -  Maximum non-infinity allowed is 1023
       -  Any more will cause a crash
 
-   -  Bug: In the Battlerecorder, it doesn’t pickup a gun that fires for 10 seconds on with 1000 bullets for some reason. Tested with the L4Bren on Auto.
+   -  Bug: In the Battlerecorder, it doesn't pickup a gun that fires for 10 seconds on with 1000 bullets for some reason. Tested with the L4Bren on Auto.
 
 -  ``objectTemplate.ammo.minimumTimeUntilReload`` float -> float
 
@@ -1653,7 +1653,7 @@ BF2 Console Commands
 
 -  ``objectTemplate.ammo.onlyActiveWhileFiring`` bool -> bool
 
-   Prevents the Medibag and Ammo Bag from being thrown when firing. Used in PR’s Medikit and Repair Bag
+   Prevents the Medibag and Ammo Bag from being thrown when firing. Used in PR's Medikit and Repair Bag
 
 -  ``objectTemplate.ammo.reloadAmount`` int -> int
 
@@ -1773,7 +1773,7 @@ BF2 Console Commands
 
    -  Vehicles .tweak, Weapons ``.tweak``
    -  Used in the AA Ship Boats.
-   -  Basically, when it’s a wreck, it can be repaired back to life.
+   -  Basically, when it's a wreck, it can be repaired back to life.
 
 -  ``objectTemplate.armor.criticalDamage`` float -> float
 
@@ -1822,7 +1822,7 @@ BF2 Console Commands
 -  ``objectTemplate.armor.timeToStayAfterDestroyed`` float -> float
 
    -  Vehicles ``.tweak``
-   -  Interesting code. If set to PR’s Jets and Helis, when they explode from wreck, the non-flaming wreck model stays though it shows in the minimap as an occupied vehicle.
+   -  Interesting code. If set to PR's Jets and Helis, when they explode from wreck, the non-flaming wreck model stays though it shows in the minimap as an occupied vehicle.
 
 -  ``objectTemplate.armor.timeToStayAsWreck`` float -> float
 
@@ -2731,7 +2731,7 @@ BF2 Console Commands
    -  “Set only for wheels.
    -  Roll grip for wheels that are not powered.
    -  Engine grip for wheels that are powered.
-   -  Engine dummy grip for wheel you want to make looking like they are powered, but actually aren’t.
+   -  Engine dummy grip for wheel you want to make looking like they are powered, but actually aren't.
 
 -  ``objectTemplate.groundContactVolume`` float -> float
 
@@ -2890,7 +2890,7 @@ BF2 Console Commands
 
 -  ``objectTemplate.is3dSound`` bool -> bool
 
-   If the .wav file is Mono, setting it to 1 will tell the engine to play it on both channels. If applied to a .wav that is Stereo, it will play on the entire map. Same with .ogg files though it’s usually experimentation.
+   If the .wav file is Mono, setting it to 1 will tell the engine to play it on both channels. If applied to a .wav that is Stereo, it will play on the entire map. Same with .ogg files though it's usually experimentation.
 
 -  ``objectTemplate.isCounterForce`` bool -> bool
 
@@ -2986,8 +2986,8 @@ BF2 Console Commands
 
 -  ``objectTemplate.localPredictOnClient`` bool -> bool
 
-   -  Used with Grenades and if there’s any effect projectiles.
-   -  Seems like it tells the server to predict what’s going to happen.
+   -  Used with Grenades and if there's any effect projectiles.
+   -  Seems like it tells the server to predict what's going to happen.
 
       -  Maybe used with the Networkable Setting
 
@@ -3114,8 +3114,8 @@ BF2 Console Commands
 -  ``objectTemplate.networkableInfo`` std::string -> std::string
 
    -  ``Networkables.con``
-   -  Needs to be set for objects that won’t work online without them.
-   -  Depends on the way it’s set and if it crashes immediately, is laggy, or crashes unexpectantly”
+   -  Needs to be set for objects that won't work online without them.
+   -  Depends on the way it's set and if it crashes immediately, is laggy, or crashes unexpectantly”
 
 -  ``objectTemplate.neverDrawAs1p`` bool -> bool
 
@@ -4135,7 +4135,7 @@ BF2 Console Commands
    -  Used in Weapons and Vehicle ``.tweak``
    -  For the overheat sound. Adding it makes the engine reference the std::string defined with MenuSound.con.
 
-      -  Usually it’s ``S_Weapon_Handheld_Overheat``
+      -  Usually it's ``S_Weapon_Handheld_Overheat``
       -  ``S_Vehicle_Handheld_Overheat`` but can be anything and custom ones can be used if needed
 
 -  ``objectTemplate.weaponHud.secondLockSound`` std::string -> std::string
@@ -4871,7 +4871,7 @@ BF2 Console Commands
 
    -  Increases the player number count in the W32 Dedicated to the number specified.
    -  Effect Unknown.
-   -  Maximum allowed is 100 though not sure if it’s a BF2 thing or not
+   -  Maximum allowed is 100 though not sure if it's a BF2 thing or not
 
 -  ``sv.minPlayersForVoting`` int -> int
 -  ``sv.notEnoughPlayersRestartDelay`` float -> float
@@ -5823,7 +5823,7 @@ All ``Vars.Set`` Codes
    -  The number referenced is the angle.
    -  Setting it to 0 allows you to prone into water.
 
-      -  Can shoot walls when it’s in water but not walls from the surface.
+      -  Can shoot walls when it's in water but not walls from the surface.
 
    -  Setting it to 2 prevents you from proning near water in which you automatically go to the standing position
 
