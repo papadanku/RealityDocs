@@ -1,0 +1,90 @@
+==  Problem  ==
+
+Normal Python interpreters will abort when an uncaught exception (programming error) occurs, printing a "traceback" message to help you track the problem down. The built-in error catching on the Python host embedded in Battlefield 2, however, only catches some errors, but not all of them--and when it doesn't catch a problem, the module in which it occurs will generally just quietly discontinue execution, while execution continues with other modules. This can make life for programmers very tough; troubleshooting bad code can be a problem without error messages, and putting <code>print</code> statements everywhere to try and pinpoint where something is failing is far from desirable.
+
+
+==  Solution  ==
+
+Python has <code>Try</code> statements that allow you to catch and output errors that would otherwise wouldn't show error messages. Specifically we will use the <code>Try...Except</code> statement, which has two clauses. The first clause is the <code>Try</code> portion which is where you put your code. The next clause, the <code>Except</code> portion, is where you put the code to be executed when an exception(error) occurs. A simple example of this is:
+
+<pre>
+ Try:
+     # Put code that you want executed here
+ Except:
+     # Put code that should execute on an error here
+</pre>
+
+In the example I use the plain old <code>Except</code>, which should catch all exceptions. You can be more specific if you know what kind of error might occur during this code, such as <code>Except ImportError</code>. For a list of specific exceptions, go here: [http://docs.python.org/lib/module-exceptions.html Python Exceptions].
+
+Next comes the code we want to execute when an exception occurs. When an exception occurs, three different values are put into <code>sys.exc_info()</code>. The first value is the type of exception that occured, the second value tells you specifics of the exception, and the third value gives you a reference to a traceback object for the exception. This makes it easy for us to learn about specifics of an exception when it occurs. In the following example, I also use functions from both the [http://www.python.org/doc/2.3.4/lib/module-inspect.html Inspect Module](to get the source code file name) and the [http://www.python.org/doc/2.3.4/lib/module-re.html Re Module](to format strings):
+
+<pre>
+ import inspect
+ import re
+ 
+ def ExceptionOutput():
+     sys.stderr.write("\n" + "Exception Occured: " + str(sys.exc_info()[0]) + "\n")
+     sys.stderr.write("Value: " + str(sys.exc_info()[1]) + "\n")   
+     sys.stderr.write("Line:" + str(readline(inspect.getfile(sys.exc_info()[2]),
+                      sys.exc_info()[2].tb_lineno)) + "\n")   
+     sys.stderr.write("Line #: " + str(sys.exc_info()[2].tb_lineno) + "\n")
+     sys.stderr.write("File: " + str(inspect.getfile(sys.exc_info()[2])) + "\n" + "\n")
+ 
+ def readline(filename, lineno):
+     filen = re.sub('\\\\', '/', filename)
+     file = open(filen, 'rU')
+     lines = file.readlines()
+     file.close()
+     linen = lineno - 1
+     line = re.sub('\s+', ' ', lines[linen])
+     return line
+</pre>
+
+Time to explain the two functions we've just defined.
+
+* The function <code>readline</code> takes two arguments, a file name and a line number.
+
+** The file name is gotten using the <code>inspect.getfile(object)</code>, which takes an object and returns the name of the source code file that it is from.
+** The line number is gotten by using <code>object.tb_lineno</code>. The tb in the <code>tb_lineno</code> refers to a trace back object.
+** In both of the above cases the object is the third value stored in <code>sys.exc_info()</code>
+** Getting to the actual meat of the function, the first line take the file name argument and formats it to reverse all backslashes to frontslashes. The reasoning for this will be explained in a moment.
+** The next line opens the file pointed to by the file name we just formatted. The file name had to be formatted first because although <code>inspect.getfile(object)</code> returns a name with backslashes, the open method needs a file name with frontslashes.
+** Now that we have the source code file open, we spit out all the lines using <code>file.readlines()</code>.
+** Next we close the file, because we are done with it.
+** We now take the line number and subtract one from it, because while source code file line numbers run 1,2,3...etc the list(aka array) in which the lines are stored is numbered 0,1,2,3..
+** Normally the returned line would have a lot of extra white space in front due to Python's use of white space in its source code files. Since this doesn't look good in an error log, we use a substitution function to remove all the excess white space.
+** Finally we return the source code line at the line number that was inputed.
+
+* The function <code>ExceptionOutput</code> takes no arguments, but instead outputs some nice little error text for us.
+
+** The first line outputs the first value in <code>sys.exc_info()</code>, the type of exception.
+** The next line outputs the second value of <code>sys.exc_info()</code>, the specifics of the exception.
+** Next we output the source code line at which the exception occured, using the <code>readline</code> function.
+** Just to make things easier to find, we also output the line number at which the exception occured.
+** The last thing we output is the name of the source code file in which the exception occured.
+
+Now lets see an example where we implement these functions:
+
+<pre>
+ def onEnterVehicle(player, vehicle, freeSoldier = False):
+   try:
+       print "Entered: ", vehicle.templateName
+       print vehicle.getDamage()
+       print vehicle.hasArmor
+       print vehicle.getName()
+   except:
+      ExceptionOutput()
+</pre>
+
+In this example, an error would occur at <code>print vehicle.getName()</code> and we will get a nice little error message from <code>ExceptionOutput()</code>. The <code>Try...Except</code> statement stops processing code in the <code>try</code> section once an exception occurs, so that even if multiple exceptions exist inside the <code>try</code> section, you will only see the first one that Python finds. Once you fix the exception, and re-execute your code it should continue on and catch any other errors you have in your code.
+
+==  Discussion  ==
+
+When I wrote this code, I was writing it dealing specificially with the [http://wikihost.org/wikis/bf2modding/ BF2 Python Log]. The code should work with other forms of logging, but may need slight modifying. I suggest using [http://wikihost.org/wikis/bf2modding/ BF2 Python Log], that way you can see errors in real-time, and the error messages show up in pretty red text.
+
+Please remember that this is just an example, and there are other ways you can do things. For one, in my code I used one big <code>Try...Except</code> statement and put all the code in the <code>try</code> section. You can break it up into several <code>Try...Except</code> statements if you would like, with only a little code in each statement. This can be useful when being more specific with the type of exception. You could also use a <code>Try...Except...Else</code> statement. In a <code>Try...Except...Else</code> statement the <code>else</code> section is executed if no exception occurs in the <code>try</code> section, but no checking for exceptions occurs in the <code>else</code> section. More information on <code>try</code> statements can be found here: [http://www.python.org/doc/2.3.4/ref/try.html Try Statements].
+
+
+==  Submitted By  ==
+
+--King of Camelot
