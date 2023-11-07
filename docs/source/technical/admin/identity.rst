@@ -62,11 +62,9 @@ Example hash: ``ec74c4b5dcc40a1962cfd61e1d062ea3``
 IP Address
 ----------
 
-[IP address](wikipedia:IP_Address "wikilink") is the address of a particular computer on a network, such as "``192.168.100.1``". Generally speaking, a player's IP address can be used as a way to identify their computer (similar to how CD key hash can be used), as well as to tell something about their location-which country they are in, for example. In practice, care must be used in these applications because many internet service providers use `NAT <https://en.wikipedia.org/wiki/Network_address_translation>`__ to dynamically change their customers' IP addresses from day to day; AOL is the worst, changing addresses from one connection to the next! If you ban or kick a player based on their IP address, they may well reconnect to your server a few minutes later with a different IP address.
+The `IP address <https://en.wikipedia.org/wiki/IP_address>`__ is the address of a particular computer on a network, such as ``192.168.100.1``. Generally speaking, a player's IP address can be used as a way to identify their computer (similar to how CD key hash can be used), as well as to tell something about their location-which country they are in, for example. In practice, care must be used in these applications because many internet service providers use `NAT <https://en.wikipedia.org/wiki/Network_address_translation>`__ to dynamically change their customers' IP addresses from day to day; AOL is the worst, changing addresses from one connection to the next! If you ban or kick a player based on their IP address, they may well reconnect to your server a few minutes later with a different IP address.
 
 .. code-block:: python
    :caption: How to access the IP address a player is using from their Player Object
 
       playerObject.getAddress()
-
-You can also use the [playerData](Scripts:playerData "wikilink") function to retrieve the same information, along with [CD key hashes](Player_Identity#CD_Key_Hash "wikilink").
