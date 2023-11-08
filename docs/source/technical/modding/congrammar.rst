@@ -69,11 +69,7 @@ Some examples:
 
    .. note::
 
-      This distribution is often misused in the Battlefield code, e.g.
-
-   ``ObjectTemplate.initRotation CRD_EXPONENTIAL/0/180/1``
-
-   is a common use. However, this setting actually always returns a value of 0, since that is the mean specified. The “180” argument is ignored.
+      This distribution is often misused in the Battlefield code, e.g. ``ObjectTemplate.initRotation CRD_EXPONENTIAL/0/180/1`` is a common use. However, this setting actually always returns a value of 0, since that is the mean specified. The “180” argument is ignored.
 
 -  ``ObjectTemplate.timeToLive CRD_NORMAL/2/3.5/0``
 
