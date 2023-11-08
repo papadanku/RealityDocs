@@ -67,7 +67,9 @@ Some examples:
 
    The exponential distribution basically gives a distribution curve that drops off sharply and then levels out. It is computed by ``-mean*ln(random(0,1))``. In other words, a random number between 0 and 1 (not including 0 or 1) is generated, the natural logarithm of this number is computed, and the result is multiplied by the negative of the mean (the average), the second argument (and first number) passed in. For example, if the random number generated was 0.1, the natural log is -2.3, so since the mean was -20, the final number returned would be -(-20)\*-2.3 = -46. Since the symmetric flag, the last argument, is set to 1 (true), there is a 50/50 chance that this result will be negated, i.e. be returned as 46 instead of -46.
 
-   NOTE: this distribution is often misused in the Battlefield code, e.g.
+   .. note::
+
+      This distribution is often misused in the Battlefield code, e.g.
 
    ``ObjectTemplate.initRotation CRD_EXPONENTIAL/0/180/1``
 

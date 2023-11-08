@@ -57,7 +57,9 @@ Linux Iptables
 
 This ruleset allows my server to be seen in the server browser list, people can join it AND use VOIP, game admins can connect through PRISM and sysadmins can connect to SSH.
 
-Note that this is a standard server, only one BF2 server on the machine, and no hank panky with ports used and such. Battlerecorder is recommended to be hosted on a separate box.
+.. note::
+
+   This is a standard server, only one BF2 server on the machine, and no hank panky with ports used and such. Battlerecorder is recommended to be hosted on a separate box.
 
 ::
 

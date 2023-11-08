@@ -36,7 +36,6 @@ Because of the way your operating system buffers I/O, you may not see anything i
 
 For example, if you are using the server GUI tool available from EA and you push the “Stop” button when the server is running, the server will shutdown abruptly without flushing it's buffers--and you'll find nothing in your log file. To shut the server down gracefully, type the “quit” command into the server's window directly. If you've sent some particularly important information to the log file and you want to insure it gets there, you can use the ``sys.stdout.flush()`` method.
 
-Note
-----
+.. note::
 
-You can use ``host.rcon_invoke('echo "..."')`` to print things directly to the server console.
+   You can use ``host.rcon_invoke('echo "..."')`` to print things directly to the server console.

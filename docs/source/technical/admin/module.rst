@@ -59,7 +59,9 @@ The ``default`` module implements just three RCon commands (but could easily be 
 
    Executes any server command.
 
-(Note that from a player's in-game console window, each of these commands must be preceeded by the word “rcon” to cause the game engine to send it to the ``default`` module; from a TCP RCon connection, these commands are typed exactly as shown).
+.. note::
+
+   From a player's in-game console window, each of these commands must be preceeded by the word “rcon” to cause the game engine to send it to the ``default`` module; from a TCP RCon connection, these commands are typed exactly as shown.
 
 Other Administrative Functions
 ------------------------------
