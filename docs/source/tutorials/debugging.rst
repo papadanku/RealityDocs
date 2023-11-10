@@ -10,7 +10,7 @@ The BF2/PR debugger is extremely helpful in tracking down bugs that don't give e
 #. Next you'll need to make a profile that will function properly in the debugger. Go to **Manage Profiles** and create a new offline profile.
 #. Select it from the profiles list after creating it and hit **Convert Profile** to convert to a debugger profile.
 #. Depending on what you want to do, you may want to go back to the **Options** menu through the launcher, select debugger profile in order to lower resolution and disable fullscreen. That's because fullscreen only produces logs while windowed mode also shows error windows for more important errors.
-#. Go back to the debugger screen(right click **PLAY** and select **launch Debugger**), select your new profile, log in, and have fun debugging.
+#. Go back to the debugger screen(right click **PLAY** and select **Launch Debugger**), select your new profile, log in, and have fun debugging.
 
 When you're running the debugger in windowed mode, you'll get error messages popping up all the time when loading. Generally, these are messages about texture coordinates, which can be ignored. Simply press Continue through them all.
 
