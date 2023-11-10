@@ -2,7 +2,7 @@
 Requesting & Trading Assets with Other Mod Teams
 ================================================
 
-From *AfterDune*
+Author: *AfterDune*
 
 Introduction
 ------------

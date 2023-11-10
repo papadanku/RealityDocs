@@ -2,7 +2,7 @@
 Reloading Modules at Runtime
 ============================
 
-Submitted by *King of Camelot*.
+Author: *King of Camelot*
 
 Problem
 -------

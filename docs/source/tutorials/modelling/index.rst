@@ -1,6 +1,6 @@
 
-Community Modelling
-===================
+Community Modding
+=================
 
 .. toctree::
    :glob:

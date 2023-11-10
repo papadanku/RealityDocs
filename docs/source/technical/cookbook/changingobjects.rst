@@ -2,7 +2,7 @@
 Changing Objects At Runtime
 ===========================
 
-Submitted by *Woody*.
+Author: *Woody*
 
 Problem
 -------

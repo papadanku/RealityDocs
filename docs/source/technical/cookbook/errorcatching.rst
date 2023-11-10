@@ -2,7 +2,7 @@
 Better Error Catching
 =====================
 
-Submitted by *King of Camelot*.
+Author: *King of Camelot*
 
 Problem
 -------

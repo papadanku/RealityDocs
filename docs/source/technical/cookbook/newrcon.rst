@@ -2,7 +2,7 @@
 Adding New RCon Commands
 ========================
 
-Submitted by *Woody*.
+Author: *Woody*
 
 Problem
 -------
