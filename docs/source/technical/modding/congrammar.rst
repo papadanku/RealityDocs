@@ -77,7 +77,7 @@ Some examples:
 
    Variance specifies the range in which about 4/5ths of the numbers generated will fall. In our example, the 2 is the average time to live desired, and a variance of 3.5 means that this value can vary fairly widely; about 4/5ths of the numbers generated will be in the range +3.5 to -3.5 from the mean of 2, i.e. -1.5 to 5.5, with 1/5th of the numbers appearing above and below this range.
 
-`Source <https://bfmods.com/mdt/scripting/CRD.html>`__
+`Source <https://bfmods.com/mdt/scripting/CRD.html>`_
 
 Variables
 ---------

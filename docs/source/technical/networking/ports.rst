@@ -34,11 +34,11 @@ This is from the ``readmeserver.txt``
 How to firewall your server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. External firewall
+#. External firewall
 
    You have a machine that all traffic has to pass through to get to your server (my favourite)
 
-2. Local Firewall
+#. Local Firewall
 
    You are running a firewall on the same server as you have the server (uses local CPU,so not the best way)
 

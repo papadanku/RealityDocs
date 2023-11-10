@@ -31,7 +31,7 @@ bf2
    .. py:method:: isAIGame()
    .. py:method:: sendClientCommand(playerId, command, args)
 
-      Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a ```ClientCommand`` <../events.rst#command-events>`__ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
+      Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a ```ClientCommand`` <../events.rst#command-events>`_ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
 
    .. py:method:: sendGameEvent(playerObject, event, data)
 
@@ -59,19 +59,19 @@ bf2
    .. py:method:: getVictoryType()
    .. py:method:: setHealPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerHealPoint`` <../events.rst#player-events>`__ event.
+      Percentage heal required to trigger a ```PlayerHealPoint`` <../events.rst#player-events>`_ event.
 
    .. py:method:: setRepairPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerRepairPoint`` <../events.rst#player-events>`__ event.
+      Percentage heal required to trigger a ```PlayerRepairPoint`` <../events.rst#player-events>`_ event.
 
    .. py:method:: setGiveAmmoPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerGiveAmmoPoint`` <../events.rst#player-events>`__ event.
+      Percentage heal required to trigger a ```PlayerGiveAmmoPoint`` <../events.rst#player-events>`_ event.
 
    .. py:method:: setTeamDamagePointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerTeamDamagePoint`` <../events.rst#player-events>`__ event.
+      Percentage heal required to trigger a ```PlayerTeamDamagePoint`` <../events.rst#player-events>`_ event.
 
    .. py:method:: setTeamVehicleDamagePointLimit(value)
 
@@ -150,36 +150,36 @@ bf2
 
 Class attributes stored in the BF2 engine
 
-   .. py:attribute:: deaths
-   .. py:attribute:: kills
-   .. py:attribute:: TKs
-   .. py:attribute:: score
-   .. py:attribute:: skillScore
-   .. py:attribute:: rplScore
-   .. py:attribute:: cmdScore
-   .. py:attribute:: fracScore
-   .. py:attribute:: rank
-   .. py:attribute:: firstPlace
-   .. py:attribute:: secondPlace
-   .. py:attribute:: thirdPlace
-   .. py:attribute:: bulletsFired
+- ``deaths``
+- ``kills``
+- ``TKs``
+- ``score``
+- ``skillScore``
+- ``rplScore``
+- ``cmdScore``
+- ``fracScore``
+- ``rank``
+- ``firstPlace``
+- ``secondPlace``
+- ``thirdPlace``
+- ``bulletsFired``
 
-      Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
+   Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
 
-      ``(("uspi-m16", 30), ("knife", 3))``
+   ``(("uspi-m16", 30), ("knife", 3))``
 
-      Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
+   Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
 
-   .. py:attribute:: bulletsGivingDamage
+- ``bulletsGivingDamage``
 
-      Same as above, but only with bullets giving damage
+   Same as above, but only with bullets giving damage
 
-   .. py:attribute:: bulletsFiredAndClear
+- ``bulletsFiredAndClear``
 
-      The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
+   The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
 
-   .. py:attribute:: bulletsGivingDamageAndClear
-   .. py:attribute:: dkRatio
+- ``bulletsGivingDamageAndClear``
+- ``dkRatio``
 
 .. py:class:: bf2.PlayerManager.Player
 

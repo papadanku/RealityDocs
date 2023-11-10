@@ -349,125 +349,119 @@ While each event documented here corresponds to a discrete change of game state,
 Player Spawn
 ~~~~~~~~~~~~
 
-1. :py:func:`PlayerConnect`
-
-2. :py:func:`PlayerSpawn`
+#. :py:func:`PlayerConnect`
+#. :py:func:`PlayerSpawn`
 
    Player becomes associated with a :py:class:`soldierObject`.
 
-3. :py:func:`PlayerChangeWeapon`
+#. :py:func:`PlayerChangeWeapon`
 
    From ``None`` to a :py:class:`weaponObject`.
 
-4. :py:func:`PickupKit`
+#. :py:func:`PickupKit`
 
 Player Killed
 ~~~~~~~~~~~~~
 
-1. :py:func:`PlayerKilled`
-
-2. :py:func:`PlayerScore`
-
-3. :py:func:`DropKit`
+#. :py:func:`PlayerKilled`
+#. :py:func:`PlayerScore`
+#. :py:func:`DropKit`
 
    The victim drops their kit.
 
-4. :py:func:`ExitVehicle`
+#. :py:func:`ExitVehicle`
 
    If player is inside a vehicle.
 
-5. :py:func:`PlayerDeath`
+#. :py:func:`PlayerDeath`
 
 Player Revived
 ~~~~~~~~~~~~~~
 
-1. :py:func:`PlayerKilled`
-
-2. :py:func:`PlayerScore`
+#. :py:func:`PlayerKilled`
+#. :py:func:`PlayerScore`
 
    For attacker.
 
-3. :py:func:`DropKit`
+#. :py:func:`DropKit`
 
    Victim drops their kit.
 
-4. :py:func:`PlayerRevived`
-
-5. :py:func:`PickupKit`
+#. :py:func:`PlayerRevived`
+#. :py:func:`PickupKit`
 
    Revived player picks up the nearest kit [hopefully, but not necessarily, their old one]; if there is no kit nearby, they default to picking up an “assault” kit.
 
-6. :py:func:`PlayerScore`
+#. :py:func:`PlayerScore`
 
    For medic who did the revive.
 
 Flag Change
 ~~~~~~~~~~~
 
-1. :py:func:`ControlPointChangedOwner`
+#. :py:func:`ControlPointChangedOwner`
 
    When neutralized.
 
-2. :py:func:`PlayerScoreEvent`
+#. :py:func:`PlayerScoreEvent`
 
    Score for having neutralized flag, repeated for each attacker in CP radius.
 
-3. :py:func:`ControlPointChangedOwner`
+#. :py:func:`ControlPointChangedOwner`
 
    When capture complete.
 
-4. :py:func:`PlayerScoreEvent`
+#. :py:func:`PlayerScoreEvent`
 
    Score for having completed capture, repeated for each attacker in CP radius.
 
 Player Kicked
 ~~~~~~~~~~~~~
 
-1. :py:func:`PlayerKicked`
-2. :py:func:`DropKit`
-3. :py:func:`PlayerDeath`
-4. :py:func:`PlayerDisconnect`
+#. :py:func:`PlayerKicked`
+#. :py:func:`DropKit`
+#. :py:func:`PlayerDeath`
+#. :py:func:`PlayerDisconnect`
 
 Player Banned
 ~~~~~~~~~~~~~
 
-1. :py:func:`PlayerBanned`
-2. :py:func:`PlayerKicked`
-3. :py:func:`DropKit`
-4. :py:func:`PlayerDeath`
-5. :py:func:`PlayerDisconnect`
+#. :py:func:`PlayerBanned`
+#. :py:func:`PlayerKicked`
+#. :py:func:`DropKit`
+#. :py:func:`PlayerDeath`
+#. :py:func:`PlayerDisconnect`
 
 Overall Game State Change
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. :py:func:`StatusChange`
+#. :py:func:`StatusChange`
 
    To ``PreGame``.
 
-2. :py:func:`Reset`
+#. :py:func:`Reset`
 
    This event doesn't happen in the first round after a server starts.
 
-3. :py:func:`StatusChange`
+#. :py:func:`StatusChange`
 
    To ``Playing``; stay here until enough players connect.
 
-4. :py:func:`StatusChange`
+#. :py:func:`StatusChange`
 
    To ``PreGame``, once enough players have connected.
 
-5. :py:func:`Reset`
-
-6. :py:func:`StatusChange`
+#. :py:func:`Reset`
+#. :py:func:`StatusChange`
 
    To ``Playing``-the real game round now begins.
 
-7. Play game, beginning with players spawning in.
+#. Play game, beginning with players spawning in.
 
-8. :py:func:`StatusChange`
+#. :py:func:`StatusChange`
 
    To ``EndGame``.
 
-9. :py:func:`DropKit`
+#. :py:func:`DropKit`
 
    For each player still in game at end.

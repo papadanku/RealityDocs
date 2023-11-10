@@ -358,7 +358,7 @@ BF2 Console Commands
 
    Time in seconds of how long will a vehicle, effect or projectile will last. For vehicles, if it has been exited for a time, it will blow up. Uses CRD Arguments.
 
-   `More info <http://bfmods.com/mdt/scripting/ObjectTemplate/Properties/TimeToLive.html>`__
+   `More info <http://bfmods.com/mdt/scripting/ObjectTemplate/Properties/TimeToLive.html>`_
 
 -  ``demo.recordDemo`` std::string -> void
 

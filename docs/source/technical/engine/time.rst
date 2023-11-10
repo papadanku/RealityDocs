@@ -21,4 +21,4 @@ Most *(all?)* time-related measurements inside BF2 are in seconds, and are based
       # Or, to get a formatted string containing a more user-friendly date and time
       dateString = time.strftime("%m-%d-%y %H:%M")
 
-See the `Python Library Reference <https://docs.python.org/release/2.3.4/lib/module-time.html>`__ for more information about ways to manipulate dates and times in Python.
+See the `Python Library Reference <https://docs.python.org/release/2.3.4/lib/module-time.html>`_ for more information about ways to manipulate dates and times in Python.

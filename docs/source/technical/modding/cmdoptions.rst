@@ -6,7 +6,7 @@ Battlefield 2 supports quite a few command line options. Most of you are probabl
 
 .. note::
 
-   The following options were found with the debug version of the BF2.exe, so some of these options may not work with the normal BF2.exe. The debug build can be obtained by downloading and installing the Battlefield 2 Editor. Once installed the debug build is named BF2_r.exe in your main Battlefield 2 directory. The Battlefield 2 Editor can be downloaded at `Battlefield 2 Editor <http://www.fileplanet.com/155852/download/Battlefield-2-Editor>`__. Also, case does matter when using these options.
+   The following options were found with the debug version of the BF2.exe, so some of these options may not work with the normal BF2.exe. The debug build can be obtained by downloading and installing the Battlefield 2 Editor. Once installed the debug build is named BF2_r.exe in your main Battlefield 2 directory. The Battlefield 2 Editor can be downloaded at `Battlefield 2 Editor <http://www.fileplanet.com/155852/download/Battlefield-2-Editor>`_. Also, case does matter when using these options.
 
 Basic Options
 -------------
@@ -203,7 +203,7 @@ Advanced Options
      - Unknown at the moment.
      - ``+deviceBehavior <??>``
    * - ``+skipMeshLods``
-     - Unknown at the moment. `LOD <http://en.wikipedia.org/wiki/Level_of_Detail>`__
+     - Unknown at the moment. `LOD <http://en.wikipedia.org/wiki/Level_of_Detail>`_
      - ``+skipMeshLods <??>``
    * - ``+keepTemplates``
      - Unknown at the moment.

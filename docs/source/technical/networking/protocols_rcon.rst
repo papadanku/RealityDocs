@@ -27,7 +27,7 @@ The sample remoteconsole.py script included with BF2 uses the 0x02 character on 
 Login
 -----
 
-A digest of the password using the `MD5 algorithm <https://en.wikipedia.org/wiki/MD5>`__ is calculated with the seed obtained from the banner and is represented in hexadecimal format (e.g. ``106c9f3b52c173dc210e7ee612e689bb``). Note that the seed isnt used in the “normal” seed manner. To get a working digest, you take the seed returned in the banner, concatenated with the password, and then send the returned digest to the server. For example lets say the returned seed is ``PXYHKqLrFfENvONV`` and the RCON password is ``password``, the string to return the digest of would be ``PXYHKqLrFfENvONVpassword``, which is this case whould yield a digest of ``bc3d874909af1404eec2765ef3613b19``.
+A digest of the password using the `MD5 algorithm <https://en.wikipedia.org/wiki/MD5>`_ is calculated with the seed obtained from the banner and is represented in hexadecimal format (e.g. ``106c9f3b52c173dc210e7ee612e689bb``). Note that the seed isnt used in the “normal” seed manner. To get a working digest, you take the seed returned in the banner, concatenated with the password, and then send the returned digest to the server. For example lets say the returned seed is ``PXYHKqLrFfENvONV`` and the RCON password is ``password``, the string to return the digest of would be ``PXYHKqLrFfENvONVpassword``, which is this case whould yield a digest of ``bc3d874909af1404eec2765ef3613b19``.
 
 A login command may look like:
 

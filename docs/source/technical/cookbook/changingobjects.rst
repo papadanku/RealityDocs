@@ -12,7 +12,7 @@ You don't like how some of the standard Python code that comes with BF2 works, a
 Solution
 --------
 
-Python is a `dynamic language <https://en.wikipedia.org/wiki/Dynamic_language>`__, which, among other things, means that programs can change themselves even while they are running. We can take advantage of Python's dynamic nature to write code that dynamically modifies the properties of standard BF2 objects.
+Python is a `dynamic language <https://en.wikipedia.org/wiki/Dynamic_language>`_, which, among other things, means that programs can change themselves even while they are running. We can take advantage of Python's dynamic nature to write code that dynamically modifies the properties of standard BF2 objects.
 
 Example: Adding A New Property To An Object
 ---------------------------------------------

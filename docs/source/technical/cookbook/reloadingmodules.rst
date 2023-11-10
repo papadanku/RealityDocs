@@ -12,7 +12,7 @@ You're sick of having to restart the server everytime you make a change to your 
 Solution
 --------
 
-The fact that Python is a `dynamic language <https://en.wikipedia.org/wiki/Dynamic_language>`__ allows us to reload a module while the main Python code is still running. To accomplish this, I've broken it down into two parts: first a header file to set up the reload function and other odd ends, and then the module where you put your code.
+The fact that Python is a `dynamic language <https://en.wikipedia.org/wiki/Dynamic_language>`_ allows us to reload a module while the main Python code is still running. To accomplish this, I've broken it down into two parts: first a header file to set up the reload function and other odd ends, and then the module where you put your code.
 
 The Header File
 ---------------
