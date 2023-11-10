@@ -11,7 +11,7 @@ Welcome to Project Reality's Official Documentation!
 
 
 .. toctree::
-   :caption: Community Modding Tutorials
+   :caption: Community Modding Guide
    :hidden:
    :glob:
 
