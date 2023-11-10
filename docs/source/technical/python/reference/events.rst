@@ -33,12 +33,12 @@ The BF2 engine generates these events when the status of the game changes.
 
 The possible states game status can be in (as enumerated in :py:class:`bf2.GameStatus`) are:
 
--  NotConnected
--  PreGame
--  Playing
--  Paused
--  EndGame
--  RestartServer
+- NotConnected
+- PreGame
+- Playing
+- Paused
+- EndGame
+- RestartServer
 
 Game status events are usually used to kick off pre-game initialization or post-game clean-up processing.
 

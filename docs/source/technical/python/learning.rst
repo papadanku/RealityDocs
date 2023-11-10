@@ -9,33 +9,33 @@ Taking advantage of this ability to integrate with other languages, the Battlefi
 Python Language Resources
 -------------------------
 
--  `python.org <https://python.org/>`_
+- `python.org <https://python.org/>`_
 
    The main Python website, and includes lots of information and links to other useful sites, including:
 
-   -  `Beginner's Guide to Python <https://wiki.python.org/moin/BeginnersGuide>`_
-   -  `Python Tutorial <https://python.org/doc/2.3.4/tut/tut.html>`_
+   - `Beginner's Guide to Python <https://wiki.python.org/moin/BeginnersGuide>`_
+   - `Python Tutorial <https://python.org/doc/2.3.4/tut/tut.html>`_
 
--  `Dive Into Python <https://diveintopython.org/>`_
+- `Dive Into Python <https://diveintopython.org/>`_
 
    Full text of a good intro to Python for people who are already fluent in another programming language.
 
--  `Google's Python Class <https://code.google.com/edu/languages/google-python-class/>`_
+- `Google's Python Class <https://code.google.com/edu/languages/google-python-class/>`_
 
 Python cookbooks, idioms, and design patterns
 ---------------------------------------------
 
--  `ActiveState Python Cookbook <https://code.activestate.com/recipes/>`_
--  `Python Idioms <http://wiki.c2.com/?PythonIdioms>`_
--  `Python Design Patterns <https://python-patterns.guide/>`_
+- `ActiveState Python Cookbook <https://code.activestate.com/recipes/>`_
+- `Python Idioms <http://wiki.c2.com/?PythonIdioms>`_
+- `Python Design Patterns <https://python-patterns.guide/>`_
 
 Some good printed books on Python
 ---------------------------------
 
--  `Learning Python <https://www.oreilly.com/library/view/learning-python-5th/9781449355722/>`_
--  `Python in a Nutshell <https://www.oreilly.com/library/view/python-in-a/9781098113544/>`_
--  `Python Cookbook <https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/>`_
--  `Dive Into Python Book <https://www.amazon.com/Dive-into-Python-Mark-Pilgrim/dp/1430224150>`_
+- `Learning Python <https://www.oreilly.com/library/view/learning-python-5th/9781449355722/>`_
+- `Python in a Nutshell <https://www.oreilly.com/library/view/python-in-a/9781098113544/>`_
+- `Python Cookbook <https://www.oreilly.com/library/view/python-cookbook-3rd/9781449357337/>`_
+- `Dive Into Python Book <https://www.amazon.com/Dive-into-Python-Mark-Pilgrim/dp/1430224150>`_
 
 Downloading Python
 ------------------
@@ -44,26 +44,26 @@ Whether you are new to Python or are an experienced Pythonista trying to debug a
 
 The Python embedded in Battlefield 2 is an old version, 2.3.4; if you install a current version to experiment with be aware that there may be some differences between how it behaves and how BF2 Python behaves. Here are best places to download Python.
 
--  `The official repository for Python <https://www.python.org/downloads/>`_
--  `A nicely packaged version that includes lots of commonly-used add-ons <https://www.activestate.com/products/python/>`_
+- `The official repository for Python <https://www.python.org/downloads/>`_
+- `A nicely packaged version that includes lots of commonly-used add-ons <https://www.activestate.com/products/python/>`_
 
 Python IDEs
 -----------
 
 There are quite a few good `Integrated Development Environments <https://en.wikipedia.org/wiki/Integrated_development_environment>`_ (IDEs) for Python. IDEs are (highly) glorified text editors that offer lots of features that are especially useful to programmers, such as integrated debuggers, class browsers, language documentation, automatic color-coding and line completion, etc. Some of the more noteworthy ones designed for use with Python:
 
--  `IDLE <https://docs.python.org/3/library/idle.html>`_
+- `IDLE <https://docs.python.org/3/library/idle.html>`_
 
    Included with the standard Python distribution; pretty basic, but fine if you're just starting out.
 
--  `Visual Studio Code <https://code.visualstudio.com/>`_
+- `Visual Studio Code <https://code.visualstudio.com/>`_
 
    A full-featured open source IDE with Python support.
 
--  `PyCharm <https://www.jetbrains.com/pycharm/>`_
+- `PyCharm <https://www.jetbrains.com/pycharm/>`_
 
    Another full-featured open source Python IDE.
 
--  `Komodo IDE <https://www.activestate.com/products/komodo-ide/>`_
+- `Komodo IDE <https://www.activestate.com/products/komodo-ide/>`_
 
    A very good open-source IDE (previously commercial, now retired).
