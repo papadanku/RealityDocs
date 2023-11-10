@@ -1,5 +1,5 @@
 
-Requesting & Trading Assets with other Mod Teams
+Requesting & Trading Assets with Other Mod Teams
 ================================================
 
 From *AfterDune*
