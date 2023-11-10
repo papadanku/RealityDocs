@@ -19,17 +19,17 @@ In order to make things as clear as possible here's a step-by-step guide to what
 #. First, your Community Faction or Mod Lead will need to deal with any asset request(s) unless he's unavailable for some reason, then it's down to whoever is next in charge to handle the asset request(s). If it is for a custom map (outside of a community mod/faction) then it is for the mapper to request it.
 #. Whoever is dealing with the asset request as per step 1, will need to type up a request for that mod team with info regarding what asset(s) you wish for with basic info on how you would like to use the asset(s) etc.
 
-    For example, if a community faction wants to use a pirate ship static from the Battlefield Pirates 2 (BFP2) mod, here is what I would expect them to type out::
+   For example, if a community faction wants to use a pirate ship static from the Battlefield Pirates 2 (BFP2) mod, here is what I would expect them to type out::
 
-        Dear Battlefield Pirates 2 team,
+      Dear Battlefield Pirates 2 team,
 
-        My Community Faction *bla bla*, being created for the Project Reality Mod would like to use one of your static pirate ships, to be exact your ship_wreck01 located in Objects\staticobjects\island\ship_wreck01\ to be used on one of our maps called *bla bla* which is based on a tropical island.
+      My Community Faction *bla bla*, being created for the Project Reality Mod would like to use one of your static pirate ships, to be exact your ship_wreck01 located in Objects\staticobjects\island\ship_wreck01\ to be used on one of our maps called *bla bla* which is based on a tropical island.
 
-        This asset will only be released to the public with only being part of the Project Reality Mod and full credit will be given.
+      This asset will only be released to the public with only being part of the Project Reality Mod and full credit will be given.
 
-        If there's any chance we would be able to use this static please let me know.
+      If there's any chance we would be able to use this static please let me know.
 
-        Cheers, *bla bla*, *bla bla* Faction Lead. 
+      Cheers, *bla bla*, *bla bla* Faction Lead. 
 
 #. This message will need to then be posted in the Community Mod Leads Private Chat.
 #. We will then send the message off to the respected mod team and then will get back to you in the topic you posted or via PM, if your asset request was accepted or denied.

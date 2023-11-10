@@ -19,11 +19,11 @@ BF2 Objects
 
       The known properties available via the ``getTemplateProperty`` method are:
 
-      -  ``radius``
+      - ``radius``
 
          For control points only.
 
-      -  ``ControlPointID``
+      - ``ControlPointID``
 
          For control points only.
 
@@ -57,9 +57,9 @@ BF2 Objects
 
       Returns:
 
-      -  ``0`` = top
-      -  ``1`` = middle
-      -  ``2`` = bottom
+      - ``0`` = top
+      - ``1`` = middle
+      - ``2`` = bottom
 
    .. py:attribute:: lastAttackingTeam
    .. py:attribute:: triggerId

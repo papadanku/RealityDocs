@@ -6,20 +6,20 @@ Here's a description of how the BF2 engine interacts with Python code:
 
 #.  When BF2 engine starts up it fires up its embedded Python interpreter, with it's sys.path set to include
 
-    -  The Python standard library (which is contained in the file ``Battlefield 2 Server/pylib-2.3.4.zip``).
-    -  The ``Battlefield 2 Server/python directory``
-    -  The Python directory of the current mod (e.g. ``Battlefield 2 Server/mods/bf2/python``)
+   - The Python standard library (which is contained in the file ``Battlefield 2 Server/pylib-2.3.4.zip``).
+   - The ``Battlefield 2 Server/python directory``
+   - The Python directory of the current mod (e.g. ``Battlefield 2 Server/mods/bf2/python``)
 
-       -  If the server switches mods, this will be changed, too. (It appears that the current BF2 game engine doesn't have the ability to switch mods automatically between rounds-that once a mod is loaded, it stays loaded and running until the server is manually stopped, reconfigured, and restarted).
+      - If the server switches mods, this will be changed, too. (It appears that the current BF2 game engine doesn't have the ability to switch mods automatically between rounds-that once a mod is loaded, it stays loaded and running until the server is manually stopped, reconfigured, and restarted).
 
-    -  The ``Battlefield 2 Server/admin`` directory.
+   - The ``Battlefield 2 Server/admin`` directory.
 
 #.  The BF2 engine imports the ``bf2`` package (the code for this package is located in the directory ``Battlefield 2 Server/python``).
 #.  When Python imports a package, it executes the ``_init_.py`` module in that package. In the case of the ``bf2``, the ``_init_`` module imports and instantiates the basic code and objects needed for the game, including ``game.scoringCommon`` from the active mod's python directory (this appears to be the only place any mod-specific Python code gets pulled in).
 #.  The BF2 engine calls ``bf2.init_module()``
 
-    - That method imports the stats modules
-    - Not clear why it's done this way, instead of just putting everything in the ``_init_`` module.
+   - That method imports the stats modules
+   - Not clear why it's done this way, instead of just putting everything in the ``_init_`` module.
 
 #. The BF2 engine processes the ``Battlefield 2 Server/mods/bf2/settings/ServerSettings.con`` configuration file. In it's default, out-of-the-box configuration, that file has a directive that causes more Python activity: ``sv.adminScript "default"`` causes the ``default`` module in the directory ``Battlefield 2 Server/admin`` to be imported. This module primarily handles the ``RCon`` interface, but contains an ``init()`` function that, when called later by the game engine, causes the ``admin.standard_admin`` package to be imported. This package presently handles team autobalancing and punishing team killing (“TK”). See the :doc:`Admin Module <../admin/module>` for more details.
 #. Throughout the start-up process, as packages and modules are imported into the embedded Python interpreter they are registering themselves to receive callbacks when various :doc:`events <reference/events>` occur in the BF2 engine.
@@ -30,4 +30,4 @@ Here's a description of how the BF2 engine interacts with Python code:
 
 .. note::
 
-    There is another directory of Python code in the ``Battlefield 2 Server`` directory that does **not** get pulled in by the game engine: ``adminutils`` contains source code and executables for the ``rotate_demo`` and ``remoteconsole`` stand-alone applications, as examples of how to write software that will interact with BF2. The fact that these are written in Python is coincidental. (The BF2 engine handles ``RCon`` and demo recording functionality internally, without using the embedded Python interpreter, although there are events connected with these functions that can be used to hook your own Python code to them).
+   There is another directory of Python code in the ``Battlefield 2 Server`` directory that does **not** get pulled in by the game engine: ``adminutils`` contains source code and executables for the ``rotate_demo`` and ``remoteconsole`` stand-alone applications, as examples of how to write software that will interact with BF2. The fact that these are written in Python is coincidental. (The BF2 engine handles ``RCon`` and demo recording functionality internally, without using the embedded Python interpreter, although there are events connected with these functions that can be used to hook your own Python code to them).

@@ -16,10 +16,10 @@ Python has ``Try`` statements that allow you to catch and output errors that wou
 
 .. code-block:: python
 
-    Try:
-        # Put code that you want executed here
-    Except:
-        # Put code that should execute on an error here
+   Try:
+      # Put code that you want executed here
+   Except:
+      # Put code that should execute on an error here
 
 In the example I use the plain old ``Except``, which should catch all exceptions. You can be more specific if you know what kind of error might occur during this code, such as ``Except ImportError``. For a list of specific exceptions, go here: `Python Exceptions <https://docs.python.org/release/2.3.4/lib/module-exceptions.html>`_.
 
@@ -27,61 +27,61 @@ Next comes the code we want to execute when an exception occurs. When an excepti
 
 .. code-block:: python
 
-    import inspect
-    import re
+   import inspect
+   import re
 
-    def ExceptionOutput():
-        sys.stderr.write("\n" + "Exception Occured: " + str(sys.exc_info()[0]) + "\n")
-        sys.stderr.write("Value: " + str(sys.exc_info()[1]) + "\n")
-        sys.stderr.write("Line:" + str(readline(inspect.getfile(sys.exc_info()[2]),
-                         sys.exc_info()[2].tb_lineno)) + "\n")
-        sys.stderr.write("Line #: " + str(sys.exc_info()[2].tb_lineno) + "\n")
-        sys.stderr.write("File: " + str(inspect.getfile(sys.exc_info()[2])) + "\n" + "\n")
+   def ExceptionOutput():
+      sys.stderr.write("\n" + "Exception Occured: " + str(sys.exc_info()[0]) + "\n")
+      sys.stderr.write("Value: " + str(sys.exc_info()[1]) + "\n")
+      sys.stderr.write("Line:" + str(readline(inspect.getfile(sys.exc_info()[2]),
+                        sys.exc_info()[2].tb_lineno)) + "\n")
+      sys.stderr.write("Line #: " + str(sys.exc_info()[2].tb_lineno) + "\n")
+      sys.stderr.write("File: " + str(inspect.getfile(sys.exc_info()[2])) + "\n" + "\n")
 
-    def readline(filename, lineno):
-        filen = re.sub('\\\\', '/', filename)
-        file = open(filen, 'rU')
-        lines = file.readlines()
-        file.close()
-        linen = lineno - 1
-        line = re.sub('\s+', ' ', lines[linen])
-        return line
+   def readline(filename, lineno):
+      filen = re.sub('\\\\', '/', filename)
+      file = open(filen, 'rU')
+      lines = file.readlines()
+      file.close()
+      linen = lineno - 1
+      line = re.sub('\s+', ' ', lines[linen])
+      return line
 
 Time to explain the two functions we've just defined.
 
--  The function ``readline`` takes two arguments, a file name and a line number.
+- The function ``readline`` takes two arguments, a file name and a line number.
 
-   -  The file name is gotten using the ``inspect.getfile(object)``, which takes an object and returns the name of the source code file that it is from.
-   -  The line number is gotten by using ``object.tb_lineno``. The tb in the ``tb_lineno`` refers to a trace back object.
-   -  In both of the above cases the object is the third value stored in ``sys.exc_info()``
-   -  Getting to the actual meat of the function, the first line take the file name argument and formats it to reverse all backslashes to frontslashes. The reasoning for this will be explained in a moment.
-   -  The next line opens the file pointed to by the file name we just formatted. The file name had to be formatted first because although ``inspect.getfile(object)`` returns a name with backslashes, the open method needs a file name with frontslashes.
-   -  Now that we have the source code file open, we spit out all the lines using ``file.readlines()``.
-   -  Next we close the file, because we are done with it.
-   -  We now take the line number and subtract one from it, because while source code file line numbers run 1,2,3...etc the list(aka array) in which the lines are stored is numbered 0,1,2,3..
-   -  Normally the returned line would have a lot of extra white space in front due to Python's use of white space in its source code files. Since this doesn't look good in an error log, we use a substitution function to remove all the excess white space.
-   -  Finally we return the source code line at the line number that was inputed.
+   - The file name is gotten using the ``inspect.getfile(object)``, which takes an object and returns the name of the source code file that it is from.
+   - The line number is gotten by using ``object.tb_lineno``. The tb in the ``tb_lineno`` refers to a trace back object.
+   - In both of the above cases the object is the third value stored in ``sys.exc_info()``
+   - Getting to the actual meat of the function, the first line take the file name argument and formats it to reverse all backslashes to frontslashes. The reasoning for this will be explained in a moment.
+   - The next line opens the file pointed to by the file name we just formatted. The file name had to be formatted first because although ``inspect.getfile(object)`` returns a name with backslashes, the open method needs a file name with frontslashes.
+   - Now that we have the source code file open, we spit out all the lines using ``file.readlines()``.
+   - Next we close the file, because we are done with it.
+   - We now take the line number and subtract one from it, because while source code file line numbers run 1,2,3...etc the list(aka array) in which the lines are stored is numbered 0,1,2,3..
+   - Normally the returned line would have a lot of extra white space in front due to Python's use of white space in its source code files. Since this doesn't look good in an error log, we use a substitution function to remove all the excess white space.
+   - Finally we return the source code line at the line number that was inputed.
 
--  The function ``ExceptionOutput`` takes no arguments, but instead outputs some nice little error text for us.
+- The function ``ExceptionOutput`` takes no arguments, but instead outputs some nice little error text for us.
 
-   -  The first line outputs the first value in ``sys.exc_info()``, the type of exception.
-   -  The next line outputs the second value of ``sys.exc_info()``, the specifics of the exception.
-   -  Next we output the source code line at which the exception occured, using the ``readline`` function.
-   -  Just to make things easier to find, we also output the line number at which the exception occured.
-   -  The last thing we output is the name of the source code file in which the exception occured.
+   - The first line outputs the first value in ``sys.exc_info()``, the type of exception.
+   - The next line outputs the second value of ``sys.exc_info()``, the specifics of the exception.
+   - Next we output the source code line at which the exception occured, using the ``readline`` function.
+   - Just to make things easier to find, we also output the line number at which the exception occured.
+   - The last thing we output is the name of the source code file in which the exception occured.
 
 Now lets see an example where we implement these functions:
 
 .. code-block:: python
 
-    def onEnterVehicle(player, vehicle, freeSoldier = False):
+   def onEnterVehicle(player, vehicle, freeSoldier = False):
       try:
-        print "Entered: ", vehicle.templateName
-        print vehicle.getDamage()
-        print vehicle.hasArmor
-        print vehicle.getName()
+         print "Entered: ", vehicle.templateName
+         print vehicle.getDamage()
+         print vehicle.hasArmor
+         print vehicle.getName()
       except:
-        ExceptionOutput()
+         ExceptionOutput()
 
 In this example, an error would occur at ``print vehicle.getName()`` and we will get a nice little error message from ``ExceptionOutput()``. The ``Try...Except`` statement stops processing code in the ``try`` section once an exception occurs, so that even if multiple exceptions exist inside the ``try`` section, you will only see the first one that Python finds. Once you fix the exception, and re-execute your code it should continue on and catch any other errors you have in your code.
 

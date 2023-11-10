@@ -1,0 +1,8 @@
+
+Community Factions
+==================
+
+.. toctree::
+   :glob:
+
+   *

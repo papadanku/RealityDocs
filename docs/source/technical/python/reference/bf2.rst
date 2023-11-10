@@ -303,8 +303,8 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
 
-      -  Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work.
-      -  You must ``import bf2.Timer`` to create timer objects.
+      - Note that even though ``data`` is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won't work.
+      - You must ``import bf2.Timer`` to create timer objects.
 
       :param timerEventHandler: Handler to be called when ``delta`` seconds have elapsed since the creation of the timer.
       :param alwaysTrigger: Should be 1 *(not sure what the alternative is)*
@@ -334,11 +334,11 @@ Class attributes stored in the BF2 engine
 
    Project Reality timer (``realitytimer.py``) expands the default interface with the following:
 
-   -  Exception catching with a debug message when an exception is not caught in the handler
+   - Exception catching with a debug message when an exception is not caught in the handler
 
       No need to worry about bad code crashing the server.
 
-   -  Internal check to make sure timers don't fire after :py:meth:`bf2.Timer.destroy` was called
+   - Internal check to make sure timers don't fire after :py:meth:`bf2.Timer.destroy` was called
 
       Can happen when :py:meth:`bf2.Timer.destroy` is called on the same tick
 

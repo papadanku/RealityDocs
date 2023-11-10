@@ -21,72 +21,72 @@ The header file will contain the function code to reload your module. Unfortunat
 
 .. code-block:: python
 
-    import host
-    import sys
-    import bf2.mymodule
-    import inspect
-    import re
+   import host
+   import sys
+   import bf2.mymodule
+   import inspect
+   import re
 
-    def init():
-        # Set up any events you will use in your code
-        # These can be changed later, but only if you restart the server
-        # Note the extra _Header added to the end of the events
-        # This suffix is needed for this to work correctly
+   def init():
+      # Set up any events you will use in your code
+      # These can be changed later, but only if you restart the server
+      # Note the extra _Header added to the end of the events
+      # This suffix is needed for this to work correctly
 
-        host.registerHandler('EnterVehicle', onEnterVehicle_Header)
-        host.registerHandler('ExitVehicle', onExitVehicle_Header)
+      host.registerHandler('EnterVehicle', onEnterVehicle_Header)
+      host.registerHandler('ExitVehicle', onExitVehicle_Header)
 
-        # This event will be used by the header to know when to reload the module
-        # If you want to use the ChatMessage event in your own code, I suggest you
-        # Register it up above like the others, and leave this as is
+      # This event will be used by the header to know when to reload the module
+      # If you want to use the ChatMessage event in your own code, I suggest you
+      # Register it up above like the others, and leave this as is
 
-        host.registerHandler('ChatMessage', onChatMessage)
+      host.registerHandler('ChatMessage', onChatMessage)
 
-    def onEnterVehicle_Header(player, vehicle, freeSoldier = False):
-        # This event is acting as a wrapper of sorts, recieving the information
-        # and then sending it off to the module
+   def onEnterVehicle_Header(player, vehicle, freeSoldier = False):
+      # This event is acting as a wrapper of sorts, recieving the information
+      # and then sending it off to the module
 
-        bf2.mymodule.onEnterVehicle(player, vehicle, freeSoldier = False)
+      bf2.mymodule.onEnterVehicle(player, vehicle, freeSoldier = False)
 
-    def onExitVehicle_Header(player, vehicle):
-        # This event is acting as a wrapper of sorts, recieving the information
-        # and then sending it off to the module
+   def onExitVehicle_Header(player, vehicle):
+      # This event is acting as a wrapper of sorts, recieving the information
+      # and then sending it off to the module
 
-        bf2.mymodule.onExitVehicle(player, vehicle)
+      bf2.mymodule.onExitVehicle(player, vehicle)
 
-    def onChatMessage(playerId, text, channel, flags):
-        # Fairly simple usage here
-        # Checks chat messages looking for one that says 'reset'
-        # When found it reloads your module
-        # For this to work as plan use 'Say All:'
+   def onChatMessage(playerId, text, channel, flags):
+      # Fairly simple usage here
+      # Checks chat messages looking for one that says 'reset'
+      # When found it reloads your module
+      # For this to work as plan use 'Say All:'
 
-        if text == 'reset':
-            try:
-                reload(bf2.mymodule)
-            except:
-                sys.stderr.write("\n" + "Couldn't reload module, an exception occured")
-                ExceptionOutput()
+      if text == 'reset':
+         try:
+               reload(bf2.mymodule)
+         except:
+               sys.stderr.write("\n" + "Couldn't reload module, an exception occured")
+               ExceptionOutput()
 
-    def ExceptionOutput():
-        sys.stderr.write("\n" + "Exception Occured: " + str(sys.exc_info()[0]) + "\n")
-        sys.stderr.write("Value: " + str(sys.exc_info()[1]) + "\n")
-        sys.stderr.write("Line:" + str(readline(inspect.getfile(sys.exc_info()[2]),
-                         sys.exc_info()[2].tb_lineno)) + "\n")
-        sys.stderr.write("Line #: " + str(sys.exc_info()[2].tb_lineno) + "\n")
-        sys.stderr.write("File: " + str(inspect.getfile(sys.exc_info()[2])) + "\n" + "\n")
+   def ExceptionOutput():
+      sys.stderr.write("\n" + "Exception Occured: " + str(sys.exc_info()[0]) + "\n")
+      sys.stderr.write("Value: " + str(sys.exc_info()[1]) + "\n")
+      sys.stderr.write("Line:" + str(readline(inspect.getfile(sys.exc_info()[2]),
+                        sys.exc_info()[2].tb_lineno)) + "\n")
+      sys.stderr.write("Line #: " + str(sys.exc_info()[2].tb_lineno) + "\n")
+      sys.stderr.write("File: " + str(inspect.getfile(sys.exc_info()[2])) + "\n" + "\n")
 
-    def readline(filename, lineno):
-        filen = re.sub('\\\\', '/', filename)
-        file = open(filen, 'rU')
-        lines = file.readlines()
-        file.close()
-        linen = lineno - 1
-        line = re.sub('\s+', ' ', lines[linen])
-        return line
+   def readline(filename, lineno):
+      filen = re.sub('\\\\', '/', filename)
+      file = open(filen, 'rU')
+      lines = file.readlines()
+      file.close()
+      linen = lineno - 1
+      line = re.sub('\s+', ' ', lines[linen])
+      return line
 
 .. note::
 
-    In light of writing my cookbook receipe on better error catching, I've decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, :doc:`click here <errorcatching>`
+   In light of writing my cookbook receipe on better error catching, I've decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, :doc:`click here <errorcatching>`
 
 The Module File
 ---------------
@@ -95,19 +95,19 @@ Next comes the actual module, where you put your custom code. From the coding as
 
 .. code-block:: python
 
-    # Set up any imports you need for your module
+   # Set up any imports you need for your module
 
-    def onEnterVehicle(player, vehicle, freeSoldier = False):
-        # Set up your events just like you normally would
-        # For this example I will use a simple print command
-        # To demonstrate that it works
-        print "Entered:", vehicle.templateName
+   def onEnterVehicle(player, vehicle, freeSoldier = False):
+      # Set up your events just like you normally would
+      # For this example I will use a simple print command
+      # To demonstrate that it works
+      print "Entered:", vehicle.templateName
 
-    def onExitVehicle(player, vehicle):
-        # Set up your events just like you normally would
-        # For this example I will use a simple print command
-        # To demonstrate that it works
-        print "Exited:", vehicle.templateName
+   def onExitVehicle(player, vehicle):
+      # Set up your events just like you normally would
+      # For this example I will use a simple print command
+      # To demonstrate that it works
+      print "Exited:", vehicle.templateName
 
 Discussion
 ----------

@@ -128,19 +128,19 @@ Global Stats Methods
 
    Settings include:
 
-   -  ``ticketRatio``
-   -  ``teamRatioPct``
-   -  ``maxPlayers``
-   -  ``gameMode``
-   -  ``mapName``
-   -  ``timeLimit``
-   -  ``scoreLimit``
-   -  ``autoBalance``
-   -  ``tkpEnabled``
-   -  ``tkpNeeded``
-   -  ``tkpDefault``
-   -  ``globRank``
-   -  ``globUnlocks``
+   - ``ticketRatio``
+   - ``teamRatioPct``
+   - ``maxPlayers``
+   - ``gameMode``
+   - ``mapName``
+   - ``timeLimit``
+   - ``scoreLimit``
+   - ``autoBalance``
+   - ``tkpEnabled``
+   - ``tkpNeeded``
+   - ``tkpDefault``
+   - ``globRank``
+   - ``globUnlocks``
 
 Object Manager Methods
 ----------------------

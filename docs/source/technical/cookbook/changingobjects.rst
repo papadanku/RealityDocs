@@ -23,18 +23,18 @@ In Python, if all you want to do is add a new attribute to an object, you can Ju
 
 .. code-block:: python
 
-    playerObject.karma = 0
+   playerObject.karma = 0
 
 There--it's done! If :py:class:`playerObject` is an instance of class :py:class:`bf2.PlayerManager.Player`, then we just created a new attribute called ``karma`` within that instance, and assigned it the value "0". There really isn't anything else to it--we can read and change that attribute elsewhere in our code at will, just as though it had been defined as part of the class from the beginning.
 
 .. note::
 
-    We didn't add this attribute to the :py:class:`bf2.PlayerManager.Player` class--we added it to a specific instance of that class, so only that one player will have a karma attribute. If we want other players to have a karma attribute, then we need to find their playerObjects and do the same thing. Assuming we've imported :doc:`bf2 <../python/reference/bf2>`, we could loop through and assign a karma attribute to all players by doing something like
+   We didn't add this attribute to the :py:class:`bf2.PlayerManager.Player` class--we added it to a specific instance of that class, so only that one player will have a karma attribute. If we want other players to have a karma attribute, then we need to find their playerObjects and do the same thing. Assuming we've imported :doc:`bf2 <../python/reference/bf2>`, we could loop through and assign a karma attribute to all players by doing something like
 
-    .. code-block:: python
+   .. code-block:: python
 
-        for playerObject in bf2.playerManager.getPlayers():
-            playerObject.karma = 0
+      for playerObject in bf2.playerManager.getPlayers():
+         playerObject.karma = 0
 
 Discussion
 ----------

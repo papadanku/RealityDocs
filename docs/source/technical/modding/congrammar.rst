@@ -35,19 +35,19 @@ The first argument says what type of distribution should be used, the second and
 
 The meaning of the second and third arguments, which are always '''numbers''', varies depending on the type of distribution property specified. The four types for this first argument are:
 
--  ``CRD_NONE``
+- ``CRD_NONE``
 
    Do not vary the argument at all, just return the first number.
 
--  ``CRD_UNIFORM``
+- ``CRD_UNIFORM``
 
    Uniform random distribution, between the two numbers specified.
 
--  ``CRD_EXPONENTIAL``
+- ``CRD_EXPONENTIAL``
 
    Exponential drop off, first number specifies the mean (average).
 
--  ``CRD_NORMAL``
+- ``CRD_NORMAL``
 
    Normal distribution, the first number is the mean, the second the variance.
 
@@ -55,15 +55,15 @@ We just need the first three arguments to compute a random number, the final, fo
 
 Some examples:
 
--  ``ObjectTemplate.TimeToLive CRD_NONE/240/0/0``
+- ``ObjectTemplate.TimeToLive CRD_NONE/240/0/0``
 
    ``TimeToLive`` will be set to 240: no computation was performed we just returned the first argument. This sort of CRD can be directly replaced by the number itself.
 
--  ``ObjectTemplate.TimeToLive CRD_UNIFORM/2/7/0``
+- ``ObjectTemplate.TimeToLive CRD_UNIFORM/2/7/0``
 
    ``TimeToLive`` can be one of [2, 3, 4, 5, 6, 7] and they have all the same chance.
 
--  ``ObjectTemplate.rotationalSpeedInDof CRD_EXPONENTIAL/-20/0/1``
+- ``ObjectTemplate.rotationalSpeedInDof CRD_EXPONENTIAL/-20/0/1``
 
    The exponential distribution basically gives a distribution curve that drops off sharply and then levels out. It is computed by ``-mean*ln(random(0,1))``. In other words, a random number between 0 and 1 (not including 0 or 1) is generated, the natural logarithm of this number is computed, and the result is multiplied by the negative of the mean (the average), the second argument (and first number) passed in. For example, if the random number generated was 0.1, the natural log is -2.3, so since the mean was -20, the final number returned would be -(-20)\*-2.3 = -46. Since the symmetric flag, the last argument, is set to 1 (true), there is a 50/50 chance that this result will be negated, i.e. be returned as 46 instead of -46.
 
@@ -71,7 +71,7 @@ Some examples:
 
       This distribution is often misused in the Battlefield code, e.g. ``ObjectTemplate.initRotation CRD_EXPONENTIAL/0/180/1`` is a common use. However, this setting actually always returns a value of 0, since that is the mean specified. The “180” argument is ignored.
 
--  ``ObjectTemplate.timeToLive CRD_NORMAL/2/3.5/0``
+- ``ObjectTemplate.timeToLive CRD_NORMAL/2/3.5/0``
 
    A normal distribution is a classic bell curve shape. The second argument is the mean, the average value, and the third argument is the variance, how fast the distribution curve drops off into its bell shape. The fourth argument again acts to force symmetry if set, though the bell curve has its own symmetry when the mean is 0.
 
@@ -114,9 +114,9 @@ Conditionals
 
 Conditionals include the standard constructs. These evaluate an ''expression''
 
--  ``if ... endIf``
--  ``if ... elseIf ... endIf``
--  ``while ... endWhile``
+- ``if ... endIf``
+- ``if ... elseIf ... endIf``
+- ``while ... endWhile``
 
 Expressions
 ~~~~~~~~~~~
@@ -125,15 +125,15 @@ The grammar of an expression is roughly:
 
 ``<variable> <comparator> <value>``
 
--  ``variable``
+- ``variable``
 
    Any variable name beginning with ``v_`` or ``c_``.
 
--  ``comparator``
+- ``comparator``
 
    One of ``==``, ``!=``, ``>``, ``>=``, ``<`` or ``<=`` or their textual equivalents: ``lessOrEqualThan``, ``lessThan``, ``greaterOrEqualThan``, ``greaterThan``, ``notEquals``, ``equals``.
 
--  ``value``
+- ``value``
 
    Any literal string, quoted if neccessary.
 

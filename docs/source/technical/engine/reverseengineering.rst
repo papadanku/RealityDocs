@@ -150,51 +150,51 @@ Reverse Engineering Tables
 .. list-table::
    :header-rows: 1
 
-   * -  Function Name
-     -  Address
-     -  Relative Address
-     -  Ordinal
-   * -  public: __thiscall BF2VoipServer::CBF2VoipServer::CBF2VoipServer(void)
-     -  0x10001380
-     -  0x00001380
-     -  1 (0x1)
-   * -  public: __thiscall BF2VoipServer::CBF2VoipServer::~CBF2VoipServer(void)
-     -  0x100013d0
-     -  0x000013d0
-     -  2 (0x2)
-   * -  public: bool __thiscall BF2VoipServer::CBF2VoipServer::IsRunning(void)
-     -  0x100011a0
-     -  0x000011a0
-     -  5 (0x5)
-   * -  public: class BF2VoipServer::CBF2VoipServerInstance* __thiscall BF2VoipServer::CBF2VoipServer::getInstance(unsigned int)
-     -  0x100012a0
-     -  0x000012a0
-     -  10 (0xa)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::CreateInstance(unsigned int,class std::basic_string<char,struct std::char_traits,class std::allocator >,int &)
-     -  0x10001680
-     -  0x00001680
-     -  3 (0x3)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Initialize(bool)
-     -  0x100011b0
-     -  0x000011b0
-     -  4 (0x4)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::ReleaseAllInstances(void)
-     -  0x10001500
-     -  0x00001500
-     -  6 (0x6)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::ReleaseInstance(int)
-     -  0x10001450
-     -  0x00001450
-     -  7 (0x7)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Shutdown(void)
-     -  0x100015d0
-     -  0x000015d0
-     -  8 (0x8)
-   * -  public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Update(void)
-     -  0x100012d0
-     -  0x000012d0
-     -  9 (0x9)
-   * -  public: unsigned int __thiscall BF2VoipServer::CBF2VoipServer::getNumInstances(void)
-     -  0x10001280
-     -  0x00001280
-     -  11 (0xb)
+   * - Function Name
+     - Address
+     - Relative Address
+     - Ordinal
+   * - public: __thiscall BF2VoipServer::CBF2VoipServer::CBF2VoipServer(void)
+     - 0x10001380
+     - 0x00001380
+     - 1 (0x1)
+   * - public: __thiscall BF2VoipServer::CBF2VoipServer::~CBF2VoipServer(void)
+     - 0x100013d0
+     - 0x000013d0
+     - 2 (0x2)
+   * - public: bool __thiscall BF2VoipServer::CBF2VoipServer::IsRunning(void)
+     - 0x100011a0
+     - 0x000011a0
+     - 5 (0x5)
+   * - public: class BF2VoipServer::CBF2VoipServerInstance* __thiscall BF2VoipServer::CBF2VoipServer::getInstance(unsigned int)
+     - 0x100012a0
+     - 0x000012a0
+     - 10 (0xa)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::CreateInstance(unsigned int,class std::basic_string<char,struct std::char_traits,class std::allocator >,int &)
+     - 0x10001680
+     - 0x00001680
+     - 3 (0x3)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Initialize(bool)
+     - 0x100011b0
+     - 0x000011b0
+     - 4 (0x4)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::ReleaseAllInstances(void)
+     - 0x10001500
+     - 0x00001500
+     - 6 (0x6)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::ReleaseInstance(int)
+     - 0x10001450
+     - 0x00001450
+     - 7 (0x7)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Shutdown(void)
+     - 0x100015d0
+     - 0x000015d0
+     - 8 (0x8)
+   * - public: enum VOIP::VRESULT __thiscall BF2VoipServer::CBF2VoipServer::Update(void)
+     - 0x100012d0
+     - 0x000012d0
+     - 9 (0x9)
+   * - public: unsigned int __thiscall BF2VoipServer::CBF2VoipServer::getNumInstances(void)
+     - 0x10001280
+     - 0x00001280
+     - 11 (0xb)
