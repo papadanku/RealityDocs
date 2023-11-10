@@ -11,7 +11,7 @@ Welcome to Project Reality's Official Documentation!
 
 
 .. toctree::
-   :caption: PR:BF2 Modding Tutorials
+   :caption: Community Modding Tutorials
    :hidden:
    :glob:
 
