@@ -3,12 +3,19 @@ Welcome to Project Reality's Official Documentation!
 ====================================================
 
 .. toctree::
+   :caption: External Links
+   :hidden:
+
+   Website <https://www.realitymod.com/>
+   GitHub <https://github.com/realitymod>
+   YouTube <https://www.realitymod.com/>
+
+.. toctree::
    :caption: Technical Documentation
    :hidden:
    :glob:
 
    technical/*/index
-
 
 .. toctree::
    :caption: Community Modding Guide
