@@ -13,7 +13,7 @@ The ``sv.adminScript`` server configuration directive tells the BF2 game engine 
 
    sv.adminScript "default"
 
-You can create your own administrative modules; just put them in the ``Battlefield 2 Server/admin`` directory and change the setting for ``sv.adminScript`` in the ``ServerSettings.con`` file. One example of a custom administrative module can be found [[Scripts:Modified_admin_script|here]] (in this case, it's an expansion of the ``default`` module that adds more features).
+You can create your own administrative modules; just put them in the ``Battlefield 2 Server/admin`` directory and change the setting for ``sv.adminScript`` in the ``ServerSettings.con`` file.
 
 Module Methods
 --------------

@@ -4,7 +4,6 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Technical Documentation
-   :numbered:
    :hidden:
    :glob:
 
@@ -13,7 +12,6 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Community Modding Guide
-   :numbered:
    :hidden:
    :glob:
 

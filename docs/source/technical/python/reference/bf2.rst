@@ -35,13 +35,13 @@ bf2
 
    .. py:method:: sendGameEvent(playerObject, event, data)
 
-      Tells the BF2 game engine to cause a [[GameEvent]] to occur.
+      Tells the BF2 game engine to cause a :ref:`GameEvent <game-events>` to occur.
 
    .. py:method:: sendMedalEvent(playerObject, type, value)
    .. py:method:: sendRankEvent(playerObject, rank, score)
    .. py:method:: sendHudEvent(playerObject, event, data)
 
-      Tells the BF2 game engine to cause a [[HudEvent]] to occur.
+      Tells the BF2 game engine to cause a :doc:`HudEvent <hud>` to occur.
 
    .. py:method:: sendServerMessage(playerId, message)
    .. py:method:: getTicketState(team)
@@ -299,7 +299,7 @@ Class attributes stored in the BF2 engine
 
    (Not available in PR, use the ``realitytimer`` below.)
 
-   Objects in this class are timers that can cause [[Event Reference#Timer Events|timer events]] to be generated when a fixed amount of time has elapsed.
+   Objects in this class are timers that can cause :ref:`timer events <timer-events>` to be generated when a fixed amount of time has elapsed.
 
    .. py:method:: bf2.Timer(timerEventHandler, delta, alwaysTrigger, data)
 
@@ -396,6 +396,4 @@ Class attributes stored in the BF2 engine
 
       Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.
 
-      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the [[Game Engine Object Templates]] page.
-
-      These constant values appear to be the same as those used in the [[BF2Stats|statistics server]], specifically the [[BF2Stats_LookUp_Values|look up values]].
+      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the :doc:`Game Engine Object Templates <../../engine/objecttemplates>` page.
