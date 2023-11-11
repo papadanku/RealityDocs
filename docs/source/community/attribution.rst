@@ -2,8 +2,6 @@
 Requesting & Trading Assets with Other Mod Teams
 ================================================
 
-Author: *AfterDune*
-
 Introduction
 ------------
 
@@ -39,3 +37,7 @@ The Project Reality team will be enforcing any new asset requests along these li
 Moving onto the next point on trading, if any other mod team out there wishes to trade an asset with you, ie, asks if they can use any of your assets or wishes to do a straight swap for one of there assets with one of yours, please inform us (the Project Reality team) about this trade before it happens. Recently a trade was made with one of the community factions which will remain nameless, with another BF2 mod which will also remain nameless, and traded an asset which they did not make and in fact belonged to the Project Reality team. This has all been sorted out, but unfortunately the credit went to the wrong people, which slightly upset the people who worked countless hours on making the asset.
 
 All asset requests done before this message will be overlooked for now, but for all future asset requests please go though the proper channels.
+
+.. rubric:: Footnotes
+
+.. [#f1] Made by AfterDune

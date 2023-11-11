@@ -2,8 +2,6 @@
 Official Info
 =============
 
-Author: *Rhino*
-
 Please read this entire post epically if you are part of or thinking of starting up a community faction.
 
 This is to clear up any questions any of you may have about the community factions, how they are going to work for mainly the teams working on them, but also for the public and new community faction teams that may be starting up.
@@ -64,3 +62,7 @@ We are here to help you, as much as you are here to help us by trying to add som
 Cheers,
 
 *The Project Reality Team.*
+
+.. rubric:: Footnotes
+
+.. [#f1] Made by Rhino

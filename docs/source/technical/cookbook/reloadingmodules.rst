@@ -2,8 +2,6 @@
 Reloading Modules at Runtime
 ============================
 
-Author: *King of Camelot*
-
 Problem
 -------
 
@@ -115,3 +113,7 @@ Discussion
 Reloading files at runtime saves a lot of time. All you have to do is shrink the game, change and save your module, bring back up the game and type 'reset' in the public chat. I broke it up into a header and module file, but it might be doable as one file. I though it was simplest this way, as you can set up multiple modules to the same header file, it save on redundant coding. Also, I decided to use a chat message as the event for a reload for simplicity, you could set it up to work with any event you want.
 
 This was a learning experience for me, so there may be some mistakes. Feel free to point out anything that is done wrong or could be done better. Remember, these are just examples for you to understand the theory behind reloading files, there are several other ways this could be done.
+
+.. rubric:: Footnotes
+
+.. [#f1] Made by King of Camelot

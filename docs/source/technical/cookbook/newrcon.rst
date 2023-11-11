@@ -2,8 +2,6 @@
 Adding New RCon Commands
 ========================
 
-Author: *Woody*
-
 Problem
 -------
 
@@ -60,3 +58,7 @@ Discussion
 You can add as many commands as you want, each of which can implement any function you want--and they will behave exactly as though they were coded in the ``Battlefield 2 Server/admin/default.py`` file--even though you never had to change that file!
 
 The reason this is so useful, and the reason why it's such a bad idea to just hack around with the standard files, is that doing so makes it very difficult to upgrade to a new version of BF2 later, plus, if you have multiple mods or add-ons that want to add their own RCon commands, they will very quickly start tripping over and breaking each other if they're all modifying the original code. This approach is much cleaner; in fact, you can have multiple scripts like this that are all developed separately by different people, but when they're imported, they behave gracefully with each other, with no problem at all (unless two developers choose identical names for their new commands).
+
+.. rubric:: Footnotes
+
+.. [#f1] Made by Woody

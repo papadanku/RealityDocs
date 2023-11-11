@@ -2,8 +2,6 @@
 Faction Requirements
 ====================
 
-Author: *AfterDune*
-
 Sometimes, Community Factions ask us what "requirements" the PR team has before we can label them "ready" (which means.. ready for implementation).
 
 Below are some guidelines we have set up to help you on your way a bit more. Please note that by meeting the requirements posted below, a faction is not automatically implemented in the first PR release. There's more than just having everything done by the rulebook. And it takes time and planning before the next step can be made.
@@ -53,3 +51,7 @@ Other
 The whole faction must work properly and should be provided as a minimod which extends onto the current version of PR (like how PRSP was done up to now).
 
 The faction must have a full set of flags, rallypoints, spawners, logistics/support trucks, command posts, etc.
+
+.. rubric:: Footnotes
+
+.. [#f1] Made by AfterDune
