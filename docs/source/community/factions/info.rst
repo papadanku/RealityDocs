@@ -1,6 +1,6 @@
 
-Official Info
-=============
+Official Information
+====================
 
 Please read this entire post epically if you are part of or thinking of starting up a community faction.
 
@@ -54,8 +54,8 @@ Once your community mod leader thinks your mod is ready, or almost ready for rel
 
    You are not permitted to release your community mod without permission from us, if you do we will take action against you. It is not hard to get a "yes" from us, the only thing that will make us say "no" is if there is some major bugs that we think need to be cleaned up before release first, or it would take the mod in a direction we don't want it to, thou if we thought it would we would probably say that when you submit the design plan. It is also in your best interest that we release it since that means full front page news cover on our, and every other BF2 community site, ingame MOTD (Message of the Day) promotion and us hosting the files on our servers etc.
 
-Final Info
-----------
+Final Information
+-----------------
 
 We are here to help you, as much as you are here to help us by trying to add something new to PR so providing you are willing to work with us in a professional manner, we will do the same.
 
