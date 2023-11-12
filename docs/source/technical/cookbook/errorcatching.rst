@@ -90,6 +90,4 @@ When I wrote this code, I was writing it dealing specificially with the `BF2 Pyt
 
 Please remember that this is just an example, and there are other ways you can do things. For one, in my code I used one big ``Try...Except`` statement and put all the code in the ``try`` section. You can break it up into several ``Try...Except`` statements if you would like, with only a little code in each statement. This can be useful when being more specific with the type of exception. You could also use a ``Try...Except...Else`` statement. In a ``Try...Except...Else`` statement the ``else`` section is executed if no exception occurs in the ``try`` section, but no checking for exceptions occurs in the ``else`` section. More information on ``try`` statements can be found here: `Try Statements <https://docs.python.org/release/2.3.4/ref/try.html>`_.
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by King of Camelot
+*Made by King of Camelot*

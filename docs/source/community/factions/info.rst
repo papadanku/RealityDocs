@@ -63,6 +63,4 @@ Cheers,
 
 *The Project Reality Team.*
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by Rhino
+*Made by Rhino*

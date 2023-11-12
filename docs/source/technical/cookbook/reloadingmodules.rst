@@ -114,6 +114,4 @@ Reloading files at runtime saves a lot of time. All you have to do is shrink the
 
 This was a learning experience for me, so there may be some mistakes. Feel free to point out anything that is done wrong or could be done better. Remember, these are just examples for you to understand the theory behind reloading files, there are several other ways this could be done.
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by King of Camelot
+*Made by King of Camelot*

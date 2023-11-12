@@ -52,6 +52,4 @@ The whole faction must work properly and should be provided as a minimod which e
 
 The faction must have a full set of flags, rallypoints, spawners, logistics/support trucks, command posts, etc.
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by AfterDune
+*Made by AfterDune*

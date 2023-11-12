@@ -41,6 +41,4 @@ This cookbook entry just scratches the surface of what you can do with dynamic c
 
 It may have occured to you, though, that *something* needs to be running that will make these dynamic modifications--and how does that *something* get to run in the first place, without itself modifying some of the standard code? The short answer is that these dynamic programming tricks are only possible if there is a "hook" you can use to cause this and other code to be run, and DICE put no such hook in their Python code. So, no matter what, at least **one** modification needs to be made to the standard BF2 code: at a minimum, an "import" statement needs to be added to one of the main files that will cause your code to be read in and executed... but that's a subject for another time...
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by Woody
+*Made by Woody*

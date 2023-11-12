@@ -38,6 +38,4 @@ Moving onto the next point on trading, if any other mod team out there wishes to
 
 All asset requests done before this message will be overlooked for now, but for all future asset requests please go though the proper channels.
 
-.. rubric:: Footnotes
-
-.. [#f1] Made by AfterDune
+*Made by AfterDune*
