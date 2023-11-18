@@ -2,7 +2,7 @@
 Creating Reference, Shadow Casting Objects
 ==========================================
 
-Here we are going to be replacing all our current Overgrowth meshes, helpers and other objects with "Reference" objects that are setup with transparent materials etc so they cast the shadows we want them to. We unfortunately can't just slap a material on the current Overgrowth meshes you've imported since they don't have the proper UVs to do so. As such we must import some.
+Here we are going to be replacing all our current Overgrowth meshes, helpers and other objects with "Reference" objects that are setup with transparent materials etc so they cast the shadows we want them to. We unfortunately can't just slap a material on the current Overgrowth meshes you've imported since they do not have the proper UVs to do so. As such we must import some.
 
 Note that after reading this section, it's worth reading post 2 in this thread as it contains a link to a max-scene already containing many completed reference meshes for you.
 
@@ -80,7 +80,7 @@ At first, however, nothing will change since the texture is trying to read the R
    :width: 750px
    :height: 406px
 
-Finally we need to give the leaves a backface since they currently don't have one, which you can see if we look up from underneath.
+Finally we need to give the leaves a backface since they currently do not have one, which you can see if we look up from underneath.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000096.jpg
    :width: 750px
@@ -146,7 +146,7 @@ Now for the ``kentia_palm_cluster01``, its materials are a little odder with its
    :width: 750px
    :height: 406px
 
-For the Wire Fence series, which are not overgrowth objects but statics with transparent materials, the process is more or less the same but with a few differences. The biggest difference is that because its not an Overgrowth object, it already has the back faces for the transparent materials so we don't need to clone and flip the transparent faces like we needed to do for the OG Objects.
+For the Wire Fence series, which are not overgrowth objects but statics with transparent materials, the process is more or less the same but with a few differences. The biggest difference is that because its not an Overgrowth object, it already has the back faces for the transparent materials so we do not need to clone and flip the transparent faces like we needed to do for the OG Objects.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000102.jpg
    :width: 750px
@@ -210,9 +210,9 @@ For the Civi Car, for its reference I'm not going to bother applying any transpa
    :width: 750px
    :height: 406px
 
-Finally its worth pointing out that for overgrowth objects etc that have no transparent materials on them, or need no tweaks from their existing mesh to cast the right shadows, you don't need to import and fix up a Reference mesh to replace them with, since there is nothing to change. This is unless they have only be imported as a helper of course, as then you will need to replace them with a mesh but no need to fix up their materials if they have no transparent ones.
+Finally, it is worth pointing out that for overgrowth, objects, etc. that have no transparent materials on them, or need no tweaks from their existing mesh to cast the right shadows, you do not need to import and fix up a Reference mesh to replace them with, since there is nothing to change. This is unless they have only be imported as a helper of course, as then you will need to replace them with a mesh but no need to fix up their materials if they have no transparent ones.
 
-In total I have 45 Different Reference Objects required for my map.
+In total, I have 45 different reference objects required for my map.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000118.jpg
 
