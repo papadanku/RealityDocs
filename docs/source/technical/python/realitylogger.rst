@@ -21,9 +21,9 @@ Using a logger
 
 .. code-block:: python
 
-      # Aquire a logger
-      X = realitylogger.RealityLogger[key]
+   # Aquire a logger
+   X = realitylogger.RealityLogger[key]
 
-      # Basic logging commands
-      X.logLine(line)
-      X.logLines(lines)
+   # Basic logging commands
+   X.logLine(line)
+   X.logLines(lines)
