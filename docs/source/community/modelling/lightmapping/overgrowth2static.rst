@@ -50,4 +50,4 @@ Now if you look in your staticobjects.con now you should see all your overgrowth
     :width: 750px
     :height: 468px
 
-You should now rename your Staticobjects.con with all your OG in it to something like `Staticobjects_Overgrowth.con` and then put your proper Staticobjects.con backup (with all your buildings etc. in), back into its orignal place.
+You should now rename your Staticobjects.con with all your OG in it to something like ``Staticobjects_Overgrowth.con`` and then put your proper ``Staticobjects.con`` backup (with all your buildings etc. in), back into its orignal place.
