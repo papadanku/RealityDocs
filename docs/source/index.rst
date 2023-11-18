@@ -12,15 +12,15 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Technical Documentation
-   :hidden:
    :glob:
+   :hidden:
 
    technical/*/index
 
 .. toctree::
    :caption: Community Modding Guide
-   :hidden:
    :glob:
+   :hidden:
 
    community/*
    community/*/index

@@ -6,6 +6,7 @@ Python programs interact with Battlefield 2 using “objects”, as well as “m
 
 .. toctree::
    :glob:
+   :maxdepth: 2
 
    events.rst
    *

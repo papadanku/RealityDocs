@@ -3,8 +3,8 @@ Advanced 3DsMax Lightmapping
 ============================
 
 .. toctree::
-   :numbered:
    :maxdepth: 2
+   :numbered:
 
    introduction
    overgrowth2static
