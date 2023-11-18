@@ -1,6 +1,6 @@
 
-Importing Your Overgrowth into 3DsMax
-=====================================
+Importing Overgrowth into 3DsMax
+================================
 
 #. Once your PC has restarted, before we import the overgrowth, to save ourselves a hell of a lot of time in the long run, you should go to your ``EA GAMES\Battlefield 2\mods\pr_edit\Objects`` folder and temporarily move the ``vegitation`` folder outside of your ``pr_edit`` folder, somewhere on your computer, so that the import scripts can't find the objects its trying to import, and instead just places a helper for them.
 #. Once you've moved your vegitation folder load up 3DsMax again and with a brand new scene, with the same units setup as before, repeat the above process for importing statics into 3DsMax **but** importing your Overgrowth ``Staticobjects.con``

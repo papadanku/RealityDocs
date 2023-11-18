@@ -1,6 +1,6 @@
 
-Importing Your Terrain into 3DsMax
-==================================
+Importing Terrain into 3DsMax
+=============================
 
 Once your 3DsMax scene is setup with the right units etc go to **BF2 > BF2 Lightmapping** and click **Load Land**. Then browse to your map's main folder in **/pr_edit/levels/\*your map*/** and select/open your map's ``Heightdata.con`` file. It should now start to import your terrain, this may take a little time.
 
