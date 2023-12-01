@@ -17,3 +17,4 @@ Advanced 3DsMax Lightmapping
    page8
    page9
    page10
+   page11
