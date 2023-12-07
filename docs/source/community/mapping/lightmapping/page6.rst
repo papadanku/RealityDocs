@@ -11,7 +11,7 @@ Importing Overgrowth into 3DsMax
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000032.jpg
 
-   .. figure:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000038.jpg
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000038.jpg
 
    Once the importing has finished you should have something like this.
 

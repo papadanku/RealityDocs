@@ -6,29 +6,29 @@ Now its time to finally get some light in here.
 
 Lets first start off by loading your sun from your sky settings. Go to **BF2 > BF2 Lightmapping** and hit the **Load Sun** button. Then browse to your map folder and select your ``sky.con`` file and by magic a direct light will be created in the location your sun is ingame.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000171.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000171.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000172.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000172.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000173.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000173.jpg
 
 Now since this is a 4km map the light has been created far too close to the terrain, since the script for making it was only designed for 2km and smaller maps, and as such, the far sides of the map are basically behind the sun and wont receive lighting from it. As such the first thing you need to do, if your working on a 4km or larger map, is to move the sun further away, but without affecting its rotation at all. To do this, first select your "BF2_SunLight", then select the Move Tool (W) and then switch to Local Transformation mode in the dropdown box at the top. Now your "Gizmo" will be at the same rotation as your sun:
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000175.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000175.jpg
 
 Now what you want to do is in the bottom centre, click the "Absolute Mode Transform Type-In" until it turns yellow which means its in "Offset Mode Transform Type-In". Then in the Z Axis box, type in 10000 (for a 4km map, larger maps will require more) and then your sun will be moved +10000 units (which is 1km) away along the Z Axis.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000178.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000178.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000179.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000179.jpg
 
 Now to fix up your Sun's Light Settings. There are two main types of shadow casting methods to use for your Sun Light *(and point light but we will come to that later)* in 3DsMax. These are "Ray Traced Shadows" and "Adv. Ray Traced". I will go into more detail into these in a second but first, lets set up the common settings both of these methods use.
 
 Select your sun and go into the modifier tab. First Check the "On" box under Shadows and for now leave the drop-down box under that on "Shadow Map" *(we will be changing this in a bit t either "Ray Traced Shadows" and "Adv. Ray Traced")*. Then under Intensity/Color/Attenuation, set your Sun's Light Multipler to 2 if its a sunny map (like mine) or 1 if its a cloudy map, or anywhere in-between but DO NOT go under 1 as you should never darken a map though lightmaps, when you can far more easily darken a map though the map's light settings and if its a night map, with no moon, you can fully get rid of the sun light by just setting the sun light colour to 100% black. Next we want to change the Sun Light Colour to 0, 255, 0 (RGB - aka 100% Green) in the box to the right of the multiplier, which will be white by default. This is because we are going to generate all the light types together and Sun Light uses the Green Channel in an RGB Lightmap Texture. Next in Directional Parameters, if your working with a 4km map, change the "hotspot/Beam" to have a value of 30000, more if its a larger map so it include the entire map (note the big circle around the map) in the image below. Other than that you can leave the rest of the settings at default but check them against my settings in the image below, with the exception of the Shadow Drop Down Box setting which we will get into next:
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg
 
 Now for the different shadow types and you will want to pick which ever works best for you and your map.
 
@@ -105,11 +105,11 @@ Now its time to import the Sky Lights we are going to use. Download this file he
 
 Then go to **File > Merge** and browse to and select this file, and import all the lights inside of it into your map:
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000182.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000182.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg
 
 Configure Lights
 ^^^^^^^^^^^^^^^^
@@ -163,12 +163,12 @@ I'm going to make a big Omni light in the Lighthouse by:
 
 I'm also going to apply my Lighting Template for the Carrier that I've done for other maps since that takes me only a few seconds to apply and here are the settings of the three type of lights used on it, which are two types of **Spot Light** and one type of **Omni Light**, which are all instances of each other so changing the settings on one will change the settings on all the other instances (which is what you should also be doing for your lighting) and if you want to use this Carrier Light Template on your map you can download it here and just align it to the Bridge, note however this is setup for HMS Invincible and if used on the USS Essex there will be a few differences: `https://media.realitymod.com/tutoria...s_Template.zip <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip>`_
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000188.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000188.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000189.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000189.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000191.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000191.jpg
 
-   .. note::
+.. note::
 
-      You can setup templates of lights for a type of static, like for example a bunch of lights for each light bulb in a building, then setting each instance of that static to use that light template but this is pretty tricky so if someone really wants to know how to do this and can't work it out for themselves let me know and I might look into adding it into this tutorial at a later date.
+   You can setup templates of lights for a type of static, like for example a bunch of lights for each light bulb in a building, then setting each instance of that static to use that light template but this is pretty tricky so if someone really wants to know how to do this and can't work it out for themselves let me know and I might look into adding it into this tutorial at a later date.

@@ -4,15 +4,15 @@ Sorting Statics for Lightmapping
 
 First thing we will want to do is unhide all your LOD0 meshes of your statics. The simplest way to do this is go to Unhide by name, then do an object search for ``*=0`` (without the quotes) which will select all the LOD0 meshes we want to unhide.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000143.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000143.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000144.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000144.jpg
 
 Next go to **BF2 > Bf2 Lightmapping** and hit the **Save/Update File** in the **Lightmap Size Control** Segment and call the ``.txt`` file something like ``YourMap_LightmapSizes.txt``.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000145.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000145.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000146.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000146.jpg
 
 Open that file it creates and it should look something like this, which is what it produced for my map.
 
@@ -112,39 +112,39 @@ Now we need to sort all our objects by Alphabetical order and the simplest way I
 
 First Create a new Spreadsheet on your Google Drive, then go to **File > Import** and select the ``.txt`` file you just saved and in the import file settings I would recommend you use "Replace spreadsheet" and for Separator character you need to set it to use a " " (a Space, without the quotes) as the Separator then hit import and you should have something like this.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000147.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000147.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000148.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000148.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000149.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000149.jpg
 
 Now with Column A Selected go to **Data > Sort** sheet by column **A**, **A > Z** and it will sort all the rows out into alphabetical order
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000150.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000150.jpg
 
 And do a search in the file for ``undefined`` and you will be able to see if the settings are already defined in the master, like this ``air_repairstation_no_supply`` which you can see, is already defined by the row above it.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000160.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000160.jpg
 
 When you find one which isn't already defined, like the bunker here, copy it into the master ``.txt`` file like so.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000161.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000161.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000162.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000162.jpg
 
 Now we need to update the ``undefined`` lod lightmap sizes to the correct ones. The simplest way to find out what sizes it uses is to browse to the object's ligthmap samples and open them with BFMeshView, with the ``.samples`` being the ``lod0`` sample, ``.samp_01`` being the LOD1 sample, ``.samp_02`` being the ``lod2`` sample etc.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000166.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000166.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000164.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000164.jpg
 
 Once open you will be able to see the width and height of the lightmap settings in the top left.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000165.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000165.jpg
 
 Some of the lightmap samples for many objects are much higher resolution than they need to be and in many cases you can make them much smaller, especially for the LODs which for this bunker ``lod1`` also has a lightmap sample size of 128 by default by we can make it 64 for this bunker with ease and 32 for ``lod2``.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000167.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000167.jpg
 
 If an object has a different Width and Height resolution then instead of defining them with just one number, you would put a \* in the middle of the Width and Height, for example 256*64 for a lightmap texture width of ``256px`` and a height of ``64px``. Note you should only define objects with different width and height width resolutions that have been setup to have them, which is only a few objects so far with custom Lightmap UVs, such as the `Wooden Fence Series <https://www.realitymod.com/forum/f196-pr-highlights/93602-new-wooden-fence-statics.html>`_.
 
@@ -152,8 +152,8 @@ If you find an object without any samples then its a matter of best judgement an
 
 Once you have defined lightmap sizes for all the LODs of your statics into the Master Lightmap Sizes file, go back into max and go to **BF2 > BF2 Lightmapping** and by **Lightmap Size File** Hit the **...** button and select the ``Master_LightmapSizes.txt`` file you have updated with all your lightmap sizes. Then hit the **Apply Lightmap Settings** button and it will apply all these lightmap size settings to all the LODs of your statics.
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000168.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000168.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000169.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000169.jpg
 
-   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000170.jpg
+.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000170.jpg
