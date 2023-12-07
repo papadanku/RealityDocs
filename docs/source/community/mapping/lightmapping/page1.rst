@@ -6,24 +6,24 @@ I have been experimenting and refining Lightmapping with 3DsMax for BF2, for qui
 
 First of all I want to state the advantages of 3DsMax Lightmapping for anyone unsure if its worth it, including the advantages that are new in this tutorial.
 
-- 3DsMax Lightmapping is generally a lot faster than Lightmapping in the BF2 Editor (depending on the type of lighting you use), with multi-core processing and 64bit support, especially for large complex maps, even after you take into account the extra time for importing your terrain and all the objects etc.
+   - 3DsMax Lightmapping is generally a lot faster than Lightmapping in the BF2 Editor (depending on the type of lighting you use), with multi-core processing and 64bit support, especially for large complex maps, even after you take into account the extra time for importing your terrain and all the objects etc.
 
-   I have also managed to make this process even faster than the traditional method of 3DsMax LMing shown in previous tutorials, with generating all three types of light together at once instead of individually as before with max.
+      I have also managed to make this process even faster than the traditional method of 3DsMax LMing shown in previous tutorials, with generating all three types of light together at once instead of individually as before with max.
 
-- For Object Lightmapping the BF2 Editor generally takes around 3 and a 1/2 minutes to generate all the LODs of a single, complex static, where 3DsMax with Adv. Ray Traced Shadows takes around 2 and a 1/2 minutes for the same object and all its lod, saving a whole minute per object and in all taking around 70% of the time BF2 Editor takes.
+   - For Object Lightmapping the BF2 Editor generally takes around 3 and a 1/2 minutes to generate all the LODs of a single, complex static, where 3DsMax with Adv. Ray Traced Shadows takes around 2 and a 1/2 minutes for the same object and all its lod, saving a whole minute per object and in all taking around 70% of the time BF2 Editor takes.
 
-   It should be noted thou that in full Ray Traced Shadows, which gives the best quality lighting, the lightmapping process dose take quite a bit longer at around 6 minutes per object and its lods.
+      It should be noted thou that in full Ray Traced Shadows, which gives the best quality lighting, the lightmapping process dose take quite a bit longer at around 6 minutes per object and its lods.
 
-- For Terrain Lightmaps the savings are even larger, depending on the complexity of your map of course, since the BF2 Editor really struggles to render lots of overgrowth on the terrain, like the example map in this tutorial.
+   - For Terrain Lightmaps the savings are even larger, depending on the complexity of your map of course, since the BF2 Editor really struggles to render lots of overgrowth on the terrain, like the example map in this tutorial.
 
-   For a single patch that was 2/3 sea water and didn't have that many trees on it, the BF2 Editor took 11mins and 41secs, where 3DsMax with Adv. Ray Traced Shadows only took 2mins and 38secs, which is a massive saving of around 23% of the time the BF2 Editor took on the same patch. Even when it came to Full Ray Traced Shadows in 3DsMax it took quite a bit less time than the Editor, taking 8mins and 20secs for the same patch which really says it all.
+      For a single patch that was 2/3 sea water and didn't have that many trees on it, the BF2 Editor took 11mins and 41secs, where 3DsMax with Adv. Ray Traced Shadows only took 2mins and 38secs, which is a massive saving of around 23% of the time the BF2 Editor took on the same patch. Even when it came to Full Ray Traced Shadows in 3DsMax it took quite a bit less time than the Editor, taking 8mins and 20secs for the same patch which really says it all.
 
-- The Quality of the Lightmaps is far superior, depending on the settings and lighting method you use of-course, especially when it comes to overgrowth when setup with transparent leaves (as per in this tutorial).
-- The Lightmap Sizes are far more optimized than standard BF2 Lightmap Samples since many small vBF2, and even PR Custom Statics, have super large lightmap samples for tiny objects, resulting in a 512x512 texture for a small detached house which can easily be lightmapped in 256x256 without much loss of quality and being the same light pixel ratio as the other statics on your map.
-- You have far more control over your lighting and how objects have an impact on your map and the end result of your lightmaps as well than with the BF2Editor.
-- "Point Light" (Man Made Light such as light bulbs in buildings) can be done far easier, with much more flexibility and with better quality than in the BF2Editor.
-- No requirement of "Lightmap Samples" for all your statics to be present in order to lightmap them, which also allows for lightmapping xpack objects etc (although it is now possible to generate samples for most statics using Bf2MeshView, but doing this, especially for a lot of objects, is very time consuming).
-- Full Lightmap Padding (with new scripts) which helps cut down lighting errors in the mipmaps and is something the BF2 Editor doesn't have (although dose have a little padding).
+   - The Quality of the Lightmaps is far superior, depending on the settings and lighting method you use of-course, especially when it comes to overgrowth when setup with transparent leaves (as per in this tutorial).
+   - The Lightmap Sizes are far more optimized than standard BF2 Lightmap Samples since many small vBF2, and even PR Custom Statics, have super large lightmap samples for tiny objects, resulting in a 512x512 texture for a small detached house which can easily be lightmapped in 256x256 without much loss of quality and being the same light pixel ratio as the other statics on your map.
+   - You have far more control over your lighting and how objects have an impact on your map and the end result of your lightmaps as well than with the BF2Editor.
+   - "Point Light" (Man Made Light such as light bulbs in buildings) can be done far easier, with much more flexibility and with better quality than in the BF2Editor.
+   - No requirement of "Lightmap Samples" for all your statics to be present in order to lightmap them, which also allows for lightmapping xpack objects etc (although it is now possible to generate samples for most statics using Bf2MeshView, but doing this, especially for a lot of objects, is very time consuming).
+   - Full Lightmap Padding (with new scripts) which helps cut down lighting errors in the mipmaps and is something the BF2 Editor doesn't have (although dose have a little padding).
 
 .. list-table::
    :header-rows: 1
@@ -55,13 +55,13 @@ First of all I want to state the advantages of 3DsMax Lightmapping for anyone un
 
 However there are a few disadvantages that you should be aware of:
 
-- Its a very complex process that for someone without any knowledge of 3DsMax and Rendering etc may struggle with but I aim to make this tutorial as straight forward as possible for any novices out there.
-- The setup process prior to lightmapping can be pretty time consuming with having to import all the static meshes of your map etc, especially if your going to setup all your overgrowth etc with transparent leaves etc as per this tutorial.
-- You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that aren't on the "Master Lightmap Sizes" List you will need to define.
-- Child Objects such as Ladders will not be imported with their parent meshes and will need to be added manually into Max in order to cast a shadow *(and to LM them if they require that but you can't LM Children in the BF2Editor either and Ladders shouldn't be ladders)*
-- Destroyable Objects can not be lightmapped in 3DsMax, at least not without a big complex work around and its best to generate them in the BF2 Editor with settings similar to those of 3DsMax.
+   - Its a very complex process that for someone without any knowledge of 3DsMax and Rendering etc may struggle with but I aim to make this tutorial as straight forward as possible for any novices out there.
+   - The setup process prior to lightmapping can be pretty time consuming with having to import all the static meshes of your map etc, especially if your going to setup all your overgrowth etc with transparent leaves etc as per this tutorial.
+   - You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that aren't on the "Master Lightmap Sizes" List you will need to define.
+   - Child Objects such as Ladders will not be imported with their parent meshes and will need to be added manually into Max in order to cast a shadow *(and to LM them if they require that but you can't LM Children in the BF2Editor either and Ladders shouldn't be ladders)*
+   - Destroyable Objects can not be lightmapped in 3DsMax, at least not without a big complex work around and its best to generate them in the BF2 Editor with settings similar to those of 3DsMax.
 
-   If a Destroyable Object has been made "non-destroyable" by code, then it will import the geom0 lods into Max and will lightmap them fine, but it will not import the geom1, wreck lods in and you will need to make 8x8px dummy lightmaps for the wreck lods which are required in order for the geom0 lod lightmaps to load ingame and will save quite a lot of LM space from generating them at full rez.
+      If a Destroyable Object has been made "non-destroyable" by code, then it will import the geom0 lods into Max and will lightmap them fine, but it will not import the geom1, wreck lods in and you will need to make 8x8px dummy lightmaps for the wreck lods which are required in order for the geom0 lod lightmaps to load ingame and will save quite a lot of LM space from generating them at full rez.
 
 Before You Begin
 ----------------

@@ -9,39 +9,29 @@ Importing Overgrowth into 3DsMax
 
 #. We are using a brand new blank sceen to make it easier on the importing script to do its job as for some reason it seems to slow down when the scene is already populated with lots of objects and we are going to merge the imported Overgrowth helpers into the proper scene once the importing has finished.
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000032.jpg
-   :width: 750px
-   :height: 630px
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000032.jpg
 
-.. figure:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000038.jpg
-   :width: 750px
-   :height: 406px
+   .. figure:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000038.jpg
 
    Once the importing has finished you should have something like this.
 
 #. Now Save this max scene as the same name as your map but with an **_Overgrowth** suffix.
 
    Mine is called ``Jamaica_Overgrowth.max``
-   
+
 #. Back it up and finally move the ``vegitation`` folder you just moved out of your ``\pr_edit\Objects`` folder, back into it where it belongs.
 #. Open up your normal Lightmapping Scene with your terrain and statics in and then go to **File > Merge** and select your scene with your imported Overgrowth Helpers in. Then click the "All" button in the bottom left to select everything and click ok and it will import all the selected files into your current scene.
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000037.jpg
-   :width: 750px
-   :height: 406px
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000037.jpg
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000039.jpg
-   :width: 750px
-   :height: 630px
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000039.jpg
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000040.jpg
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000040.jpg
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000041.jpg
-   :width: 750px
-   :height: 406px
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000041.jpg
 
 I would then recommend adding the selected to a new "Overgrowth Helpers" Layer.
 
-.. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000042.jpg
+   .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000042.jpg
 
 Then save and backup your lightmapping scene.
