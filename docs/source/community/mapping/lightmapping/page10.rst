@@ -146,11 +146,11 @@ Some of the lightmap samples for many objects are much higher resolution than th
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000167.jpg
 
-If an object has a different Width and Height resolution then instead of defining them with just one number, you would put a \* in the middle of the Width and Height, for example 256*64 for a lightmap texture width of ``256px`` and a height of ``64px``. Note you should only define objects with different width and height width resolutions that have been setup to have them, which is only a few objects so far with custom Lightmap UVs, such as the `Wooden Fence Series <https://www.realitymod.com/forum/f196-pr-highlights/93602-new-wooden-fence-statics.html>`_.
+If an object has a different Width and Height resolution then instead of defining them with just one number, you would put a \* in the middle of the Width and Height, for example 256*64 for a lightmap texture width of ``256px`` and a height of ``64px``. Note you should only define objects with different width and height width resolutions that have been setup to have them, which is only a few objects so far with custom lightmap UVs, such as the `Wooden Fence Series <https://www.realitymod.com/forum/f196-pr-highlights/93602-new-wooden-fence-statics.html>`_.
 
 If you find an object without any samples then its a matter of best judgement and/or trial and error to finding the right lightmap size. It must be noted that the resolution for the width and height of each lightmap must be a power of two, ie either a value of 8, 16, 32, 64, 128, 256, 512, 1024 or 2048.
 
-Once you have defined lightmap sizes for all the LODs of your statics into the Master Lightmap Sizes file, go back into max and go to **BF2 > BF2 Lightmapping** and by **Lightmap Size File** Hit the **...** button and select the ``Master_LightmapSizes.txt`` file you have updated with all your lightmap sizes. Then hit the **Apply Lightmap Settings** button and it will apply all these lightmap size settings to all the LODs of your statics.
+Once you have defined lightmap sizes for all the LODs of your statics into the **Master Lightmap Sizes** file, go back into max and go to **BF2 > BF2 Lightmapping** and by **Lightmap Size File** Hit the **...** button and select the ``Master_LightmapSizes.txt`` file you have updated with all your lightmap sizes. Then hit the **Apply Lightmap Settings** button and it will apply all these lightmap size settings to all the LODs of your statics.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000168.jpg
 

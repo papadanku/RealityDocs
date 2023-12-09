@@ -68,7 +68,7 @@ Ray-Traced Shadows
 
    This is the "High Quality, Slow Rendering" Option for anyone who has a really good computer and/or has a lot of time to be able to lightmap their map in, like if you have a spare computer sitting around which otherwise would not be used and can lightmap solidly for a week or so. It should be noted that I would only recommend using this setting if your map is truly 100% final, being fully tested before hand and your absolutely sure that no changes are needed for it that will affect its lightmaps.
 
-   In this mode, Object Lightmaps take around **6mins / object** (and its LODs), when lightmapping a high rez lightmap for a complex object, and it takes around **3x Longer than "Adv. Ray Traced"** and around 2x as long as the BF2 Editor's Final Quality Lightmaps.
+   In this mode, Object lightmaps take around **6mins / object** (and its LODs), when lightmapping a high rez lightmap for a complex object, and it takes around **3x Longer than "Adv. Ray Traced"** and around 2x as long as the BF2 Editor's Final Quality lightmaps.
 
    But when it comes to Terrain, at least with a lot of Overgrowth on it, Ray Traced Shadow takes only around **5/7th** of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax with Ray Traced Shadows took only **8mins 20secs** to Render the same patch.
 
@@ -83,9 +83,9 @@ Adv. Ray-Traced Shadows
 
    This is the "Medium Quality, Fast Rendering" Option for anyone who doesn't have the time or a decent enough computer to do "Ray Traced Shadows". If you plan on changing your map in the future which will require the map to be totally re-lightmapped, then this is the option to pick.
 
-   In this mode Object Lightmaps take around **2mins 30secs / Object** (and its LODs), when lightmapping a high rez lightmap for a complex object, which is around **1/3 of the time it takes to generate "Ray Traced Shadows"** and almost 1/2 the time the BF2 Editor's takes on Final Quality Lightmaps.
+   In this mode Object, lightmaps take around **2mins 30secs / Object** (and its LODs), when lightmapping a high rez lightmap for a complex object, which is around **1/3 of the time it takes to generate "Ray Traced Shadows"** and almost 1/2 the time the BF2 Editor's takes on Final Quality lightmaps.
 
-   When it comes to Terrain Lightmaps it is considerably faster taking only around **2/9th** of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax in Adv. Ray Traced took only **2mins 38secs** to Render the same patch.
+   When it comes to Terrain lightmaps it is considerably faster taking only around **2/9th** of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax in Adv. Ray Traced took only **2mins 38secs** to Render the same patch.
 
    But the quality of these shadows is isn't as good as Ray Traced Shadows and with the exception of transparent leaf rendering, isn't that much better than the BF2 Editor's shadows and in some small cases, slightly worse, but that is mainly when the BF2 Editor generates a higher rez than you've set in 3DsMax. Overall these are still better quality than the BF2 Editors, especially if you have lots of overgrowth.
 

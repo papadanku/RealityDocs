@@ -3,8 +3,8 @@ Importing Statics into 3DsMax
 =============================
 
 #. Next step is to import your statics into 3DsMax
-#. Go to BF2 > Bf2 Lightmapping and hit the "Load Staticobjects.con" Button
-#. Browse to your maps Staticobjects.con with all your buildings etc in
+#. Go to **BF2 > Bf2 Lightmapping** and hit the load **Staticobjects.con** button
+#. Browse to your map's ``Staticobjects.con`` with all your buildings etc in
 #. Wait thile all your statics are imported, time depends on how many objects are in your map and the complexity of those objects
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000029.jpg

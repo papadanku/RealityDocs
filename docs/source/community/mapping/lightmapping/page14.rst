@@ -83,7 +83,7 @@ Then restart your PC, optimize it for lightmapping like you did before for your 
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000280.jpg
 
-I Lightmapped my Sun and Sky Terrain Lightmaps in **2hrs and 7mins** with Adv. Ray Traced Shadows and once your done you should have something like this:
+I lightmapped my Sun and Sky Terrain lightmaps in **2hrs and 7mins** with Adv. Ray Traced Shadows and once your done you should have something like this:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sun_LM.jpg
 

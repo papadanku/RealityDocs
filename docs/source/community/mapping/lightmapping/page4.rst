@@ -149,4 +149,4 @@ Finally I would recommend now setting your Terrain's Object Color to something e
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000346.jpg
 
-Finally, Save and Backup your 3DsMax Lightmapping Scene before you go any further.
+Finally, save and backup your 3DsMax Lightmapping scene before you go any further.
