@@ -1,1 +1,4 @@
-furo
+python
+sphinx
+docutils
+sphinx_rtd_theme
