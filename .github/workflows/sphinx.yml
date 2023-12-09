@@ -9,7 +9,7 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v4
-    - name: Build HTML
+    - name: Build HTML Files
       uses: ammaraskar/sphinx-action@master
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
