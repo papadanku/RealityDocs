@@ -66,7 +66,7 @@ And if I apply the material back onto the entire selection note how the cars and
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000137.jpg
 
-You can alternatively just go though each material and turn off the **show in viewport**, button which then *should* still have the material render with its transparent leaves when doing the LMs but this takes longer than just swapping materials, depending on your system, how many transparent objects and materials you have etc.
+You can alternatively just go though each material and turn off the **show in viewport**, button which then *should* still have the material render with its transparent leaves when doing the lightmaps but this takes longer than just swapping materials, depending on your system, how many transparent objects and materials you have etc.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000138.jpg
 

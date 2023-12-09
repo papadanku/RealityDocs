@@ -16,7 +16,7 @@ Once its done you should end up with something like this.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000015.jpg
 
-Now your terrain is imported, to help you distinguish and navigate it more easily, as well as a few things to help with LMing it later on, I would first recommend you first rename your terrain object from ``Object01`` (or something similar) to ``_TERRAIN`` and Convert your Terrain to an Edible Polygon.
+Now your terrain is imported, to help you distinguish and navigate it more easily, as well as a few things to help with lightmapping it later on, I would first recommend you first rename your terrain object from ``Object01`` (or something similar) to ``_TERRAIN`` and Convert your Terrain to an Edible Polygon.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000019.jpg
 

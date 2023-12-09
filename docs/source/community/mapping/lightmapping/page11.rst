@@ -68,7 +68,7 @@ Ray-Traced Shadows
 
    This is the "High Quality, Slow Rendering" Option for anyone who has a really good computer and/or has a lot of time to be able to lightmap their map in, like if you have a spare computer sitting around which otherwise would not be used and can lightmap solidly for a week or so. It should be noted that I would only recommend using this setting if your map is truly 100% final, being fully tested before hand and your absolutely sure that no changes are needed for it that will affect its lightmaps.
 
-   In this mode, Object Lightmaps take around **6mins / object** (and its LODs), when lightmapping a high rez LM for a complex object, and it takes around **3x Longer than "Adv. Ray Traced"** and around 2x as long as the BF2 Editor's Final Quality Lightmaps.
+   In this mode, Object Lightmaps take around **6mins / object** (and its LODs), when lightmapping a high rez lightmap for a complex object, and it takes around **3x Longer than "Adv. Ray Traced"** and around 2x as long as the BF2 Editor's Final Quality Lightmaps.
 
    But when it comes to Terrain, at least with a lot of Overgrowth on it, Ray Traced Shadow takes only around **5/7th** of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax with Ray Traced Shadows took only **8mins 20secs** to Render the same patch.
 
@@ -83,7 +83,7 @@ Adv. Ray-Traced Shadows
 
    This is the "Medium Quality, Fast Rendering" Option for anyone who doesn't have the time or a decent enough computer to do "Ray Traced Shadows". If you plan on changing your map in the future which will require the map to be totally re-lightmapped, then this is the option to pick.
 
-   In this mode Object Lightmaps take around **2mins 30secs / Object** (and its LODs), when lightmapping a high rez LM for a complex object, which is around **1/3 of the time it takes to generate "Ray Traced Shadows"** and almost 1/2 the time the BF2 Editor's takes on Final Quality Lightmaps.
+   In this mode Object Lightmaps take around **2mins 30secs / Object** (and its LODs), when lightmapping a high rez lightmap for a complex object, which is around **1/3 of the time it takes to generate "Ray Traced Shadows"** and almost 1/2 the time the BF2 Editor's takes on Final Quality Lightmaps.
 
    When it comes to Terrain Lightmaps it is considerably faster taking only around **2/9th** of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax in Adv. Ray Traced took only **2mins 38secs** to Render the same patch.
 
@@ -159,7 +159,7 @@ I'm going to make a big Omni light in the Lighthouse by:
       .. note::
 
          - The last bunch of settings can be tweaked quite a bit depending on how powerful the light is and how far your want the light to travel etc.
-         - Getting it right will take a bit of trial and error and to get it right you can do a quick render of your viewport in max and/or do Test LM Renders which I'll get into later in this tutorial.
+         - Getting it right will take a bit of trial and error and to get it right you can do a quick render of your viewport in max and/or do Test lightmap Renders which I'll get into later in this tutorial.
 
 I'm also going to apply my Lighting Template for the Carrier that I've done for other maps since that takes me only a few seconds to apply and here are the settings of the three type of lights used on it, which are two types of **Spot Light** and one type of **Omni Light**, which are all instances of each other so changing the settings on one will change the settings on all the other instances (which is what you should also be doing for your lighting) and if you want to use this Carrier Light Template on your map you can download it here and just align it to the Bridge, note however this is setup for HMS Invincible and if used on the USS Essex there will be a few differences: `https://media.realitymod.com/tutoria...s_Template.zip <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip>`_
 
