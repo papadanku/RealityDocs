@@ -1,160 +1,50 @@
-<!doctype html>
-<html class="no-js" lang="en" data-content_root="">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Requesting &amp; Trading Assets with Other Mod Teams" href="../../../community/attribution.html" /><link rel="prev" title="HudEvent" href="hud.html" />
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
-        <title>BF2 Objects - RealityDocs documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
-    
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BF2 Objects &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
 
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
   
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Requesting &amp; Trading Assets with Other Mod Teams" href="../../../community/attribution.html" />
+    <link rel="prev" title="HudEvent" href="hud.html" /> 
+</head>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../../../index.html"><div class="brand">RealityDocs  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
-  
-  
-  <span class="sidebar-brand-text">RealityDocs  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
@@ -162,50 +52,30 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../admin/identity.html">Player Identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../admin/module.html">The Administrative Module</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cookbook/errorcatching.html">Better Error Catching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cookbook/newrcon.html">Adding New RCon Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../engine/coordinates.html">BF2 Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../engine/internals.html">BF2 Engine Internals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../engine/objecttemplates.html">Game Engine Object Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../engine/reverseengineering.html">Reverse Engineering Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../engine/time.html">Time in BF2</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modding/aicode.html">All AI Codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modding/cmdoptions.html">Command Line Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modding/consolecommands.html">BF2 Console Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modding/systemrequirements.html">Server System Requirements</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../networking/ports.html">BF2 Porting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../networking/protocols_rcon.html">The RCon Protocol</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Battlefield Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Battlefield Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../bigpicture.html">How Battlefield 2 Hooks Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../learning.html">Learning Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../realitylogger.html">Reality Logger</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">References</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">References</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="events.html">Events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bf2.html">bf2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="host.html">host</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hud.html">HudEvent</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BF2 Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">BF2 Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PhysicalObject"><code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#weaponObject"><code class="docutils literal notranslate"><span class="pre">weaponObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kitObject"><code class="docutils literal notranslate"><span class="pre">kitObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controlPointObject"><code class="docutils literal notranslate"><span class="pre">controlPointObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vehicleObject"><code class="docutils literal notranslate"><span class="pre">vehicleObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#soldierObject"><code class="docutils literal notranslate"><span class="pre">soldierObject</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -217,106 +87,76 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../community/guidelines.html">Guidelines for Community Assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/info.html">Official Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/requirements.html">Faction Requirements</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/mapping/index.html">Mapping</a></li>
 </ul>
 
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
         </div>
-        <article role="main">
-          <section id="bf2-objects">
-<h1>BF2 Objects<a class="headerlink" href="#bf2-objects" title="Permalink to this heading">#</a></h1>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Battlefield Python</a></li>
+          <li class="breadcrumb-item"><a href="index.html">References</a></li>
+      <li class="breadcrumb-item active">BF2 Objects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/technical/python/reference/objects.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bf2-objects">
+<h1>BF2 Objects<a class="headerlink" href="#bf2-objects" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="PhysicalObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PhysicalObject</span></span><a class="headerlink" href="#PhysicalObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PhysicalObject</span></span><a class="headerlink" href="#PhysicalObject" title="Permalink to this definition"></a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code> represent physical things in the BF2 game world; as such, they have the properties of real objects in the physical world: properties like position (X, Y, Z coordinates) and orientation (rotation), and can contain, and be contained by, other <code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code> objects. A <code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code> appears to be implemented as C++ objects in the game engine which the embedded Python engine has access to, but since they are game engine objects, they are not defined anywhere in Python, and cannot be created directly in Python - but they can be accessed from Python. No special imports are necessary to manipulate these objects.</p>
 <p>Please note that since these are not native Python objects, we don’t know what they are actually named inside the game engine; <code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code>, as well as the names of other types of objects that inherit from that class, are made up for convienience. We also can’t see into the game engine code to see if the hierarchial structure of these classes is what is presented here - for example, <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a> and <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> may, in fact, be a single class; the hierarchy of <code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code>’s decendents given here should nevertheless be equivalent to whatever the real hierarchy is.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PhysicalObject.templateName">
-<span class="sig-name descname"><span class="pre">templateName</span></span><a class="headerlink" href="#PhysicalObject.templateName" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">templateName</span></span><a class="headerlink" href="#PhysicalObject.templateName" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PhysicalObject.isControlPoint">
-<span class="sig-name descname"><span class="pre">isControlPoint</span></span><a class="headerlink" href="#PhysicalObject.isControlPoint" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isControlPoint</span></span><a class="headerlink" href="#PhysicalObject.isControlPoint" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PhysicalObject.isPlayerControlObject">
-<span class="sig-name descname"><span class="pre">isPlayerControlObject</span></span><a class="headerlink" href="#PhysicalObject.isPlayerControlObject" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isPlayerControlObject</span></span><a class="headerlink" href="#PhysicalObject.isPlayerControlObject" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PhysicalObject.hasArmor">
-<span class="sig-name descname"><span class="pre">hasArmor</span></span><a class="headerlink" href="#PhysicalObject.hasArmor" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">hasArmor</span></span><a class="headerlink" href="#PhysicalObject.hasArmor" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PhysicalObject.token">
-<span class="sig-name descname"><span class="pre">token</span></span><a class="headerlink" href="#PhysicalObject.token" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">token</span></span><a class="headerlink" href="#PhysicalObject.token" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.isValid">
-<span class="sig-name descname"><span class="pre">isValid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.isValid" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isValid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.isValid" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.getTemplateProperty">
-<span class="sig-name descname"><span class="pre">getTemplateProperty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getTemplateProperty" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTemplateProperty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getTemplateProperty" title="Permalink to this definition"></a></dt>
 <dd><p>The known properties available via the <code class="docutils literal notranslate"><span class="pre">getTemplateProperty</span></code> method are:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code></p>
@@ -334,27 +174,27 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.getPosition">
-<span class="sig-name descname"><span class="pre">getPosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getPosition" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getPosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getPosition" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.setPosition">
-<span class="sig-name descname"><span class="pre">setPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.setPosition" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.setPosition" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.getRotation">
-<span class="sig-name descname"><span class="pre">getRotation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getRotation" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getRotation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getRotation" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.setRotation">
-<span class="sig-name descname"><span class="pre">setRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.setRotation" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.setRotation" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.getParent">
-<span class="sig-name descname"><span class="pre">getParent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getParent" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getParent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getParent" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code> that contains this instance, if any.</p>
@@ -364,7 +204,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="PhysicalObject.getChildren">
-<span class="sig-name descname"><span class="pre">getChildren</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getChildren" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getChildren</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PhysicalObject.getChildren" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A tuple of multiple <code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code> contained by this instance.</p>
@@ -377,23 +217,23 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="weaponObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weaponObject</span></span><a class="headerlink" href="#weaponObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weaponObject</span></span><a class="headerlink" href="#weaponObject" title="Permalink to this definition"></a></dt>
 <dd><p>A <code class="docutils literal notranslate"><span class="pre">weaponObject</span></code> is used to represent a weapon in BF2. The <code class="docutils literal notranslate"><span class="pre">weaponObject</span></code> class inherits the methods and attributes of <code class="docutils literal notranslate"><span class="pre">physicalObject</span></code>, with no additonal methods or attributes.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="kitObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kitObject</span></span><a class="headerlink" href="#kitObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kitObject</span></span><a class="headerlink" href="#kitObject" title="Permalink to this definition"></a></dt>
 <dd><p>A <code class="docutils literal notranslate"><span class="pre">kitObject</span></code> is used to represent a “kit” in BF2. The <code class="docutils literal notranslate"><span class="pre">kitObject</span></code> class inherits the methods and attributes of <code class="docutils literal notranslate"><span class="pre">physicalObject</span></code>, with no additonal methods or attributes.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="controlPointObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">controlPointObject</span></span><a class="headerlink" href="#controlPointObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">controlPointObject</span></span><a class="headerlink" href="#controlPointObject" title="Permalink to this definition"></a></dt>
 <dd><p>A <code class="docutils literal notranslate"><span class="pre">controlPointObject</span></code> is used to represent a control point in BF2. The <code class="docutils literal notranslate"><span class="pre">controlPointObject</span></code> class inherits the methods and attributes of <code class="docutils literal notranslate"><span class="pre">physicalObject</span></code>, with the following additional methods and attributes:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="controlPointObject.flagPosition">
-<span class="sig-name descname"><span class="pre">flagPosition</span></span><a class="headerlink" href="#controlPointObject.flagPosition" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flagPosition</span></span><a class="headerlink" href="#controlPointObject.flagPosition" title="Permalink to this definition"></a></dt>
 <dd><p>Returns:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> = top</p></li>
@@ -404,88 +244,88 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="controlPointObject.lastAttackingTeam">
-<span class="sig-name descname"><span class="pre">lastAttackingTeam</span></span><a class="headerlink" href="#controlPointObject.lastAttackingTeam" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">lastAttackingTeam</span></span><a class="headerlink" href="#controlPointObject.lastAttackingTeam" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="controlPointObject.triggerId">
-<span class="sig-name descname"><span class="pre">triggerId</span></span><a class="headerlink" href="#controlPointObject.triggerId" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">triggerId</span></span><a class="headerlink" href="#controlPointObject.triggerId" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="controlPointObject.cp_getParam">
-<span class="sig-name descname"><span class="pre">cp_getParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controlPointObject.cp_getParam" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cp_getParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controlPointObject.cp_getParam" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="controlPointObject.cp_setParam">
-<span class="sig-name descname"><span class="pre">cp_setParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controlPointObject.cp_setParam" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cp_setParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#controlPointObject.cp_setParam" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p><code class="docutils literal notranslate"><span class="pre">controlPointObject</span></code> also have a number of internal properties that are accessed through the <code class="docutils literal notranslate"><span class="pre">cp_getParam</span></code> and <code class="docutils literal notranslate"><span class="pre">cp_setParam</span></code> methods:</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.isHemisphere">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isHemisphere</span></span><a class="headerlink" href="#controlPointObject.isHemisphere" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isHemisphere</span></span><a class="headerlink" href="#controlPointObject.isHemisphere" title="Permalink to this definition"></a></dt>
 <dd><p>0 or 1, indicating if the control point capture area is a hemisphere or not.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.team">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">team</span></span><a class="headerlink" href="#controlPointObject.team" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">team</span></span><a class="headerlink" href="#controlPointObject.team" title="Permalink to this definition"></a></dt>
 <dd><p>Team the capture point belongs to: 0 for neutral, 1 for team 1, and 2 for team 2. Updating this value also changes the minimap and flag tag indicator.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.flag">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flag</span></span><a class="headerlink" href="#controlPointObject.flag" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flag</span></span><a class="headerlink" href="#controlPointObject.flag" title="Permalink to this definition"></a></dt>
 <dd><p>The flag image used in the control point; 1 for team 1’s flag, 2 for team 2’s.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.areaValue">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">areaValue</span></span><a class="headerlink" href="#controlPointObject.areaValue" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">areaValue</span></span><a class="headerlink" href="#controlPointObject.areaValue" title="Permalink to this definition"></a></dt>
 <dd><p>The weighting value for this control point</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.unableToChangeTeam">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unableToChangeTeam</span></span><a class="headerlink" href="#controlPointObject.unableToChangeTeam" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unableToChangeTeam</span></span><a class="headerlink" href="#controlPointObject.unableToChangeTeam" title="Permalink to this definition"></a></dt>
 <dd><p>Whether or not this control point is capturable (0) or not (1)</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.timeToGetControl">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timeToGetControl</span></span><a class="headerlink" href="#controlPointObject.timeToGetControl" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timeToGetControl</span></span><a class="headerlink" href="#controlPointObject.timeToGetControl" title="Permalink to this definition"></a></dt>
 <dd><p>How many seconds it takes to get control of this control point</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.timeToLoseControl">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timeToLoseControl</span></span><a class="headerlink" href="#controlPointObject.timeToLoseControl" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timeToLoseControl</span></span><a class="headerlink" href="#controlPointObject.timeToLoseControl" title="Permalink to this definition"></a></dt>
 <dd><p>How many seconds it takes to get control of this control point</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.onlyTakeableByTeam">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">onlyTakeableByTeam</span></span><a class="headerlink" href="#controlPointObject.onlyTakeableByTeam" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">onlyTakeableByTeam</span></span><a class="headerlink" href="#controlPointObject.onlyTakeableByTeam" title="Permalink to this definition"></a></dt>
 <dd><p>Whether (1) or not (0) this control point is only capturable by one team</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.takeOverChangePerSecond">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">takeOverChangePerSecond</span></span><a class="headerlink" href="#controlPointObject.takeOverChangePerSecond" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">takeOverChangePerSecond</span></span><a class="headerlink" href="#controlPointObject.takeOverChangePerSecond" title="Permalink to this definition"></a></dt>
 <dd><p>Capture speed; speed at which the flag at this control point raises or lowers.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.enemyTicketLossWhenCaptured">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enemyTicketLossWhenCaptured</span></span><a class="headerlink" href="#controlPointObject.enemyTicketLossWhenCaptured" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enemyTicketLossWhenCaptured</span></span><a class="headerlink" href="#controlPointObject.enemyTicketLossWhenCaptured" title="Permalink to this definition"></a></dt>
 <dd><p>Ticket loss caused to the enemy when this control point is captured <em>(needs to be verified)</em></p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="controlPointObject.playerId">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">playerId</span></span><a class="headerlink" href="#controlPointObject.playerId" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">playerId</span></span><a class="headerlink" href="#controlPointObject.playerId" title="Permalink to this definition"></a></dt>
 <dd><p><em>Unknown; may set the ``playerID`` of the player that captured this control point first (the first player to arrive, not assisting players?)</em></p>
 </dd></dl>
 
@@ -493,21 +333,21 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="vehicleObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vehicleObject</span></span><a class="headerlink" href="#vehicleObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vehicleObject</span></span><a class="headerlink" href="#vehicleObject" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a> represents a BF2 vehicle. The <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a> class inherits the methods and attributes of <a class="reference internal" href="#PhysicalObject" title="PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a>, with several additional methods. <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a>, used to represent the physical body of player, is a sub-class of <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="vehicleObject.getDamage">
-<span class="sig-name descname"><span class="pre">getDamage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getDamage" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getDamage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getDamage" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vehicleObject.setDamage">
-<span class="sig-name descname"><span class="pre">setDamage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intValue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.setDamage" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setDamage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intValue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.setDamage" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vehicleObject.getIsWreck">
-<span class="sig-name descname"><span class="pre">getIsWreck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getIsWreck" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getIsWreck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getIsWreck" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Boolean, 1 if the vehicle is destroyed.</p>
@@ -517,7 +357,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vehicleObject.getOccupyingPlayers">
-<span class="sig-name descname"><span class="pre">getOccupyingPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getOccupyingPlayers" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getOccupyingPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getOccupyingPlayers" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>An array with index 0 being the driver.</p>
@@ -527,7 +367,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vehicleObject.getIsRemoteControlled">
-<span class="sig-name descname"><span class="pre">getIsRemoteControlled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getIsRemoteControlled" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getIsRemoteControlled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vehicleObject.getIsRemoteControlled" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p>The <a class="reference internal" href="#vehicleObject.getDamage" title="vehicleObject.getDamage"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDamage()</span></code></a> and <a class="reference internal" href="#vehicleObject.setDamage" title="vehicleObject.setDamage"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDamage()</span></code></a> methods actually read/set the health of the vehicle. Transport helicopters start with 1500, tanks with 1000 and light jeeps with 750. They all explode when the damage reaches 0.</p>
@@ -535,7 +375,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="soldierObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">soldierObject</span></span><a class="headerlink" href="#soldierObject" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">soldierObject</span></span><a class="headerlink" href="#soldierObject" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> represents the physical body of a human or AI player in BF2. The <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> class inherits the methods and attributes of <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a>, with no additonal methods or attributes. (Note - it appears that within the game engine, <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> and <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a> may actually be the exact same thing; conceptually, though, it helps to think of <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> as a subclass of <a class="reference internal" href="#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a>).</p>
 <p>It is important to pay attention to the destinction between a player’s “physical” body in the game, which is represented by an instance of the <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> class, having position, orientation, health, etc., and the in-game “spirit” of that player, which is represented by an instance of the <a class="reference internal" href="bf2.html#bf2.PlayerManager.Player" title="bf2.PlayerManager.Player"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player</span></code></a> class, having properties like a name, squad, profile ID, etc. The <a class="reference internal" href="bf2.html#bf2.PlayerManager.Player" title="bf2.PlayerManager.Player"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player</span></code></a> (“spirit”) is created when a player connects to the server, and persists as long as the server continues running, even across game rounds (and disconnect/reconnects - if the player disconnects and then reconnects, the server tries to match them up with an existing <a class="reference internal" href="bf2.html#bf2.PlayerManager.Player" title="bf2.PlayerManager.Player"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player</span></code></a> object). By contrast, a player remains associated with a <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> only as long as they remain alive; as soon as they die, their association with the <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> is broken; when they respawn, a new <a class="reference internal" href="#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> instance is created, and becomes associated with the player. That is to say, between dying and respawning, the player’s “spirit” leaves their first “body” and is “reincarnated” in a new “body”.</p>
 <p>Is that metaphysical enough for you?</p>
@@ -543,122 +383,35 @@
 
 </section>
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="../../../community/attribution.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Requesting &amp; Trading Assets with Other Mod Teams</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="hud.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">HudEvent</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, The Project Reality Team
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">BF2 Objects</a><ul>
-<li><a class="reference internal" href="#PhysicalObject"><code class="docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a><ul>
-<li><a class="reference internal" href="#PhysicalObject.templateName"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.templateName</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.isControlPoint"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.isControlPoint</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.isPlayerControlObject"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.isPlayerControlObject</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.hasArmor"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.hasArmor</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.token"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.token</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.isValid"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.isValid()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.getTemplateProperty"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.getTemplateProperty()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.getPosition"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.getPosition()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.setPosition"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.setPosition()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.getRotation"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.getRotation()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.setRotation"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.setRotation()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.getParent"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.getParent()</span></code></a></li>
-<li><a class="reference internal" href="#PhysicalObject.getChildren"><code class="docutils literal notranslate"><span class="pre">PhysicalObject.getChildren()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#weaponObject"><code class="docutils literal notranslate"><span class="pre">weaponObject</span></code></a></li>
-<li><a class="reference internal" href="#kitObject"><code class="docutils literal notranslate"><span class="pre">kitObject</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject"><code class="docutils literal notranslate"><span class="pre">controlPointObject</span></code></a><ul>
-<li><a class="reference internal" href="#controlPointObject.flagPosition"><code class="docutils literal notranslate"><span class="pre">controlPointObject.flagPosition</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.lastAttackingTeam"><code class="docutils literal notranslate"><span class="pre">controlPointObject.lastAttackingTeam</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.triggerId"><code class="docutils literal notranslate"><span class="pre">controlPointObject.triggerId</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.cp_getParam"><code class="docutils literal notranslate"><span class="pre">controlPointObject.cp_getParam()</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.cp_setParam"><code class="docutils literal notranslate"><span class="pre">controlPointObject.cp_setParam()</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.isHemisphere"><code class="docutils literal notranslate"><span class="pre">controlPointObject.isHemisphere</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.team"><code class="docutils literal notranslate"><span class="pre">controlPointObject.team</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.flag"><code class="docutils literal notranslate"><span class="pre">controlPointObject.flag</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.areaValue"><code class="docutils literal notranslate"><span class="pre">controlPointObject.areaValue</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.unableToChangeTeam"><code class="docutils literal notranslate"><span class="pre">controlPointObject.unableToChangeTeam</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.timeToGetControl"><code class="docutils literal notranslate"><span class="pre">controlPointObject.timeToGetControl</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.timeToLoseControl"><code class="docutils literal notranslate"><span class="pre">controlPointObject.timeToLoseControl</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.onlyTakeableByTeam"><code class="docutils literal notranslate"><span class="pre">controlPointObject.onlyTakeableByTeam</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.takeOverChangePerSecond"><code class="docutils literal notranslate"><span class="pre">controlPointObject.takeOverChangePerSecond</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.enemyTicketLossWhenCaptured"><code class="docutils literal notranslate"><span class="pre">controlPointObject.enemyTicketLossWhenCaptured</span></code></a></li>
-<li><a class="reference internal" href="#controlPointObject.playerId"><code class="docutils literal notranslate"><span class="pre">controlPointObject.playerId</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#vehicleObject"><code class="docutils literal notranslate"><span class="pre">vehicleObject</span></code></a><ul>
-<li><a class="reference internal" href="#vehicleObject.getDamage"><code class="docutils literal notranslate"><span class="pre">vehicleObject.getDamage()</span></code></a></li>
-<li><a class="reference internal" href="#vehicleObject.setDamage"><code class="docutils literal notranslate"><span class="pre">vehicleObject.setDamage()</span></code></a></li>
-<li><a class="reference internal" href="#vehicleObject.getIsWreck"><code class="docutils literal notranslate"><span class="pre">vehicleObject.getIsWreck()</span></code></a></li>
-<li><a class="reference internal" href="#vehicleObject.getOccupyingPlayers"><code class="docutils literal notranslate"><span class="pre">vehicleObject.getOccupyingPlayers()</span></code></a></li>
-<li><a class="reference internal" href="#vehicleObject.getIsRemoteControlled"><code class="docutils literal notranslate"><span class="pre">vehicleObject.getIsRemoteControlled()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#soldierObject"><code class="docutils literal notranslate"><span class="pre">soldierObject</span></code></a></li>
-</ul>
-</li>
-</ul>
 
+           </div>
           </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hud.html" class="btn btn-neutral float-left" title="HudEvent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../community/attribution.html" class="btn btn-neutral float-right" title="Requesting &amp; Trading Assets with Other Mod Teams" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      
-      
-    </aside>
+    </section>
   </div>
-</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
-    </body>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

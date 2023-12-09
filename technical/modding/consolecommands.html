@@ -1,160 +1,50 @@
-<!doctype html>
-<html class="no-js" lang="en" data-content_root="">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Server System Requirements" href="systemrequirements.html" /><link rel="prev" title=".con File Grammar" href="congrammar.html" />
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
-        <title>BF2 Console Commands - RealityDocs documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
-    
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BF2 Console Commands &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
   
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Server System Requirements" href="systemrequirements.html" />
+    <link rel="prev" title=".con File Grammar" href="congrammar.html" /> 
+</head>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../../index.html"><div class="brand">RealityDocs  documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
-  
-  
-  <span class="sidebar-brand-text">RealityDocs  documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
@@ -162,54 +52,69 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../admin/identity.html">Player Identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../admin/module.html">The Administrative Module</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cookbook/errorcatching.html">Better Error Catching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cookbook/newrcon.html">Adding New RCon Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../engine/coordinates.html">BF2 Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../engine/internals.html">BF2 Engine Internals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../engine/objecttemplates.html">Game Engine Object Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../engine/reverseengineering.html">Reverse Engineering Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../engine/time.html">Time in BF2</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Modding</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modding</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="aicode.html">All AI Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmdoptions.html">Command Line Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">BF2 Console Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BF2 Console Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#animationbundle"><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animationmanager"><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animationsystem"><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animationtrigger"><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animationvalueholder"><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audiosettings"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collisionmanager"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combatarea"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commander"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commanderinterface"><code class="docutils literal notranslate"><span class="pre">commanderInterface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commandermenu"><code class="docutils literal notranslate"><span class="pre">commanderMenu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#console"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlmap"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decalmanager"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editor"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effecttweak"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gamelogic"><code class="docutils literal notranslate"><span class="pre">gameLogic</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gameserversettings"><code class="docutils literal notranslate"><span class="pre">gameServerSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generalsettings"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geometrytemplate"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#globalsettings"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hapticsettings"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heightmapcluster"><code class="docutils literal notranslate"><span class="pre">heightmapcluster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hudbuilder"><code class="docutils literal notranslate"><span class="pre">hudBuilder</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lightmanager"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localplayer"><code class="docutils literal notranslate"><span class="pre">localPlayer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#localprofile"><code class="docutils literal notranslate"><span class="pre">localProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maplist"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#material"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#menuteammanager"><code class="docutils literal notranslate"><span class="pre">menuTeamManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minimap"><code class="docutils literal notranslate"><span class="pre">minimap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nametags"><code class="docutils literal notranslate"><span class="pre">nametags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#networkableinfo"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objecttemplate"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overgrowth"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#particlesystemmanager"><code class="docutils literal notranslate"><span class="pre">particleSystemManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profile"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pythonhost"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radio"><code class="docutils literal notranslate"><span class="pre">radio</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renderer"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scoreboard"><code class="docutils literal notranslate"><span class="pre">scoreboard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scoremanager"><code class="docutils literal notranslate"><span class="pre">scoreManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shadermanager"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sv"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#all-vars-set-codes">All <code class="docutils literal notranslate"><span class="pre">Vars.Set</span></code> Codes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="systemrequirements.html">Server System Requirements</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../networking/ports.html">BF2 Porting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../networking/protocols_rcon.html">The RCon Protocol</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../python/index.html">Battlefield Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/bigpicture.html">How Battlefield 2 Hooks Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/debugging.html">Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/realitylogger.html">Reality Logger</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../python/reference/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/reference/events.html">Events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/reference/bf2.html">bf2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/reference/host.html">host</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/reference/hud.html">HudEvent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/reference/objects.html">BF2 Objects</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Battlefield Python</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
 <ul>
@@ -217,70 +122,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../community/guidelines.html">Guidelines for Community Assets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../community/factions/info.html">Official Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../community/factions/requirements.html">Faction Requirements</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/mapping/index.html">Mapping</a></li>
 </ul>
 
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
         </div>
-        <article role="main">
-          <section id="bf2-console-commands">
-<h1>BF2 Console Commands<a class="headerlink" href="#bf2-console-commands" title="Permalink to this heading">#</a></h1>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modding</a></li>
+      <li class="breadcrumb-item active">BF2 Console Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/technical/modding/consolecommands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bf2-console-commands">
+<h1>BF2 Console Commands<a class="headerlink" href="#bf2-console-commands" title="Permalink to this heading"></a></h1>
 <section id="animationbundle">
-<h2><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code><a class="headerlink" href="#animationbundle" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code><a class="headerlink" href="#animationbundle" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationBundle.abruptPlayback</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationBundle.addAnimation</span></code> std::string -&gt; void</p></li>
@@ -337,7 +211,7 @@
 </ul>
 </section>
 <section id="animationmanager">
-<h2><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code><a class="headerlink" href="#animationmanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code><a class="headerlink" href="#animationmanager" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationManager.fadeInTime</span></code> float -&gt; float</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationManager.ignoreMotherOrientation</span></code> int -&gt; int</p></li>
@@ -369,7 +243,7 @@
 </ul>
 </section>
 <section id="animationsystem">
-<h2><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code><a class="headerlink" href="#animationsystem" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code><a class="headerlink" href="#animationsystem" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">animationSystem.activestd::string</span></code> -&gt; std::string</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationSystem.activeAnimation</span></code> std::string -&gt; std::string</p></li>
@@ -406,7 +280,7 @@
 </ul>
 </section>
 <section id="animationtrigger">
-<h2><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code><a class="headerlink" href="#animationtrigger" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code><a class="headerlink" href="#animationtrigger" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">animationTrigger.addBundle</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationTrigger.addChild</span></code> std::string -&gt; void</p></li>
@@ -424,7 +298,7 @@
 </ul>
 </section>
 <section id="animationvalueholder">
-<h2><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code><a class="headerlink" href="#animationvalueholder" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code><a class="headerlink" href="#animationvalueholder" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">animationValueHolder.getFilename</span></code> -&gt; std::string</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">animationValueHolder.max</span></code> float -&gt; float</p></li>
@@ -436,7 +310,7 @@
 </ul>
 </section>
 <section id="audiosettings">
-<h2><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code><a class="headerlink" href="#audiosettings" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code><a class="headerlink" href="#audiosettings" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">audioSettings.alwaysAllowSystemOpenAL</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">audioSettings.effectsVolume</span></code> float -&gt; float</p></li>
@@ -474,7 +348,7 @@
 </ul>
 </section>
 <section id="collisionmanager">
-<h2><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code><a class="headerlink" href="#collisionmanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code><a class="headerlink" href="#collisionmanager" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">collisionManager.buildDebugCollisionMeshes</span></code> -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">collisionManager.create</span></code> std::string -&gt; void</p></li>
@@ -516,7 +390,7 @@
 </ul>
 </section>
 <section id="combatarea">
-<h2><code class="docutils literal notranslate"><span class="pre">combatArea</span></code><a class="headerlink" href="#combatarea" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">combatArea</span></code><a class="headerlink" href="#combatarea" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">combatArea.active</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">combatArea.addAreaPoint</span></code> Vec2 -&gt; void</p></li>
@@ -550,7 +424,7 @@
 </ul>
 </section>
 <section id="commander">
-<h2><code class="docutils literal notranslate"><span class="pre">commander</span></code><a class="headerlink" href="#commander" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">commander</span></code><a class="headerlink" href="#commander" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">commander.accept</span></code> bool -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">commander.artillery</span></code> -&gt; void</p></li>
@@ -570,14 +444,14 @@
 </ul>
 </section>
 <section id="commanderinterface">
-<h2><code class="docutils literal notranslate"><span class="pre">commanderInterface</span></code><a class="headerlink" href="#commanderinterface" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">commanderInterface</span></code><a class="headerlink" href="#commanderinterface" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">commanderInterface.selectOrder</span></code> std::string -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">commanderInterface.setstd::stringMap</span></code> std::string std::string std::string -&gt; void</p></li>
 </ul>
 </section>
 <section id="commandermenu">
-<h2><code class="docutils literal notranslate"><span class="pre">commanderMenu</span></code><a class="headerlink" href="#commandermenu" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">commanderMenu</span></code><a class="headerlink" href="#commandermenu" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">commanderMenu.deselect</span></code> -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">commanderMenu.doubleClick</span></code> -&gt; void</p></li>
@@ -588,7 +462,7 @@
 </ul>
 </section>
 <section id="console">
-<h2><code class="docutils literal notranslate"><span class="pre">Console</span></code><a class="headerlink" href="#console" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">Console</span></code><a class="headerlink" href="#console" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Console.allowMultipleFileLoad</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Console.bindKeyToConsoleScript</span></code> int std::string -&gt; bool</p></li>
@@ -617,7 +491,7 @@
 </ul>
 </section>
 <section id="controlmap">
-<h2><code class="docutils literal notranslate"><span class="pre">controlMap</span></code><a class="headerlink" href="#controlmap" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">controlMap</span></code><a class="headerlink" href="#controlmap" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">controlMap.addAxisToAxisMapping</span></code> int InputDeviceFlags InputDeviceAxes -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">controlMap.addAxisToTriggerMapping</span></code> int int InputDeviceFlags -&gt; void</p></li>
@@ -643,7 +517,7 @@
 </ul>
 </section>
 <section id="decalmanager">
-<h2><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code><a class="headerlink" href="#decalmanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code><a class="headerlink" href="#decalmanager" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">decalManager.decalGeomClipAngle</span></code> float -&gt; float</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">decalManager.decalNormalOffset</span></code> float -&gt; float</p></li>
@@ -670,7 +544,7 @@
 </ul>
 </section>
 <section id="demo">
-<h2><code class="docutils literal notranslate"><span class="pre">demo</span></code><a class="headerlink" href="#demo" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">demo</span></code><a class="headerlink" href="#demo" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">demo.restartDemo</span></code> -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">demo.shutdownDemo</span></code> -&gt; void</p></li>
@@ -686,7 +560,7 @@
 </ul>
 </section>
 <section id="editor">
-<h2><code class="docutils literal notranslate"><span class="pre">Editor</span></code><a class="headerlink" href="#editor" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">Editor</span></code><a class="headerlink" href="#editor" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Editor.createNewLayer</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Editor.deleteAllLayers</span></code> -&gt; void</p></li>
@@ -737,7 +611,7 @@
 </ul>
 </section>
 <section id="effecttweak">
-<h2><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code><a class="headerlink" href="#effecttweak" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code><a class="headerlink" href="#effecttweak" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">effectTweak.setAgeScaleFactorForAllEffects</span></code> float -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">effectTweak.setAlphaIntensityForAllEffects</span></code> float -&gt; void</p></li>
@@ -764,7 +638,7 @@
 </ul>
 </section>
 <section id="gamelogic">
-<h2><code class="docutils literal notranslate"><span class="pre">gameLogic</span></code><a class="headerlink" href="#gamelogic" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">gameLogic</span></code><a class="headerlink" href="#gamelogic" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">gameLogic.AddInvalidDropVehicleObject</span></code> std::string bool -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gameLogic.becomeSquadLeader</span></code> bool -&gt; bool</p></li>
@@ -847,7 +721,7 @@
 </ul>
 </section>
 <section id="gameserversettings">
-<h2><code class="docutils literal notranslate"><span class="pre">gameServerSettings</span></code><a class="headerlink" href="#gameserversettings" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">gameServerSettings</span></code><a class="headerlink" href="#gameserversettings" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">gameServerSettings.setAdminScript</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gameServerSettings.setAllowNATNegotation</span></code> bool -&gt; void</p></li>
@@ -921,7 +795,7 @@
 </ul>
 </section>
 <section id="generalsettings">
-<h2><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code><a class="headerlink" href="#generalsettings" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code><a class="headerlink" href="#generalsettings" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">generalSettings.addFavouriteServer</span></code> std::string int std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">generalSettings.addServerHistory</span></code> std::string int std::string -&gt; void</p></li>
@@ -956,7 +830,7 @@
 </ul>
 </section>
 <section id="geometrytemplate">
-<h2><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code><a class="headerlink" href="#geometrytemplate" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code><a class="headerlink" href="#geometrytemplate" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">geometryTemplate.active</span></code> IGeometryTemplate* -&gt; IGeometryTemplate*</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">geometryTemplate.color</span></code> Vec3 -&gt; Vec3</p></li>
@@ -1011,14 +885,14 @@
 </ul>
 </section>
 <section id="globalsettings">
-<h2><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code><a class="headerlink" href="#globalsettings" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code><a class="headerlink" href="#globalsettings" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">globalSettings.setDefaultUser</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">globalSettings.setNamePrefix</span></code> std::string -&gt; void</p></li>
 </ul>
 </section>
 <section id="hapticsettings">
-<h2><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code><a class="headerlink" href="#hapticsettings" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code><a class="headerlink" href="#hapticsettings" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hapticSettings.addWeaponClassMap</span></code> std::string int -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hapticSettings.load</span></code> -&gt; bool</p></li>
@@ -1247,7 +1121,7 @@
 </ul>
 </section>
 <section id="heightmapcluster">
-<h2><code class="docutils literal notranslate"><span class="pre">heightmapcluster</span></code><a class="headerlink" href="#heightmapcluster" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">heightmapcluster</span></code><a class="headerlink" href="#heightmapcluster" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">heightmapcluster.addHeightmap</span></code> std::string int int -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">heightmapcluster.compileWaterMeshesIntoHeightmap</span></code> -&gt; void</p></li>
@@ -1272,7 +1146,7 @@
 </ul>
 </section>
 <section id="hudbuilder">
-<h2><code class="docutils literal notranslate"><span class="pre">hudBuilder</span></code><a class="headerlink" href="#hudbuilder" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">hudBuilder</span></code><a class="headerlink" href="#hudbuilder" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hudBuilder.addNodeAlphaShowEffect</span></code> -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hudBuilder.addNodeBlendEffect</span></code> int int -&gt; bool</p></li>
@@ -1435,7 +1309,7 @@
 </ul>
 </section>
 <section id="lightmanager">
-<h2><code class="docutils literal notranslate"><span class="pre">lightManager</span></code><a class="headerlink" href="#lightmanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">lightManager</span></code><a class="headerlink" href="#lightmanager" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">lightManager.defaultEffectLightAffectionFactor</span></code> float -&gt; float</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lightManager.dynamicPointColor</span></code> Vec3 -&gt; Vec3</p></li>
@@ -1490,14 +1364,14 @@
 </ul>
 </section>
 <section id="localplayer">
-<h2><code class="docutils literal notranslate"><span class="pre">localPlayer</span></code><a class="headerlink" href="#localplayer" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">localPlayer</span></code><a class="headerlink" href="#localplayer" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">localPlayer.commanderSelectDelay</span></code> float -&gt; float</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">localPlayer.firstCommanderSelectDelay</span></code> float -&gt; float</p></li>
 </ul>
 </section>
 <section id="localprofile">
-<h2><code class="docutils literal notranslate"><span class="pre">localProfile</span></code><a class="headerlink" href="#localprofile" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">localProfile</span></code><a class="headerlink" href="#localprofile" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">localProfile.addDemoBookmark</span></code> std::string std::string std::string -&gt; void</p>
 <blockquote>
@@ -1535,7 +1409,7 @@
 </ul>
 </section>
 <section id="maplist">
-<h2><code class="docutils literal notranslate"><span class="pre">maplist</span></code><a class="headerlink" href="#maplist" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">maplist</span></code><a class="headerlink" href="#maplist" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">maplist.append</span></code> std::string std::string int -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">maplist.clear</span></code> -&gt; bool</p></li>
@@ -1550,7 +1424,7 @@
 </ul>
 </section>
 <section id="material">
-<h2><code class="docutils literal notranslate"><span class="pre">material</span></code><a class="headerlink" href="#material" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">material</span></code><a class="headerlink" href="#material" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">material.active</span></code> unsigned int -&gt; unsigned int</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">material.damageLoss</span></code> float -&gt; float</p></li>
@@ -1578,7 +1452,7 @@
 </ul>
 </section>
 <section id="menuteammanager">
-<h2><code class="docutils literal notranslate"><span class="pre">menuTeamManager</span></code><a class="headerlink" href="#menuteammanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">menuTeamManager</span></code><a class="headerlink" href="#menuteammanager" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">menuTeamManager.addKit</span></code> std::string -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">menuTeamManager.addTeam</span></code> std::string std::string -&gt; void</p></li>
@@ -1587,7 +1461,7 @@
 </ul>
 </section>
 <section id="minimap">
-<h2><code class="docutils literal notranslate"><span class="pre">minimap</span></code><a class="headerlink" href="#minimap" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">minimap</span></code><a class="headerlink" href="#minimap" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">minimap.setCommanderOffset</span></code> Vec2 -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">minimap.setCurrOrderList</span></code> int -&gt; void</p></li>
@@ -1604,7 +1478,7 @@
 </ul>
 </section>
 <section id="nametags">
-<h2><code class="docutils literal notranslate"><span class="pre">nametags</span></code><a class="headerlink" href="#nametags" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">nametags</span></code><a class="headerlink" href="#nametags" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nametags.createBar</span></code> NametagItemIDs int int -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nametags.createIcon</span></code> NametagItemIDs -&gt; void</p></li>
@@ -1625,7 +1499,7 @@
 </ul>
 </section>
 <section id="networkableinfo">
-<h2><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code><a class="headerlink" href="#networkableinfo" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code><a class="headerlink" href="#networkableinfo" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">networkableInfo.createNewInfo</span></code> std::string -&gt; void</p>
 <blockquote>
@@ -1649,7 +1523,7 @@
 </ul>
 </section>
 <section id="object">
-<h2><code class="docutils literal notranslate"><span class="pre">object</span></code><a class="headerlink" href="#object" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">object</span></code><a class="headerlink" href="#object" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">object.absolutePosition</span></code> Vec3 -&gt; Vec3</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">object.absolutePositionSecondary</span></code> Vec3 -&gt; Vec3</p></li>
@@ -1727,7 +1601,7 @@
 </ul>
 </section>
 <section id="objecttemplate">
-<h2><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code><a class="headerlink" href="#objecttemplate" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code><a class="headerlink" href="#objecttemplate" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">objectTemplate.3dMapIcon</span></code> int -&gt; int</p>
 <blockquote>
@@ -3597,7 +3471,7 @@
 </ul>
 </section>
 <section id="overgrowth">
-<h2><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code><a class="headerlink" href="#overgrowth" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code><a class="headerlink" href="#overgrowth" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">overgrowth.addMaterial</span></code> std::string uint -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">overgrowth.addType</span></code> std::string -&gt; bool</p></li>
@@ -3637,7 +3511,7 @@
 </ul>
 </section>
 <section id="particlesystemmanager">
-<h2><code class="docutils literal notranslate"><span class="pre">particleSystemManager</span></code><a class="headerlink" href="#particlesystemmanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">particleSystemManager</span></code><a class="headerlink" href="#particlesystemmanager" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">particleSystemManager.affectedByWind</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">particleSystemManager.drawBoundingBoxEnable</span></code> bool -&gt; bool</p></li>
@@ -3657,7 +3531,7 @@
 </ul>
 </section>
 <section id="player">
-<h2><code class="docutils literal notranslate"><span class="pre">Player</span></code><a class="headerlink" href="#player" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">Player</span></code><a class="headerlink" href="#player" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Player.active</span></code> IPlayer* -&gt; IPlayer*</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Player.create</span></code> std::string std::string -&gt; IPlayer*</p></li>
@@ -3681,7 +3555,7 @@
 </ul>
 </section>
 <section id="profile">
-<h2><code class="docutils literal notranslate"><span class="pre">profile</span></code><a class="headerlink" href="#profile" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">profile</span></code><a class="headerlink" href="#profile" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">profile.activateCharacterProfile</span></code> std::string -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">profile.activatePlayerProfile</span></code> std::string -&gt; bool</p></li>
@@ -3703,14 +3577,14 @@
 </ul>
 </section>
 <section id="pythonhost">
-<h2><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code><a class="headerlink" href="#pythonhost" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code><a class="headerlink" href="#pythonhost" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pythonHost.reinitialize</span></code> -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pythonHost.sendCommand</span></code> std::string std::string std::string -&gt; bool</p></li>
 </ul>
 </section>
 <section id="radio">
-<h2><code class="docutils literal notranslate"><span class="pre">radio</span></code><a class="headerlink" href="#radio" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">radio</span></code><a class="headerlink" href="#radio" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">radio.answer</span></code> bool -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">radio.callForAmmo</span></code> -&gt; void</p></li>
@@ -3746,7 +3620,7 @@
 </ul>
 </section>
 <section id="renderer">
-<h2><code class="docutils literal notranslate"><span class="pre">renderer</span></code><a class="headerlink" href="#renderer" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">renderer</span></code><a class="headerlink" href="#renderer" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">renderer.allowA2M</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">renderer.allowOnDemandPostProcessing</span></code> bool -&gt; bool</p></li>
@@ -3883,14 +3757,14 @@
 </ul>
 </section>
 <section id="scoreboard">
-<h2><code class="docutils literal notranslate"><span class="pre">scoreboard</span></code><a class="headerlink" href="#scoreboard" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">scoreboard</span></code><a class="headerlink" href="#scoreboard" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scoreboard.setToggleShow</span></code> int -&gt; void</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scoreboard.singleClick</span></code> int -&gt; void</p></li>
 </ul>
 </section>
 <section id="scoremanager">
-<h2><code class="docutils literal notranslate"><span class="pre">scoreManager</span></code><a class="headerlink" href="#scoremanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">scoreManager</span></code><a class="headerlink" href="#scoremanager" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scoreManager.ammo</span></code> int -&gt; int</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scoreManager.ammoScoreLimit</span></code> float -&gt; float</p></li>
@@ -3927,7 +3801,7 @@
 </ul>
 </section>
 <section id="shadermanager">
-<h2><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code><a class="headerlink" href="#shadermanager" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code><a class="headerlink" href="#shadermanager" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">shadermanager.byPassDiceStates</span></code> bool -&gt; bool</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">shadermanager.compileDebugTerrain</span></code> bool -&gt; bool</p></li>
@@ -4090,7 +3964,7 @@
 </ul>
 </section>
 <section id="sv">
-<h2><code class="docutils literal notranslate"><span class="pre">sv</span></code><a class="headerlink" href="#sv" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">sv</span></code><a class="headerlink" href="#sv" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">sv.adminScript</span></code> std::string -&gt; std::string</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sv.allowExternalViews</span></code> bool -&gt; bool</p></li>
@@ -4273,7 +4147,7 @@
 </ul>
 </section>
 <section id="all-vars-set-codes">
-<h2>All <code class="docutils literal notranslate"><span class="pre">Vars.Set</span></code> Codes<a class="headerlink" href="#all-vars-set-codes" title="Permalink to this heading">#</a></h2>
+<h2>All <code class="docutils literal notranslate"><span class="pre">Vars.Set</span></code> Codes<a class="headerlink" href="#all-vars-set-codes" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">EngineRunningTimer</span></code> 5.000000</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">anim-soldier-1p-speed-crouch</span></code> 1.700000</p></li>
@@ -4772,124 +4646,35 @@
 </section>
 </section>
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="systemrequirements.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Server System Requirements</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="congrammar.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, The Project Reality Team
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">BF2 Console Commands</a><ul>
-<li><a class="reference internal" href="#animationbundle"><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code></a></li>
-<li><a class="reference internal" href="#animationmanager"><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code></a></li>
-<li><a class="reference internal" href="#animationsystem"><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code></a></li>
-<li><a class="reference internal" href="#animationtrigger"><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code></a></li>
-<li><a class="reference internal" href="#animationvalueholder"><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code></a></li>
-<li><a class="reference internal" href="#audiosettings"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
-<li><a class="reference internal" href="#collisionmanager"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
-<li><a class="reference internal" href="#combatarea"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
-<li><a class="reference internal" href="#commander"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
-<li><a class="reference internal" href="#commanderinterface"><code class="docutils literal notranslate"><span class="pre">commanderInterface</span></code></a></li>
-<li><a class="reference internal" href="#commandermenu"><code class="docutils literal notranslate"><span class="pre">commanderMenu</span></code></a></li>
-<li><a class="reference internal" href="#console"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
-<li><a class="reference internal" href="#controlmap"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
-<li><a class="reference internal" href="#decalmanager"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
-<li><a class="reference internal" href="#demo"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
-<li><a class="reference internal" href="#editor"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
-<li><a class="reference internal" href="#effecttweak"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
-<li><a class="reference internal" href="#gamelogic"><code class="docutils literal notranslate"><span class="pre">gameLogic</span></code></a></li>
-<li><a class="reference internal" href="#gameserversettings"><code class="docutils literal notranslate"><span class="pre">gameServerSettings</span></code></a></li>
-<li><a class="reference internal" href="#generalsettings"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
-<li><a class="reference internal" href="#geometrytemplate"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
-<li><a class="reference internal" href="#globalsettings"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
-<li><a class="reference internal" href="#hapticsettings"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
-<li><a class="reference internal" href="#heightmapcluster"><code class="docutils literal notranslate"><span class="pre">heightmapcluster</span></code></a></li>
-<li><a class="reference internal" href="#hudbuilder"><code class="docutils literal notranslate"><span class="pre">hudBuilder</span></code></a></li>
-<li><a class="reference internal" href="#lightmanager"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
-<li><a class="reference internal" href="#localplayer"><code class="docutils literal notranslate"><span class="pre">localPlayer</span></code></a></li>
-<li><a class="reference internal" href="#localprofile"><code class="docutils literal notranslate"><span class="pre">localProfile</span></code></a></li>
-<li><a class="reference internal" href="#maplist"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
-<li><a class="reference internal" href="#material"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
-<li><a class="reference internal" href="#menuteammanager"><code class="docutils literal notranslate"><span class="pre">menuTeamManager</span></code></a></li>
-<li><a class="reference internal" href="#minimap"><code class="docutils literal notranslate"><span class="pre">minimap</span></code></a></li>
-<li><a class="reference internal" href="#nametags"><code class="docutils literal notranslate"><span class="pre">nametags</span></code></a></li>
-<li><a class="reference internal" href="#networkableinfo"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
-<li><a class="reference internal" href="#object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
-<li><a class="reference internal" href="#objecttemplate"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
-<li><a class="reference internal" href="#overgrowth"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
-<li><a class="reference internal" href="#particlesystemmanager"><code class="docutils literal notranslate"><span class="pre">particleSystemManager</span></code></a></li>
-<li><a class="reference internal" href="#player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
-<li><a class="reference internal" href="#profile"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
-<li><a class="reference internal" href="#pythonhost"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
-<li><a class="reference internal" href="#radio"><code class="docutils literal notranslate"><span class="pre">radio</span></code></a></li>
-<li><a class="reference internal" href="#renderer"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
-<li><a class="reference internal" href="#scoreboard"><code class="docutils literal notranslate"><span class="pre">scoreboard</span></code></a></li>
-<li><a class="reference internal" href="#scoremanager"><code class="docutils literal notranslate"><span class="pre">scoreManager</span></code></a></li>
-<li><a class="reference internal" href="#shadermanager"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
-<li><a class="reference internal" href="#sv"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
-<li><a class="reference internal" href="#all-vars-set-codes">All <code class="docutils literal notranslate"><span class="pre">Vars.Set</span></code> Codes</a></li>
-</ul>
-</li>
-</ul>
 
+           </div>
           </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="congrammar.html" class="btn btn-neutral float-left" title=".con File Grammar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="systemrequirements.html" class="btn btn-neutral float-right" title="Server System Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      
-      
-    </aside>
+    </section>
   </div>
-</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
-    </body>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>
