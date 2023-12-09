@@ -1,0 +1,1236 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="bf2" href="bf2.html" /><link rel="prev" title="References" href="index.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Events - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/objecttemplates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/aicode.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Battlefield Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">References</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bf2.html">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/info.html">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="events">
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this heading">#</a></h1>
+<p>The interaction between the BF2 engine and Python programs is largely <a class="reference external" href="https://en.wikipedia.org/wiki/Event-driven_programming">event-driven</a>: when an “event” happens in a game, BF2 checks to see if any Python programs have registered to be notified of that particular event; if they have, they are called (a “callback”). One way to think about this: the events are “hooks” into the game engine to which you can attach your own Python code.</p>
+<p>Multiple callbacks can be registered for any given event; all registered callbacks will be executed when the event occurs. For example, if three different programs have registered for the “PlayerConnect” event, then when a new player connects, all three of those programs will be run.</p>
+<section id="types-of-events">
+<h2>Types of Events<a class="headerlink" href="#types-of-events" title="Permalink to this heading">#</a></h2>
+<p>The BF2 engine supports five types of events</p>
+<section id="standard-events">
+<h3>Standard Events<a class="headerlink" href="#standard-events" title="Permalink to this heading">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">These are events that occur during the normal course of gameplay</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">host</span><span class="o">.</span><span class="n">registerHandler</span><span class="p">(</span><span class="s1">&#39;EventName&#39;</span><span class="p">,</span> <span class="n">pythonEventHandler</span><span class="p">[,</span> <span class="n">parameter</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>This registration will typically be done in the init() method of an object, but could be done anywhere in your code.</p>
+</section>
+<section id="game-status-events">
+<h3>Game Status Events<a class="headerlink" href="#game-status-events" title="Permalink to this heading">#</a></h3>
+<p>The BF2 engine generates these events when the status of the game changes.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">You register to receive callbacks for these events</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">host</span><span class="o">.</span><span class="n">registerGameStatusHandler</span><span class="p">(</span><span class="n">pythonEventHandler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The possible states game status can be in (as enumerated in <a class="reference internal" href="bf2.html#bf2.GameStatus" title="bf2.GameStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.GameStatus</span></code></a>) are:</p>
+<ul class="simple">
+<li><p>NotConnected</p></li>
+<li><p>PreGame</p></li>
+<li><p>Playing</p></li>
+<li><p>Paused</p></li>
+<li><p>EndGame</p></li>
+<li><p>RestartServer</p></li>
+</ul>
+<p>Game status events are usually used to kick off pre-game initialization or post-game clean-up processing.</p>
+</section>
+<section id="trigger-events">
+<h3>Trigger Events<a class="headerlink" href="#trigger-events" title="Permalink to this heading">#</a></h3>
+<p>“Trigger” events activate when a vehicle comes within a specified distance of an object.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Triggers are created and registered for by” bf2.triggerManager.</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">createHemiSphericalTrigger</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">triggerEventHandler</span><span class="p">,</span> <span class="n">objectName</span><span class="p">,</span> <span class="n">radius</span><span class="p">[,</span> <span class="n">data</span><span class="p">])</span>
+
+   <span class="n">bf2</span><span class="o">.</span><span class="n">triggerManager</span><span class="o">.</span><span class="n">createRadiusTrigger</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">triggerEventHandler</span><span class="p">,</span> <span class="n">objectName</span><span class="p">,</span> <span class="n">radius</span><span class="p">[,</span> <span class="n">data</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>In standard Battlefield 2, trigger events are used to track scoring for flag captures (triggers activate whenever a player enters or leaves a fixed radius around each control point), as well as effects such as birds (birds are triggered to take flight whenever a player enter their trigger radius).</p>
+</section>
+<section id="timer-events">
+<span id="id1"></span><h3>Timer Events<a class="headerlink" href="#timer-events" title="Permalink to this heading">#</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="host.bf2.Timer">
+<span class="sig-prename descclassname"><span class="pre">bf2.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timerEventHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alwaysTrigger</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#host.bf2.Timer" title="Permalink to this definition">#</a></dt>
+<dd><p>Timer events activate when a certain amount of time has elapsed.</p>
+<p>In standard Battlefield 2, timer events are used to cause periodic status checks related to scoring, ranking, punishing TKs, etc.</p>
+<p>See the description of the <a class="reference internal" href="bf2.html#bf2.Timer" title="bf2.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.Timer</span></code></a> class for details.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="descriptions-of-events">
+<h2>Descriptions of Events<a class="headerlink" href="#descriptions-of-events" title="Permalink to this heading">#</a></h2>
+<p>EA/DICE have not published a list of events, but here is a list of events that have been discovered so far.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.EventName">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">EventName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handlerParameter1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handlerParameter2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.EventName" title="Permalink to this definition">#</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">EventName</span></code> is the name of the event to register for with host. <code class="docutils literal notranslate"><span class="pre">registerHandler</span></code>; the parameters are the parameters your handler should receive when called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>playerObject</strong> – An instance of <a class="reference internal" href="bf2.html#bf2.PlayerManager.Player" title="bf2.PlayerManager.Player"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player</span></code></a></p></li>
+<li><p><strong>playerID</strong> – As players connect to the server they are assigned playerID numbers from “1” up</p></li>
+<li><p><strong>squadID</strong> (<em>int</em>) – Squads for each side are independently numbered beginning at “1” and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad “0”</p></li>
+<li><p><strong>teamID</strong> (<em>int</em>) – 0 for US, 1 for China or MEC</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="server-events">
+<h3>Server Events<a class="headerlink" href="#server-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ServerReady">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ServerReady</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ServerReady" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.BeginRound">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">BeginRound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.BeginRound" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.EndRound">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">EndRound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.EndRound" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+</section>
+<section id="player-events">
+<h3>Player Events<a class="headerlink" href="#player-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerConnect">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerConnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerConnect" title="Permalink to this definition">#</a></dt>
+<dd><p>Fires when a player connects to the game.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerSpawn">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerSpawn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soldierObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerSpawn" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs when a player spawns, and associates a <code class="xref py py-class docutils literal notranslate"><span class="pre">playerObject</span></code> “spirit” with a <a class="reference internal" href="objects.html#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> “body”.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerChangeTeams">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerChangeTeams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">humanHasSpawned</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerChangeTeams" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>humanHasSpawned</strong> – 1 if the player the event is firing for is a human (as opposed to an AI). Does not fire due to team change from “setTeam”!</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerChangeWeapon">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerChangeWeapon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oldWeaponObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newWeaponObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerChangeWeapon" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has changed which weapon they are holding.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerChangedSquad">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerChangedSquad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oldSquadID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newSquadID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerChangedSquad" title="Permalink to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">SquadID</span></code> is 0 for players who are not members of any squad (including the team commander).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerScore">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerScore" title="Permalink to this definition">#</a></dt>
+<dd><p>Difference is change to player’s score (positive or negative).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerHealPoint">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerHealPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">givingPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receivingSoldierObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerHealPoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs whenever a player heals another player; there is no indication of how much health was restored.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerRepairPoint">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerRepairPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">givingPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receivingVehicleObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerRepairPoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs whenever a player repairs a vehicle; there is no indication of how much damage was repaired.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerGiveAmmoPoint">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerGiveAmmoPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">givingPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receivingPhysicalObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerGiveAmmoPoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs whenever a player replenishes the ammo in another player or vehicle. There is no indication of how much ammo was replenished.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerTeamDamagePoint">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerTeamDamagePoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">victimSoldierObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerTeamDamagePoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs whenever a player damages another player on their own team. There is no indication of how much damage was done.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerKilled">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerKilled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">victimPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attackerPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weaponObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">victimSoldierObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerKilled" title="Permalink to this definition">#</a></dt>
+<dd><p>This event occurs when a player is “critically injured”, but still capable of being revived. If any players assisted in the kill, then “assists” will be a tuple of tuples: the top-level tuple will contain one lower-level tuple for each assisting player; the lower-level tuples will each have two elements: a <code class="xref py py-class docutils literal notranslate"><span class="pre">playerObject</span></code> for one of the assisting players, and a number indicating the type of assist (1=targeting assist, 2=kill damage assist, 3=driver assist).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerRevived">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerRevived</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">revivedPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medicPlayerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerRevived" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has been revived from a “critically injured” condition to full health by a medic using “shock paddles”. Players can only be revived in the interval between a <a class="reference internal" href="#host.PlayerKilled" title="host.PlayerKilled"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerKilled()</span></code></a> event and a subsequent <a class="reference internal" href="#host.PlayerDeath" title="host.PlayerDeath"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDeath()</span></code></a> event.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerDeath">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerDeath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soldierObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerDeath" title="Permalink to this definition">#</a></dt>
+<dd><p>This event occurs when a player is decisively dead, and cannot be revived; they will only return to the game by respawning. <a class="reference internal" href="objects.html#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a> is the soldier “body” (which is now discarded) for the <code class="xref py py-class docutils literal notranslate"><span class="pre">playerObject</span></code> “spirit” (which will persist through the next spawn).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerBanned">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerBanned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerBanned" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerKicked">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerKicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerKicked" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has been kicked off the server.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerDisconnect">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerDisconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerDisconnect" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has disconnected from the server.</p>
+</dd></dl>
+
+</section>
+<section id="vehicle-and-kit-events">
+<h3>Vehicle and Kit Events<a class="headerlink" href="#vehicle-and-kit-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.EnterVehicle">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">EnterVehicle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicleObject</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">freeSoldier</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#host.EnterVehicle" title="Permalink to this definition">#</a></dt>
+<dd><p>Player represented by <code class="xref py py-class docutils literal notranslate"><span class="pre">playerObject</span></code> has entered the vehicle represented by <a class="reference internal" href="objects.html#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a>. <code class="docutils literal notranslate"><span class="pre">freeSoldier</span></code> is 1 if the player is a passenger of the vehicle and is able to use weapons/objects of his kit. i.e. seat 4(+) of a black hawk.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ExitVehicle">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ExitVehicle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicleObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ExitVehicle" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has exited a vehicle.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.VehicleDestroyed">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">VehicleDestroyed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicleObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attackerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.VehicleDestroyed" title="Permalink to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="objects.html#vehicleObject" title="vehicleObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vehicleObject</span></code></a> has been destroyed by <code class="docutils literal notranslate"><span class="pre">attackerObject</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PickupKit">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PickupKit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kitObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PickupKit" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has picked up a kit. This occurs both when a player physically picks up a kit, as well as when a player spawns.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.DropKit">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">DropKit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kitObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.DropKit" title="Permalink to this definition">#</a></dt>
+<dd><p>Player has dropped a kit; can occur either because a player has died, or because a player has picked up a different kit.</p>
+</dd></dl>
+
+</section>
+<section id="team-events">
+<h3>Team Events<a class="headerlink" href="#team-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.Reset">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">Reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.Reset" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChangedCommander">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChangedCommander</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">teamID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oldCommanderPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newCommanderPlayerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ChangedCommander" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs when a team changes commanders; the old or new commander may be “None”.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChangedSquadLeader">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChangedSquadLeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">squadID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oldLeaderPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newLeaderPlayerObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ChangedSquadLeader" title="Permalink to this definition">#</a></dt>
+<dd><p>Occurs when a squad changes squad leaders; the old or new squad leader may be “None”.</p>
+</dd></dl>
+
+</section>
+<section id="game-events">
+<span id="id2"></span><h3>Game Events<a class="headerlink" href="#game-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ControlPointChangedOwner">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ControlPointChangedOwner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlPointObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attackingTeamID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ControlPointChangedOwner" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.TimeLimitReached">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">TimeLimitReached</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.TimeLimitReached" title="Permalink to this definition">#</a></dt>
+<dd><p>Event fires when the fixed time limit for a round expires (not sure what “value” is)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.TicketLimitReached">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">TicketLimitReached</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.TicketLimitReached" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+</section>
+<section id="command-events">
+<h3>Command Events<a class="headerlink" href="#command-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ConsoleSendCommand">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ConsoleSendCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ConsoleSendCommand" title="Permalink to this definition">#</a></dt>
+<dd><p>This event is triggered by someone using the <code class="docutils literal notranslate"><span class="pre">pythonHost.sendCommand</span></code> console command. Unfortunately, this command/event mechanism appears to be disabled in non-ranked servers. (As a workaround, you can achieve a similar effect <a class="reference internal" href="../../cookbook/newrcon.html"><span class="doc">creating and registering your own custom RCon commands</span></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.RemoteCommand">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">RemoteCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.RemoteCommand" title="Permalink to this definition">#</a></dt>
+<dd><p>Event fires when a game client gives an <code class="docutils literal notranslate"><span class="pre">RCon</span></code> (remote console) command. <code class="docutils literal notranslate"><span class="pre">cmd</span></code> is the command the player gave. This event is used by the admin module to receive and process <code class="docutils literal notranslate"><span class="pre">RCon</span></code> commands from players; <code class="docutils literal notranslate"><span class="pre">RCon</span></code> commands from TCP connections are received by the admin module directly, and do not fire this event.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ClientCommand">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issuerPlayerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ClientCommand" title="Permalink to this definition">#</a></dt>
+<dd><p>This event occurs when a game client issues certain in-game commands. The only such commands identified so far are: command=100 means player wants to punish teammate for teamkill; command=101 means player wants to forgive. In both cases, args=1. This response is generated by the player responding to an on-screen prompt caused by a call to the <a class="reference internal" href="bf2.html#bf2.GameLogic.GameLogic.sendClientCommand" title="bf2.GameLogic.GameLogic.sendClientCommand"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.gameLogic.sendClientCommand</span></code></a> method.</p>
+</dd></dl>
+
+</section>
+<section id="miscellaneous-events">
+<h3>Miscellaneous Events<a class="headerlink" href="#miscellaneous-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerUnlocksResponse">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerUnlocksResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">succeeded</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unlocks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerUnlocksResponse" title="Permalink to this definition">#</a></dt>
+<dd><p>Unlocks are requested and received asynchronously. This event is triggered when the response for player (which is an object of type Player) are received. If the ranking server did not successfully find the player in question, <code class="docutils literal notranslate"><span class="pre">succeeded</span></code> is set to false, else true. unlocks is a list of kit ids, which are 11, 22, 33 .. 77.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerAwardsResponse">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerAwardsResponse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerAwardsResponse" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChatMessage">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChatMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.ChatMessage" title="Permalink to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">channel</span></code> is <code class="docutils literal notranslate"><span class="pre">Squad</span></code>, <code class="docutils literal notranslate"><span class="pre">Team</span></code>, <code class="docutils literal notranslate"><span class="pre">Global</span></code>, <code class="docutils literal notranslate"><span class="pre">ServerTeamMessage</span></code> or <code class="docutils literal notranslate"><span class="pre">ServerMessage</span></code>. Text is the text of the message sent, prefixed by <code class="docutils literal notranslate"><span class="pre">HUD_TEXT_CHAT_TEAM</span></code> or <code class="docutils literal notranslate"><span class="pre">HUD_TEXT_CHAT_SQUAD</span></code> if the message is sent to the Team or Squad channel; there is no prefix if it is sent to the Global channel. <code class="docutils literal notranslate"><span class="pre">playerId</span></code> is -1 for all server messages. If the player sending the message is dead, their message is also prefixed by <code class="docutils literal notranslate"><span class="pre">HUD_CHAT_DEADPREFIX</span></code>. (Strings such as <code class="docutils literal notranslate"><span class="pre">HUD_TEXT_CHAT_TEAM</span></code>, <code class="docutils literal notranslate"><span class="pre">HUD_CHAT_DEADPREFIX</span></code>, and so on, are used as keys by the game engine to match and replace with localized text.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PlayerStatsResponse">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PlayerStatsResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">succeeded</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.PlayerStatsResponse" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.Update">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.Update" title="Permalink to this definition">#</a></dt>
+<dd><p>TBD</p>
+</dd></dl>
+
+</section>
+<section id="non-standard-events">
+<h3>Non-Standard Events<a class="headerlink" href="#non-standard-events" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.GameStatusChangedEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">GameStatusChangedEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.GameStatusChangedEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>This type of event is registered for with <a class="reference internal" href="host.html#host.registerGameStatusHandler" title="host.registerGameStatusHandler"><code class="xref py py-meth docutils literal notranslate"><span class="pre">host.registerGameStatusHandler()</span></code></a>. <code class="docutils literal notranslate"><span class="pre">status</span></code> is an integer status code enumerated by <a class="reference internal" href="bf2.html#bf2.GameStatus" title="bf2.GameStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.GameStatus</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.TriggerEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">TriggerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triggerID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vehicle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.TriggerEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>This type of event is registered for with <a class="reference internal" href="bf2.html#bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger" title="bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.triggerManager.createHemiSphericalTrigger</span></code></a> or <a class="reference internal" href="bf2.html#bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger" title="bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.triggerManager.createRadiusTrigger</span></code></a>; trigger <code class="docutils literal notranslate"><span class="pre">triggerID</span></code> is activated when <code class="docutils literal notranslate"><span class="pre">vehicle</span></code> comes within the preset radius of <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.TimerEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">TimerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.TimerEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>This type of event fires when a timer established with <a class="reference internal" href="bf2.html#bf2.Timer" title="bf2.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.Timer</span></code></a> expires. “data” is an optional piece of information (of any type) that can be set when the timer is established.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="mysterious-events">
+<h2>Mysterious Events<a class="headerlink" href="#mysterious-events" title="Permalink to this heading">#</a></h2>
+<p>These strings were found in the server executable, and appear to be internal game engine events. They seem to not be accessible from Python, except in a few cases, where there is a correspondence between these “events” and Python events (e.g. “BeginRoundEvent” may be the same as “BeginRound”). For more information, see <a class="reference internal" href="../../engine/internals.html"><span class="doc">BF2 Internals</span></a>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="host.RemoveSpawnGroupEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">RemoveSpawnGroupEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.RemoveSpawnGroupEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CreateSpawnGroupEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CreateSpawnGroupEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CreateSpawnGroupEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ContentCheckEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ContentCheckEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ContentCheckEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.UAVEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">UAVEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.UAVEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.MissileInitEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">MissileInitEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.MissileInitEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.UnlockEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">UnlockEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.UnlockEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.MedalEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">MedalEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.MedalEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ToggleFreeCameraEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ToggleFreeCameraEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ToggleFreeCameraEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.VoipSessionEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">VoipSessionEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.VoipSessionEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.RequestEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">RequestEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.RequestEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PythonCommandEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PythonCommandEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.PythonCommandEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.EndOfRoundEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">EndOfRoundEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.EndOfRoundEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>→ EndRound</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.BeginRoundEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">BeginRoundEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.BeginRoundEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>→ BeginRound</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.TargetDirectionEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">TargetDirectionEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.TargetDirectionEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.VoteEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">VoteEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.VoteEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.VoipPlayerMuteEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">VoipPlayerMuteEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.VoipPlayerMuteEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.SupplyDropEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">SupplyDropEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.SupplyDropEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CommanderCamEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CommanderCamEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CommanderCamEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.VoipOnOffEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">VoipOnOffEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.VoipOnOffEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.AmbientEffectAreaEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">AmbientEffectAreaEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.AmbientEffectAreaEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.StickyProjectileEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">StickyProjectileEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.StickyProjectileEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ArtilleryEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ArtilleryEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ArtilleryEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.SpottedEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">SpottedEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.SpottedEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.SetSquadLeaderEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">SetSquadLeaderEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.SetSquadLeaderEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.SetAcceptOrderEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">SetAcceptOrderEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.SetAcceptOrderEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.KickBanEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">KickBanEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.KickBanEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.RankEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">RankEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.RankEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.InviteEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">InviteEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.InviteEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.IssueSquadOrderEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">IssueSquadOrderEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.IssueSquadOrderEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.SetPrivateSquadEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">SetPrivateSquadEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.SetPrivateSquadEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChangeSquadNameEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChangeSquadNameEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ChangeSquadNameEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.KilledByEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">KilledByEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.KilledByEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.RadioMessageEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">RadioMessageEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.RadioMessageEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CommanderEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CommanderEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CommanderEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.LeaveSquadEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">LeaveSquadEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.LeaveSquadEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.JoinSquadEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">JoinSquadEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.JoinSquadEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.StringBlockEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">StringBlockEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.StringBlockEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.HandleDropEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">HandleDropEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.HandleDropEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.HandlePickupEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">HandlePickupEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.HandlePickupEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChangePlayerNameEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChangePlayerNameEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ChangePlayerNameEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.PostRemoteEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">PostRemoteEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.PostRemoteEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ExitVehicleEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ExitVehicleEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ExitVehicleEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>→ ExitVehicle</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.EnterVehicleEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">EnterVehicleEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.EnterVehicleEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>→ EnterVehicle</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.DestroyPlayerEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">DestroyPlayerEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.DestroyPlayerEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.DestroyObjectEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">DestroyObjectEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.DestroyObjectEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CreateKitEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CreateKitEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CreateKitEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CreateObjectEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CreateObjectEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CreateObjectEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.CreatePlayerEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">CreatePlayerEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.CreatePlayerEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.DataBlockEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">DataBlockEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.DataBlockEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ConnectionTypeEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ConnectionTypeEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ConnectionTypeEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChallengeResponseEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChallengeResponseEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ChallengeResponseEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="host.ChallengeEvent">
+<span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">ChallengeEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.ChallengeEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="event-patterns">
+<h2>Event Patterns<a class="headerlink" href="#event-patterns" title="Permalink to this heading">#</a></h2>
+<p>While each event documented here corresponds to a discrete change of game state, there are certain actions that happen in the game that cause a fixed sequence of events to happen every time-a PlayerSpawn event, for example, is always followed by a <a class="reference internal" href="#host.PlayerChangeWeapon" title="host.PlayerChangeWeapon"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerChangeWeapon()</span></code></a> event and a PickupKit event. This section documents some of these recurring patterns.</p>
+<section id="player-spawn">
+<h3>Player Spawn<a class="headerlink" href="#player-spawn" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><a class="reference internal" href="#host.PlayerConnect" title="host.PlayerConnect"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerConnect()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerSpawn" title="host.PlayerSpawn"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerSpawn()</span></code></a></p>
+<p>Player becomes associated with a <a class="reference internal" href="objects.html#soldierObject" title="soldierObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">soldierObject</span></code></a>.</p>
+</li>
+<li><p><a class="reference internal" href="#host.PlayerChangeWeapon" title="host.PlayerChangeWeapon"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerChangeWeapon()</span></code></a></p>
+<p>From <code class="docutils literal notranslate"><span class="pre">None</span></code> to a <a class="reference internal" href="objects.html#weaponObject" title="weaponObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">weaponObject</span></code></a>.</p>
+</li>
+<li><p><a class="reference internal" href="#host.PickupKit" title="host.PickupKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">PickupKit()</span></code></a></p></li>
+</ol>
+</section>
+<section id="player-killed">
+<h3>Player Killed<a class="headerlink" href="#player-killed" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><a class="reference internal" href="#host.PlayerKilled" title="host.PlayerKilled"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerKilled()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerScore" title="host.PlayerScore"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerScore()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.DropKit" title="host.DropKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">DropKit()</span></code></a></p>
+<p>The victim drops their kit.</p>
+</li>
+<li><p><a class="reference internal" href="#host.ExitVehicle" title="host.ExitVehicle"><code class="xref py py-func docutils literal notranslate"><span class="pre">ExitVehicle()</span></code></a></p>
+<p>If player is inside a vehicle.</p>
+</li>
+<li><p><a class="reference internal" href="#host.PlayerDeath" title="host.PlayerDeath"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDeath()</span></code></a></p></li>
+</ol>
+</section>
+<section id="player-revived">
+<h3>Player Revived<a class="headerlink" href="#player-revived" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><a class="reference internal" href="#host.PlayerKilled" title="host.PlayerKilled"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerKilled()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerScore" title="host.PlayerScore"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerScore()</span></code></a></p>
+<p>For attacker.</p>
+</li>
+<li><p><a class="reference internal" href="#host.DropKit" title="host.DropKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">DropKit()</span></code></a></p>
+<p>Victim drops their kit.</p>
+</li>
+<li><p><a class="reference internal" href="#host.PlayerRevived" title="host.PlayerRevived"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerRevived()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PickupKit" title="host.PickupKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">PickupKit()</span></code></a></p>
+<p>Revived player picks up the nearest kit [hopefully, but not necessarily, their old one]; if there is no kit nearby, they default to picking up an “assault” kit.</p>
+</li>
+<li><p><a class="reference internal" href="#host.PlayerScore" title="host.PlayerScore"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerScore()</span></code></a></p>
+<p>For medic who did the revive.</p>
+</li>
+</ol>
+</section>
+<section id="flag-change">
+<h3>Flag Change<a class="headerlink" href="#flag-change" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><a class="reference internal" href="#host.ControlPointChangedOwner" title="host.ControlPointChangedOwner"><code class="xref py py-func docutils literal notranslate"><span class="pre">ControlPointChangedOwner()</span></code></a></p>
+<p>When neutralized.</p>
+</li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerScoreEvent()</span></code></p>
+<p>Score for having neutralized flag, repeated for each attacker in CP radius.</p>
+</li>
+<li><p><a class="reference internal" href="#host.ControlPointChangedOwner" title="host.ControlPointChangedOwner"><code class="xref py py-func docutils literal notranslate"><span class="pre">ControlPointChangedOwner()</span></code></a></p>
+<p>When capture complete.</p>
+</li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerScoreEvent()</span></code></p>
+<p>Score for having completed capture, repeated for each attacker in CP radius.</p>
+</li>
+</ol>
+</section>
+<section id="player-kicked">
+<h3>Player Kicked<a class="headerlink" href="#player-kicked" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#host.PlayerKicked" title="host.PlayerKicked"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerKicked()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.DropKit" title="host.DropKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">DropKit()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerDeath" title="host.PlayerDeath"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDeath()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerDisconnect" title="host.PlayerDisconnect"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDisconnect()</span></code></a></p></li>
+</ol>
+</section>
+<section id="player-banned">
+<h3>Player Banned<a class="headerlink" href="#player-banned" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#host.PlayerBanned" title="host.PlayerBanned"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerBanned()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerKicked" title="host.PlayerKicked"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerKicked()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.DropKit" title="host.DropKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">DropKit()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerDeath" title="host.PlayerDeath"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDeath()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#host.PlayerDisconnect" title="host.PlayerDisconnect"><code class="xref py py-func docutils literal notranslate"><span class="pre">PlayerDisconnect()</span></code></a></p></li>
+</ol>
+</section>
+<section id="overall-game-state-change">
+<h3>Overall Game State Change<a class="headerlink" href="#overall-game-state-change" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">StatusChange()</span></code></p>
+<p>To <code class="docutils literal notranslate"><span class="pre">PreGame</span></code>.</p>
+</li>
+<li><p><a class="reference internal" href="#host.Reset" title="host.Reset"><code class="xref py py-func docutils literal notranslate"><span class="pre">Reset()</span></code></a></p>
+<p>This event doesn’t happen in the first round after a server starts.</p>
+</li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">StatusChange()</span></code></p>
+<p>To <code class="docutils literal notranslate"><span class="pre">Playing</span></code>; stay here until enough players connect.</p>
+</li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">StatusChange()</span></code></p>
+<p>To <code class="docutils literal notranslate"><span class="pre">PreGame</span></code>, once enough players have connected.</p>
+</li>
+<li><p><a class="reference internal" href="#host.Reset" title="host.Reset"><code class="xref py py-func docutils literal notranslate"><span class="pre">Reset()</span></code></a></p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">StatusChange()</span></code></p>
+<p>To <code class="docutils literal notranslate"><span class="pre">Playing</span></code>-the real game round now begins.</p>
+</li>
+<li><p>Play game, beginning with players spawning in.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">StatusChange()</span></code></p>
+<p>To <code class="docutils literal notranslate"><span class="pre">EndGame</span></code>.</p>
+</li>
+<li><p><a class="reference internal" href="#host.DropKit" title="host.DropKit"><code class="xref py py-func docutils literal notranslate"><span class="pre">DropKit()</span></code></a></p>
+<p>For each player still in game at end.</p>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="bf2.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">bf2</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">References</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Events</a><ul>
+<li><a class="reference internal" href="#types-of-events">Types of Events</a><ul>
+<li><a class="reference internal" href="#standard-events">Standard Events</a></li>
+<li><a class="reference internal" href="#game-status-events">Game Status Events</a></li>
+<li><a class="reference internal" href="#trigger-events">Trigger Events</a></li>
+<li><a class="reference internal" href="#timer-events">Timer Events</a><ul>
+<li><a class="reference internal" href="#host.bf2.Timer"><code class="docutils literal notranslate"><span class="pre">bf2.Timer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#descriptions-of-events">Descriptions of Events</a><ul>
+<li><a class="reference internal" href="#host.EventName"><code class="docutils literal notranslate"><span class="pre">EventName()</span></code></a></li>
+<li><a class="reference internal" href="#server-events">Server Events</a><ul>
+<li><a class="reference internal" href="#host.ServerReady"><code class="docutils literal notranslate"><span class="pre">ServerReady()</span></code></a></li>
+<li><a class="reference internal" href="#host.BeginRound"><code class="docutils literal notranslate"><span class="pre">BeginRound()</span></code></a></li>
+<li><a class="reference internal" href="#host.EndRound"><code class="docutils literal notranslate"><span class="pre">EndRound()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#player-events">Player Events</a><ul>
+<li><a class="reference internal" href="#host.PlayerConnect"><code class="docutils literal notranslate"><span class="pre">PlayerConnect()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerSpawn"><code class="docutils literal notranslate"><span class="pre">PlayerSpawn()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerChangeTeams"><code class="docutils literal notranslate"><span class="pre">PlayerChangeTeams()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerChangeWeapon"><code class="docutils literal notranslate"><span class="pre">PlayerChangeWeapon()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerChangedSquad"><code class="docutils literal notranslate"><span class="pre">PlayerChangedSquad()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerScore"><code class="docutils literal notranslate"><span class="pre">PlayerScore()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerHealPoint"><code class="docutils literal notranslate"><span class="pre">PlayerHealPoint()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerRepairPoint"><code class="docutils literal notranslate"><span class="pre">PlayerRepairPoint()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerGiveAmmoPoint"><code class="docutils literal notranslate"><span class="pre">PlayerGiveAmmoPoint()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerTeamDamagePoint"><code class="docutils literal notranslate"><span class="pre">PlayerTeamDamagePoint()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerKilled"><code class="docutils literal notranslate"><span class="pre">PlayerKilled()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerRevived"><code class="docutils literal notranslate"><span class="pre">PlayerRevived()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerDeath"><code class="docutils literal notranslate"><span class="pre">PlayerDeath()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerBanned"><code class="docutils literal notranslate"><span class="pre">PlayerBanned()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerKicked"><code class="docutils literal notranslate"><span class="pre">PlayerKicked()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerDisconnect"><code class="docutils literal notranslate"><span class="pre">PlayerDisconnect()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vehicle-and-kit-events">Vehicle and Kit Events</a><ul>
+<li><a class="reference internal" href="#host.EnterVehicle"><code class="docutils literal notranslate"><span class="pre">EnterVehicle()</span></code></a></li>
+<li><a class="reference internal" href="#host.ExitVehicle"><code class="docutils literal notranslate"><span class="pre">ExitVehicle()</span></code></a></li>
+<li><a class="reference internal" href="#host.VehicleDestroyed"><code class="docutils literal notranslate"><span class="pre">VehicleDestroyed()</span></code></a></li>
+<li><a class="reference internal" href="#host.PickupKit"><code class="docutils literal notranslate"><span class="pre">PickupKit()</span></code></a></li>
+<li><a class="reference internal" href="#host.DropKit"><code class="docutils literal notranslate"><span class="pre">DropKit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#team-events">Team Events</a><ul>
+<li><a class="reference internal" href="#host.Reset"><code class="docutils literal notranslate"><span class="pre">Reset()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChangedCommander"><code class="docutils literal notranslate"><span class="pre">ChangedCommander()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChangedSquadLeader"><code class="docutils literal notranslate"><span class="pre">ChangedSquadLeader()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#game-events">Game Events</a><ul>
+<li><a class="reference internal" href="#host.ControlPointChangedOwner"><code class="docutils literal notranslate"><span class="pre">ControlPointChangedOwner()</span></code></a></li>
+<li><a class="reference internal" href="#host.TimeLimitReached"><code class="docutils literal notranslate"><span class="pre">TimeLimitReached()</span></code></a></li>
+<li><a class="reference internal" href="#host.TicketLimitReached"><code class="docutils literal notranslate"><span class="pre">TicketLimitReached()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#command-events">Command Events</a><ul>
+<li><a class="reference internal" href="#host.ConsoleSendCommand"><code class="docutils literal notranslate"><span class="pre">ConsoleSendCommand()</span></code></a></li>
+<li><a class="reference internal" href="#host.RemoteCommand"><code class="docutils literal notranslate"><span class="pre">RemoteCommand()</span></code></a></li>
+<li><a class="reference internal" href="#host.ClientCommand"><code class="docutils literal notranslate"><span class="pre">ClientCommand()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#miscellaneous-events">Miscellaneous Events</a><ul>
+<li><a class="reference internal" href="#host.PlayerUnlocksResponse"><code class="docutils literal notranslate"><span class="pre">PlayerUnlocksResponse()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerAwardsResponse"><code class="docutils literal notranslate"><span class="pre">PlayerAwardsResponse()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage()</span></code></a></li>
+<li><a class="reference internal" href="#host.PlayerStatsResponse"><code class="docutils literal notranslate"><span class="pre">PlayerStatsResponse()</span></code></a></li>
+<li><a class="reference internal" href="#host.Update"><code class="docutils literal notranslate"><span class="pre">Update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#non-standard-events">Non-Standard Events</a><ul>
+<li><a class="reference internal" href="#host.GameStatusChangedEvent"><code class="docutils literal notranslate"><span class="pre">GameStatusChangedEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.TriggerEvent"><code class="docutils literal notranslate"><span class="pre">TriggerEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.TimerEvent"><code class="docutils literal notranslate"><span class="pre">TimerEvent()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mysterious-events">Mysterious Events</a><ul>
+<li><a class="reference internal" href="#host.RemoveSpawnGroupEvent"><code class="docutils literal notranslate"><span class="pre">RemoveSpawnGroupEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CreateSpawnGroupEvent"><code class="docutils literal notranslate"><span class="pre">CreateSpawnGroupEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ContentCheckEvent"><code class="docutils literal notranslate"><span class="pre">ContentCheckEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.UAVEvent"><code class="docutils literal notranslate"><span class="pre">UAVEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.MissileInitEvent"><code class="docutils literal notranslate"><span class="pre">MissileInitEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.UnlockEvent"><code class="docutils literal notranslate"><span class="pre">UnlockEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.MedalEvent"><code class="docutils literal notranslate"><span class="pre">MedalEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ToggleFreeCameraEvent"><code class="docutils literal notranslate"><span class="pre">ToggleFreeCameraEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.VoipSessionEvent"><code class="docutils literal notranslate"><span class="pre">VoipSessionEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.RequestEvent"><code class="docutils literal notranslate"><span class="pre">RequestEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.PythonCommandEvent"><code class="docutils literal notranslate"><span class="pre">PythonCommandEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.EndOfRoundEvent"><code class="docutils literal notranslate"><span class="pre">EndOfRoundEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.BeginRoundEvent"><code class="docutils literal notranslate"><span class="pre">BeginRoundEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.TargetDirectionEvent"><code class="docutils literal notranslate"><span class="pre">TargetDirectionEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.VoteEvent"><code class="docutils literal notranslate"><span class="pre">VoteEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.VoipPlayerMuteEvent"><code class="docutils literal notranslate"><span class="pre">VoipPlayerMuteEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.SupplyDropEvent"><code class="docutils literal notranslate"><span class="pre">SupplyDropEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CommanderCamEvent"><code class="docutils literal notranslate"><span class="pre">CommanderCamEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.VoipOnOffEvent"><code class="docutils literal notranslate"><span class="pre">VoipOnOffEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.AmbientEffectAreaEvent"><code class="docutils literal notranslate"><span class="pre">AmbientEffectAreaEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.StickyProjectileEvent"><code class="docutils literal notranslate"><span class="pre">StickyProjectileEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ArtilleryEvent"><code class="docutils literal notranslate"><span class="pre">ArtilleryEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.SpottedEvent"><code class="docutils literal notranslate"><span class="pre">SpottedEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.SetSquadLeaderEvent"><code class="docutils literal notranslate"><span class="pre">SetSquadLeaderEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.SetAcceptOrderEvent"><code class="docutils literal notranslate"><span class="pre">SetAcceptOrderEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.KickBanEvent"><code class="docutils literal notranslate"><span class="pre">KickBanEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.RankEvent"><code class="docutils literal notranslate"><span class="pre">RankEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.InviteEvent"><code class="docutils literal notranslate"><span class="pre">InviteEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.IssueSquadOrderEvent"><code class="docutils literal notranslate"><span class="pre">IssueSquadOrderEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.SetPrivateSquadEvent"><code class="docutils literal notranslate"><span class="pre">SetPrivateSquadEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChangeSquadNameEvent"><code class="docutils literal notranslate"><span class="pre">ChangeSquadNameEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.KilledByEvent"><code class="docutils literal notranslate"><span class="pre">KilledByEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.RadioMessageEvent"><code class="docutils literal notranslate"><span class="pre">RadioMessageEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CommanderEvent"><code class="docutils literal notranslate"><span class="pre">CommanderEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.LeaveSquadEvent"><code class="docutils literal notranslate"><span class="pre">LeaveSquadEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.JoinSquadEvent"><code class="docutils literal notranslate"><span class="pre">JoinSquadEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.StringBlockEvent"><code class="docutils literal notranslate"><span class="pre">StringBlockEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.HandleDropEvent"><code class="docutils literal notranslate"><span class="pre">HandleDropEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.HandlePickupEvent"><code class="docutils literal notranslate"><span class="pre">HandlePickupEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChangePlayerNameEvent"><code class="docutils literal notranslate"><span class="pre">ChangePlayerNameEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.PostRemoteEvent"><code class="docutils literal notranslate"><span class="pre">PostRemoteEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ExitVehicleEvent"><code class="docutils literal notranslate"><span class="pre">ExitVehicleEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.EnterVehicleEvent"><code class="docutils literal notranslate"><span class="pre">EnterVehicleEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.DestroyPlayerEvent"><code class="docutils literal notranslate"><span class="pre">DestroyPlayerEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.DestroyObjectEvent"><code class="docutils literal notranslate"><span class="pre">DestroyObjectEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CreateKitEvent"><code class="docutils literal notranslate"><span class="pre">CreateKitEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CreateObjectEvent"><code class="docutils literal notranslate"><span class="pre">CreateObjectEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.CreatePlayerEvent"><code class="docutils literal notranslate"><span class="pre">CreatePlayerEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.DataBlockEvent"><code class="docutils literal notranslate"><span class="pre">DataBlockEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ConnectionTypeEvent"><code class="docutils literal notranslate"><span class="pre">ConnectionTypeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChallengeResponseEvent"><code class="docutils literal notranslate"><span class="pre">ChallengeResponseEvent()</span></code></a></li>
+<li><a class="reference internal" href="#host.ChallengeEvent"><code class="docutils literal notranslate"><span class="pre">ChallengeEvent()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#event-patterns">Event Patterns</a><ul>
+<li><a class="reference internal" href="#player-spawn">Player Spawn</a></li>
+<li><a class="reference internal" href="#player-killed">Player Killed</a></li>
+<li><a class="reference internal" href="#player-revived">Player Revived</a></li>
+<li><a class="reference internal" href="#flag-change">Flag Change</a></li>
+<li><a class="reference internal" href="#player-kicked">Player Kicked</a></li>
+<li><a class="reference internal" href="#player-banned">Player Banned</a></li>
+<li><a class="reference internal" href="#overall-game-state-change">Overall Game State Change</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

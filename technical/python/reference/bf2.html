@@ -1,0 +1,1374 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="host" href="host.html" /><link rel="prev" title="Events" href="events.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>bf2 - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/objecttemplates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../engine/time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/aicode.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modding/systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Battlefield Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">References</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/info.html">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../community/factions/requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="bf2">
+<h1>bf2<a class="headerlink" href="#bf2" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.GameStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.</span></span><span class="sig-name descname"><span class="pre">GameStatus</span></span><a class="headerlink" href="#bf2.GameStatus" title="Permalink to this definition">#</a></dt>
+<dd><p>Just used as a container for the constant values returned by callbacks from the <code class="docutils literal notranslate"><span class="pre">GameStatusChanged</span></code> event</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.Playing">
+<span class="sig-name descname"><span class="pre">Playing</span></span><a class="headerlink" href="#bf2.GameStatus.Playing" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.EndGame">
+<span class="sig-name descname"><span class="pre">EndGame</span></span><a class="headerlink" href="#bf2.GameStatus.EndGame" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.PreGame">
+<span class="sig-name descname"><span class="pre">PreGame</span></span><a class="headerlink" href="#bf2.GameStatus.PreGame" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.Paused">
+<span class="sig-name descname"><span class="pre">Paused</span></span><a class="headerlink" href="#bf2.GameStatus.Paused" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.RestartServer">
+<span class="sig-name descname"><span class="pre">RestartServer</span></span><a class="headerlink" href="#bf2.GameStatus.RestartServer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.GameStatus.NotConnected">
+<span class="sig-name descname"><span class="pre">NotConnected</span></span><a class="headerlink" href="#bf2.GameStatus.NotConnected" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access these class attributes.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.GameLogic.</span></span><span class="sig-name descname"><span class="pre">GameLogic</span></span><a class="headerlink" href="#bf2.GameLogic.GameLogic" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper around lots of BF2 engine stuff accessible through host, apparently to make it more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object <code class="docutils literal notranslate"><span class="pre">bf2.gameLogic</span></code>.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access the methods and attributes of this object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getModDir">
+<span class="sig-name descname"><span class="pre">getModDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getModDir" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getMapName">
+<span class="sig-name descname"><span class="pre">getMapName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getMapName" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getWorldSize">
+<span class="sig-name descname"><span class="pre">getWorldSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getWorldSize" title="Permalink to this definition">#</a></dt>
+<dd><p>returns a tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getTeamName">
+<span class="sig-name descname"><span class="pre">getTeamName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getTeamName" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.isAIGame">
+<span class="sig-name descname"><span class="pre">isAIGame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.isAIGame" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendClientCommand">
+<span class="sig-name descname"><span class="pre">sendClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendClientCommand" title="Permalink to this definition">#</a></dt>
+<dd><p>Appears to tell game engine to prompt a player for input; the player’s response returns control to Python by generating a <code class="docutils literal notranslate"><span class="pre">`ClientCommand</span></code> &lt;../events.rst#command-events&gt;`_ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendGameEvent">
+<span class="sig-name descname"><span class="pre">sendGameEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendGameEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>Tells the BF2 game engine to cause a <a class="reference internal" href="events.html#game-events"><span class="std std-ref">GameEvent</span></a> to occur.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendMedalEvent">
+<span class="sig-name descname"><span class="pre">sendMedalEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendMedalEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendRankEvent">
+<span class="sig-name descname"><span class="pre">sendRankEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendRankEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendHudEvent">
+<span class="sig-name descname"><span class="pre">sendHudEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendHudEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>Tells the BF2 game engine to cause a <a class="reference internal" href="hud.html"><span class="doc">HudEvent</span></a> to occur.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.sendServerMessage">
+<span class="sig-name descname"><span class="pre">sendServerMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.sendServerMessage" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getTicketState">
+<span class="sig-name descname"><span class="pre">getTicketState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getTicketState" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTicketState">
+<span class="sig-name descname"><span class="pre">setTicketState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTicketState" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getTickets">
+<span class="sig-name descname"><span class="pre">getTickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getTickets" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTickets">
+<span class="sig-name descname"><span class="pre">setTickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTickets" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getDefaultTickets">
+<span class="sig-name descname"><span class="pre">getDefaultTickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getDefaultTickets" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getTicketChangePerSecond">
+<span class="sig-name descname"><span class="pre">getTicketChangePerSecond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getTicketChangePerSecond" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTicketChangePerSecond">
+<span class="sig-name descname"><span class="pre">setTicketChangePerSecond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTicketChangePerSecond" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getTicketLimit">
+<span class="sig-name descname"><span class="pre">getTicketLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getTicketLimit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTicketLimit">
+<span class="sig-name descname"><span class="pre">setTicketLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTicketLimit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getDefaultTicketLossPerMin">
+<span class="sig-name descname"><span class="pre">getDefaultTicketLossPerMin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getDefaultTicketLossPerMin" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getDefaultTicketLossAtEndPerMin">
+<span class="sig-name descname"><span class="pre">getDefaultTicketLossAtEndPerMin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getDefaultTicketLossAtEndPerMin" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getWinner">
+<span class="sig-name descname"><span class="pre">getWinner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getWinner" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.getVictoryType">
+<span class="sig-name descname"><span class="pre">getVictoryType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getVictoryType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setHealPointLimit">
+<span class="sig-name descname"><span class="pre">setHealPointLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setHealPointLimit" title="Permalink to this definition">#</a></dt>
+<dd><p>Percentage heal required to trigger a <code class="docutils literal notranslate"><span class="pre">`PlayerHealPoint</span></code> &lt;../events.rst#player-events&gt;`_ event.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setRepairPointLimit">
+<span class="sig-name descname"><span class="pre">setRepairPointLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setRepairPointLimit" title="Permalink to this definition">#</a></dt>
+<dd><p>Percentage heal required to trigger a <code class="docutils literal notranslate"><span class="pre">`PlayerRepairPoint</span></code> &lt;../events.rst#player-events&gt;`_ event.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setGiveAmmoPointLimit">
+<span class="sig-name descname"><span class="pre">setGiveAmmoPointLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setGiveAmmoPointLimit" title="Permalink to this definition">#</a></dt>
+<dd><p>Percentage heal required to trigger a <code class="docutils literal notranslate"><span class="pre">`PlayerGiveAmmoPoint</span></code> &lt;../events.rst#player-events&gt;`_ event.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTeamDamagePointLimit">
+<span class="sig-name descname"><span class="pre">setTeamDamagePointLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTeamDamagePointLimit" title="Permalink to this definition">#</a></dt>
+<dd><p>Percentage heal required to trigger a <code class="docutils literal notranslate"><span class="pre">`PlayerTeamDamagePoint</span></code> &lt;../events.rst#player-events&gt;`_ event.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.GameLogic.setTeamVehicleDamagePointLimit">
+<span class="sig-name descname"><span class="pre">setTeamVehicleDamagePointLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.setTeamVehicleDamagePointLimit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.GameLogic.</span></span><span class="sig-name descname"><span class="pre">ServerSettings</span></span><a class="headerlink" href="#bf2.GameLogic.ServerSettings" title="Permalink to this definition">#</a></dt>
+<dd><p>Another wrapper around more BF2 engine stuff that’s accessible through host; this class makes it accessing these things cleaner and more Pythonic. During its initialization the bf2 class instantiates this class as the singleton object <code class="docutils literal notranslate"><span class="pre">bf2.serverSettings</span></code>.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access the methods and attributes of this object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTicketRatio">
+<span class="sig-name descname"><span class="pre">getTicketRatio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTicketRatio" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTeamRatioPercent">
+<span class="sig-name descname"><span class="pre">getTeamRatioPercent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTeamRatioPercent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getMaxPlayers">
+<span class="sig-name descname"><span class="pre">getMaxPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getMaxPlayers" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getGameMode">
+<span class="sig-name descname"><span class="pre">getGameMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getGameMode" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getMapName">
+<span class="sig-name descname"><span class="pre">getMapName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getMapName" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTimeLimit">
+<span class="sig-name descname"><span class="pre">getTimeLimit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTimeLimit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getScoreLimit">
+<span class="sig-name descname"><span class="pre">getScoreLimit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getScoreLimit" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getAutoBalanceTeam">
+<span class="sig-name descname"><span class="pre">getAutoBalanceTeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getAutoBalanceTeam" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTKPunishEnabled">
+<span class="sig-name descname"><span class="pre">getTKPunishEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTKPunishEnabled" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTKNumPunishToKick">
+<span class="sig-name descname"><span class="pre">getTKNumPunishToKick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTKNumPunishToKick" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getTKPunishByDefault">
+<span class="sig-name descname"><span class="pre">getTKPunishByDefault</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getTKPunishByDefault" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getUseGlobalRank">
+<span class="sig-name descname"><span class="pre">getUseGlobalRank</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getUseGlobalRank" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.GameLogic.ServerSettings.getUseGlobalUnlocks">
+<span class="sig-name descname"><span class="pre">getUseGlobalUnlocks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.ServerSettings.getUseGlobalUnlocks" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p>You cannot find out server name, port and other similar information this way. Instead, use f.e. <code class="docutils literal notranslate"><span class="pre">host.rcon_invoke('sv.serverName')</span></code> to get the server name.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.ObjectManager.ObjectManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.ObjectManager.</span></span><span class="sig-name descname"><span class="pre">ObjectManager</span></span><a class="headerlink" href="#bf2.ObjectManager.ObjectManager" title="Permalink to this definition">#</a></dt>
+<dd><p>During its initialization the bf2 class instantiates this class as the singleton object <code class="docutils literal notranslate"><span class="pre">bf2.objectManager</span></code>. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found <a class="reference internal" href="../../engine/objecttemplates.html"><span class="doc">here</span></a>.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access the methods and attributes of this object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.ObjectManager.ObjectManager.getObjectsOfType">
+<span class="sig-name descname"><span class="pre">getObjectsOfType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span> <span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.ObjectManager.ObjectManager.getObjectsOfType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.ObjectManager.ObjectManager.getObjectsOfTemplate">
+<span class="sig-name descname"><span class="pre">getObjectsOfTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span> <span class="pre">template</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.ObjectManager.ObjectManager.getObjectsOfTemplate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.PlayerManager.</span></span><span class="sig-name descname"><span class="pre">PlayerScore</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore" title="Permalink to this definition">#</a></dt>
+<dd><p>Objects of this class maintain a long list of player score attributes. They are used inside of objects of the <code class="docutils literal notranslate"><span class="pre">Player</span></code> class; for any <code class="docutils literal notranslate"><span class="pre">Player</span></code> object x, <code class="docutils literal notranslate"><span class="pre">x.score</span></code> is an object of class <code class="docutils literal notranslate"><span class="pre">PlayerScore</span></code>.</p>
+<p>You will not normally create objects of this class; they are created automatically as part of the <code class="docutils literal notranslate"><span class="pre">Player</span></code> class when <code class="docutils literal notranslate"><span class="pre">Player</span></code> objects are created. No special imports are necessary to access methods and attributes of these objects.</p>
+<p>There is also a separate <code class="docutils literal notranslate"><span class="pre">player.stats</span></code> object, which tracks different information. You can use the following code fragment to see all of the variables in the <code class="docutils literal notranslate"><span class="pre">player.stats</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">stats</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets all score attributes stored within the object itself.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.index">
+<span class="sig-name descname"><span class="pre">index</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.index" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.heals">
+<span class="sig-name descname"><span class="pre">heals</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.heals" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.ammos">
+<span class="sig-name descname"><span class="pre">ammos</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.ammos" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.repairs">
+<span class="sig-name descname"><span class="pre">repairs</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.repairs" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.damageAssists">
+<span class="sig-name descname"><span class="pre">damageAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.damageAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.passengerAssists">
+<span class="sig-name descname"><span class="pre">passengerAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.passengerAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.driverAssists">
+<span class="sig-name descname"><span class="pre">driverAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.driverAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.targetAssists">
+<span class="sig-name descname"><span class="pre">targetAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.targetAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.driverSpecials">
+<span class="sig-name descname"><span class="pre">driverSpecials</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.driverSpecials" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.revives">
+<span class="sig-name descname"><span class="pre">revives</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.revives" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.teamDamages">
+<span class="sig-name descname"><span class="pre">teamDamages</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.teamDamages" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.teamVehicleDamages">
+<span class="sig-name descname"><span class="pre">teamVehicleDamages</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.teamVehicleDamages" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cpCaptures">
+<span class="sig-name descname"><span class="pre">cpCaptures</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cpCaptures" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cpDefends">
+<span class="sig-name descname"><span class="pre">cpDefends</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cpDefends" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cpAssists">
+<span class="sig-name descname"><span class="pre">cpAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cpAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.suicides">
+<span class="sig-name descname"><span class="pre">suicides</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.suicides" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cpNeutralizes">
+<span class="sig-name descname"><span class="pre">cpNeutralizes</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cpNeutralizes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cpNeutralizeAssists">
+<span class="sig-name descname"><span class="pre">cpNeutralizeAssists</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cpNeutralizeAssists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.rplScore">
+<span class="sig-name descname"><span class="pre">rplScore</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.rplScore" title="Permalink to this definition">#</a></dt>
+<dd><p>This attribute may not be in all versions of BF2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.skillScore">
+<span class="sig-name descname"><span class="pre">skillScore</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.skillScore" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.PlayerScore.cmdScore">
+<span class="sig-name descname"><span class="pre">cmdScore</span></span><a class="headerlink" href="#bf2.PlayerManager.PlayerScore.cmdScore" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p>Class attributes stored in the BF2 engine</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">deaths</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kills</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TKs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skillScore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rplScore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmdScore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fracScore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rank</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">firstPlace</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">secondPlace</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thirdPlace</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bulletsFired</span></code></p>
+<blockquote>
+<div><p>Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:</p>
+<p><code class="docutils literal notranslate"><span class="pre">((&quot;uspi-m16&quot;,</span> <span class="pre">30),</span> <span class="pre">(&quot;knife&quot;,</span> <span class="pre">3))</span></code></p>
+<p>Before the first weapon is fired, this may be <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bulletsGivingDamage</span></code></p>
+<blockquote>
+<div><p>Same as above, but only with bullets giving damage</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bulletsFiredAndClear</span></code></p>
+<blockquote>
+<div><p>The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bulletsGivingDamageAndClear</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dkRatio</span></code></p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.PlayerManager.</span></span><span class="sig-name descname"><span class="pre">Player</span></span><a class="headerlink" href="#bf2.PlayerManager.Player" title="Permalink to this definition">#</a></dt>
+<dd><p>An object of this class is created for each player in the game. When they are initialized, <code class="docutils literal notranslate"><span class="pre">Player</span></code> objects automatically instantiate a <code class="docutils literal notranslate"><span class="pre">PlayerScore</span></code> object and assign it to their score attribute.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2.PlayerManager</span></code> if you wish to create objects of this class; normally, however, you will just access methods and attributes of already existing <code class="docutils literal notranslate"><span class="pre">Player</span></code> objects that are returned to you by other calls, which requires no special import statement.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Instance creation</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">bf2</span><span class="o">.</span><span class="n">PlayerManager</span><span class="o">.</span><span class="n">Player</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.index">
+<span class="sig-name descname"><span class="pre">index</span></span><a class="headerlink" href="#bf2.PlayerManager.Player.index" title="Permalink to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">playerID</span></code> for this player.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.score">
+<span class="sig-name descname"><span class="pre">score</span></span><a class="headerlink" href="#bf2.PlayerManager.Player.score" title="Permalink to this definition">#</a></dt>
+<dd><p>Current score for this player.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isValid">
+<span class="sig-name descname"><span class="pre">isValid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isValid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isRemote">
+<span class="sig-name descname"><span class="pre">isRemote</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isRemote" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isAIPlayer">
+<span class="sig-name descname"><span class="pre">isAIPlayer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isAIPlayer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isAlive">
+<span class="sig-name descname"><span class="pre">isAlive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isAlive" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isManDown">
+<span class="sig-name descname"><span class="pre">isManDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isManDown" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isConnected">
+<span class="sig-name descname"><span class="pre">isConnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isConnected" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getProfileId">
+<span class="sig-name descname"><span class="pre">getProfileId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getProfileId" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isFlagHolder">
+<span class="sig-name descname"><span class="pre">isFlagHolder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isFlagHolder" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getTeam">
+<span class="sig-name descname"><span class="pre">getTeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getTeam" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setTeam">
+<span class="sig-name descname"><span class="pre">setTeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setTeam" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getPing">
+<span class="sig-name descname"><span class="pre">getPing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getPing" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the player’s ping (network transit time from player to server and back) in milliseconds</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getSuicide">
+<span class="sig-name descname"><span class="pre">getSuicide</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getSuicide" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns 1 if the player suicided. Resets once the player spawns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setSuicide">
+<span class="sig-name descname"><span class="pre">setSuicide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setSuicide" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getTimeToSpawn">
+<span class="sig-name descname"><span class="pre">getTimeToSpawn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getTimeToSpawn" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns 0 when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setTimeToSpawn">
+<span class="sig-name descname"><span class="pre">setTimeToSpawn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setTimeToSpawn" title="Permalink to this definition">#</a></dt>
+<dd><p>Appears to generate an exception if used on a player that is already spawned in; if used on a player that that is waiting to spawn it changes the time until they are allowed to spawn.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getSquadId">
+<span class="sig-name descname"><span class="pre">getSquadId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getSquadId" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the player’s squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isSquadLeader">
+<span class="sig-name descname"><span class="pre">isSquadLeader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isSquadLeader" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns 1 if player is a squad leader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.isCommander">
+<span class="sig-name descname"><span class="pre">isCommander</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isCommander" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns 1 if player is currently the commander.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getName" title="Permalink to this definition">#</a></dt>
+<dd><p>Return’s player’s name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setName" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets a player’s name (at least, it changes what <code class="docutils literal notranslate"><span class="pre">getName()</span></code> returns), but the change doesn’t show up in-game–everything in the game still shows the player’s old name.</p>
+<p>It is working, but only sees that player who connected after the name change.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getSpawnGroup">
+<span class="sig-name descname"><span class="pre">getSpawnGroup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getSpawnGroup" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setSpawnGroup">
+<span class="sig-name descname"><span class="pre">setSpawnGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setSpawnGroup" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getKit">
+<span class="sig-name descname"><span class="pre">getKit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getKit" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the current player’s kit object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getVehicle">
+<span class="sig-name descname"><span class="pre">getVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getVehicle" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the current player’s vehicle object. If the player is not in a vehicle at the time this returns the player’s soldier object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getDefaultVehicle">
+<span class="sig-name descname"><span class="pre">getDefaultVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getDefaultVehicle" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the player’s soldier object, no matter what vehicle they are in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getPrimaryWeapon">
+<span class="sig-name descname"><span class="pre">getPrimaryWeapon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getPrimaryWeapon" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the weapon object for the player’s currently selected weapon.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getAddress">
+<span class="sig-name descname"><span class="pre">getAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getAddress" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns player’s IP address.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.setIsInsideCP">
+<span class="sig-name descname"><span class="pre">setIsInsideCP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.setIsInsideCP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.Player.getIsInsideCP">
+<span class="sig-name descname"><span class="pre">getIsInsideCP</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getIsInsideCP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.PlayerManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.</span></span><span class="sig-name descname"><span class="pre">PlayerManager</span></span><a class="headerlink" href="#bf2.PlayerManager" title="Permalink to this definition">#</a></dt>
+<dd><p>This class is a wrapper around some player management functions in the BF2 engine, and also adds some simple calculations and logic to those functions. During its initialization the bf2 class instantiates this class as the singleton object <code class="docutils literal notranslate"><span class="pre">bf2.playerManager</span></code>.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access the methods and attributes of this object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getNumberOfPlayers">
+<span class="sig-name descname"><span class="pre">getNumberOfPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getNumberOfPlayers" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getCommander">
+<span class="sig-name descname"><span class="pre">getCommander</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getCommander" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getPlayers">
+<span class="sig-name descname"><span class="pre">getPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getPlayers" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getPlayerByIndex">
+<span class="sig-name descname"><span class="pre">getPlayerByIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getPlayerByIndex" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getNextPlayer">
+<span class="sig-name descname"><span class="pre">getNextPlayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getNextPlayer" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getNumberOfPlayersInTeam">
+<span class="sig-name descname"><span class="pre">getNumberOfPlayersInTeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getNumberOfPlayersInTeam" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.getNumberOfAlivePlayersInTeam">
+<span class="sig-name descname"><span class="pre">getNumberOfAlivePlayersInTeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.getNumberOfAlivePlayersInTeam" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.enableScoreEvents">
+<span class="sig-name descname"><span class="pre">enableScoreEvents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.enableScoreEvents" title="Permalink to this definition">#</a></dt>
+<dd><p>Enables PlayerScore events</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.PlayerManager.disableScoreEvents">
+<span class="sig-name descname"><span class="pre">disableScoreEvents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.disableScoreEvents" title="Permalink to this definition">#</a></dt>
+<dd><p>Disables PlayerScore events</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.Timer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><a class="headerlink" href="#bf2.Timer" title="Permalink to this definition">#</a></dt>
+<dd><p>(Not available in PR, use the <code class="docutils literal notranslate"><span class="pre">realitytimer</span></code> below.)</p>
+<p>Objects in this class are timers that can cause <a class="reference internal" href="events.html#timer-events"><span class="std std-ref">timer events</span></a> to be generated when a fixed amount of time has elapsed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.bf2.Timer">
+<span class="sig-prename descclassname"><span class="pre">bf2.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timerEventHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alwaysTrigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.bf2.Timer" title="Permalink to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>Note that even though <code class="docutils literal notranslate"><span class="pre">data</span></code> is optional when establishing a timer, the timerEventHandler must specify it as a parameter, or the handler won’t work.</p></li>
+<li><p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2.Timer</span></code> to create timer objects.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timerEventHandler</strong> – Handler to be called when <code class="docutils literal notranslate"><span class="pre">delta</span></code> seconds have elapsed since the creation of the timer.</p></li>
+<li><p><strong>alwaysTrigger</strong> – Should be 1 <em>(not sure what the alternative is)</em></p></li>
+<li><p><strong>data</strong> – Optional item (typically a tuple) that will be passed to <code class="docutils literal notranslate"><span class="pre">timerEventHandler</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.destroy" title="Permalink to this definition">#</a></dt>
+<dd><p>Destroys the associated game engine timer (but not the Python instance.)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.getTime">
+<span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.getTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the <a class="reference internal" href="../../engine/time.html"><span class="doc">wall time</span></a> at which this timer will fire.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.setTime">
+<span class="sig-name descname"><span class="pre">setTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.setTime" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the <a class="reference internal" href="../../engine/time.html"><span class="doc">wall time</span></a> at which this timer will fire.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.setRecurring">
+<span class="sig-name descname"><span class="pre">setRecurring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.setRecurring" title="Permalink to this definition">#</a></dt>
+<dd><p>Specifies this this timer should fire repeatedly, every interval seconds.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.Timer.onTrigger">
+<span class="sig-name descname"><span class="pre">onTrigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.onTrigger" title="Permalink to this definition">#</a></dt>
+<dd><p>For internal use only; calls <code class="docutils literal notranslate"><span class="pre">timerEventHandler</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realitytimer.py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realitytimer.</span></span><span class="sig-name descname"><span class="pre">py</span></span><a class="headerlink" href="#realitytimer.py" title="Permalink to this definition">#</a></dt>
+<dd><p>Project Reality timer (<code class="docutils literal notranslate"><span class="pre">realitytimer.py</span></code>) expands the default interface with the following:</p>
+<ul>
+<li><p>Exception catching with a debug message when an exception is not caught in the handler</p>
+<blockquote>
+<div><p>No need to worry about bad code crashing the server.</p>
+</div></blockquote>
+</li>
+<li><p>Internal check to make sure timers don’t fire after <a class="reference internal" href="#bf2.Timer.destroy" title="bf2.Timer.destroy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.Timer.destroy()</span></code></a> was called</p>
+<blockquote>
+<div><p>Can happen when <a class="reference internal" href="#bf2.Timer.destroy" title="bf2.Timer.destroy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.Timer.destroy()</span></code></a> is called on the same tick</p>
+</div></blockquote>
+</li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="realitytimer.py.fireOnce">
+<span class="sig-name descname"><span class="pre">fireOnce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targetFunc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#realitytimer.py.fireOnce" title="Permalink to this definition">#</a></dt>
+<dd><p>Class that can fire an event once after delay and then destroy itself. No need to store reference.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realitytimer.py.fireNextTick">
+<span class="sig-name descname"><span class="pre">fireNextTick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targetFunc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#realitytimer.py.fireNextTick" title="Permalink to this definition">#</a></dt>
+<dd><p>Class that will fire the event at the next game tick and then destroy itself. No need to store reference</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.TriggerManager.</span></span><span class="sig-name descname"><span class="pre">TriggerManager</span></span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager" title="Permalink to this definition">#</a></dt>
+<dd><p>This class is a wraper around some player management functions in the BF2 engine. During its initialization the bf2 class instantiates this class as the singleton object <code class="docutils literal notranslate"><span class="pre">bf2.triggerManager</span></code>. This object is used to manage “triggers”, which are events that are fired when a PCO enters a defined spherical or hemispherical volume surrounding an object.</p>
+<p>You must <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bf2</span></code> to access the methods and attributes of this object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager.createRadiusTrigger">
+<span class="sig-name descname"><span class="pre">createRadiusTrigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.createRadiusTrigger" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a trigger that causes <code class="docutils literal notranslate"><span class="pre">callback</span></code> to be called if a player enters a spherical region of radius <code class="docutils literal notranslate"><span class="pre">radius</span></code> centered on <code class="docutils literal notranslate"><span class="pre">object</span></code>, passing <code class="docutils literal notranslate"><span class="pre">data</span></code> as an argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger">
+<span class="sig-name descname"><span class="pre">createHemiSphericalTrigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <a class="reference internal" href="#bf2.TriggerManager.TriggerManager.createRadiusTrigger" title="bf2.TriggerManager.TriggerManager.createRadiusTrigger"><code class="xref py py-meth docutils literal notranslate"><span class="pre">createRadiusTrigger()</span></code></a>, except that instead of a spherical trigger region, the trigger region is a flat circle lying along the ground (yes, it’s badly named).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager.destroyAllTriggers">
+<span class="sig-name descname"><span class="pre">destroyAllTriggers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.destroyAllTriggers" title="Permalink to this definition">#</a></dt>
+<dd><p>Destroys all registered triggers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trig_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.destroy" title="Permalink to this definition">#</a></dt>
+<dd><p>Destroys a specific trigger.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.TriggerManager.TriggerManager.getObjects">
+<span class="sig-name descname"><span class="pre">getObjects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trig_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.getObjects" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a tuple containing all objects currently within the specified trigger region.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bf2.stats.constants">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bf2.stats.</span></span><span class="sig-name descname"><span class="pre">constants</span></span><a class="headerlink" href="#bf2.stats.constants" title="Permalink to this definition">#</a></dt>
+<dd><p>This module appears intended to be imported with something like…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bf2.stats.constants</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>… so that everything in it is loaded into the local namespace, rather than being a part of any object. The module includes a lot of constants and dictionaries, as well as some utility functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getVehicleType">
+<span class="sig-name descname"><span class="pre">getVehicleType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templateName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getVehicleType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getWeaponType">
+<span class="sig-name descname"><span class="pre">getWeaponType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templateName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getWeaponType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getKitType">
+<span class="sig-name descname"><span class="pre">getKitType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templateName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getKitType" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getArmy">
+<span class="sig-name descname"><span class="pre">getArmy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templateName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getArmy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getMapId">
+<span class="sig-name descname"><span class="pre">getMapId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getMapId" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getGameModeId">
+<span class="sig-name descname"><span class="pre">getGameModeId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gameMode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getGameModeId" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bf2.stats.constants.getRootParent">
+<span class="sig-name descname"><span class="pre">getRootParent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">physicalObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.stats.constants.getRootParent" title="Permalink to this definition">#</a></dt>
+<dd><p>Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">getWeaponType(&quot;usrif_m16a2&quot;)</span></code> looks up an M16 rifle in a dictionary called <code class="docutils literal notranslate"><span class="pre">weaponTypeMap</span></code> (also defined in <a class="reference internal" href="#bf2.stats.constants" title="bf2.stats.constants"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.stats.constants</span></code></a>) and returns the constant <code class="docutils literal notranslate"><span class="pre">WEAPON_TYPE_ASSAULT</span></code>… which, too, is defined in <a class="reference internal" href="#bf2.stats.constants" title="bf2.stats.constants"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.stats.constants</span></code></a>, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the <a class="reference internal" href="../../engine/objecttemplates.html"><span class="doc">Game Engine Object Templates</span></a> page.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="host.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">host</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="events.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Events</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">bf2</a><ul>
+<li><a class="reference internal" href="#bf2.GameStatus"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.GameStatus.Playing"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.Playing</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameStatus.EndGame"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.EndGame</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameStatus.PreGame"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.PreGame</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameStatus.Paused"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.Paused</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameStatus.RestartServer"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.RestartServer</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameStatus.NotConnected"><code class="docutils literal notranslate"><span class="pre">bf2.GameStatus.NotConnected</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getModDir"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getModDir()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getMapName"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getMapName()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getWorldSize"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getWorldSize()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getTeamName"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getTeamName()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.isAIGame"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.isAIGame()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendClientCommand"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendClientCommand()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendGameEvent"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendGameEvent()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendMedalEvent"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendMedalEvent()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendRankEvent"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendRankEvent()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendHudEvent"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendHudEvent()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.sendServerMessage"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.sendServerMessage()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getTicketState"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getTicketState()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTicketState"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTicketState()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getTickets"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getTickets()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTickets"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTickets()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getDefaultTickets"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getDefaultTickets()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getTicketChangePerSecond"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getTicketChangePerSecond()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTicketChangePerSecond"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTicketChangePerSecond()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getTicketLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getTicketLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTicketLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTicketLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getDefaultTicketLossPerMin"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getDefaultTicketLossPerMin()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getDefaultTicketLossAtEndPerMin"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getDefaultTicketLossAtEndPerMin()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getWinner"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getWinner()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.getVictoryType"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.getVictoryType()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setHealPointLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setHealPointLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setRepairPointLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setRepairPointLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setGiveAmmoPointLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setGiveAmmoPointLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTeamDamagePointLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTeamDamagePointLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.GameLogic.setTeamVehicleDamagePointLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.GameLogic.setTeamVehicleDamagePointLimit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTicketRatio"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTicketRatio()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTeamRatioPercent"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTeamRatioPercent()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getMaxPlayers"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getMaxPlayers()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getGameMode"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getGameMode()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getMapName"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getMapName()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTimeLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTimeLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getScoreLimit"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getScoreLimit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getAutoBalanceTeam"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getAutoBalanceTeam()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTKPunishEnabled"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTKPunishEnabled()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTKNumPunishToKick"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTKNumPunishToKick()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getTKPunishByDefault"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getTKPunishByDefault()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getUseGlobalRank"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getUseGlobalRank()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.GameLogic.ServerSettings.getUseGlobalUnlocks"><code class="docutils literal notranslate"><span class="pre">bf2.GameLogic.ServerSettings.getUseGlobalUnlocks()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.ObjectManager.ObjectManager"><code class="docutils literal notranslate"><span class="pre">bf2.ObjectManager.ObjectManager</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.ObjectManager.ObjectManager.getObjectsOfType"><code class="docutils literal notranslate"><span class="pre">bf2.ObjectManager.ObjectManager.getObjectsOfType()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.ObjectManager.ObjectManager.getObjectsOfTemplate"><code class="docutils literal notranslate"><span class="pre">bf2.ObjectManager.ObjectManager.getObjectsOfTemplate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.reset"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.reset()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.index"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.index</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.heals"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.heals</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.ammos"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.ammos</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.repairs"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.repairs</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.damageAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.damageAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.passengerAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.passengerAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.driverAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.driverAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.targetAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.targetAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.driverSpecials"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.driverSpecials</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.revives"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.revives</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.teamDamages"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.teamDamages</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.teamVehicleDamages"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.teamVehicleDamages</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cpCaptures"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cpCaptures</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cpDefends"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cpDefends</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cpAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cpAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.suicides"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.suicides</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cpNeutralizes"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cpNeutralizes</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cpNeutralizeAssists"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cpNeutralizeAssists</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.rplScore"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.rplScore</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.skillScore"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.skillScore</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.PlayerScore.cmdScore"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.PlayerScore.cmdScore</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.index"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.index</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.score"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.score</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isValid"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isValid()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isRemote"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isRemote()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isAIPlayer"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isAIPlayer()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isAlive"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isAlive()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isManDown"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isManDown()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isConnected"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isConnected()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getProfileId"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getProfileId()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isFlagHolder"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isFlagHolder()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getTeam"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getTeam()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setTeam"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setTeam()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getPing"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getPing()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getSuicide"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getSuicide()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setSuicide"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setSuicide()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getTimeToSpawn"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getTimeToSpawn()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setTimeToSpawn"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setTimeToSpawn()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getSquadId"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getSquadId()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isSquadLeader"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isSquadLeader()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.isCommander"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.isCommander()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getName"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getName()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setName"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setName()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getSpawnGroup"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getSpawnGroup()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setSpawnGroup"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setSpawnGroup()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getKit"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getKit()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getVehicle"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getVehicle()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getDefaultVehicle"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getDefaultVehicle()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getPrimaryWeapon"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getPrimaryWeapon()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getAddress"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getAddress()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.setIsInsideCP"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.setIsInsideCP()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.Player.getIsInsideCP"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.Player.getIsInsideCP()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.PlayerManager"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.PlayerManager.getNumberOfPlayers"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getNumberOfPlayers()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getCommander"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getCommander()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getPlayers"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getPlayers()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getPlayerByIndex"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getPlayerByIndex()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getNextPlayer"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getNextPlayer()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getNumberOfPlayersInTeam"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getNumberOfPlayersInTeam()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.getNumberOfAlivePlayersInTeam"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.getNumberOfAlivePlayersInTeam()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.enableScoreEvents"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.enableScoreEvents()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.PlayerManager.disableScoreEvents"><code class="docutils literal notranslate"><span class="pre">bf2.PlayerManager.disableScoreEvents()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.Timer"><code class="docutils literal notranslate"><span class="pre">bf2.Timer</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.Timer.destroy"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.destroy()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.Timer.getTime"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.getTime()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.Timer.setTime"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.setTime()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.Timer.setRecurring"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.setRecurring()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.Timer.onTrigger"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.onTrigger()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.Timer.bf2.Timer"><code class="docutils literal notranslate"><span class="pre">bf2.Timer.bf2.Timer()</span></code></a></li>
+<li><a class="reference internal" href="#realitytimer.py"><code class="docutils literal notranslate"><span class="pre">realitytimer.py</span></code></a><ul>
+<li><a class="reference internal" href="#realitytimer.py.fireOnce"><code class="docutils literal notranslate"><span class="pre">realitytimer.py.fireOnce()</span></code></a></li>
+<li><a class="reference internal" href="#realitytimer.py.fireNextTick"><code class="docutils literal notranslate"><span class="pre">realitytimer.py.fireNextTick()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager.createRadiusTrigger"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager.createRadiusTrigger()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager.createHemiSphericalTrigger()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager.destroyAllTriggers"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager.destroyAllTriggers()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager.destroy"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager.destroy()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.TriggerManager.TriggerManager.getObjects"><code class="docutils literal notranslate"><span class="pre">bf2.TriggerManager.TriggerManager.getObjects()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bf2.stats.constants"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants</span></code></a><ul>
+<li><a class="reference internal" href="#bf2.stats.constants.getVehicleType"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getVehicleType()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getWeaponType"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getWeaponType()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getKitType"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getKitType()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getArmy"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getArmy()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getMapId"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getMapId()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getGameModeId"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getGameModeId()</span></code></a></li>
+<li><a class="reference internal" href="#bf2.stats.constants.getRootParent"><code class="docutils literal notranslate"><span class="pre">bf2.stats.constants.getRootParent()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

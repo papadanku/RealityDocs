@@ -1,0 +1,399 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="15. Terrain Sea Water Depth/Transparency Lightmap" href="page15.html" /><link rel="prev" title="13. Full Object Lightmaps" href="page13.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>14. Terrain Sun &amp; Sky Lightmaps - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/engine/coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/engine/internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/engine/objecttemplates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/engine/reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/engine/time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/modding/aicode.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/modding/cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/modding/consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/modding/systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../technical/python/index.html">Battlefield Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/python/bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/python/debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/python/learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../technical/python/realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../technical/python/reference/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../technical/python/reference/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../technical/python/reference/bf2.html">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../technical/python/reference/host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../technical/python/reference/hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../technical/python/reference/objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../factions/info.html">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../factions/requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Mapping</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="terrain-sun-sky-lightmaps">
+<h1><span class="section-number">14. </span>Terrain Sun &amp; Sky Lightmaps<a class="headerlink" href="#terrain-sun-sky-lightmaps" title="Permalink to this heading">#</a></h1>
+<p>Its now time to setup the terrain for its Sun and Sky Lightmaps. Note that the Red channel isn’t used for point light on the terrain and its used for water transparency instead which we will do later sepratly.</p>
+<p>First load your map back up in 3DsMax<strong>9</strong> and turn off (or altenrativly, delete) all your point lights if you have any as otherwise they will conflict with the water depth lighting channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wish to have Man Made (Point) Lighting on your terrain then the best way to go about it is to turn them Blue/Green and have them in your Sky/Sun Light Channel BUT, doing them this way means you can’t turn them off in day map layers and they will use the same light colour/intensity as your Sky/Sun light.</p>
+</div>
+<p>Next thing we need to do is create your “Sea Water Level” so that shadows cast on your water are cast on the sea water surface and not on the sea bed.</p>
+<p>Select your Terrain mesh <em>(_TERRAIN)</em> and add a <strong>Vol. Select</strong> modifier to it. Switch the <strong>Stack Selection Level</strong> to <strong>Vertex</strong> and <strong>Selection Method</strong> to <strong>Replace</strong> and check <strong>Invert</strong>. This means that any verts outside of this Volume Selection box will now be selected, which by default, is nothing since the box is created to the very limits of your object.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000266.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000266.jpg" />
+<p>Expand the modifier, selecting <strong>Gizmo</strong> and switching to <strong>Offset Mode Transform Type-in</strong> with the <strong>Move Tool</strong> selected, offset the <strong>Volume Selection</strong> box by the depth of your sea water of your map. My map has a sea water Level of 5m so I need to offset my <strong>Vol. Selection</strong> box by 50 Units (since 10 Units = 1m).</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000270.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000270.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000271.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000271.jpg" />
+<p>Turn on <strong>Percentage Snapping</strong> and open up the <strong>Grid and Snap Settings</strong> window (Right click on the snapping button to open it or go to <strong>Customise &gt; Grid</strong> and Snap Settings…) and in the <strong>Options Tab</strong> set the <strong>Percent</strong> box to <code class="docutils literal notranslate"><span class="pre">100%</span></code>. Then add an <strong>Edit Poly</strong> modifier to your terrain and go into <strong>Vertex Selection</strong> mode and all the vertices selected by the <strong>Vol. Select</strong> modifier should now be selected for you in this new <strong>Edit Poly</strong> Modifier. Switch to the <strong>Scale</strong> Tool and with <strong>Percentage Snapping</strong> still enabled, select the <code class="docutils literal notranslate"><span class="pre">Z</span></code> Axis and scale it down to <code class="docutils literal notranslate"><span class="pre">0%</span></code>, which will make all the vertices in your selection totally flat.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000272.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000272.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000273.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000273.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000275.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000275.jpg" />
+<p>Finally switch to the <strong>Move</strong> tool and in <strong>Absolute Mode Transform Type-In</strong> set the Z amount for your vertices to that of your sea water level, which in my case is 5m, 50 Units:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000277.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000277.jpg" />
+<p>Now if you look at your terrain where your sea water should be closely it should be all flat and at the level your sea water is ingame:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000278.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000278.jpg" />
+<p>And if we turn off the <strong>Edit Poly</strong> modifier, we still have our sea bed, which we will need later <em>(and if you plan on re-lightmapping any objects since you don’t want your sea water level to cast a shadow on your objects)</em></p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000279.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000279.jpg" />
+<p>Now with your Terrain selected hit the <code class="docutils literal notranslate"><span class="pre">0</span></code> key on your keyboard to bring up the <strong>Render to Texture</strong> window ( alternatively, go to <strong>Render &gt; Render to Texture</strong>). At the top you, will see a little <strong>Output</strong> box under the <strong>General Settings</strong> rollout and next to <strong>Path</strong>, hit the <strong>…</strong> button, then browse to your lightmap scene folder and make a new <strong>Terrain</strong> folder and select it.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000259.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000259.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000260.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000260.jpg" />
+<p>Next scroll down to the <strong>Output</strong> Rollout and hit the <strong>Add…</strong> button, then add a <strong>LightingMap</strong> element. By default it should be created as a <code class="docutils literal notranslate"><span class="pre">.tga</span></code>, which is what we want:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000262.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000262.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000263.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000263.jpg" />
+<p>Next you need to change the element’s width and height settings. This depends on the size of your map, and/or how much detail you want on your terrain’s lightmap. Generally speaking, however, a normal map has a terrain lightmap ratio of 2px/meter and these are the normal width and height settings you should use for the following sizes of map:</p>
+<blockquote>
+<div><ul>
+<li><p><strong>1km x 1km:</strong> 2048 x 2048</p>
+<blockquote>
+<div><p>16 512x512 Patches</p>
+</div></blockquote>
+</li>
+<li><p><strong>2km x 2km:</strong> 4096 x 4096</p>
+<blockquote>
+<div><p>64 512x512 Patches</p>
+</div></blockquote>
+</li>
+<li><p><strong>4km x 4km:</strong> 8192 x 8192</p>
+<blockquote>
+<div><p>64 1024x1024 Patches</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Since I’m working on a 4km by 4km map, I’m going to be using a 8192 width and 8192 height:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000265.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000265.jpg" />
+<p>Now we just need to unhide any objects we want to cast shadows on our terrain. You should still have all your LOD0 Static Meshes unhidden but if not, unhide them <em>(by searching for “*=0” in unhide by name as before)</em> and unhide your Overgrowth layer/group and make sure it has the correct leaf material applied to it etc.</p>
+<p>Then once all that is done and your Sun and Sky lights are the only ones active, save your scene back it up, and save a separate scene to be loaded in a later version of 3DsMax if your using one (pretty much a requirement for an 8192 or above render).</p>
+<p>Then restart your PC, optimize it for lightmapping like you did before for your final object lightmaps and render away by clicking the <strong>Render</strong> button in the bottom left of the <strong>Render to Texture</strong> window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Small little tip for better render preview window, is to turn off your diffuse texture for your terrain material as it will only conflict with the render preview, but will not affect the final saved LM.</p>
+</div>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000280.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000280.jpg" />
+<p>I lightmapped my Sun and Sky Terrain lightmaps in <strong>2hrs and 7mins</strong> with Adv. Ray Traced Shadows and once your done you should have something like this:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sun_LM.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sun_LM.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sky_LM.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sky_LM.jpg" />
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="page15.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">15. </span>Terrain Sea Water Depth/Transparency Lightmap</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="page13.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">13. </span>Full Object Lightmaps</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

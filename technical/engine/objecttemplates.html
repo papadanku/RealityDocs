@@ -1,0 +1,498 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Reverse Engineering Tables" href="reverseengineering.html" /><link rel="prev" title="BF2 Engine Internals" href="internals.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Game Engine Object Templates - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Battlefield Engine</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modding/aicode.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/index.html">Battlefield Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../python/reference/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/bf2.html">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../community/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../community/factions/info.html">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community/factions/requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="game-engine-object-templates">
+<h1>Game Engine Object Templates<a class="headerlink" href="#game-engine-object-templates" title="Permalink to this heading">#</a></h1>
+<p>This is a list of C++ game engine “object types” that can be used in the <cite>bf2.objectManager.getObjectsOfType</cite> method. As an example, to get a list of all control points, you could use: <a class="reference internal" href="../python/reference/objects.html#PhysicalObject.getChildren" title="PhysicalObject.getChildren"><code class="xref py py-class docutils literal notranslate"><span class="pre">getChildren()</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">controlPoints</span> <span class="o">=</span> <span class="n">bf2</span><span class="o">.</span><span class="n">objectManager</span><span class="o">.</span><span class="n">getObjectsOfType</span><span class="p">(</span><span class="s1">&#39;dice.hfe.world.ObjectTemplate.ControlPoint&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">controlPoints</span><span class="p">:</span>
+   <span class="c1"># do stuff to each control point``</span>
+</pre></div>
+</div>
+<section id="confirmed-objecttemplates">
+<h2>Confirmed ObjectTemplates<a class="headerlink" href="#confirmed-objecttemplates" title="Permalink to this heading">#</a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Parent</p></th>
+<th class="head"><p>Children</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.PlayerControlObject</span></code></p></td>
+<td><p>Returns a tuple of vehicle(?) objects that are controllable by a player (Includes the Commander assets). Vehicles are constructed of many objects, use the <a class="reference internal" href="../python/reference/objects.html#PhysicalObject.getChildren" title="PhysicalObject.getChildren"><code class="xref py py-class docutils literal notranslate"><span class="pre">getChildren()</span></code></a> method to get a tuple of all objects in a vehicle.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.ControlPoint</span></code></p></td>
+<td><p>Returns A tuple of <a class="reference internal" href="../python/reference/objects.html#controlPointObject" title="controlPointObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlPoint</span> <span class="pre">objects</span></code></a>. A controlpoint is constructed of a flagpole and a flag. Depending on which team controls the controlpoint, a different flag image is displayed.</p></td>
+<td><p>None</p></td>
+<td><p>Type <a class="reference internal" href="../python/reference/objects.html#PhysicalObject" title="PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a> (flagpole, flag_us, flag_mec, flag_ch, flag_neutral)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Trigger</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.AmbientEffectArea</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Ladder</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.TargetObject</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects. These appear to always be of the template UniqueTarget. The first two objects in the tuple seem to always correspond to artillery. The first object is MEC or China artillery, while the second object always appears to be US artillery. When the round begins all the TargetObjects positions are set to (0.0, 0.0, 0.0). When artillery is fired, its corresponding TargetObject’s position is set to the location of the artillery. This position remains until the artillery is fired again, and the position is overwritten with the new location. The other objects in the tuple correspond to guided missiles and such throughout the level(ie TV-Guided Missiles).</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.ObjectSpawner</span></code></p></td>
+<td><p>Returns a tuple of <a class="reference internal" href="../python/reference/objects.html#PhysicalObject" title="PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span> <span class="pre">objects</span></code></a>. Spawned objects are defined in the <cite>GamePlayObjects.con</cite> file that is located in server.zip (<cite>GameModes//</cite>). Examples of spawned objects are UAV, JEEP_AAV, destroyable bridges.</p></td>
+<td><p>None</p></td>
+<td><p>Mixed type depending on the type of the parent object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Soldier</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>Unknown type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.AnimatedBundle</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Kit</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>Unknown type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.DestroyableObject</span></code></p></td>
+<td><p>Returns a tuple of type unknown objects.</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unconfirmed-objecttemplates">
+<h2>Unconfirmed ObjectTemplates<a class="headerlink" href="#unconfirmed-objecttemplates" title="Permalink to this heading">#</a></h2>
+<p>These objects are valid but return an empty tuple. They are probably not accessible from python, or only valid when these objects exist in the map. This is not tested. Any insight on these objects is highly appreciated.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.PreDestinedFollowComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultFollowComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.FixedTargetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SeekClosestTargetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultRicochetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultPenetrateComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultProjSoundComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ReplenishDetonationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultDetonationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.StickyCollisionComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ResurrectCollisionComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ReplenishCollisionComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultCollisionComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ExplosivesFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ThrownFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SpawnObjectFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.LPFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SimpleTargetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.LPTargetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.MultiFireArmTargetComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ThrownAnimationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultAnimationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.TargetDeviationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SimpleDeviationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SoldierDeviationComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.WeaponBasedRecoilComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SoldierBasedRecoilComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultSoundComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ToggleCameraComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultZoomComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.ReplenishingAmmoComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.DefaultAmmoComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.MultiFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.SingleFireComp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.StrategicObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.HelpHud</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.WarningHud</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.AbilityHud</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.WeaponHud</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.VehicleHud</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.TemplateComponent.PostProcess</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.GenericProjectile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.TurnableRemoteControlledObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.RemoteControlledObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.LadderContainer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.AreaObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Obstacle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.SupplyObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.SupplyDepot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.KitPart</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Parachute</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.GenericFireArm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.AntennaObject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.DestroyableWindow</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.DestroyableWindowsBundle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.ItemContainer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dice.hfe.world.ObjectTemplate.Item</span></code></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="reverseengineering.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Reverse Engineering Tables</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="internals.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">BF2 Engine Internals</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Game Engine Object Templates</a><ul>
+<li><a class="reference internal" href="#confirmed-objecttemplates">Confirmed ObjectTemplates</a></li>
+<li><a class="reference internal" href="#unconfirmed-objecttemplates">Unconfirmed ObjectTemplates</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

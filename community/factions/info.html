@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Faction Requirements" href="requirements.html" /><link rel="prev" title="Community Factions" href="index.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Official Information - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/engine/coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/engine/internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/engine/objecttemplates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/engine/reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/engine/time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/modding/index.html">Modding</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/modding/aicode.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/modding/cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/modding/congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/modding/consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/modding/systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../technical/python/index.html">Battlefield Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/python/bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/python/debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/python/learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical/python/realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../technical/python/reference/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../technical/python/reference/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical/python/reference/bf2.html">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical/python/reference/host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical/python/reference/hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical/python/reference/objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Community Factions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="official-information">
+<h1>Official Information<a class="headerlink" href="#official-information" title="Permalink to this heading">#</a></h1>
+<p>Please read this entire post epically if you are part of or thinking of starting up a community faction.</p>
+<p>This is to clear up any questions any of you may have about the community factions, how they are going to work for mainly the teams working on them, but also for the public and new community faction teams that may be starting up.</p>
+<section id="what-are-community-factions">
+<h2>“What are Community Factions?”<a class="headerlink" href="#what-are-community-factions" title="Permalink to this heading">#</a></h2>
+<p>They are Factions for the Project Reality Mod that are developed by our community members who want to see a new army in-game.</p>
+</section>
+<section id="how-do-i-start-making-a-community-faction-for-pr">
+<h2>“How do I start making a Community Faction for PR?”<a class="headerlink" href="#how-do-i-start-making-a-community-faction-for-pr" title="Permalink to this heading">#</a></h2>
+<section id="assemble-a-team">
+<h3>1. Assemble a Team<a class="headerlink" href="#assemble-a-team" title="Permalink to this heading">#</a></h3>
+<p>If you want to develop a Community Faction, you will need to assemble a team, unless you think you can do the entire mod on your own which is really not feasible unless for a small mini-mod based on PR, depending on how small the mini-mod is and the skill of the developer. The normal community faction will need a team because it would be a major addition of a team to PR, etc. Best way to go about recruiting a team is normally to go posting a single topic in the community modding forums about what you plan on doing, and on other forums you think you may be able to recruit from. Remember, “testers” for your mod don’t count, in fact, you can not recruit any testers for your mod as will be explained later on. Only DEVs like modellers, skinners, mappers, coders etc.</p>
+</section>
+<section id="design-a-plan">
+<h3>2. Design a Plan<a class="headerlink" href="#design-a-plan" title="Permalink to this heading">#</a></h3>
+<p>Once you have a team, you will then need to assemble a design plan of what you want to do. If your making a new faction, your design plan should include all the vehicles, weapons, and general new content you will be adding such as maps, statics or w/e. The more complete your design plan is, the more seriously we will take you and the more likely your community mod will succeed.</p>
+</section>
+<section id="submit-your-design-plan">
+<h3>3. Submit Your Design Plan<a class="headerlink" href="#submit-your-design-plan" title="Permalink to this heading">#</a></h3>
+<p>Once you have completed your design plan, you will need to submit it to a “Red Tag” Developer via a Private Message on these forums with info about the basics you want to do, a list of your current team members, examples of any work you may have done so far on it, models, textures etc and of course, your design plan. Again, the more complete your submissions are the more seriously we will take you. Modding is no easy task and it takes a huge amount of time and effort and we do not want to be wasting our team on a community mod that don’t look like they have their sh*t together.</p>
+<p>Once you have submitted the above, we will assess your mod and providing everything checks out and we are happy with your general concept, design plan etc we will approve your mod and make your own sub forum inside the community modding forums for you to work in. The Leader of the Community mod will also get access to the R-COM (Faction) forums so he can be in direct contact with CONs &amp; DEVs.</p>
+</section>
+</section>
+<section id="what-assets-are-we-allowed-to-use">
+<h2>“What assets are we allowed to use?”<a class="headerlink" href="#what-assets-are-we-allowed-to-use" title="Permalink to this heading">#</a></h2>
+<p>To put it simply, anything that is inside the Project Reality mod or vBF2 (not xpacks etc) already, you’re allowed to use, even if its not in use currently in the mod though if it’s not in use, that may be because its buggy or still not finished.</p>
+<p>For the assets in the mod, you are allowed to reskin them and add “child” objects on (models attach by code, like a missile rack or w/e) thou you are not allowed to modify the model itself without our full permission. This also goes for vBF2 models and other mod’s models.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You are not allowed to use anything from another BF2 mod, including other BSS mods without full permission of the use of that asset. To get permission, you will need to go though us (Project Reality Lead Developers) to gain permission. To do this, please read the relevent Stickied post in this forum. Any assets that you require from other mods though us you are not allowed to redistribute or anything like that to any other mod team or w/e. If any other community mods want to use an asset that has been required via another community faction team, they must go through the same process.</p>
+<p>If we find that any assets have been stolen from any other mod, be it BF2 or any other game, we will take serious action against you along with that team and inform them of exactly what you have done and then we will take it from there, but be warned, you do not want to get onto the bad side of us or any other BF2 mod, we have full copyright on these assets we have made, as you do on the assets you have made and we are entitled to take legal action if need be, though we hope it never comes to that.</p>
+</div>
+</section>
+<section id="how-will-our-community-faction-be-released-once-finished">
+<h2>“How will our Community Faction be Released Once Finished?”<a class="headerlink" href="#how-will-our-community-faction-be-released-once-finished" title="Permalink to this heading">#</a></h2>
+<p>Once your community mod leader thinks your mod is ready, or almost ready for release then it is his job to post on the R-COM forums that they are finished or almost finished. Once then, we (the developer team) will take a full look at your mod, give you any feedback on changes you may need to make, and also run it though our testing team if need be. We will probably give you some developing help at this point from our own DEVs to help finalize your mod for release. Then, we will either give you permission to release it, or we will release it for you (with full credit to you and your team of course), if it is a new faction we will most likely release it for you.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You are not permitted to release your community mod without permission from us, if you do we will take action against you. It is not hard to get a “yes” from us, the only thing that will make us say “no” is if there is some major bugs that we think need to be cleaned up before release first, or it would take the mod in a direction we don’t want it to, thou if we thought it would we would probably say that when you submit the design plan. It is also in your best interest that we release it since that means full front page news cover on our, and every other BF2 community site, ingame MOTD (Message of the Day) promotion and us hosting the files on our servers etc.</p>
+</div>
+</section>
+<section id="final-information">
+<h2>Final Information<a class="headerlink" href="#final-information" title="Permalink to this heading">#</a></h2>
+<p>We are here to help you, as much as you are here to help us by trying to add something new to PR so providing you are willing to work with us in a professional manner, we will do the same.</p>
+<p>Cheers,</p>
+<p><em>The Project Reality Team.</em></p>
+<p><em>Made by Rhino</em></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="requirements.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Faction Requirements</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Community Factions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Official Information</a><ul>
+<li><a class="reference internal" href="#what-are-community-factions">“What are Community Factions?”</a></li>
+<li><a class="reference internal" href="#how-do-i-start-making-a-community-faction-for-pr">“How do I start making a Community Faction for PR?”</a><ul>
+<li><a class="reference internal" href="#assemble-a-team">1. Assemble a Team</a></li>
+<li><a class="reference internal" href="#design-a-plan">2. Design a Plan</a></li>
+<li><a class="reference internal" href="#submit-your-design-plan">3. Submit Your Design Plan</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-assets-are-we-allowed-to-use">“What assets are we allowed to use?”</a></li>
+<li><a class="reference internal" href="#how-will-our-community-faction-be-released-once-finished">“How will our Community Faction be Released Once Finished?”</a></li>
+<li><a class="reference internal" href="#final-information">Final Information</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

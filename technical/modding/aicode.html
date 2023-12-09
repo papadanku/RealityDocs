@@ -1,0 +1,982 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Command Line Options" href="cmdoptions.html" /><link rel="prev" title="Modding" href="index.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>All AI Codes - RealityDocs documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RealityDocs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">RealityDocs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../admin/index.html">Administration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Administration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/identity.html">Player Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/module.html">The Administrative Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cookbook/index.html">The Python Cookbook</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of The Python Cookbook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/changingobjects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/errorcatching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/reloadingmodules.html">Reloading Modules at Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../engine/index.html">Battlefield Engine</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Battlefield Engine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../engine/coordinates.html">BF2 Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engine/internals.html">BF2 Engine Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engine/objecttemplates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engine/reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../engine/time.html">Time in BF2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Modding</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Modding</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmdoptions.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="congrammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolecommands.html">BF2 Console Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="systemrequirements.html">Server System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../networking/index.html">Networking</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Networking</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../networking/ports.html">BF2 Porting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking/protocols_rcon.html">The RCon Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/index.html">Battlefield Python</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Battlefield Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/bigpicture.html">How Battlefield 2 Hooks Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/realitylogger.html">Reality Logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../python/reference/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of References</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/bf2.html">bf2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/host.html">host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/hud.html">HudEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/reference/objects.html">BF2 Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../community/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/factions/index.html">Community Factions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Community Factions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../community/factions/info.html">Official Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../community/factions/requirements.html">Faction Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../community/mapping/index.html">Mapping</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Mapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../community/mapping/lightmapping/index.html">Advanced 3DsMax Lightmapping</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Advanced 3DsMax Lightmapping</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../community/mapping/lightmapping/page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="all-ai-codes">
+<h1>All AI Codes<a class="headerlink" href="#all-ai-codes" title="Permalink to this heading">#</a></h1>
+<section id="iai">
+<h2><code class="docutils literal notranslate"><span class="pre">iai</span></code><a class="headerlink" href="#iai" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iai.tempinit</span></code></p></li>
+</ul>
+</section>
+<section id="it">
+<h2><code class="docutils literal notranslate"><span class="pre">IT</span></code><a class="headerlink" href="#it" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ITHasCarHorn</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITObstacle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITHasWreck</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITHelicopter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITNoTemperature</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITObstructedView</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITSoldier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITVegetation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITBiological</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITStructure</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITLowPriority</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITUnmanned</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITMobile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITCover</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITFixed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITArtillery</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITTransportation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITAirfield</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITRadar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITControlpoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITNaval</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITGround</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITAir</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITUnit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITRepair</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITAmmunition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITProduction</span></code></p></li>
+</ul>
+</section>
+<section id="ai">
+<h2><code class="docutils literal notranslate"><span class="pre">ai</span></code><a class="headerlink" href="#ai" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.createheightmap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.readheightmapfromfile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.init</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.reset</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.kill</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.debug</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.writebotplans</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.aisystemquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.setaisystemcomponentsquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotmanagerquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getsaiquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botstatisticupdatespeed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotcount</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getnumberofactivebots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getnumberofdeactivedbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.addbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.addunspawnedbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.deactivatebot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.updatebot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.killbotid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.killbotname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.killallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botgiveorder</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botsetwaypoints_patrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botsetwaypoints_patrol3d</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botmoveto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.botflyto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.createsai</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.saienable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.saimapxdimension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.saimapydimension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.addsaistrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.renderside</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.snoopbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.validatedatastructuresenabled</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawbotplan</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawstrategicareas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawpathfinding</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawmovement</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawaiming</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.executeplan</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawchangeurgency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawonlyclosestbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawaddclosestbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawremoveallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawaddallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawaddbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawremovebot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.drawaddclosestsecondarybot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.pauseallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.unpauseallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.pauseallbutclosestprimarybot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.pauseallbutclosestsecondarybot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.pausebot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.showall</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getrendcameraposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getrendcamerarotation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.attachcamera</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.attachcameracycle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getcurrentpitchangle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getcurrentyawangle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getallbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotgoalposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotside</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotvitals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotvehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotkit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbotbehaviourlist</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getbehaviourinfo</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getactivebehaviour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getstrategyheat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.listsaistrategies</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.getactivestrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.addplacement</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.spawnbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ai.pause</span></code></p></li>
+</ul>
+</section>
+<section id="aisettings">
+<h2><code class="docutils literal notranslate"><span class="pre">aisettings</span></code><a class="headerlink" href="#aisettings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setmaxnbots</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setmaxnautocontrollers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.maxbotsincludehumans</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setignorecommanderdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setmaxnumberofbehaviours</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setviewdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setstatsviewdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setinformationgriddimension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehicleclustermapping</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehiclematerialcost</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setmandownequipment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getinformationgriddimension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getviewdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getstatsviewdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getvehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getvehicleclustermapping</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setnsides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getnsides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setbotskill</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.botskill</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.discovercloakedenemiesdistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getbotskill</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getnumberofvehiclegroups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getvehiclegroup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getvehiclegroupname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.createvehiclegroup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.addvehicletovehiclegroup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getsaiupdatefrequency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setsaiupdatefrequency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setrespawnallowed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.addbotname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.isrespawnallowed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.overridemenusettings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.lodenable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setbasicloddistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehiclemods</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setstandardpersonality</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehiclebehaviour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setvehicledefaultbehaviour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.addinterpreterentry</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.removeinterpreterentry</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.activatedefaultinterpreter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setbasicbotweights</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setbehaviour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getbehaviour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.createbehaviourmodifiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.activebehaviourmodifiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setbehaviourmodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.getbehaviourmodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.listbehaviourmodifiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.showaisettings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.createucconstant</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.createuclinear</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.createucxinverse</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setsensingagentpatternname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.setsensingagentnullpattern</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.addsensingagentpattern</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.sensingagentdebug</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aisettings.autospawnbots</span></code></p></li>
+</ul>
+</section>
+<section id="aibotmanager">
+<h2><code class="docutils literal notranslate"><span class="pre">aibotmanager</span></code><a class="headerlink" href="#aibotmanager" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setlodlevelticks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setlodlevelpriority</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setplanneddecisionmakingthreshold</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setunplanneddecisionmakingthreshold</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setdecisionmakinginterleave</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setsensingquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.setsystemquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevelfullticks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevelmediumticks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevellightticks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevelfullpriority</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevelmediumpriority</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getlodlevellightpriority</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getplanneddecisionmakingthresholdfull</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getplanneddecisionmakingthresholdmedium</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getplanneddecisionmakingthresholdlight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getunplanneddecisionmakingthresholdfull</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getunplanneddecisionmakingthresholdmedium</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getunplanneddecisionmakingthresholdlight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getplanneddecisionmakinginterleave</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getunplanneddecisionmakinginterleave</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getsensingquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getmemoryupdatequotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getsystemdecisionmakingquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getsystempathfindingquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.getsystemsensingquotient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aibotmanager.enablebotscriptdebugger</span></code></p></li>
+</ul>
+</section>
+<section id="aistrategy">
+<h2><code class="docutils literal notranslate"><span class="pre">aistrategy</span></code><a class="headerlink" href="#aistrategy" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createstrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setactivestrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getactivestrategyname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.aggression</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.timelimit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getprerequisiteweight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setprerequisiteweight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.liststrategies</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.settreemodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.gettreemodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.settreemodifiercombatstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.gettreemodifiercombatstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.numberofattacks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.numberofdefences</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setprerequisite</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.addrequiredprecedingstrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.addprohibitedprecedingstrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setstrategicobjectsmodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getstrategicobjectsmodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.clearallstrategicobjectsmodifiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.addspecificobjectmodifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.completestrategies</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createprerequisite</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setactiveprerequisite</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getactiveprerequisitename</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.listprerequisites</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.addcondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setactivecondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getactiveconditionname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.listconditions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createconstantcondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createhomogenouscondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createheterogeneouscondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.createareacondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setconditionstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.getconditionstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.setisabortcondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.isabortcondition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.completeconditions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.targetvalue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.forcestrategy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.enabledebug</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategy.thresholdspeed</span></code></p></li>
+</ul>
+</section>
+<section id="aistrategicarea">
+<h2><code class="docutils literal notranslate"><span class="pre">aistrategicarea</span></code><a class="headerlink" href="#aistrategicarea" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.create</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setflankposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.createfromcontrolpoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removeactive</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setactive</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getactive</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addneighbour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addtwowayneighbour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getneighbours</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.layer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setvisible</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getvisible</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.drawvehiclesearchradi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removeallneighbours</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.centerposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.topleftcorner</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addobjecttypeflag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setobjecttypeflags</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getobjecttypeflags</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removeobjecttypeflag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setstatus</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.category</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.vehiclesearchradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.settakeable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.istakeable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removeallobjecttypeflags</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getobjecttypeflagmapping</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.basictemperature</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setorderposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getorderposition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.listorderpositions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addwaypoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removewaypoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.removeclosestwaypoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.clearwaypoints</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setwaypointstodraw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.clearwaypointtodraw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.setside</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getside</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.enabledebug</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addallowedvehiclegroup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.attachlandingzone</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.listlandingzones</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.gettemperature</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getstatus</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getnumberofpresentunits</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getnumberofavailableattackers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getnumberofavailabledefenders</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getnumberofassignedunits</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getcategoryname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getcategoryfromname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.createnewcategory</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.showneighbours</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.getstrategicareanames</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.isinside</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.strategicareaname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.saveall</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addallowedunit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addexpelledunit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aistrategicarea.addlandingzoneunit</span></code></p></li>
+</ul>
+</section>
+<section id="ailandingzone">
+<h2><code class="docutils literal notranslate"><span class="pre">ailandingzone</span></code><a class="headerlink" href="#ailandingzone" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.activezone</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.createlandingzone</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.listzones</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.mincorner</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.maxcorner</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ailandingzone.beachdirection</span></code></p></li>
+</ul>
+</section>
+<section id="aipathfinding">
+<h2><code class="docutils literal notranslate"><span class="pre">aipathfinding</span></code><a class="headerlink" href="#aipathfinding" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.createmap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.activemap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.tracemap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.getmaplist</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.addinvalidmaterial</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.maxslope</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.headclearance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.allowedthresholdheight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.radius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.allowedheightdiff</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.minpolygonsinleaf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.maxdepthintree</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.meshtype</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.addvehicleforclustercost</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.draw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.undraw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.drawcluster</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.undrawcluster</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.drawclusterneighbourindices</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.drawclusterportals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.builddebugmeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.builddebugclustermeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.loadgtsdebugmeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.unloaddebugmeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.unloaddebugclustermeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.recalculateportalcosts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.getpolygondebug</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.drawmode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.map.loadquadtrees</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.savequadtrees</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.loadquadtrees</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.loadgtsdata</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.exportgtsmeshes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.exportgtsmesheswithinboundary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.maxwaterdepth</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aipathfinding.drawdynamicaiobjects</span></code></p></li>
+</ul>
+</section>
+<section id="aidebug">
+<h2><code class="docutils literal notranslate"><span class="pre">aidebug</span></code><a class="headerlink" href="#aidebug" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.textgamma</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.draw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.toolpathfinding</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.pathfindingdebugtoolvehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.clustersearch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.setpathfindingdebugtoolvehicleid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.trypath</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aidebug.tryclusterpath</span></code></p></li>
+</ul>
+</section>
+<section id="airandom">
+<h2><code class="docutils literal notranslate"><span class="pre">airandom</span></code><a class="headerlink" href="#airandom" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">airandom.seed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.pathfinding_localsearch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.pathfindingmode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.pathfindingvehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.pathfindinggoalradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.pathfindingtrigger</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitools.sensingmode</span></code></p></li>
+</ul>
+</section>
+<section id="airadio">
+<h2><code class="docutils literal notranslate"><span class="pre">airadio</span></code><a class="headerlink" href="#airadio" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">airadio.subscribetomessage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">airadio.subscribetomessage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">airadio.subscribetomessage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">airadio.subscribetomessage</span></code></p></li>
+</ul>
+</section>
+<section id="aicheats">
+<h2><code class="docutils literal notranslate"><span class="pre">aicheats</span></code><a class="headerlink" href="#aicheats" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aicheats.code</span></code></p></li>
+</ul>
+</section>
+<section id="aiscript">
+<h2><code class="docutils literal notranslate"><span class="pre">aiscript</span></code><a class="headerlink" href="#aiscript" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.enablescripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.runscript</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscript</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.endscript</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscriptflow</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscriptcommand</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createmovecommand</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscript</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.close</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscriptvariable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createglobalbotupdater</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createbotupdater</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.hasbreakpoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setinformationgriddimension</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setsubroutine</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.negate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setconditional</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.addwaypoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setmindistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setweight</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.addbot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscriptvariable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.var</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createscriptvariableupdater</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.upd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.createglobalscriptvariableupdater</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.gupd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setactivebot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.avoid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.change</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.fire</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.idle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.medicsupport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.move</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.scout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.takecover</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.if</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.parallel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.serial</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.when</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.while</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.setbotactivebyid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.botid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.bot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.bool</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiscript.vec3</span></code></p></li>
+</ul>
+</section>
+<section id="objecttemplate">
+<h2><code class="docutils literal notranslate"><span class="pre">objecttemplate</span></code><a class="headerlink" href="#objecttemplate" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">objecttemplate.aitemplate</span></code></p></li>
+</ul>
+</section>
+<section id="object">
+<h2><code class="docutils literal notranslate"><span class="pre">object</span></code><a class="headerlink" href="#object" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">object.aiside</span></code></p></li>
+</ul>
+</section>
+<section id="aitemplate">
+<h2><code class="docutils literal notranslate"><span class="pre">aitemplate</span></code><a class="headerlink" href="#aitemplate" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.create</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.active</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.degeneration</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.allowedtimediff</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.basictemp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.commonknowledge</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.secondary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.addtype</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplate.addplugin</span></code></p></li>
+</ul>
+</section>
+<section id="aitemplateplugin">
+<h2><code class="docutils literal notranslate"><span class="pre">aitemplateplugin</span></code><a class="headerlink" href="#aitemplateplugin" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.create</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.active</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.vehiclenumber</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setpathfindingmap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.maxspeed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setsoundsphereradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.sethearingprobability</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.spaceneededtweak</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.speedatzerospace</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.backingspeed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.brakedistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.maxbrakepercentage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookaheadtime</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.minspeedforlookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.minanglediffforslowdown</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.angleslowdownscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.maxanglediffslowdown</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.getstrtype</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setstrtype</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setisantiaircraft</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.culldistance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.equipmenttypename</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setbattlestrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setstrategicstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.selectkey</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setusenopathfindingtogettoobject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.sethasexposedsoldier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setalwaystargetsoldier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.throttlesensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.pitchsensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.rollsensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.yawsensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.proportionalconstant</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.derivativeconstant</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.anglespeedconstant</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.throttlelookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.pitchlookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.rolllookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.yawlookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.throttlescale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.pitchscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.rollscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookverticalsensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookhorizontalsensitivity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookverticallookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookhorizontallookahead</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookverticalscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookhorizontalscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.yawscale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.drivethrottlecontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.driveturncontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.aimverticalcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.aimhorizontalcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookverticalcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.lookhorizontalcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setcamerarelativedofrotationoffsetdeg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setcamerarelativeminrotationdeg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.setcamerarelativemaxrotationdeg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.maxclimbangle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.maxrollangle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.driverollcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.drivepitchcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.aimthrottlecontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.aimrollcontrol</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aitemplateplugin.isfloating</span></code></p></li>
+</ul>
+</section>
+<section id="weapontemplate">
+<h2><code class="docutils literal notranslate"><span class="pre">weaponTemplate</span></code><a class="headerlink" href="#weapontemplate" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.create</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.active</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.deviation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.deviationcorrectiontime</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.indirect</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.healing</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.useaimeronly</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.drag</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.minrange</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.maxrange</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.weaponactivate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.weaponfire</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.isthrown</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.soundsphereradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.exitvelocity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.getstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.setstrength</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.firerate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.firingpose</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.optimalrangepercentage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.explosionradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.alloweddeviation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.firesthroughtransparent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.explodesonimpact</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.weapontype</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.shouldrearm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weapontemplate.isantiairweapon</span></code></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="cmdoptions.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Command Line Options</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Modding</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, The Project Reality Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">All AI Codes</a><ul>
+<li><a class="reference internal" href="#iai"><code class="docutils literal notranslate"><span class="pre">iai</span></code></a></li>
+<li><a class="reference internal" href="#it"><code class="docutils literal notranslate"><span class="pre">IT</span></code></a></li>
+<li><a class="reference internal" href="#ai"><code class="docutils literal notranslate"><span class="pre">ai</span></code></a></li>
+<li><a class="reference internal" href="#aisettings"><code class="docutils literal notranslate"><span class="pre">aisettings</span></code></a></li>
+<li><a class="reference internal" href="#aibotmanager"><code class="docutils literal notranslate"><span class="pre">aibotmanager</span></code></a></li>
+<li><a class="reference internal" href="#aistrategy"><code class="docutils literal notranslate"><span class="pre">aistrategy</span></code></a></li>
+<li><a class="reference internal" href="#aistrategicarea"><code class="docutils literal notranslate"><span class="pre">aistrategicarea</span></code></a></li>
+<li><a class="reference internal" href="#ailandingzone"><code class="docutils literal notranslate"><span class="pre">ailandingzone</span></code></a></li>
+<li><a class="reference internal" href="#aipathfinding"><code class="docutils literal notranslate"><span class="pre">aipathfinding</span></code></a></li>
+<li><a class="reference internal" href="#aidebug"><code class="docutils literal notranslate"><span class="pre">aidebug</span></code></a></li>
+<li><a class="reference internal" href="#airandom"><code class="docutils literal notranslate"><span class="pre">airandom</span></code></a></li>
+<li><a class="reference internal" href="#airadio"><code class="docutils literal notranslate"><span class="pre">airadio</span></code></a></li>
+<li><a class="reference internal" href="#aicheats"><code class="docutils literal notranslate"><span class="pre">aicheats</span></code></a></li>
+<li><a class="reference internal" href="#aiscript"><code class="docutils literal notranslate"><span class="pre">aiscript</span></code></a></li>
+<li><a class="reference internal" href="#objecttemplate"><code class="docutils literal notranslate"><span class="pre">objecttemplate</span></code></a></li>
+<li><a class="reference internal" href="#object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li><a class="reference internal" href="#aitemplate"><code class="docutils literal notranslate"><span class="pre">aitemplate</span></code></a></li>
+<li><a class="reference internal" href="#aitemplateplugin"><code class="docutils literal notranslate"><span class="pre">aitemplateplugin</span></code></a></li>
+<li><a class="reference internal" href="#weapontemplate"><code class="docutils literal notranslate"><span class="pre">weaponTemplate</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
