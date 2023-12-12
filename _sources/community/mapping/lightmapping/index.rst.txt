@@ -5,7 +5,6 @@ Advanced 3DsMax Lightmapping
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :glob:
 
    page1
    page2
@@ -22,3 +21,6 @@ Advanced 3DsMax Lightmapping
    page13
    page14
    page15
+   page16
+   page17
+   page18
