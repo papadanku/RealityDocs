@@ -13,7 +13,8 @@ A lot of the internal components of the game use intrusive reference counting th
 
 .. code-block:: cpp
 
-   class RefCounted {
+   class RefCounted
+   {
    public:
       RefCounted() : m_refCount(1) {}
 
@@ -104,7 +105,8 @@ The game has multiple event systems, game events are events that occur in-game a
 .. code-block:: cpp
    :caption: The (incomplete) class below is the base class used by all events, events often have additional data. A GameEvent has a maximum size of 1024 bits as defined by ``const uint MaximumGameEventSize``.
 
-   class GameEvent : public RefCounted {
+   class GameEvent : public RefCounted
+   {
    public:
       GameEvent() : field_8(-1) {}
 
@@ -190,7 +192,8 @@ Stream
 .. code-block:: cpp
    :caption: Interface used for files, used by FileManager.
 
-   class Stream {
+   class Stream
+   {
    public:
       virtual unsigned read(void* buffer, unsigned numBytes) = 0;
       virtual bool write(void* buffer, unsigned numBytes) = 0;
@@ -211,7 +214,8 @@ FileSystem
 .. code-block:: cpp
    :caption: Interface used and implemented by the FileManager to access the underlying file system.
 
-   class FileSystem {
+   class FileSystem
+   {
    public:
       virtual int unk_1() {}
       virtual int unk_2() {}

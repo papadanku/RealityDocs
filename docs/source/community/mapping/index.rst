@@ -7,3 +7,4 @@ Mapping
    :maxdepth: 2
 
    */index
+   *
