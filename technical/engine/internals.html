@@ -123,7 +123,8 @@
 <section id="reference-counting">
 <h2>Reference Counting<a class="headerlink" href="#reference-counting" title="Permalink to this heading"></a></h2>
 <p>A lot of the internal components of the game use intrusive reference counting through inheritance. The base class would look something like this:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">RefCounted</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">RefCounted</span>
+<span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
 <span class="w">   </span><span class="n">RefCounted</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_refCount</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
@@ -211,7 +212,8 @@
 <p>The game has multiple event systems, game events are events that occur in-game and are related to gameplay.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">The (incomplete) class below is the base class used by all events, events often have additional data. A GameEvent has a maximum size of 1024 bits as defined by <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">uint</span> <span class="pre">MaximumGameEventSize</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GameEvent</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">RefCounted</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GameEvent</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">RefCounted</span>
+<span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
 <span class="w">   </span><span class="n">GameEvent</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">field_8</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
@@ -297,7 +299,8 @@
 <h3>Stream<a class="headerlink" href="#stream" title="Permalink to this heading"></a></h3>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Interface used for files, used by FileManager.</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stream</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stream</span>
+<span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
 <span class="w">   </span><span class="k">virtual</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">numBytes</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">   </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">numBytes</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -319,7 +322,8 @@
 <h3>FileSystem<a class="headerlink" href="#filesystem" title="Permalink to this heading"></a></h3>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Interface used and implemented by the FileManager to access the underlying file system.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FileSystem</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FileSystem</span>
+<span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
 <span class="w">   </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unk_1</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">   </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unk_2</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
