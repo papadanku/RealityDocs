@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AASv4 Game Mode &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating AI Support (CO-OP): PR Maps" href="coopsupport.html" />
+    <link rel="prev" title="18. Addendum" href="lightmapping/page18.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical/python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../factions/index.html">Community Factions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lightmapping/index.html">Advanced 3DsMax Lightmapping</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AASv4 Game Mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tools-needed">Tools Needed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-teams">Setting Up Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#placing-control-points-cps">Placing Control Points (CPs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supplygroupid">SupplyGroupId</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-bases">Main Bases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-randomization">Basic Randomization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aasv4-attack-routes">AASv4 Attack Routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#same-area-different-cps">Same Area, Different CPs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-one-cp-on-all-routes">Using One CP on All Routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-few-more-things-about-main-bases">A Few More Things about Main Bases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flag-names-on-minimap">Flag Names on Minimap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verifying-your-routes">Verifying Your Routes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-closing">In Closing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coopsupport.html">Creating AI Support (CO-OP): PR Maps</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Mapping</a></li>
+      <li class="breadcrumb-item active">AASv4 Game Mode</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/community/mapping/aasv4.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aasv4-game-mode">
+<h1>AASv4 Game Mode<a class="headerlink" href="#aasv4-game-mode" title="Permalink to this heading"></a></h1>
+<p>This tutorial will explain how to set up control points on your map using AASv4 (Advance and Secure version 4).</p>
+<section id="tools-needed">
+<h2>Tools Needed<a class="headerlink" href="#tools-needed" title="Permalink to this heading"></a></h2>
+<p>BF2 Editor</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>A map that has at least one gameplay layer created (i.e. AAS 64 etc.)</p></li>
+<li><dl class="simple">
+<dt>Creating combat zones, object spawners, and spawn points won’t change from previous AAS versions so that won’t be covered in this tutorial. For basic layer information, refer to:</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/13937-map-tutorial-layers-16-32-64-size-maps-etc.html">[Map Tutorial] Layers (16, 32 And 64 Size Maps etc)</a></p></li>
+<li><p><a class="reference external" href="http://www.bfeditor.org/wiki/index.php?title=Creating_a_Basic_Level">Creating a Basic Level - BFEditor</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="setting-up-teams">
+<h2>Setting Up Teams<a class="headerlink" href="#setting-up-teams" title="Permalink to this heading"></a></h2>
+<p>The CP capture order always starts with <strong>Team 1</strong>. So the closest control point to Team 1’s main will be CP#1 and working it’s way out from there. So the first thing you’ll want to do it establish which team will be Team 1. You do this by editing the init.con, which is found in your map’s main folder. Open it up and you’ll see something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rem</span> <span class="o">***</span> <span class="n">Generated</span> <span class="n">by</span> <span class="n">BF2Editor</span> <span class="o">***</span>
+<span class="k">if</span> <span class="n">v_arg1</span> <span class="o">==</span> <span class="n">BF2Editor</span>
+
+<span class="n">run</span> <span class="n">Heightdata</span><span class="o">.</span><span class="n">con</span>
+<span class="n">LevelSettings</span><span class="o">.</span><span class="n">InitWorld</span>
+<span class="n">run</span> <span class="n">Terrain</span><span class="o">.</span><span class="n">con</span> <span class="n">BF2Editor</span>
+<span class="n">run</span> <span class="n">StaticObjects</span><span class="o">.</span><span class="n">con</span> <span class="n">BF2Editor</span>
+<span class="n">run</span> <span class="n">Sounds</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Sky</span><span class="o">.</span><span class="n">con</span> <span class="n">BF2Editor</span>
+<span class="n">run</span> <span class="n">Editor</span><span class="o">/</span><span class="n">GamePlayObjects</span><span class="o">.</span><span class="n">con</span> <span class="n">host</span>
+<span class="n">UndergrowthEditable</span><span class="o">.</span><span class="n">create</span>
+<span class="n">Undergrowth</span><span class="o">.</span><span class="n">load</span> <span class="n">Levels</span>\<span class="n">yourmapname</span>\
+<span class="n">run</span> <span class="n">Overgrowth</span><span class="o">/</span><span class="n">Overgrowth</span><span class="o">.</span><span class="n">con</span>
+<span class="n">Overgrowth</span><span class="o">.</span><span class="n">editorEnable</span> <span class="mi">1</span>
+<span class="n">run</span> <span class="n">AmbientObjects</span><span class="o">.</span><span class="n">con</span> <span class="n">BF2Editor</span>
+<span class="n">run</span> <span class="n">Water</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">TriggerableTemplates</span><span class="o">.</span><span class="n">con</span> <span class="n">BF2Editor</span>
+
+<span class="k">else</span>
+
+<span class="n">run</span> <span class="n">Heightdata</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Terrain</span><span class="o">.</span><span class="n">con</span> <span class="n">v_arg2</span>
+<span class="n">run</span> <span class="n">Sky</span><span class="o">.</span><span class="n">con</span> <span class="n">v_arg2</span>
+<span class="n">run</span> <span class="n">CompiledRoads</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Sounds</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">tmp</span><span class="o">.</span><span class="n">con</span> <span class="n">v_arg1</span>
+<span class="n">Undergrowth</span><span class="o">.</span><span class="n">load</span> <span class="n">Levels</span>\<span class="n">yourmapname</span>\
+<span class="n">run</span> <span class="n">Overgrowth</span><span class="o">/</span><span class="n">Overgrowth</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Overgrowth</span><span class="o">/</span><span class="n">OvergrowthCollision</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">AmbientObjects</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Water</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">TriggerableTemplates</span><span class="o">.</span><span class="n">con</span>
+<span class="n">run</span> <span class="n">Fields</span><span class="o">.</span><span class="n">con</span>
+
+<span class="n">endIf</span>
+
+<span class="n">rem</span> <span class="o">-------------------------------</span> <span class="n">LevelSettings</span> <span class="o">-------------------------------</span>
+<span class="n">rem</span> <span class="o">-----------------------------------------------------------------------------</span>
+
+<span class="n">run</span> <span class="o">../../</span><span class="n">Factions</span><span class="o">/</span><span class="n">faction_init</span><span class="o">.</span><span class="n">con</span> <span class="mi">1</span> <span class="s2">&quot;gb&quot;</span>
+<span class="n">run</span> <span class="o">../../</span><span class="n">Factions</span><span class="o">/</span><span class="n">faction_init</span><span class="o">.</span><span class="n">con</span> <span class="mi">2</span> <span class="s2">&quot;ch&quot;</span>
+
+<span class="n">rem</span> <span class="o">-----------------------------------------------------------------------------</span>
+
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setBeforeSpawnCamera</span> <span class="o">-</span><span class="mi">728</span><span class="o">/</span><span class="mi">24</span><span class="o">/-</span><span class="mi">1075</span> <span class="o">-</span><span class="mf">124.292</span><span class="o">/-</span><span class="mf">2.23791</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">v_arg1</span> <span class="o">==</span> <span class="n">BF2Editor</span>
+<span class="n">LevelSettings</span><span class="o">.</span><span class="n">CustomTextureSuffix</span> <span class="s2">&quot;Woodland&quot;</span>
+<span class="k">else</span>
+<span class="n">texturemanager</span><span class="o">.</span><span class="n">customTextureSuffix</span> <span class="s2">&quot;Woodland&quot;</span>
+<span class="n">endIf</span>
+<span class="n">rem</span> <span class="o">-----------------------------------------------------------------------------</span>
+
+<span class="n">GameLogic</span><span class="o">.</span><span class="n">MaximumLevelViewDistance</span> <span class="mi">800</span>
+
+<span class="n">rem</span> <span class="o">-----------------------------------------------------------------------------</span>
+
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">16</span> <span class="mi">1</span> <span class="mi">50</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">16</span> <span class="mi">2</span> <span class="mi">50</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">32</span> <span class="mi">1</span> <span class="mi">250</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">32</span> <span class="mi">2</span> <span class="mi">250</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">64</span> <span class="mi">1</span> <span class="mi">300</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">64</span> <span class="mi">2</span> <span class="mi">300</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">128</span> <span class="mi">1</span> <span class="mi">50</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultNumberOfTicketsEx</span> <span class="mi">128</span> <span class="mi">2</span> <span class="mi">50</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setDefaultTimeToNextAIWave</span> <span class="mi">8</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setTicketLossAtEndPerMin</span> <span class="mi">1000</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setTicketLossPerMin</span> <span class="mi">1</span> <span class="mi">20</span>
+<span class="n">gameLogic</span><span class="o">.</span><span class="n">setTicketLossPerMin</span> <span class="mi">2</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>Scroll to the section that starts with <code class="docutils literal notranslate"><span class="pre">rem</span> <span class="pre">-------------------------------</span> <span class="pre">LevelSettings</span> <span class="pre">-------------------------------</span></code>. That’s where your teams are defined. The easiest thing to do is to check other maps’ init.con for the team abbreviations that you want to use. Place Team 1 on the first line and Team 2 on the second, then re-save.</p>
+</section>
+<section id="placing-control-points-cps">
+<h2>Placing Control Points (CPs)<a class="headerlink" href="#placing-control-points-cps" title="Permalink to this heading"></a></h2>
+<p>As a quick refresher to the layer tutorial, here’s how to create control points (CPs):</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Open BF2 Editor in it’s “Level” function.</p></li>
+<li><p>In the right column of the Editor screen, select the layer you’d like to add a control point to.</p></li>
+<li><p>Move the camera around in the map and locate where you want to put your control point.</p></li>
+<li><p>Right-click on the spot where you want to place the control point and choose “Create ControlPoint” from the menu that pops up.</p></li>
+<li><p>A window will pop up prompting you for a name.</p></li>
+</ol>
+</div></blockquote>
+<p>PR uses a specific naming convention. Ignore the suggestion that the editor recommends and use this naming template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpname_nameofthemap_gamemode_nameofcpalloneword</span>
+
+<span class="n">Example</span><span class="p">:</span> <span class="s2">&quot;cpname_kashan_desert_aas64_northvillage&quot;</span>
+
+<span class="s2">&quot;cpname&quot;</span> <span class="o">=</span> <span class="n">literally</span> <span class="n">always</span> <span class="n">just</span> <span class="n">the</span> <span class="n">text</span> <span class="s2">&quot;cpname&quot;</span>
+
+<span class="s2">&quot;nameofthemap&quot;</span> <span class="o">=</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span><span class="p">,</span> <span class="k">if</span> <span class="n">spaces</span> <span class="n">are</span> <span class="n">needed</span> <span class="n">use</span> <span class="n">_</span>
+
+<span class="s2">&quot;gamemode&quot;</span> <span class="o">=</span> <span class="n">the</span> <span class="n">game</span> <span class="n">mode</span> <span class="ow">and</span> <span class="n">number</span><span class="o">.</span> <span class="n">Valid</span> <span class="n">values</span> <span class="n">are</span><span class="p">:</span>
+<span class="n">aas</span>
+<span class="n">skirmish</span>
+<span class="n">insurgency</span>
+<span class="n">training</span>
+<span class="n">followed</span> <span class="n">by</span> <span class="n">either</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span> <span class="n">without</span> <span class="n">a</span> <span class="n">space</span>
+
+<span class="s2">&quot;nameofcpalloneword&quot;</span> <span class="o">=</span> <span class="n">literally</span> <span class="nb">all</span> <span class="n">one</span> <span class="n">word</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cpname</span><span class="o">.</span>
+<span class="n">No</span> <span class="n">other</span> <span class="n">characters</span> <span class="k">except</span> <span class="n">alpha</span> <span class="n">characters</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+
+<span class="n">ALL</span> <span class="n">of</span> <span class="n">this</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">lower</span> <span class="n">case</span><span class="o">.</span>  <span class="n">Do</span> <span class="n">this</span> <span class="n">each</span> <span class="n">time</span> <span class="n">you</span> <span class="n">want</span> <span class="n">a</span> <span class="n">control</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="supplygroupid">
+<h2>SupplyGroupId<a class="headerlink" href="#supplygroupid" title="Permalink to this heading"></a></h2>
+<p>Using AASv4, you have a lot more options at your disposal on how you want your control points to show up in game. The order and choice of CPs will depend on the <code class="docutils literal notranslate"><span class="pre">SupplyGroupId</span></code> in the control point’s tweaker bar (highlighted in yellow below).</p>
+<img alt="http://i.imgur.com/ZbOThdS.jpg" src="http://i.imgur.com/ZbOThdS.jpg" />
+<p>In AASv4, we’ll be changing the default SGID of -1 to a specific number, depending on what you want to do.</p>
+<p>AASv4 gives you a LOT more options than ever before, so I’ll explain each option and how to set up the SGIDs using an imaginary PR map.</p>
+</section>
+<section id="main-bases">
+<h2>Main Bases<a class="headerlink" href="#main-bases" title="Permalink to this heading"></a></h2>
+<p>As you probably know, in PR the main bases are not usually in play. They are a safe haven for spawning, vehicle repairs, etc. In order to set up AAS, it’s important to decide how you want your main bases to be set up. The most common is to make them uncappable and assigned to the team that has a main base there. So looking at the tweaker bar above, you would set:</p>
+<blockquote>
+<div><p>Team = 1 (or 2)
+Check the box for “unabletochangeteam”</p>
+<p>SGIDs for main bases are as follows:
+- Team 1 = 1
+- Team 2 = -1</p>
+<p>The only change to this is if you want a main base to be cappable. Then you would assign it a unique SGID based on the tutorial that follows.</p>
+<p>You can also delete the SGID for Team 2’s main if you like by opening the text file and deleting the line <code class="docutils literal notranslate"><span class="pre">ObjectTemplate.supplyGroupId</span> <span class="pre">-1</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="basic-randomization">
+<h2>Basic Randomization<a class="headerlink" href="#basic-randomization" title="Permalink to this heading"></a></h2>
+<p>This is best for smaller (1km and 2km) maps with few control points.</p>
+<p>CPs are assigned a 2-digit SGID (AB) where:
+- A = Its order in the sequence (starting nearest to Team 1’s main)
+- B = If more than one CP has the same A number, B tells the computer how many to pick to be in play.</p>
+<p>If you don’t want a control point to be randomized, assign it a unique “A” digit and then make “B” a zero.</p>
+<p>Example:</p>
+<img alt="http://i.imgur.com/jYI34Pg.jpg" src="http://i.imgur.com/jYI34Pg.jpg" />
+<p>In the photo, Team 1 is located on the carrier and Team 2’s main is the hashed area. The CP layout is as such:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>CP#1:</strong> Village</p></li>
+<li><p><strong>CP#2:</strong> Bridge and Farm both have an SGID number starting with 3, so the computer will look at the second (B) digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.</p></li>
+<li><p><strong>CP#3:</strong> Junction</p></li>
+</ul>
+</div></blockquote>
+<p>As you can see, this is a basic layout. Team 1 will have to capture Village first, then <em>either</em> Farm or Bridge, then lastly Junction. Team 2 has to attack Junction first. Their second flag will be either Farm or Bridge, then their last flag will be Village.</p>
+<p>Now let’s say you want both Farm and Bridge to be picked. By changing the “B” digit from 1 to 2, the computer will now pick <em>both</em> CPs as CP#2. This means that <em>both CPs must be held by a team</em> before it can capture the next flag in the sequence. Be careful using this option as it’s difficult to defend two CPs while attacking a third.</p>
+<img alt="http://i.imgur.com/qgwLQ6j.jpg" src="http://i.imgur.com/qgwLQ6j.jpg" />
+</section>
+<section id="aasv4-attack-routes">
+<h2>AASv4 Attack Routes<a class="headerlink" href="#aasv4-attack-routes" title="Permalink to this heading"></a></h2>
+<p>Attack routes are the heart and soul of AASv4. Basically what you’ll be doing is adding a third digit to the <code class="docutils literal notranslate"><span class="pre">SupplyGroupId</span></code>, so now you’ll have “ABC”, where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>A:</strong> Its order in the sequence (starting nearest to Team 1’s main)</p></li>
+<li><p><strong>B:</strong> If more than one CP has the same A number, B tells the computer how many to pick to be in play.</p></li>
+<li><p><strong>C:</strong> The route it belongs to</p></li>
+</ul>
+</div></blockquote>
+<p>The third digit (or route number) tells the computer that before it does anything else, it should pick a route to use. Since I think showing is better than telling, let me show you some examples:</p>
+<img alt="http://i.imgur.com/zequiL9.jpg" src="http://i.imgur.com/zequiL9.jpg" />
+<p>Here you’ll see two routes, Blue and Green. The first thing you should notice is that the SGIDs have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your SGIDs have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.</p>
+<p>You can have up to 9 routes on your map, which should be plenty.</p>
+<p>Ok, so that’s the basic route set-up. Using this information, you can now incorporate more complexity into your routes. For example, you can add random flags (just like you did in the first part of this tutorial):</p>
+<img alt="http://i.imgur.com/gW1DX0X.jpg" src="http://i.imgur.com/gW1DX0X.jpg" />
+<p>In the above example, I’ve added another CP to the Blue route called Village. This new CP has the same SGID as Port, so let’s break it down by its ABCs:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">2</span></code>: Designating it second in the sequence. No change here.
+<code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">1</span></code>: Since Village and Port both start with an <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">2</span></code>, the computer needs to know how many of the flags should show up. In this case, setting <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">1</span></code> tells the map to pick just one.
+<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">2</span></code>: The route designation.</p>
+</div></blockquote>
+<p>So, if the computer picks route #2, it will then pick <em>either</em> Port or Village (and not both) since you assigned <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+<p>If you are feeling comfortable with how all that works, let’s move on.</p>
+</section>
+<section id="same-area-different-cps">
+<h2>Same Area, Different CPs<a class="headerlink" href="#same-area-different-cps" title="Permalink to this heading"></a></h2>
+<p>One of the features of AASv4 that has never been available before is having multiple CPs for the same area. This is possible by assigning the CPs to different routes.</p>
+<p>So why would we want to do this, you ask?</p>
+<p>Building on the Blue and Green route examples above, let’s start with a simple example. Say you really like the “Village” CP area. It’s fun, is in a great location, and will make for great battles… so you want it to be in more than one route. Solution: create another CP.</p>
+<img alt="http://i.imgur.com/gri1avK.jpg" src="http://i.imgur.com/gri1avK.jpg" />
+<p>Yes, that’s right. Just create another CP and name it something slightly different. To avoid confusion, you can place the route number in the CPs name, such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The Green route “Village” would be: <code class="docutils literal notranslate"><span class="pre">cpname_mapname_aas64_1village</span></code></p></li>
+<li><p>The Blue route “Village” would be: <code class="docutils literal notranslate"><span class="pre">cpname_mapname_aas64_2village</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Simple! Now you can move/edit the CPs within Editor so they have the exact same radius or make them slightly different. Now regardless if route #1 or route #2 gets picked, Village will be a possible CP.</p>
+<p>Another reason you may want more than one CP for an area is to offer variety. This is a little more difficult to explain, but I’ll try.</p>
+<img alt="http://i.imgur.com/geQRsm1.jpg" src="http://i.imgur.com/geQRsm1.jpg" />
+<p>Firstly, I’ve made the “village” into a “city” (forgive my photoshopping abilities). By using the multiple CP option, I can now make it so that if route #3 (Orange) is picked, the players may see a 150m North City, 150m South City, or a 300m Entire City flag. The computer will pick just one because <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">1</span></code> and it won’t interfere with the CPs in other routes because <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">3</span></code> (designating it as route 3).</p>
+<p>Now putting it all together, you get:</p>
+<img alt="http://i.imgur.com/GObRqjU.jpg" src="http://i.imgur.com/GObRqjU.jpg" />
+<p>You can see why it will be important to properly name your CPs so it includes the route number… but you can also see the amazing possibilities AASv4 gives you.</p>
+</section>
+<section id="using-one-cp-on-all-routes">
+<h2>Using One CP on All Routes<a class="headerlink" href="#using-one-cp-on-all-routes" title="Permalink to this heading"></a></h2>
+<p>Depending on your map layout, you may want to include one CP on all of your routes. For example, here is an old Fools Road AASv4 set-up:</p>
+<img alt="http://i.imgur.com/Tn9St1O.jpg" src="http://i.imgur.com/Tn9St1O.jpg" />
+<p>You can see that CP#1 and CP#5 are on all of the routes. This often makes sense when the map has a final location that the armies have a “mission” to capture or defend… such as a missile silo, airfield, etc. When this is the case, you don’t have to create separate CPs for each route but can instead assign it a single digit. If the CP is at the beginning of the route, it would have an <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>. You would then set both main bases to <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">-1</span></code> since neither is in a route. Basically, here’s the way to look at it: The computer needs to see an <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>, so if your main base fulfills that role then great. If it doesn’t, then the first flag needs to be <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+<p>Ok, so what if your shared CP is at the <strong>end</strong> of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit SGID that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.</p>
+<p>It’s important to note here that you can’t have a gap in the sequence. So if Fools Road had a route that only had SGIDs of <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">205</span></code>, <code class="docutils literal notranslate"><span class="pre">305</span></code>, and <code class="docutils literal notranslate"><span class="pre">5</span></code> then there would be a gap between <code class="docutils literal notranslate"><span class="pre">305</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code> and it wouldn’t work. The map would load just fine, but neither team could cap the other out.</p>
+</section>
+<section id="a-few-more-things-about-main-bases">
+<h2>A Few More Things about Main Bases<a class="headerlink" href="#a-few-more-things-about-main-bases" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>I know we’ve talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit SGIDs with <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">the</span> <span class="pre">last</span> <span class="pre">number</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">routes</span></code>. The reason behind this is that all of your <strong>spawn points</strong> and <strong>objectspawners</strong> are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn’t picked. So the best thing to do is ensure your spawners are tied to a CP that isn’t cappable and is not assigned to a route. The simplest way to do this is to assign <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">-1</span></code>. If you want your spawners to be associated with a CP that <em>is</em> cappable, so that the team loses it’s ability to spawn, then you must give it a single digit SGID so that it is part of all routes.</p></li>
+<li><p>With the exception of CnC mode, 99% of main bases should be marked with a CP. This let’s players know where the main bases are and thus where the domes of deaths are. So if your main is not cappable and not part of your routes, you’ll still need to make sure the CP is marked on the map.</p></li>
+</ul>
+<p>Looking back at the Fools Road example, you could do it either way. You could set all of your spawners to the closest flag, which means it’s cappable by the enemy and when it’s lost, no one can spawn or repair, etc. Or you can create a uncappable CP for your spawns that is always active.</p>
+</section>
+<section id="flag-names-on-minimap">
+<h2>Flag Names on Minimap<a class="headerlink" href="#flag-names-on-minimap" title="Permalink to this heading"></a></h2>
+<p>When your map is nearly final (or ready for play testing), there are two more steps that you’ll need to take:</p>
+<ol class="arabic">
+<li><p>Adding flag names to the localization file</p>
+<p>Since you don’t want players to see the confusing flag name that you used above (ie. cpname_map_aas64_flagname), you’ll want to follow <a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/63107-map-tutorial-map-localisation.html">this tutorial</a>.</p>
+</li>
+<li><p>Ensuring flag name doesn’t go off the minimap</p>
+<p>Once you’ve updated your localization file, jump in game and check to make sure the flag names don’t go off the minimap. This is especially common with main bases and flags near the map edge with long names. To correct this, go back into editor and edit the “MinimapNameOffset” values:</p>
+</li>
+</ol>
+<img alt="http://i.imgur.com/fv292tj.jpg" src="http://i.imgur.com/fv292tj.jpg" />
+<p>If you click on the + sign, it will expand so you can change the X value (left/right) and Y value (up/down). This is typically trial and error getting the value just right so you will likely have to go in-game several times to see how it looks.</p>
+</section>
+<section id="verifying-your-routes">
+<h2>Verifying Your Routes<a class="headerlink" href="#verifying-your-routes" title="Permalink to this heading"></a></h2>
+<p>We got a tool to verify these routes and other things on nice little overview images.</p>
+<p>Like this:</p>
+<img alt="http://i.imgur.com/YQDgaFE.jpg" src="http://i.imgur.com/YQDgaFE.jpg" />
+<p>It has a nice set of options to tweak it to your settings:</p>
+<img alt="http://i.imgur.com/3dxDyAJ.png" src="http://i.imgur.com/3dxDyAJ.png" />
+<p>I’m sure you’ll be able to figure it out how to get it to work. If not feel free to ask further here.</p>
+<p><strong>Download link:</strong> <a class="reference external" href="https://files.realitymod.com/prbf2/PRMapOverviewHelper.zip">https://files.realitymod.com/prbf2/P…viewHelper.zip</a></p>
+</section>
+<section id="in-closing">
+<h2>In Closing<a class="headerlink" href="#in-closing" title="Permalink to this heading"></a></h2>
+<p>Have fun and experiment. These new capabilities should allow you to create more focused fighting, more strategic points of interest, more logical avenues of attack, more variety, and so much more!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lightmapping/page18.html" class="btn btn-neutral float-left" title="18. Addendum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="coopsupport.html" class="btn btn-neutral float-right" title="Creating AI Support (CO-OP): PR Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
