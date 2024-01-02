@@ -121,7 +121,7 @@ BF2 Objects
    .. py:method:: setDamage(intValue)
    .. py:method:: getIsWreck()
 
-      :return: ``1`` if the vehicle is destroyed.
+      :return: ``1`` if the vehicle is destroyed
       :rtype: bool
 
    .. py:method:: getOccupyingPlayers()
