@@ -4,7 +4,7 @@ BF2 Coordinates
 
 Battlefield 2 uses basic a basic 3-dimensional coordinate system to specify the position and orientation of objects within the game world.
 
-Note that only objects of the :py:class:`PhysicalObject` class and classes that inherit from it (:py:class:`soldierObject`, :py:class:`ControlPointObject`, and so on) that “exist” in the game world and posssess positons and orientations. So, for example, instances of :py:class:`bf2.PlayerManager.Player` do **not** have positions or orientations.
+Note that only objects of the :py:class:`PhysicalObject` class and classes that inherit from it (:py:class:`soldierObject`, :py:class:`controlPointObject`, and so on) that “exist” in the game world and posssess positons and orientations. So, for example, instances of :py:class:`bf2.PlayerManager.Player` do **not** have positions or orientations.
 
 So, to retrieve position and orientation for a vehicle (say, an Abrams tank), representated by the :py:class:`vehicleObject` ``tank``:
 
