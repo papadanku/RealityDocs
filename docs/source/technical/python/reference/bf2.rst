@@ -25,7 +25,7 @@ bf2
    .. py:method:: getMapName()
    .. py:method:: getWorldSize()
 
-      returns a tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.
+      :return: A tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.
 
    .. py:method:: getTeamName(team)
    .. py:method:: isAIGame()
@@ -212,16 +212,16 @@ Class attributes stored in the BF2 engine
    .. py:method:: setTeam(t)
    .. py:method:: getPing()
 
-      Returns the player's ping (network transit time from player to server and back) in milliseconds
+      :return: The player's ping (network transit time from player to server and back) in milliseconds
 
    .. py:method:: getSuicide()
 
-      Returns 1 if the player suicided. Resets once the player spawns.
+      :return: `1` if the player suicided. Resets once the player spawns.
 
    .. py:method:: setSuicide(t)
    .. py:method:: getTimeToSpawn()
 
-      Returns 0 when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
+      :return: `0` when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
 
    .. py:method:: setTimeToSpawn(t)
 
@@ -229,19 +229,19 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: getSquadId()
 
-      Returns the player's squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.
+      :return: The player's squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.
 
    .. py:method:: isSquadLeader()
 
-      Returns 1 if player is a squad leader.
+      :return: `1` if player is a squad leader.
 
    .. py:method:: isCommander()
 
-      Returns 1 if player is currently the commander.
+      :return: `1` if player is currently the commander.
 
    .. py:method:: getName()
 
-      Return's player's name
+      :return: Player's name
 
    .. py:method:: setName(name)
 
@@ -253,23 +253,23 @@ Class attributes stored in the BF2 engine
    .. py:method:: setSpawnGroup(t)
    .. py:method:: getKit()
 
-      Returns the current player's kit object.
+      :return: The current player's kit object.
 
    .. py:method:: getVehicle()
 
-      Returns the current player's vehicle object. If the player is not in a vehicle at the time this returns the player's soldier object.
+      :return: The current player's vehicle object. If the player is not in a vehicle at the time this returns the player's soldier object.
 
    .. py:method:: getDefaultVehicle()
 
-      Returns the player's soldier object, no matter what vehicle they are in.
+      :return: The player's soldier object, no matter what vehicle they are in.
 
    .. py:method:: getPrimaryWeapon()
 
-      Returns the weapon object for the player's currently selected weapon.
+      :return: The weapon object for the player's currently selected weapon.
 
    .. py:method:: getAddress()
 
-      Returns player's IP address.
+      :return: The player's IP address.
 
    .. py:method:: setIsInsideCP(val)
    .. py:method:: getIsInsideCP()
@@ -316,7 +316,7 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: getTime()
 
-      Returns the :doc:`wall time <../../engine/time>` at which this timer will fire.
+      :return: The :doc:`wall time <../../engine/time>` at which this timer will fire.
 
    .. py:method:: setTime(time)
 
@@ -374,7 +374,7 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: getObjects(trig_id)
 
-      Returns a tuple containing all objects currently within the specified trigger region.
+      :return: A tuple containing all objects currently within the specified trigger region.
 
 .. py:class:: bf2.stats.constants
 
@@ -394,6 +394,8 @@ Class attributes stored in the BF2 engine
    .. py:method:: getGameModeId(gameMode)
    .. py:method:: getRootParent(physicalObject)
 
-      Traverses the containment for physicalObject all the way to the top; returns the outermost (topmost?) containing object.
+      Traverses the containment for physicalObject all the way to the top
 
       For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the :doc:`Game Engine Object Templates <../../engine/objecttemplates>` page.
+
+      :return: The outermost (topmost?) containing object.
