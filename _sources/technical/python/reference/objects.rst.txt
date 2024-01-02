@@ -33,11 +33,11 @@ BF2 Objects
    .. py:method:: setRotation((A, B, C))
    .. py:method:: getParent()
 
-      :returns: ``PhysicalObject`` that contains this instance, if any.
+      :return: ``PhysicalObject`` that contains this instance, if any.
 
    .. py:method:: getChildren()
 
-      :returns: A tuple of multiple ``PhysicalObject`` contained by this instance.
+      :return: A tuple of multiple ``PhysicalObject`` contained by this instance.
 
    For information about the coordinate system used by the Position and Rotation methods, see the page on :doc:`BF2 Coordinates <../../engine/coordinates>`.
 
@@ -121,11 +121,11 @@ BF2 Objects
    .. py:method:: setDamage(intValue)
    .. py:method:: getIsWreck()
 
-      :returns: Boolean, 1 if the vehicle is destroyed.
+      :return: Boolean, 1 if the vehicle is destroyed.
 
    .. py:method:: getOccupyingPlayers()
 
-      :returns: An array with index 0 being the driver.
+      :return: An array with index 0 being the driver.
 
    .. py:method:: getIsRemoteControlled()
 
