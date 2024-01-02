@@ -208,7 +208,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pers_plrRequestStats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">urlToStatType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.pers_plrRequestStats" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Specified stat of the specified player.</p>
+<dd class="field-odd"><p>Specified stat of the specified player</p>
 </dd>
 </dl>
 </dd></dl>
@@ -218,7 +218,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pers_plrRequestUnlocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.pers_plrRequestUnlocks" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Specified player’s unlocks.</p>
+<dd class="field-odd"><p>Specified player’s unlocks</p>
 </dd>
 </dl>
 </dd></dl>
@@ -295,7 +295,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">sgl_getIsAIGame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.sgl_getIsAIGame" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Whether or not the current game has AI.</p>
+<dd class="field-odd"><p>Whether or not the current game has AI</p>
 </dd>
 </dl>
 </dd></dl>
@@ -326,7 +326,10 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">sgl_getWorldSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.sgl_getWorldSize" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.</p>
+<dd class="field-odd"><p>The north/south/east/west dimensions of the current map, more-or-less in meters</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
 </dd>
 </dl>
 </dd></dl>
@@ -336,7 +339,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">sgl_getMapName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.sgl_getMapName" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Current map name.</p>
+<dd class="field-odd"><p>Current map name</p>
 </dd>
 </dl>
 </dd></dl>
@@ -346,7 +349,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">sgl_getModDirectory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.sgl_getModDirectory" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Directory containing the currently active mod.</p>
+<dd class="field-odd"><p>Directory containing the currently active mod</p>
 </dd>
 </dl>
 </dd></dl>
@@ -405,10 +408,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="host.timer_getTimers">
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">timer_getTimers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.timer_getTimers" title="Permalink to this definition"></a></dt>
-<dd><p><strong>Do not use, unfinished DICE code.</strong></p>
+<dd><p><strong>Do not use, unfinished DICE code.</strong> Trying to access the other slots will crash the server.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Creates a Tuple and only fills one slot. Trying to access the other slots will crash the server.</p>
+<dd class="field-odd"><p>A tuple and only fills one slot</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
 </dd>
 </dl>
 </dd></dl>
@@ -424,7 +430,7 @@
 <dd><p>See <a class="reference internal" href="../../engine/time.html"><span class="doc">BF2 Time</span></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of seconds since server started.</p>
+<dd class="field-odd"><p>The number of seconds since server started</p>
 </dd>
 </dl>
 </dd></dl>
@@ -442,7 +448,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_getScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_getScore" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Score name of specified player.</p>
+<dd class="field-odd"><p>Score name of specified player</p>
 </dd>
 </dl>
 </dd></dl>
@@ -452,7 +458,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_setScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playerIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_setScore" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Score name of specified player.</p>
+<dd class="field-odd"><p>Score name of specified player</p>
 </dd>
 </dl>
 </dd></dl>
@@ -472,7 +478,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_isIndexValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_isIndexValid" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Validity of specified player index.</p>
+<dd class="field-odd"><p>Validity of specified player index</p>
 </dd>
 </dl>
 </dd></dl>
@@ -482,7 +488,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_getCommander</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_getCommander" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Player object for the current commander.</p>
+<dd class="field-odd"><p>Player object for the current commander</p>
 </dd>
 </dl>
 </dd></dl>
@@ -492,7 +498,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_getPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_getPlayers" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Current player objects.</p>
+<dd class="field-odd"><p>Current player objects</p>
 </dd>
 </dl>
 </dd></dl>
@@ -502,7 +508,7 @@
 <span class="sig-prename descclassname"><span class="pre">host.</span></span><span class="sig-name descname"><span class="pre">pmgr_getNumberOfPlayers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#host.pmgr_getNumberOfPlayers" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Number of players.</p>
+<dd class="field-odd"><p>Number of players</p>
 </dd>
 </dl>
 </dd></dl>

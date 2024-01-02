@@ -182,7 +182,10 @@
 <span class="sig-name descname"><span class="pre">getWorldSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.GameLogic.GameLogic.getWorldSize" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.</p>
+<dd class="field-odd"><p>The north/south/east/west dimensions of the current map, in meters</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
 </dd>
 </dl>
 </dd></dl>
@@ -662,7 +665,7 @@
 <span class="sig-name descname"><span class="pre">getSuicide</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getSuicide" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the player suicided. Resets once the player spawns.</p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if the player suicided (resets once the player spawns)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -677,7 +680,10 @@
 <span class="sig-name descname"><span class="pre">getTimeToSpawn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getTimeToSpawn" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">0</span></code> when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.</p>
+<dd class="field-odd"><p>The number of seconds until they are allowed to spawn</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">0</span></code> when a player is spawned in; when a player is waiting to spawn</p>
 </dd>
 </dl>
 </dd></dl>
@@ -691,9 +697,10 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="bf2.PlayerManager.Player.getSquadId">
 <span class="sig-name descname"><span class="pre">getSquadId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getSquadId" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Squads for each team are independently numbered beginning at <code class="docutils literal notranslate"><span class="pre">1</span></code> and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The player’s squad ID. Squads for each team are independently numbered beginning at 1 and increasing thereafter. Players not on a squad, including team commanders, are assigned to squad 0.</p>
+<dd class="field-odd"><p>The player’s squad ID</p>
 </dd>
 </dl>
 </dd></dl>
@@ -703,7 +710,7 @@
 <span class="sig-name descname"><span class="pre">isSquadLeader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isSquadLeader" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if player is a squad leader.</p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if player is a squad leader</p>
 </dd>
 </dl>
 </dd></dl>
@@ -713,7 +720,7 @@
 <span class="sig-name descname"><span class="pre">isCommander</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.isCommander" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if player is currently the commander.</p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if player is currently the commander</p>
 </dd>
 </dl>
 </dd></dl>
@@ -750,7 +757,7 @@
 <span class="sig-name descname"><span class="pre">getKit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getKit" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The current player’s kit object.</p>
+<dd class="field-odd"><p>The current player’s kit object</p>
 </dd>
 </dl>
 </dd></dl>
@@ -760,7 +767,10 @@
 <span class="sig-name descname"><span class="pre">getVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getVehicle" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The current player’s vehicle object. If the player is not in a vehicle at the time this returns the player’s soldier object.</p>
+<dd class="field-odd"><p>The current player’s vehicle object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The player’s soldier object if the player is not in a vehicle at the time</p>
 </dd>
 </dl>
 </dd></dl>
@@ -770,7 +780,7 @@
 <span class="sig-name descname"><span class="pre">getDefaultVehicle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getDefaultVehicle" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The player’s soldier object, no matter what vehicle they are in.</p>
+<dd class="field-odd"><p>The player’s soldier object, no matter what vehicle they are in</p>
 </dd>
 </dl>
 </dd></dl>
@@ -780,7 +790,7 @@
 <span class="sig-name descname"><span class="pre">getPrimaryWeapon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getPrimaryWeapon" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The weapon object for the player’s currently selected weapon.</p>
+<dd class="field-odd"><p>The weapon object for the player’s currently selected weapon</p>
 </dd>
 </dl>
 </dd></dl>
@@ -790,7 +800,7 @@
 <span class="sig-name descname"><span class="pre">getAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.PlayerManager.Player.getAddress" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The player’s IP address.</p>
+<dd class="field-odd"><p>The player’s IP address</p>
 </dd>
 </dl>
 </dd></dl>
@@ -895,7 +905,7 @@
 <span class="sig-name descname"><span class="pre">getTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bf2.Timer.getTime" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The <a class="reference internal" href="../../engine/time.html"><span class="doc">wall time</span></a> at which this timer will fire.</p>
+<dd class="field-odd"><p>The <a class="reference internal" href="../../engine/time.html"><span class="doc">wall time</span></a> at which this timer will fire</p>
 </dd>
 </dl>
 </dd></dl>
@@ -984,7 +994,7 @@
 <span class="sig-name descname"><span class="pre">getObjects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trig_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf2.TriggerManager.TriggerManager.getObjects" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A tuple containing all objects currently within the specified trigger region.</p>
+<dd class="field-odd"><p>A tuple containing all objects currently within the specified trigger region</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1036,7 +1046,7 @@
 <p>For example, <code class="docutils literal notranslate"><span class="pre">getWeaponType(&quot;usrif_m16a2&quot;)</span></code> looks up an M16 rifle in a dictionary called <code class="docutils literal notranslate"><span class="pre">weaponTypeMap</span></code> (also defined in <a class="reference internal" href="#bf2.stats.constants" title="bf2.stats.constants"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.stats.constants</span></code></a>) and returns the constant <code class="docutils literal notranslate"><span class="pre">WEAPON_TYPE_ASSAULT</span></code>… which, too, is defined in <a class="reference internal" href="#bf2.stats.constants" title="bf2.stats.constants"><code class="xref py py-class docutils literal notranslate"><span class="pre">bf2.stats.constants</span></code></a>, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the <a class="reference internal" href="../../engine/objecttemplates.html"><span class="doc">Game Engine Object Templates</span></a> page.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The outermost (topmost?) containing object.</p>
+<dd class="field-odd"><p>The outermost (topmost?) containing object</p>
 </dd>
 </dl>
 </dd></dl>
