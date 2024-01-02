@@ -55,11 +55,7 @@ BF2 Objects
 
    .. py:attribute:: flagPosition
 
-      Returns:
-
-      - ``0`` = top
-      - ``1`` = middle
-      - ``2`` = bottom
+      :return: ``0`` (top), ``1`` (middle), ``2`` (bottom)
 
    .. py:attribute:: lastAttackingTeam
    .. py:attribute:: triggerId
@@ -83,23 +79,23 @@ BF2 Objects
 
    .. py:property:: areaValue
 
-      The weighting value for this control point
+      The weighting value for this control point.
 
    .. py:property:: unableToChangeTeam
 
-      Whether or not this control point is capturable (0) or not (1)
+      Whether or not this control point is capturable (``0``) or not (``1``).
 
    .. py:property:: timeToGetControl
 
-      How many seconds it takes to get control of this control point
+      How many seconds it takes to get control of this control point.
 
    .. py:property:: timeToLoseControl
 
-      How many seconds it takes to get control of this control point
+      How many seconds it takes to get control of this control point.
 
    .. py:property:: onlyTakeableByTeam
 
-      Whether (1) or not (0) this control point is only capturable by one team
+      Whether (1) or not (0) this control point is only capturable by one team.
 
    .. py:property:: takeOverChangePerSecond
 
@@ -107,11 +103,11 @@ BF2 Objects
 
    .. py:property:: enemyTicketLossWhenCaptured
 
-      Ticket loss caused to the enemy when this control point is captured *(needs to be verified)*
+      Ticket loss caused to the enemy when this control point is captured *(needs to be verified)*.
 
    .. py:property:: playerId
 
-      *Unknown; may set the ``playerID`` of the player that captured this control point first (the first player to arrive, not assisting players?)*
+      Unknown; may set the ``playerID`` of the player that captured this control point first (the first player to arrive, not assisting players?).
 
 .. py:class:: vehicleObject
 
