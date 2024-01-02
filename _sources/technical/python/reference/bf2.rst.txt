@@ -216,12 +216,12 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: getSuicide()
 
-      :return: `1` if the player suicided. Resets once the player spawns.
+      :return: ``1`` if the player suicided. Resets once the player spawns.
 
    .. py:method:: setSuicide(t)
    .. py:method:: getTimeToSpawn()
 
-      :return: `0` when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
+      :return: ``0`` when a player is spawned in; when a player is waiting to spawn, it returns the number of seconds until they are allowed to spawn.
 
    .. py:method:: setTimeToSpawn(t)
 
@@ -233,11 +233,11 @@ Class attributes stored in the BF2 engine
 
    .. py:method:: isSquadLeader()
 
-      :return: `1` if player is a squad leader.
+      :return: ``1`` if player is a squad leader.
 
    .. py:method:: isCommander()
 
-      :return: `1` if player is currently the commander.
+      :return: ``1`` if player is currently the commander.
 
    .. py:method:: getName()
 
