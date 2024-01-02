@@ -48,11 +48,11 @@ Global Stats Methods
 
 .. py:method:: pers_plrRequestStats(playerIndex, unknown, urlToStatType)
 
-   :return: Specified stat of the specified player.
+   :return: Specified stat of the specified player
 
 .. py:method:: pers_plrRequestUnlocks(playerIndex, unknown)
 
-   :return: Specified player's unlocks.
+   :return: Specified player's unlocks
 
 .. py:method:: pers_plrSetUnlocks(playerIndex, unknown1, unknown2)
 
@@ -93,7 +93,7 @@ Global Stats Methods
 
 .. py:method:: sgl_getIsAIGame()
 
-   :return: Whether or not the current game has AI.
+   :return: Whether or not the current game has AI
 
 .. py:method:: sgl_getControlPointsInGroup
 
@@ -107,15 +107,16 @@ Global Stats Methods
 
 .. py:method:: sgl_getWorldSize()
 
-   :return: Tuple giving the north/south and east/west dimensions of the current map, more-or-less in meters.
+   :return: The north/south/east/west dimensions of the current map, more-or-less in meters
+   :rtype: tuple
 
 .. py:method:: sgl_getMapName()
 
-   :return: Current map name.
+   :return: Current map name
 
 .. py:method:: sgl_getModDirectory()
 
-   :return: Directory containing the currently active mod.
+   :return: Directory containing the currently active mod
 
 ``ss`` Methods (Server Settings?)
 ---------------------------------
@@ -155,9 +156,10 @@ Timer Methods
 
 .. py:method:: timer_getTimers()
 
-   **Do not use, unfinished DICE code.**
+   **Do not use, unfinished DICE code.** Trying to access the other slots will crash the server.
 
-   :return: Creates a Tuple and only fills one slot. Trying to access the other slots will crash the server.
+   :return: A tuple and only fills one slot
+   :rtype: tuple
 
 .. py:method:: timer_destroy(timer)
 
@@ -165,7 +167,7 @@ Timer Methods
 
    See :doc:`BF2 Time <../../engine/time>`
 
-   :return: The number of seconds since server started.
+   :return: The number of seconds since server started
 
 Player Manager Methods
 ----------------------
@@ -173,29 +175,29 @@ Player Manager Methods
 .. py:method:: pmgr_enableScoreEvents
 .. py:method:: pmgr_getScore(playerIndex, name)
 
-   :return: Score name of specified player.
+   :return: Score name of specified player
 
 .. py:method:: pmgr_setScore(playerIndex, name, value)
 
-   :return: Score name of specified player.
+   :return: Score name of specified player
 
 .. py:method:: pmgr_p_get(name, playerIndex)
 .. py:method:: pmgr_p_set(name, playerIndex, value)
 .. py:method:: pmgr_isIndexValid(index)
 
-   :return: Validity of specified player index.
+   :return: Validity of specified player index
 
 .. py:method:: pmgr_getCommander()
 
-   :return: Player object for the current commander.
+   :return: Player object for the current commander
 
 .. py:method:: pmgr_getPlayers()
 
-   :return: Current player objects.
+   :return: Current player objects
 
 .. py:method:: pmgr_getNumberOfPlayers()
 
-   :return: Number of players.
+   :return: Number of players
 
 ``RCon`` Methods
 ----------------
