@@ -31,7 +31,7 @@ bf2
    .. py:method:: isAIGame()
    .. py:method:: sendClientCommand(playerId, command, args)
 
-      Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a ```ClientCommand`` <../events.rst#command-events>`_ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
+      Appears to tell game engine to prompt a player for input; the player's response returns control to Python by generating a `ClientCommand <../events.rst#command-events>`_ event; command is typically a numeric value, args can be anything, but is typically a tuple or list.
 
    .. py:method:: sendGameEvent(playerObject, event, data)
 
@@ -59,19 +59,19 @@ bf2
    .. py:method:: getVictoryType()
    .. py:method:: setHealPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerHealPoint`` <../events.rst#player-events>`_ event.
+      Percentage heal required to trigger a `PlayerHealPoint <../events.rst#player-events>`_ event.
 
    .. py:method:: setRepairPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerRepairPoint`` <../events.rst#player-events>`_ event.
+      Percentage heal required to trigger a `PlayerRepairPoint <../events.rst#player-events>`_ event.
 
    .. py:method:: setGiveAmmoPointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerGiveAmmoPoint`` <../events.rst#player-events>`_ event.
+      Percentage heal required to trigger a `PlayerGiveAmmoPoint <../events.rst#player-events>`_ event.
 
    .. py:method:: setTeamDamagePointLimit(value)
 
-      Percentage heal required to trigger a ```PlayerTeamDamagePoint`` <../events.rst#player-events>`_ event.
+      Percentage heal required to trigger a `PlayerTeamDamagePoint <../events.rst#player-events>`_ event.
 
    .. py:method:: setTeamVehicleDamagePointLimit(value)
 
