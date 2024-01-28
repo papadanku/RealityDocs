@@ -29,7 +29,7 @@ First to find out which patches are used and are not used the simplest way is to
 
       .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg
 
-   #. Download this `terrain_patch_grid.png <http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png>`_ image
+   #. :download:`terrain_patch_grid.png <http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png>`
 
       #. *(Right Click, Save As)*
       #. Open it up with Photoshop

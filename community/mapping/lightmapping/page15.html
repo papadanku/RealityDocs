@@ -67,6 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
@@ -89,7 +90,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coopsupport.html">Creating AI Support (CO-OP): PR Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
 </ul>
 </li>
@@ -124,7 +124,7 @@
   <section id="terrain-sea-water-depth-transparency-lightmap">
 <h1><span class="section-number">15. </span>Terrain Sea Water Depth/Transparency Lightmap<a class="headerlink" href="#terrain-sea-water-depth-transparency-lightmap" title="Permalink to this heading"></a></h1>
 <p>As mentioned above the, red channel in the terrain lightmap is used to control the water transparency depending on the depth of the water, unlike statics where the red channel is used for point lighting. This is a pretty quick thing to generate since there is no shadowing required.</p>
-<p>First load your lightmapping scene back up in 3DsMax<strong>9</strong> and then download and merge this <strong>_WaterLight</strong> into your scene the same way you did for your sky lights: <a class="reference external" href="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Water_Light_Template.max">https://media.realitymod.com/tutoria…t_Template.max</a></p>
+<p>First load your lightmapping scene back up in 3DsMax<strong>9</strong> and then download and merge this <strong>_WaterLight</strong> into your scene the same way you did for your sky lights: <a class="reference download external" download="" href="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Water_Light_Template.max"><code class="xref download docutils literal notranslate"><span class="pre">https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Water_Light_Template.max</span></code></a></p>
 <p>This is a <strong>Target Direct</strong> Light, like your Sun Light, but its placed in the centre of your map and points directly downwards. By default the light is at <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">50</span></code> (X, Y, Z) and you should change the Z Axis value, i.e., the highest this light is placed at to be the same level as your sea water level, which in my case is 5m, or 50 units, which it is already <em>(Ignore that I have the light switched off, forgot to turn it on, the one in the template above is on by default)</em></p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000453.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000453.jpg" />
 <p>This light is already setup not to cast any shadows and to case the correct red light etc. The only change you may want to make is the <code class="docutils literal notranslate"><span class="pre">Near</span> <span class="pre">Attenuation</span></code> settings, which basically controls the start and end of the transparency, with the end being when the water is totally opaque, ie, once the water is very deep. When the terrain is lightmapped with the BF2 Editor the water becomes opaque at around 3.5m, which is what the <code class="docutils literal notranslate"><span class="pre">End</span></code> setting in the <code class="docutils literal notranslate"><span class="pre">Near</span> <span class="pre">Attenuation</span></code> is set to currently. If, however, you want your sea water to be more transparent increase this value and if you want it to be less, decrease this value. Since my map is a sunny tropical map with crystal blue water and with some coral reefs around the island, I want my water to be pretty transparent so I’m going to increase my <code class="docutils literal notranslate"><span class="pre">Near</span> <span class="pre">Attenuation</span></code>, <code class="docutils literal notranslate"><span class="pre">End</span></code> values to 45 units <em>(4.5m and again, ignore that the light is turned off in the pics below)</em>.</p>

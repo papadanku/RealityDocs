@@ -300,7 +300,7 @@ It has a nice set of options to tweak it to your settings:
 
 I'm sure you'll be able to figure it out how to get it to work. If not feel free to ask further here.
 
-**Download link:** `https://files.realitymod.com/prbf2/P...viewHelper.zip <https://files.realitymod.com/prbf2/PRMapOverviewHelper.zip>`_
+:download:`https://files.realitymod.com/prbf2/PRMapOverviewHelper.zip`
 
 In Closing
 ----------

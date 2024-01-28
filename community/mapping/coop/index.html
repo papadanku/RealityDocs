@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. 3DsMax - Lightmapping Scene Setup &mdash; RealityDocs  documentation</title>
+  <title>CO-OP &mdash; RealityDocs  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4. Importing Terrain into 3DsMax" href="page4.html" />
-    <link rel="prev" title="2. Converting Overgrowth to Static" href="page2.html" /> 
+    <link rel="next" title="Creating AI Support" href="aisupport.html" />
+    <link rel="prev" title="Mapping" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,28 +67,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3. 3DsMax - Lightmapping Scene Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page7.html">7. Cleaning Up Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page18.html">18. Addendum</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CO-OP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aisupport.html">Creating AI Support</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../lightmapping/index.html">Advanced 3DsMax Lightmapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
 </ul>
@@ -110,10 +93,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Mapping</a></li>
-          <li class="breadcrumb-item"><a href="index.html">Advanced 3DsMax Lightmapping</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">3. </span>3DsMax - Lightmapping Scene Setup</li>
+      <li class="breadcrumb-item active">CO-OP</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/community/mapping/lightmapping/page3.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/community/mapping/coop/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -121,14 +103,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dsmax-lightmapping-scene-setup">
-<h1><span class="section-number">3. </span>3DsMax - Lightmapping Scene Setup<a class="headerlink" href="#dsmax-lightmapping-scene-setup" title="Permalink to this heading"></a></h1>
-<p>First create a new scene and go to “Customise &gt; Units Setup” and for lightmapping you need to set the Display Unit Scale to “Generic Units” and then click “System Unit Setup” and set “1 Unit = “ to “1.0 Inches” then click ok. This will result in a scale of <strong>1m (in BF2) = 10 Units (in Max)</strong>.</p>
-<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000011.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000011.jpg" />
-<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000012.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000012.jpg" />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For modelling and exporting I recommend using Metric Meters but for Lightmapping its best to use Generic Units.</p>
+  <section id="co-op">
+<h1>CO-OP<a class="headerlink" href="#co-op" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aisupport.html">Creating AI Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aisupport.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aisupport.html#common-terms">Common Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aisupport.html#pre-tutorial">Pre-Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aisupport.html#main-tutorial">Main tutorial</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -136,8 +122,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="page2.html" class="btn btn-neutral float-left" title="2. Converting Overgrowth to Static" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="page4.html" class="btn btn-neutral float-right" title="4. Importing Terrain into 3DsMax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Mapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aisupport.html" class="btn btn-neutral float-right" title="Creating AI Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

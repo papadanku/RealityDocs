@@ -101,7 +101,7 @@ For this tutorial I will be using "**Adv. Ray Traced**" Shadows since I'm trying
 Import Lights
 ^^^^^^^^^^^^^
 
-Now its time to import the Sky Lights we are going to use. Download this file here which has the recommend Sky Lights and Settings I'm going to be using in this tutorial and are at the very least a good base for your map for you to tweak from: `https://media.realitymod.com/tutoria...t_Template.zip <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip>`_
+Now its time to import the Sky Lights we are going to use. Download this file here which has the recommend Sky Lights and Settings I'm going to be using in this tutorial and are at the very least a good base for your map for you to tweak from: :download:`https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip`
 
 Then go to **File > Merge** and browse to and select this file, and import all the lights inside of it into your map:
 
@@ -161,7 +161,7 @@ I'm going to make a big Omni light in the Lighthouse by:
          - The last bunch of settings can be tweaked quite a bit depending on how powerful the light is and how far your want the light to travel etc.
          - Getting it right will take a bit of trial and error and to get it right you can do a quick render of your viewport in max and/or do Test lightmap Renders which I'll get into later in this tutorial.
 
-I'm also going to apply my Lighting Template for the Carrier that I've done for other maps since that takes me only a few seconds to apply and here are the settings of the three type of lights used on it, which are two types of **Spot Light** and one type of **Omni Light**, which are all instances of each other so changing the settings on one will change the settings on all the other instances (which is what you should also be doing for your lighting) and if you want to use this Carrier Light Template on your map you can download it here and just align it to the Bridge, note however this is setup for HMS Invincible and if used on the USS Essex there will be a few differences: `https://media.realitymod.com/tutoria...s_Template.zip <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip>`_
+I'm also going to apply my Lighting Template for the Carrier that I've done for other maps since that takes me only a few seconds to apply and here are the settings of the three type of lights used on it, which are two types of **Spot Light** and one type of **Omni Light**, which are all instances of each other so changing the settings on one will change the settings on all the other instances (which is what you should also be doing for your lighting) and if you want to use this Carrier Light Template on your map you can download it here and just align it to the Bridge, note however this is setup for HMS Invincible and if used on the USS Essex there will be a few differences: :download:`https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip`
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000188.jpg
 
