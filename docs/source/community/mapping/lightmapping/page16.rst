@@ -38,7 +38,7 @@ If you now switch back to the RGB channels, your lightmap should now look like t
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000473.jpg
 
-Now that you've got your combined terrain lightmap sorted with all sun, sky and water lighting in it, it's time to split it up into lots of little ``.dds`` images so that the game can use them. First download this script kindly made by [R-DEV]AncientMan for this tutorial and install it on your computer by extracting the folder inside the ``.zip`` to anywhere on your computer: `https://media.realitymod.com/tutoria...ultipleDDS.zip <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/SplitTgaToMultipleDDS.zip>`_
+Now that you've got your combined terrain lightmap sorted with all sun, sky and water lighting in it, it's time to split it up into lots of little ``.dds`` images so that the game can use them. First download this script kindly made by [R-DEV]AncientMan for this tutorial and install it on your computer by extracting the folder inside the ``.zip`` to anywhere on your computer: :download:`https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/SplitTgaToMultipleDDS.zip`
 
 .. note::
 

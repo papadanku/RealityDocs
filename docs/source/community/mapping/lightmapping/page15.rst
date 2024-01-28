@@ -3,7 +3,7 @@ Terrain Sea Water Depth/Transparency Lightmap
 
 As mentioned above the, red channel in the terrain lightmap is used to control the water transparency depending on the depth of the water, unlike statics where the red channel is used for point lighting. This is a pretty quick thing to generate since there is no shadowing required.
 
-First load your lightmapping scene back up in 3DsMax\ **9** and then download and merge this **\_WaterLight** into your scene the same way you did for your sky lights: `https://media.realitymod.com/tutoria...t_Template.max <https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Water_Light_Template.max>`_
+First load your lightmapping scene back up in 3DsMax\ **9** and then download and merge this **\_WaterLight** into your scene the same way you did for your sky lights: :download:`https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Water_Light_Template.max`
 
 
 This is a **Target Direct** Light, like your Sun Light, but its placed in the centre of your map and points directly downwards. By default the light is at ``0, 0, 50`` (X, Y, Z) and you should change the Z Axis value, i.e., the highest this light is placed at to be the same level as your sea water level, which in my case is 5m, or 50 units, which it is already *(Ignore that I have the light switched off, forgot to turn it on, the one in the template above is on by default)*

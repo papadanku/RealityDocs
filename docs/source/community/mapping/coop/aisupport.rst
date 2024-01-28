@@ -1,5 +1,5 @@
-Creating AI Support (CO-OP): PR Maps
-====================================
+Creating AI Support
+===================
 
 In this tutorial you'll learn how to set up your PR map to support the Co-Operative gamemode with bots.
 
@@ -42,7 +42,7 @@ With that in mind, lets continue.
 
 For this tutorial you'll need default editor install, the necessary files come with it as mentioned and the nav statics.
 
-`Nav Statics Download <https://www.dropbox.com/s/w86d8hdq3rou2vv/navstatics.rar?dl=0>`_
+:download:`Download Nav Statics <https://www.dropbox.com/s/w86d8hdq3rou2vv/navstatics.rar?dl=0>`
 
    Unzip this file to ``mods/pr_edit/objects``. All of the ``_nav`` versions can then be found at ``mods/pr_edit/objects/staticobjects/_stuff``. If your static doesn't have a ``_nav`` there then it's probably already got one as part of its original file.
 

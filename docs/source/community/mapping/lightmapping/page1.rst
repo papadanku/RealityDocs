@@ -76,8 +76,8 @@ Requirements & Tools
 --------------------
 
 - Battlefield 2 v1.5
-- `BF2 Editor v1.3 <http://files.ancientdev.com/prbf2/PREditor.zip>`_
-- The latest version of `Project Reality: BF2 <https://www.realitymod.com/downloads>`_ with a `pr_edit <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_ (or equivalent) working mod setup and working.
+- :download:`BF2 Editor v1.3 <http://files.ancientdev.com/prbf2/PREditor.zip>`
+- `Project Reality: BF2 <https://www.realitymod.com/downloads>`_ with a `pr_edit <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_ (or equivalent) working mod setup and working.
 - 3DsMax9 (version 9 or later)
 - `PR:BF2 3DsMax9 Tools <https://www.realitymod.com/forum/showthread.php?t=145720>`_
 - `Adobe Photoshop <https://www.adobe.com/products/photoshop.html>`_

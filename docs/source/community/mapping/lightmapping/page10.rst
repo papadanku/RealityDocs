@@ -103,7 +103,7 @@ Open that file it creates and it should look something like this, which is what 
 These are all the statics and their LODs in your map that can now be lightmapped, but currently each LOD has its lightmap size ``undefined`` and we need to define it.
 
    #. Merge our ``Master LightmapSizes`` file which, has most of the static lightmap sizes already defined.
-   #. Download this `master_size.txt <https://files.realitymod.com/lightmapping/master_size.txt>`_ *(right click, save as)*
+   #. :download:`master_size.txt <https://files.realitymod.com/lightmapping/master_size.txt>` *(right click, save as)*
    #. Open it with a text editor, then paste it onto the end of your ``master_size.txt`` file and save it: `https://files.realitymod.com/lightma...aster_size.txt <https://files.realitymod.com/lightmapping/master_size.txt>`_
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000155.jpg
