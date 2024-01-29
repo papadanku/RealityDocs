@@ -135,39 +135,39 @@ Project Reality uses a specific naming convention. Ignore the suggestion that th
 SupplyGroupId
 -------------
 
-Using AASv4, you have a lot more options at your disposal on how you want your control points to show up in game. The order and choice of CPs will depend on the ``SupplyGroupId`` in the control point's tweaker bar (highlighted in yellow below).
+Using AASv4, you have a lot more options at your disposal on how you want your control points to show up in game. The order and choice of CPs will depend on the :guilabel:`SupplyGroupId` in the control point's tweaker bar (highlighted in yellow below).
 
 .. image:: http://i.imgur.com/ZbOThdS.jpg
 
-In AASv4, we'll be changing the default ``SGID`` of ``-1`` to a specific number, depending on what you want to do.
+In AASv4, we'll be changing the default :guilabel:`SGID` of :guilabel:`-1` to a specific number, depending on what you want to do.
 
-AASv4 gives you a LOT more options than ever before, so I'll explain each option and how to set up the ``SGID`` using an imaginary PR map.
+AASv4 gives you a LOT more options than ever before, so I'll explain each option and how to set up the :guilabel:`SGID` using an imaginary PR map.
 
 Main Bases
 ----------
 
 As you probably know, in PR the main bases are not usually in play. They are a safe haven for spawning, vehicle repairs, etc. In order to set up AAS, it's important to decide how you want your main bases to be set up. The most common is to make them uncappable and assigned to the team that has a main base there. So looking at the tweaker bar above, you would set:
 
-   :Team: ``1`` (or ``2``)
+   :Team: :guilabel:`1` (or :guilabel:`2`)
    :unabletochangeteam: Check the box
-   :Team 1: ``1``
-   :Team 2: ``1``
+   :Team 1: :guilabel:`1`
+   :Team 2: :guilabel:`1`
 
-   The only change to this is if you want a main base to be cappable. Then you would assign it a unique ``SGID`` based on the tutorial that follows.
+   The only change to this is if you want a main base to be cappable. Then you would assign it a unique :guilabel:`SGID` based on the tutorial that follows.
 
-   You can also delete the ``SGID`` for ``Team 2``'s main if you like by opening the text file and deleting the line ``ObjectTemplate.supplyGroupId -1``.
+   You can also delete the :guilabel:`SGID` for ``Team 2``'s main if you like by opening the text file and deleting the line ``ObjectTemplate.supplyGroupId -1``.
 
 Basic Randomization
 -------------------
 
 This is best for smaller (1km and 2km) maps with few control points.
 
-CPs are assigned a 2-digit ``SGID`` (AB) where:
+CPs are assigned a 2-digit :guilabel:`SGID` (AB) where:
 
    :A: Its order in the sequence (starting nearest to ``Team 1``'s main)
    :B: If more than one CP has the same A number, ``B`` tells the computer how many to pick to be in play.
 
-If you don't want a control point to be randomized, assign it a unique ``A`` digit and then make ``B`` a ``0``.
+If you don't want a control point to be randomized, assign it a unique ``A`` digit and then make ``B`` a :guilabel:`0`.
 
 Example:
 
@@ -176,7 +176,7 @@ Example:
 In the photo, Team 1 is located on the carrier and Team 2's main is the hashed area. The CP layout is as such:
 
    :CP#1: Village
-   :CP#2: Bridge and Farm both have an ``SGID`` number starting with 3, so the computer will look at the second ``B`` digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.
+   :CP#2: Bridge and Farm both have an :guilabel:`SGID` number starting with 3, so the computer will look at the second ``B`` digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.
    :CP#3: Junction
 
 As you can see, this is a basic layout. Team 1 will have to capture Village first, then *either* Farm or Bridge, then lastly Junction. Team 2 has to attack Junction first. Their second flag will be either Farm or Bridge, then their last flag will be Village.
@@ -198,7 +198,7 @@ The third digit (or route number) tells the computer that before it does anythin
 
 .. image:: http://i.imgur.com/zequiL9.jpg
 
-Here you'll see two routes, Blue and Green. The first thing you should notice is that the ``SGID``\s have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your ``SGID``\s have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.
+Here you'll see two routes, Blue and Green. The first thing you should notice is that the :guilabel:`SGID`\s have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your :guilabel:`SGID`\s have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.
 
 You can have up to 9 routes on your map, which should be plenty.
 
@@ -206,7 +206,7 @@ Ok, so that's the basic route set-up. Using this information, you can now incorp
 
 .. image:: http://i.imgur.com/gW1DX0X.jpg
 
-In the above example, I've added another CP to the Blue route called Village. This new CP has the same ``SGID``\s as Port, so let's break it down by its ABCs:
+In the above example, I've added another CP to the Blue route called Village. This new CP has the same :guilabel:`SGID`\s as Port, so let's break it down by its ABCs:
 
    :A = 2: Designating it second in the sequence. No change here.
    :B = 1: Since Village and Port both start with an ``A = 2``, the computer needs to know how many of the flags should show up. In this case, setting ``B = 1`` tells the map to pick just one.
@@ -255,14 +255,14 @@ Depending on your map layout, you may want to include one CP on all of your rout
 
 You can see that CP#1 and CP#5 are on all of the routes. This often makes sense when the map has a final location that the armies have a "mission" to capture or defend... such as a missile silo, airfield, etc. When this is the case, you don't have to create separate CPs for each route but can instead assign it a single digit. If the CP is at the beginning of the route, it would have an ``SGID = 1``. You would then set both main bases to ``SGID = -1`` since neither is in a route. Basically, here's the way to look at it: The computer needs to see an ``SGID = 1``, so if your main base fulfills that role then great. If it doesn't, then the first flag needs to be ``SGID = 1``.
 
-Ok, so what if your shared CP is at the **end** of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit ``SGID`` that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.
+Ok, so what if your shared CP is at the **end** of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit :guilabel:`SGID` that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.
 
-It's important to note here that you can't have a gap in the sequence. So if Fools Road had a route that only had ``SGID``\s of ``1``, ``205``, ``305``, and ``5`` then there would be a gap between ``305`` and ``5`` and it wouldn't work. The map would load just fine, but neither team could cap the other out.
+It's important to note here that you can't have a gap in the sequence. So if Fools Road had a route that only had :guilabel:`SGID`\s of :guilabel:`1`, :guilabel:`205`, :guilabel:`305`, and :guilabel:`5` then there would be a gap between :guilabel:`305` and :guilabel:`5` and it wouldn't work. The map would load just fine, but neither team could cap the other out.
 
 A Few More Things about Main Bases
 ----------------------------------
 
--  I know we've talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit ``SGID``\s with ``Team 1 = 1`` and ``Team 2 = the last number in the routes``. The reason behind this is that all of your **spawn points** and **objectspawners** are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn't picked. So the best thing to do is ensure your spawners are tied to a CP that isn't cappable and is not assigned to a route. The simplest way to do this is to assign ``Team 1 = 1`` and ``Team 2 = -1``. If you want your spawners to be associated with a CP that *is* cappable, so that the team loses it's ability to spawn, then you must give it a single digit ``SGID`` so that it is part of all routes.
+-  I know we've talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit :guilabel:`SGID`\s with ``Team 1 = 1`` and ``Team 2 = the last number in the routes``. The reason behind this is that all of your **spawn points** and **objectspawners** are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn't picked. So the best thing to do is ensure your spawners are tied to a CP that isn't cappable and is not assigned to a route. The simplest way to do this is to assign ``Team 1 = 1`` and ``Team 2 = -1``. If you want your spawners to be associated with a CP that *is* cappable, so that the team loses it's ability to spawn, then you must give it a single digit :guilabel:`SGID` so that it is part of all routes.
 -  With the exception of CnC mode, 99% of main bases should be marked with a CP. This let's players know where the main bases are and thus where the domes of deaths are. So if your main is not cappable and not part of your routes, you'll still need to make sure the CP is marked on the map.
 
 Looking back at the Fools Road example, you could do it either way. You could set all of your spawners to the closest flag, which means it's cappable by the enemy and when it's lost, no one can spawn or repair, etc. Or you can create a uncappable CP for your spawns that is always active.

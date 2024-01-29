@@ -250,10 +250,10 @@
 </section>
 <section id="supplygroupid">
 <h2>SupplyGroupId<a class="headerlink" href="#supplygroupid" title="Permalink to this heading"></a></h2>
-<p>Using AASv4, you have a lot more options at your disposal on how you want your control points to show up in game. The order and choice of CPs will depend on the <code class="docutils literal notranslate"><span class="pre">SupplyGroupId</span></code> in the control point’s tweaker bar (highlighted in yellow below).</p>
+<p>Using AASv4, you have a lot more options at your disposal on how you want your control points to show up in game. The order and choice of CPs will depend on the <span class="guilabel">SupplyGroupId</span> in the control point’s tweaker bar (highlighted in yellow below).</p>
 <img alt="http://i.imgur.com/ZbOThdS.jpg" src="http://i.imgur.com/ZbOThdS.jpg" />
-<p>In AASv4, we’ll be changing the default <code class="docutils literal notranslate"><span class="pre">SGID</span></code> of <code class="docutils literal notranslate"><span class="pre">-1</span></code> to a specific number, depending on what you want to do.</p>
-<p>AASv4 gives you a LOT more options than ever before, so I’ll explain each option and how to set up the <code class="docutils literal notranslate"><span class="pre">SGID</span></code> using an imaginary PR map.</p>
+<p>In AASv4, we’ll be changing the default <span class="guilabel">SGID</span> of <span class="guilabel">-1</span> to a specific number, depending on what you want to do.</p>
+<p>AASv4 gives you a LOT more options than ever before, so I’ll explain each option and how to set up the <span class="guilabel">SGID</span> using an imaginary PR map.</p>
 </section>
 <section id="main-bases">
 <h2>Main Bases<a class="headerlink" href="#main-bases" title="Permalink to this heading"></a></h2>
@@ -261,26 +261,26 @@
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Team<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> (or <code class="docutils literal notranslate"><span class="pre">2</span></code>)</p>
+<dd class="field-odd"><p><span class="guilabel">1</span> (or <span class="guilabel">2</span>)</p>
 </dd>
 <dt class="field-even">unabletochangeteam<span class="colon">:</span></dt>
 <dd class="field-even"><p>Check the box</p>
 </dd>
 <dt class="field-odd">Team 1<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<dd class="field-odd"><p><span class="guilabel">1</span></p>
 </dd>
 <dt class="field-even">Team 2<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<dd class="field-even"><p><span class="guilabel">1</span></p>
 </dd>
 </dl>
-<p>The only change to this is if you want a main base to be cappable. Then you would assign it a unique <code class="docutils literal notranslate"><span class="pre">SGID</span></code> based on the tutorial that follows.</p>
-<p>You can also delete the <code class="docutils literal notranslate"><span class="pre">SGID</span></code> for <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span></code>’s main if you like by opening the text file and deleting the line <code class="docutils literal notranslate"><span class="pre">ObjectTemplate.supplyGroupId</span> <span class="pre">-1</span></code>.</p>
+<p>The only change to this is if you want a main base to be cappable. Then you would assign it a unique <span class="guilabel">SGID</span> based on the tutorial that follows.</p>
+<p>You can also delete the <span class="guilabel">SGID</span> for <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span></code>’s main if you like by opening the text file and deleting the line <code class="docutils literal notranslate"><span class="pre">ObjectTemplate.supplyGroupId</span> <span class="pre">-1</span></code>.</p>
 </div></blockquote>
 </section>
 <section id="basic-randomization">
 <h2>Basic Randomization<a class="headerlink" href="#basic-randomization" title="Permalink to this heading"></a></h2>
 <p>This is best for smaller (1km and 2km) maps with few control points.</p>
-<p>CPs are assigned a 2-digit <code class="docutils literal notranslate"><span class="pre">SGID</span></code> (AB) where:</p>
+<p>CPs are assigned a 2-digit <span class="guilabel">SGID</span> (AB) where:</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">A<span class="colon">:</span></dt>
@@ -291,7 +291,7 @@
 </dd>
 </dl>
 </div></blockquote>
-<p>If you don’t want a control point to be randomized, assign it a unique <code class="docutils literal notranslate"><span class="pre">A</span></code> digit and then make <code class="docutils literal notranslate"><span class="pre">B</span></code> a <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>If you don’t want a control point to be randomized, assign it a unique <code class="docutils literal notranslate"><span class="pre">A</span></code> digit and then make <code class="docutils literal notranslate"><span class="pre">B</span></code> a <span class="guilabel">0</span>.</p>
 <p>Example:</p>
 <img alt="http://i.imgur.com/jYI34Pg.jpg" src="http://i.imgur.com/jYI34Pg.jpg" />
 <p>In the photo, Team 1 is located on the carrier and Team 2’s main is the hashed area. The CP layout is as such:</p>
@@ -301,7 +301,7 @@
 <dd class="field-odd"><p>Village</p>
 </dd>
 <dt class="field-even">CP#2<span class="colon">:</span></dt>
-<dd class="field-even"><p>Bridge and Farm both have an <code class="docutils literal notranslate"><span class="pre">SGID</span></code> number starting with 3, so the computer will look at the second <code class="docutils literal notranslate"><span class="pre">B</span></code> digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.</p>
+<dd class="field-even"><p>Bridge and Farm both have an <span class="guilabel">SGID</span> number starting with 3, so the computer will look at the second <code class="docutils literal notranslate"><span class="pre">B</span></code> digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.</p>
 </dd>
 <dt class="field-odd">CP#3<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Junction</p>
@@ -330,11 +330,11 @@
 </div></blockquote>
 <p>The third digit (or route number) tells the computer that before it does anything else, it should pick a route to use. Since I think showing is better than telling, let me show you some examples:</p>
 <img alt="http://i.imgur.com/zequiL9.jpg" src="http://i.imgur.com/zequiL9.jpg" />
-<p>Here you’ll see two routes, Blue and Green. The first thing you should notice is that the <code class="docutils literal notranslate"><span class="pre">SGID</span></code>s have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your <code class="docutils literal notranslate"><span class="pre">SGID</span></code>s have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.</p>
+<p>Here you’ll see two routes, Blue and Green. The first thing you should notice is that the <span class="guilabel">SGID</span>s have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your <span class="guilabel">SGID</span>s have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.</p>
 <p>You can have up to 9 routes on your map, which should be plenty.</p>
 <p>Ok, so that’s the basic route set-up. Using this information, you can now incorporate more complexity into your routes. For example, you can add random flags (just like you did in the first part of this tutorial):</p>
 <img alt="http://i.imgur.com/gW1DX0X.jpg" src="http://i.imgur.com/gW1DX0X.jpg" />
-<p>In the above example, I’ve added another CP to the Blue route called Village. This new CP has the same <code class="docutils literal notranslate"><span class="pre">SGID</span></code>s as Port, so let’s break it down by its ABCs:</p>
+<p>In the above example, I’ve added another CP to the Blue route called Village. This new CP has the same <span class="guilabel">SGID</span>s as Port, so let’s break it down by its ABCs:</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">A = 2<span class="colon">:</span></dt>
@@ -381,13 +381,13 @@
 <p>Depending on your map layout, you may want to include one CP on all of your routes. For example, here is an old Fools Road AASv4 set-up:</p>
 <img alt="http://i.imgur.com/Tn9St1O.jpg" src="http://i.imgur.com/Tn9St1O.jpg" />
 <p>You can see that CP#1 and CP#5 are on all of the routes. This often makes sense when the map has a final location that the armies have a “mission” to capture or defend… such as a missile silo, airfield, etc. When this is the case, you don’t have to create separate CPs for each route but can instead assign it a single digit. If the CP is at the beginning of the route, it would have an <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>. You would then set both main bases to <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">-1</span></code> since neither is in a route. Basically, here’s the way to look at it: The computer needs to see an <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>, so if your main base fulfills that role then great. If it doesn’t, then the first flag needs to be <code class="docutils literal notranslate"><span class="pre">SGID</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
-<p>Ok, so what if your shared CP is at the <strong>end</strong> of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit <code class="docutils literal notranslate"><span class="pre">SGID</span></code> that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.</p>
-<p>It’s important to note here that you can’t have a gap in the sequence. So if Fools Road had a route that only had <code class="docutils literal notranslate"><span class="pre">SGID</span></code>s of <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">205</span></code>, <code class="docutils literal notranslate"><span class="pre">305</span></code>, and <code class="docutils literal notranslate"><span class="pre">5</span></code> then there would be a gap between <code class="docutils literal notranslate"><span class="pre">305</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code> and it wouldn’t work. The map would load just fine, but neither team could cap the other out.</p>
+<p>Ok, so what if your shared CP is at the <strong>end</strong> of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit <span class="guilabel">SGID</span> that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.</p>
+<p>It’s important to note here that you can’t have a gap in the sequence. So if Fools Road had a route that only had <span class="guilabel">SGID</span>s of <span class="guilabel">1</span>, <span class="guilabel">205</span>, <span class="guilabel">305</span>, and <span class="guilabel">5</span> then there would be a gap between <span class="guilabel">305</span> and <span class="guilabel">5</span> and it wouldn’t work. The map would load just fine, but neither team could cap the other out.</p>
 </section>
 <section id="a-few-more-things-about-main-bases">
 <h2>A Few More Things about Main Bases<a class="headerlink" href="#a-few-more-things-about-main-bases" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>I know we’ve talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit <code class="docutils literal notranslate"><span class="pre">SGID</span></code>s with <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">the</span> <span class="pre">last</span> <span class="pre">number</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">routes</span></code>. The reason behind this is that all of your <strong>spawn points</strong> and <strong>objectspawners</strong> are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn’t picked. So the best thing to do is ensure your spawners are tied to a CP that isn’t cappable and is not assigned to a route. The simplest way to do this is to assign <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">-1</span></code>. If you want your spawners to be associated with a CP that <em>is</em> cappable, so that the team loses it’s ability to spawn, then you must give it a single digit <code class="docutils literal notranslate"><span class="pre">SGID</span></code> so that it is part of all routes.</p></li>
+<li><p>I know we’ve talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit <span class="guilabel">SGID</span>s with <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">the</span> <span class="pre">last</span> <span class="pre">number</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">routes</span></code>. The reason behind this is that all of your <strong>spawn points</strong> and <strong>objectspawners</strong> are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn’t picked. So the best thing to do is ensure your spawners are tied to a CP that isn’t cappable and is not assigned to a route. The simplest way to do this is to assign <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">-1</span></code>. If you want your spawners to be associated with a CP that <em>is</em> cappable, so that the team loses it’s ability to spawn, then you must give it a single digit <span class="guilabel">SGID</span> so that it is part of all routes.</p></li>
 <li><p>With the exception of CnC mode, 99% of main bases should be marked with a CP. This let’s players know where the main bases are and thus where the domes of deaths are. So if your main is not cappable and not part of your routes, you’ll still need to make sure the CP is marked on the map.</p></li>
 </ul>
 <p>Looking back at the Fools Road example, you could do it either way. You could set all of your spawners to the closest flag, which means it’s cappable by the enemy and when it’s lost, no one can spawn or repair, etc. Or you can create a uncappable CP for your spawns that is always active.</p>
