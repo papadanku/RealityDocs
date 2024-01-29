@@ -8,7 +8,7 @@ Welcome to Project Reality's Official Documentation!
 
    Website <https://www.realitymod.com/>
    GitHub <https://github.com/realitymod>
-   YouTube <https://www.realitymod.com/>
+   YouTube <https://www.youtube.com/@ProjectRealityMod>
 
 .. toctree::
    :caption: Technical Documentation
@@ -22,8 +22,8 @@ Welcome to Project Reality's Official Documentation!
    :glob:
    :hidden:
 
-   community/*
-   community/*/index
+   modding/*
+   modding/*/index
 
 The Technical Information Wiki is a resource for the BF2 community, a repository of technical information related to the games Battlefield 2 and the modification Project Reality. Specifically, we hope to collect a lot of useful information here related to using the embedded Python capabilities of these games, modding, game statistics, administration, etc.
 
