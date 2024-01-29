@@ -28,7 +28,7 @@ First we are going to replace our :guilabel:`af_palmbush_01`, since it is the fi
 
 Once that has finished apply the :guilabel:`Overgrowth` Material to the selection
 
-   Unless its something like the :guilabel:`civi car 1`, which does not need it and applying it will most likley mess it up from its :guilabel:`MatID`s not matching the bark mat and you should now see all these objects with transparent leaves.
+   Unless its something like the :guilabel:`civi car 1`, which does not need it and applying it will most likley mess it up from its :guilabel:`MatID`\s not matching the bark mat and you should now see all these objects with transparent leaves.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000126.jpg
 
