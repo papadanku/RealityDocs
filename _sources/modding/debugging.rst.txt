@@ -7,6 +7,7 @@ The BF2/PR debugger is extremely helpful in tracking down bugs that don't give e
 #. Download the following files modified to work with the debugger (they are quite outdated compared to the release version but it doesn't really matter):
 
     :download:`Debugger Files <https://files.realitymod.com/resources/Debugger_files.zip>`
+
     :download:`Menu Files <https://drive.google.com/file/d/1ZWQdh90h0eTIO9okBuOxm7SRyMxavCNS/view?usp=sharing>` 
 
 #. Extract Debugger files into your root Project Reality folder (i.e. ``C:\Program Files (x86)\Project Reality\Project Reality BF2\``) and modified menu files into ``mods/pr_edit/content``.
