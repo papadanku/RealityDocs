@@ -31,7 +31,6 @@ Intel Core
 Happens due to some unknown differences in the way GPU drivers allocate memory, hence why some players might not encounter this error at all
 
 Experimental Fix
-
    Use DXVK and enable the config ``d3d9.deviceLossOnFocusLoss = True``. DXVK has a built in mapped memory, making longer session less prone to crashes but there are still some bugs with DXVK hence why this is marked as experimental.
 
    :download:`https://github.com/doitsujin/dxvk`
