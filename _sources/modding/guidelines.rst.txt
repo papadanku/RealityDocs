@@ -15,16 +15,13 @@ Posting for Feedback
 
 We need the following type of shots below in able for us and other users to give you as much feedback on your model as possible. Keep in mind the more good shots you can give us of your model the more feedback someone can give you but dont go about taking lots of crappy shots as too many rubbish shots will more likley put someone off from giving you feedback rather than help them giving you feedback, so take what shots you need to and make sure they all show vital parts of the model that you need feedback on and are clear and use as much space on the shot as possible.
 
-- Wireframe screenshot :kbd:`F3`
-
+Wireframe screenshot :kbd:`F3`
    So we can see if the model has errors in the mesh. **These are best taken from the top, side and front views**... though sometimes a perspective view is good too.
 
-- Edged faces screenshot :kbd:`F4`
-
+Edged faces screenshot :kbd:`F4`
    So we can see if the model has errors in the mesh.
 
-- Screenshot without wireframe or edged faces
-
+Screenshot without wireframe or edged faces
    So we can see if there are smoothing errors and to get an idea of how its going to look ingame.
 
 .. note::
