@@ -7,21 +7,17 @@ Requirements
 ------------
 
 Tools
-^^^^^
-
-:BF2 Editor: :download:`BF2 Editor <http://files.ancientdev.com/prbf2/PREditor.zip>`
-:Photoshop: :download:`https://www.adobe.com/products/photoshop.html`
-:NVIDIA DDS Plugins: :download:`http://developer.nvidia.com/object/photoshop_dds_plugins.html`
-:RAM: The bigger the map, the more RAM you are going to need.
+   :BF2 Editor: :download:`BF2 Editor <http://files.ancientdev.com/prbf2/PREditor.zip>`
+   :Photoshop: :download:`https://www.adobe.com/products/photoshop.html`
+   :NVIDIA DDS Plugins: :download:`http://developer.nvidia.com/object/photoshop_dds_plugins.html`
+   :RAM: The bigger the map, the more RAM you are going to need.
 
 Materials
-^^^^^^^^^
+   - Map with the editor colormap or detailmap files etc.
 
-- Map with the editor colormap or detailmap files etc.
+      Needs to be finished for best results.
 
-   Needs to be finished for best results.
-
-- Completion of `Setting Up The BF2 Editor for PR Mapping/Modding <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
+   - Completion of `Setting Up The BF2 Editor for PR Mapping/Modding <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
 
 ----
 
