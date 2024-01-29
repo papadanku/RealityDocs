@@ -34,10 +34,15 @@ Coordinates are specified by a three-element tuple, ``(X, Y, Z)``. For example:
 Within ``.con`` files these coordinates are written with slashes: ``X/Y/Z``.
 
 These coordinates spell out a position along three axes:
-
-- The ``X`` value tells how far east or west an object is; moving further east causes ``X`` to increase, moving further west causes it to decrease.
-- The ``Y`` value tells your altitude; as you go higher, ``Y`` increases.
-- The ``Z`` value tells how far north or south an object is; moving further north causes ``Z`` to increase, moving further south causes it to decrease.
+   :X:
+      - How far East or West an object is
+      - Moving further East/West causes it to increase/decrease
+   :Y:
+      - Your altitude
+      - Increases as you go higher
+   :Z:
+      - How far North or South an object is
+      - Increases/decreases as you move further North/South
 
 In all BF2 maps, the origin of the coordinate system (0, 0) is at the point in the very center of the map. Each unit in the coordinate system equals approximately 1 meter in the game world. Therefore, the example coordinate listed above will be a point 160.96 meters east and 266.02 meters south of map center, at an altitude of 162.55 meters. Note, however, that this is an “absolute” altitude; the altitude relative to the ground will depend on how high the surface of the ground is at that point; “sea level” varies quite a bit from map to map.
 
@@ -74,28 +79,29 @@ Rotation
    (166.29025268554687, 0.0, 0.0)
 
 Within .con files, these angles are written with slashes: ``A/P/R``.
+   A
+      (“azimuth”, also known as “yaw”) gives rotation from due north going clockwise (if A is positive) or counter-clockwise (if A is negative), (or, the amount our viewpoint is rotated around a vertical axis passing through our viewpoint) measured in degrees:
 
-- ``A`` (“azimuth”, also known as “yaw”) gives rotation from due north going clockwise (if A is positive) or counter-clockwise (if A is negative), (or, the amount our viewpoint is rotated around a vertical axis passing through our viewpoint) measured in degrees:
+      :0: Due North
+      :90: Due East
+      :180: Due South
+      :270: Due West
+   P
+      (“pitch”) tells how much we're tilting down compared to horizontal, (or, the amount tilted up or down along the axis passing through our viewpoint from left to right) measured in degrees:
 
-   - ``A=0`` (due north)
-   - ``A=90`` (due east)
-   - ``A=180`` (due south)
-   - ``A=270`` (due west)
+      :-90: Looking straight up
+      :-45: Tilting up halfway between horizonal and vertical
+      :0: Horizontal
+      :45: Tilting down halfway between horizontal and vertical
+      :90: Looking straight down
 
-- ``P`` (“pitch”) tells how much we're tilting down compared to horizontal, (or, the amount tilted up or down along the axis passing through our viewpoint from left to right) measured in degrees:
+   R
+      (“roll”) gives the amount the viewpoint has rolled around an axis passing from the back of our viewpoint through the front of the viewpoint, measured in degrees:
 
-   - ``P=0`` (horizontal)
-   - ``P=45`` (tilting down halfway between horizontal and vertical)
-   - ``P=90`` (looking straight down)
-   - ``P=-45`` (tilting up halfway between horizonal and vertical)
-   - ``P=-90`` (looking straight up)
-
-- ``R`` (“roll”) gives the amount the viewpoint has rolled around an axis passing from the back of our viewpoint through the front of the viewpoint, measured in degrees:
-
-   - ``R=0`` (no roll)
-   - ``R=45`` (viewpoint is rolled counter-clockwise by 45 degrees)
-   - ``R=-45`` (viewpoint is rolled clockwise by 45 degrees)
+      :-45: Viewpoint is rolled clockwise by 45 degrees
+      :0: No roll
+      :45: Viewpoint is rolled counter-clockwise by 45 degrees
 
 .. note::
 
-   The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do **not** apply to players or vehicles on the ground. Ground players and vehicles **always** show ``P`` and ``R`` to be 0, regardless of their actual attitude (a soldier looking straight up in the air will still have a ``P`` value of 0, for example).
+   The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do **not** apply to players or vehicles on the ground. Ground players and vehicles **always** show ``P`` and ``R`` to be ``0``, regardless of their actual attitude (a soldier looking straight up in the air will still have a ``P`` value of ``0``, for example).
