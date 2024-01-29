@@ -11,7 +11,7 @@ Welcome to Project Reality's Official Documentation!
    YouTube <https://www.youtube.com/@ProjectRealityMod>
 
 .. toctree::
-   :caption: Project Reality: Technical Support
+   :caption: Technical Support
    :hidden:
 
    support/common_issues
