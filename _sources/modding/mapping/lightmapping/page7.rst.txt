@@ -4,11 +4,13 @@ Cleaning Up Objects
 
 There are going to be a lot of objects in your files that you either don't want to generate lightmaps for, can't have them generated for, don't want them to cast a shadow on the map and so on. As such we want to sort the wheat from the chaff and to do this we need to go though all your import object types. This sounds worse than it really is since we are only talking about each type of unique object and not each individual static.
 
-First hide all the objects on your map by simply not selecting anything then right click on the viewport and click "Hide Unselected".
+First hide all the objects on your map by simply not selecting anything then right click on the viewport and click :guilabel:`Hide Unselected`.
 
 Then right click on your viewport again and go :guilabel:`Unhide By Name` and go though your list, selecting objects to unhide which you want to change. For example this :guilabel:`Bundled Mesh` :guilabel:`civiliancar1`, can not be lightmapped, but we do want it casting a shadow, but it also has first person and wreck meshes ontop of its normal mesh. As such first we should unhide it so we can work with it.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000044.jpg
+
+----
 
 Next lets select and delete :guilabel:`geom0` and :guilabel:`geom2` and its sub tree by just typing in :guilabel:`geom0` (1p mesh) into the search first, with :guilabel:`select sub tree` selected, and do the same for :guilabel:`geom2` (wreck mesh), leaving just :guilabel:`geom1` which is actually the only thing players see ingame in this objects current setup.
 
@@ -16,11 +18,15 @@ Next lets select and delete :guilabel:`geom0` and :guilabel:`geom2` and its sub 
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000047.jpg
 
+----
+
 Now select the objects name, in this case "0" and then select :guilabel:`inverse`, which will select all the helpers, and delete them leaving only the mesh:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000048.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000049.jpg
+
+----
 
 Lastly because in this rare case, the mesh name is bugged we should select all the meshes and go to :menuselection:`Tools --> Rename` Objects and rename it to its proper name of :guilabel:`civiliancar1` like so:
 
@@ -29,6 +35,8 @@ Lastly because in this rare case, the mesh name is bugged we should select all t
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000051.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000053.jpg
+
+----
 
 Next example is I have a lot of static placed overgrowth in my ``staticobjects.con`` and as such I need to remove all the lods and helpers to ensure the script doesn't try to lightmap them, since it can't and because we don't want the lods casting shadows.
 

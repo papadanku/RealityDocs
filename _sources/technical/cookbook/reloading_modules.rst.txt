@@ -84,7 +84,7 @@ The header file will contain the function code to reload your module. Unfortunat
 
 .. note::
 
-   In light of writing my cookbook receipe on better error catching, I've decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, :doc:`click here <errorcatching>`
+   In light of writing my cookbook receipe on better error catching, I've decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, :doc:`click here <error_catching>`
 
 The Module File
 ---------------

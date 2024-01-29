@@ -50,6 +50,10 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Project Reality: Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
@@ -125,6 +129,7 @@
 <p>Here we are going to be replacing all our current Overgrowth meshes, helpers and other objects with “Reference” objects that are setup with transparent materials etc so they cast the shadows we want them to. We unfortunately can’t just slap a material on the current Overgrowth meshes you’ve imported since they do not have the proper UVs to do so. As such we must import some.</p>
 <p>Note that after reading this section, it’s worth reading post 2 in this thread as it contains a link to a max-scene already containing many completed reference meshes for you.</p>
 <p><a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/134649-advanced-3dsmax-lightmapping.html#post2096455">https://www.realitymod.com/forum/f18…ml#post2096455</a></p>
+<hr class="docutils" />
 <p>For my first example I’m going to fix up <code class="docutils literal notranslate"><span class="pre">af_palmbush_01</span></code>. First we need to import the proper mesh so go to <span class="menuselection">Bf2 ‣ Bf2 Utilities</span> and hit the <span class="guilabel">Mesh Import</span> button. Then browse to the location of the object and select its main <code class="docutils literal notranslate"><span class="pre">.con</span></code> file and it will import the mesh and its lods.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000064.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000064.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000065.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000065.jpg" />
@@ -135,7 +140,7 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000069.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000069.jpg" />
 <p>Now we need to setup the materials. If you struggle with this next bit I would advise you to read <a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/117705-working-multi-sub-object-materials.html">this tutorial</a> here as it will explain how to use Multi-Sub/Object Materials like I’m going to be using.</p>
 <p>First we need to find out what textures this object is using so browse to the mesh and open it with BfMeshView, or a similar program, and we can see that this OG object only has one leaf material, which is what we are interested in here, and its uses the <span class="guilabel">leaf_af_palmtree_b_de.dds</span> texture.</p>
-<p>Next select an unused material slot and click the “Standard” button in the top right, then select “Multi/Sub-Object” to change the material to that part. Click ok on the window that pops up and rename your new material to something like <span class="guilabel">Overgrowth</span>.</p>
+<p>Next, select an unused material slot and click the <span class="guilabel">Standard</span> button in the top right, then select <span class="guilabel">Multi/Sub-Object</span> to change the material to that part. Click ok on the window that pops up and rename your new material to something like <span class="guilabel">Overgrowth</span>.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000074.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000074.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000075.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000075.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000077.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000077.jpg" />
@@ -144,7 +149,7 @@
 <p>Go to parent and call this material the name of the texture its using, which in this case is <code class="docutils literal notranslate"><span class="pre">leaf_af_palmtree_b_de</span></code> and then in the diffuse slot, put that texture in like so.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000079.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000079.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000080.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000080.jpg" />
-<p>Now before we go any further we should just look at what Material IDs this object uses, go into face selection mode, scroll down to Polygon Properies on the right and open up the drop down box and you will see that it has two materials, 1 being bark and 2 being the left as we want so this doesn’t need any changes.</p>
+<p>Now, before we go any further, we should just look at what <span class="guilabel">Material ID</span>s this object uses, go into <span class="guilabel">Face Selection</span> mode, scroll down to <span class="guilabel">Polygon Properies</span> on the right and open up the drop down box and you will see that it has two materials, <span class="guilabel">1</span> being bark and <span class="guilabel">2</span> being the left as we want so this doesn’t need any changes.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000082.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000082.jpg" />
 <p>But if we apply the current material to this the leaves aren’t transparent but we do have the texture on them.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000087.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000087.jpg" />
@@ -163,6 +168,7 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000101.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000101.jpg" />
 <p>Then I would recommend renaming these fixed up OG objects to have a prefix of <span class="guilabel">_REF_</span> so you know its a reference geometry which you will replace all the others with later.</p>
 <p>Then continue to do this for all your overgrowth object types and other objects with transparent materials etc you have in your map and if other objects use the same textures, assign them to both use the same materials to save you time setting them up.</p>
+<hr class="docutils" />
 <p>Next object I’m going to fix up is the <span class="guilabel">jungle_palm_small_01</span>.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000088.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000088.jpg" />
 <p>Just do the same as above with putting the new leaf material, in this case the <span class="guilabel">nam_palmtreefrond_01_c</span> texture in the next available slot and apply the material to the object. But in this case there is a small issue since not all the material IDs match and the other leaf texture is on the trunk of the tree:</p>
@@ -174,6 +180,7 @@
 <p>Now for the <span class="guilabel">kentia_palm_cluster01</span>, its materials are a little odder with its leaf being <span class="guilabel">material</span> <span class="guilabel">1</span>, which is our bark <span class="guilabel">material</span>, and the trunk being <span class="guilabel">material</span> <span class="guilabel">2</span>, which is one of our leaf textures but we need it to be <span class="guilabel">1</span>, our bark. The import thing here is not to by mistake assign the bark first to <span class="guilabel">1</span> as then you wont be able to select the leaf though materials since they will both be <span class="guilabel">MatID 1</span>. As such you want to assign the leaf first to in this case, <span class="guilabel">MatID 5</span> from <span class="guilabel">1</span> and then assign the <span class="guilabel">Bark</span> to <span class="guilabel">1</span>.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000094.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000094.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000095.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000095.jpg" />
+<hr class="docutils" />
 <p>For the Wire Fence series, which are not overgrowth objects but statics with transparent materials, the process is more or less the same but with a few differences. The biggest difference is that because its not an Overgrowth object, it already has the back faces for the transparent materials so we do not need to clone and flip the transparent faces like we needed to do for the OG Objects.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000102.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000102.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000103.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000103.jpg" />
@@ -192,6 +199,7 @@
 <p>One other thing you may want to consider is deleting the tiny bits of barb wire on the top, since these are so small they aren’t going to cast any kinda shadow and are just going to slow down rendering time so its kinda worth deleting them and this can be applied to other objects that ONLY cast a shadow like these (if they also are meant to receive shadows and have a lightmap then you will be deleting faces that won’t get shadows on them after its LMed) to speed up rendering time etc.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000113.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000113.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000114.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000114.jpg" />
+<hr class="docutils" />
 <p>For the Civi Car, for its reference I’m not going to bother applying any transparent materials to it since the only transparent materials it has on it, is the windows and for them, its simplest we just 100% delete them as the light difference passing though is marginal, but far easier to process no faces than a transparent material. But you may wish to make sure that all the faces on the object are using MatID1 so if you do apply the material to it, it will only be the Bark Material:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000115.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000115.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000116.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000116.jpg" />

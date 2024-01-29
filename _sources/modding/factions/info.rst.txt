@@ -11,6 +11,8 @@ This is to clear up any questions any of you may have about the community factio
 
 They are Factions for the Project Reality Mod that are developed by our community members who want to see a new army in-game.
 
+----
+
 "How do I start making a Community Faction for PR?"
 ---------------------------------------------------
 

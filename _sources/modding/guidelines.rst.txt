@@ -4,7 +4,7 @@ Guidelines for Community Assets
 
 By *Z-trooper*
 
-.. note::
+.. warning::
 
    **NO RENDERS**, they are fine when you want to show off your models friends, but if you want feedback and want them to go into PR then we need to see stuff that we can give feedback on. Simply take a screenshot of the viewport.
 

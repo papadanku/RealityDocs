@@ -49,6 +49,10 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Project Reality: Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support/common_issues.html">Common Issues</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical/admin/index.html">Administration</a></li>
@@ -146,6 +150,7 @@
 </ul>
 </section>
 </section>
+<hr class="docutils" />
 <section id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
 <p><a class="reference download external" download="" href="https://files.realitymod.com/prbf2/perfectminimapfiles.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">these</span> <span class="pre">files</span></code></a>. Once downloaded, you will need to install them into the correct places. You should have 2 folders with in that <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file, a <code class="docutils literal notranslate"><span class="pre">BF2</span></code> and a <code class="docutils literal notranslate"><span class="pre">Photoshop</span></code>, BF2 folder is BF2 files used by the editor, and Photoshop is Photoshop files used by Photoshop.</p>
@@ -211,15 +216,12 @@
 <p class="admonition-title">Note</p>
 <p>Do Not save any of these map changes made from this point, they are only made to make the minimap look better, and will not necessarily make your map look better.</p>
 </div>
-<p>First tweak that needs to be made is with your roads.</p>
-<blockquote>
-<div><p>Switch to the Roads Tool and then in the Editor bar too the right, click on the <span class="guilabel">Build All Final Roads</span> Button.</p>
+<dl>
+<dt>First tweak that needs to be made is with your roads.</dt><dd><p>Switch to the Roads Tool and then in the Editor bar too the right, click on the <span class="guilabel">Build All Final Roads</span> Button.</p>
 <p>This will “snap” your road texture dead onto the terrain without effecting the splines, and how the road will look in-game. It is just much slower for the editor to edit the splines when its like this, why it doesn’t do it by default. This basically means that none of your roads on the minimap will be going under the terrain, and will always be on top.</p>
 <p>After that’s done come out of the road tool, back into something like the move tool.</p>
-</div></blockquote>
-<p>Second tweak we need to make is to the water.</p>
-<blockquote>
-<div><p>For some reason when rendering the minimap the water virtually rises by <span class="guilabel">1m</span> (or about), so to keep the same water level on the minimap as it is in-game, we need to move all the water down by <span class="guilabel">1m</span>.</p>
+</dd>
+<dt>Second tweak we need to make is to the water.</dt><dd><p>For some reason when rendering the minimap the water virtually rises by <span class="guilabel">1m</span> (or about), so to keep the same water level on the minimap as it is in-game, we need to move all the water down by <span class="guilabel">1m</span>.</p>
 <ol class="arabic simple">
 <li><p>Go to your <span class="menuselection">Tweaker Bar ‣ Map Settings ‣ Water Settings`</span></p></li>
 <li><p>Lower your <span class="guilabel">Sea Water Level</span> by <span class="guilabel">1m</span></p></li>
@@ -227,10 +229,8 @@
 <p>So my <span class="guilabel">Sea Level</span> after that will be <span class="guilabel">25.8</span></p>
 <p>Bare in mind we are not going to be saving these changes on exit, this is only to make the minimap look correct.</p>
 <p>Now if you have any waterplanes in your map, you need to move these down by <span class="guilabel">1m</span> as well. Best way to do this is to select all your water planes on the map, then in the tweaker bar check what the <span class="guilabel">y</span> position is (as in x, y and z cordints) and just drag it as close as you can get to <span class="guilabel">1m</span> below where it was.</p>
-</div></blockquote>
-<p>Third tweak we must do is to make all the overgrowth show up on the map as static objects.</p>
-<blockquote>
-<div><p>This means they will draw on your minimap in the positions they really are, tweaking your overgrowth draw distance will rearrange the positions of all your overgrowth, and then your overgrowth wont line up with the shadows on the terrain.</p>
+</dd>
+<dt>Third tweak we must do is to make all the overgrowth show up on the map as static objects.</dt><dd><p>This means they will draw on your minimap in the positions they really are, tweaking your overgrowth draw distance will rearrange the positions of all your overgrowth, and then your overgrowth wont line up with the shadows on the terrain.</p>
 <p>To do this, all we need to do is lightmap one object in the map. This does not work for all users, but I think what you need is some sample files in your mod path which if you have the PR lightmap samples installed, it wont be a problem.</p>
 <ul>
 <li><p>Best thing to do is pick a really simple, small object to relightmap.</p>
@@ -244,10 +244,8 @@
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
-<p>Forth thing we need to do depending on your map is too run its texture mode.</p>
-<blockquote>
-<div><ul>
+</dd>
+<dt>Forth thing we need to do depending on your map is too run its texture mode.</dt><dd><ul>
 <li><p>Lots of statics like tents have Desert and Woodland textures and maybe others that you will want to show on your minimap as it will in game</p></li>
 <li><p>Some maps may also use there own custom textures which if they are for big objects that will show on the minimap and will make a difference you will want to load</p>
 <blockquote>
@@ -256,7 +254,8 @@
 </li>
 <li><p>So all you need to do is load the correct Texture Suffix and then you’re set</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 <p>Final thing you need to do is switch to the <span class="guilabel">Detail Texture Mode</span> (if you are not already in it) by going to <span class="menuselection">Render ‣ Detail Texture Mode</span>, or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">F4</kbd></kbd> (not <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">F4</kbd></kbd>, that will close the editor)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

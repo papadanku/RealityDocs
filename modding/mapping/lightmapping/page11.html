@@ -50,6 +50,10 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Project Reality: Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
@@ -147,6 +151,7 @@
 </ol>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg" />
+<hr class="docutils" />
 <p>Now for the different shadow types and you will want to pick which ever works best for you and your map.</p>
 <section id="ray-tracing">
 <h2><span class="section-number">11.1. </span>Ray-Tracing<a class="headerlink" href="#ray-tracing" title="Permalink to this heading"></a></h2>
@@ -193,11 +198,13 @@
 <p>For this setting all the above common settings remain the same from above, with the exception of changing the <span class="guilabel">Shadows</span> Drop Down Box to <span class="guilabel">Adv. Ray Traced</span> and in the new <span class="guilabel">Optimizations</span> Roll out, turn on <span class="guilabel">Transparent Shadows</span> (to allow for the transparent leaf textures to work) and to set the <span class="guilabel">Antialasing Threshold Colour</span> to 100% Black.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000222.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000222.jpg" />
 </div></blockquote>
+<hr class="docutils" />
+<p>For this tutorial I will be using <span class="guilabel">Adv. Ray Traced</span> Shadows since I’m trying to get this map done in the shortest time possible and I may be updating it later on with a few changes that may require new lightmaps to be rendered.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="main-tutorial">
 <h2><span class="section-number">11.2. </span>Main Tutorial<a class="headerlink" href="#main-tutorial" title="Permalink to this heading"></a></h2>
-<p>For this tutorial I will be using <span class="guilabel">Adv. Ray Traced</span> Shadows since I’m trying to get this map done in the shortest time possible and I may be updating it later on with a few changes that may require new lightmaps to be rendered.</p>
 <section id="import-lights">
 <h3><span class="section-number">11.2.1. </span>Import Lights<a class="headerlink" href="#import-lights" title="Permalink to this heading"></a></h3>
 <p>Now its time to import the Sky Lights we are going to use. Download this file here which has the recommend Sky Lights and Settings I’m going to be using in this tutorial and are at the very least a good base for your map for you to tweak from: <a class="reference download external" download="" href="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip"><code class="xref download docutils literal notranslate"><span class="pre">https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip</span></code></a></p>
@@ -206,6 +213,7 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg" />
 </section>
+<hr class="docutils" />
 <section id="configure-lights">
 <h3><span class="section-number">11.2.2. </span>Configure Lights<a class="headerlink" href="#configure-lights" title="Permalink to this heading"></a></h3>
 <p>Now there are two lights in this:</p>
@@ -225,6 +233,7 @@
 <blockquote>
 <div><p>Both of these Sky Lights have a colour of <span class="guilabel">0, 0, 255</span> (RGB - aka 100% Blue, a bit like the sunlight but Blue instead of Green), because we are generating all lights together and the sky light uses the blue channel in the light map texture.</p>
 </div></blockquote>
+<hr class="docutils" />
 <p>Finally its time to setup our “Point Lights”, which are basically man made lights from lamp posts etc. I’m not planning to have a “night layer” for this map which is the main place this type of light really comes in, other than also for deep dark caves etc, but for the purpose of this tutorial I’m going to put in a few. For the main example,</p>
 <p>I’m going to make a big Omni light in the Lighthouse by:</p>
 <blockquote>

@@ -3,6 +3,8 @@ Terrain Sun & Sky Lightmaps
 
 Its now time to setup the terrain for its Sun and Sky Lightmaps. Note that the Red channel isn't used for point light on the terrain and its used for water transparency instead which we will do later sepratly.
 
+----
+
 First load your map back up in 3DsMax\ **9** and turn off (or altenrativly, delete) all your point lights if you have any as otherwise they will conflict with the water depth lighting channel.
 
 .. note::

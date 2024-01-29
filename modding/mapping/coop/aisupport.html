@@ -50,6 +50,10 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Project Reality: Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
@@ -72,7 +76,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#common-terms">Common Terms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pre-tutorial">Pre-Tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#main-tutorial">Main tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ai-folder">AI Folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-the-navmesh-area">Setting Up The Navmesh Area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replacing-statics-with-nav-statics">Replacing Statics with Nav Statics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#snap-statics">“Snap” Statics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-sure">Making Sure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-files-necceseary-for-navmesh-exe">Exporting Files Necceseary for <code class="docutils literal notranslate"><span class="pre">navmesh.exe</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-navmesh">Creating The Navmesh</a></li>
 </ul>
 </li>
 </ul>
@@ -161,19 +171,18 @@
 <blockquote>
 <div><p>Unzip this file to <code class="docutils literal notranslate"><span class="pre">mods/pr_edit/objects</span></code>. All of the <code class="docutils literal notranslate"><span class="pre">_nav</span></code> versions can then be found at <code class="docutils literal notranslate"><span class="pre">mods/pr_edit/objects/staticobjects/_stuff</span></code>. If your static doesn’t have a <code class="docutils literal notranslate"><span class="pre">_nav</span></code> there then it’s probably already got one as part of its original file.</p>
 </div></blockquote>
-<p>You’ll need to to <strong>copy</strong> two files from the Navmesh folder to the main Battlefield folder.</p>
-<blockquote>
-<div><ul class="simple">
+<dl class="simple">
+<dt>You’ll need to to <strong>copy</strong> two files from the Navmesh folder to the main Battlefield folder.</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">exportGTS.con</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">saveQuadNoP4.con</span></code></p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 <img alt="https://i.imgur.com/ybc8t.jpg" src="https://i.imgur.com/ybc8t.jpg" />
 </section>
-<section id="main-tutorial">
-<h2>Main tutorial<a class="headerlink" href="#main-tutorial" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
 <section id="ai-folder">
-<h3>AI Folder<a class="headerlink" href="#ai-folder" title="Permalink to this heading"></a></h3>
+<h2>AI Folder<a class="headerlink" href="#ai-folder" title="Permalink to this heading"></a></h2>
 <p>Before you load up your map in editor, copypaste the <code class="docutils literal notranslate"><span class="pre">AI</span></code> folder out of another PR map with coop support.</p>
 <p>Inside it is another file called <code class="docutils literal notranslate"><span class="pre">AI</span></code>. Open it with Notepad.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rem</span> <span class="o">***************************</span> <span class="n">LEVEL</span> <span class="n">SPECIFIC</span> <span class="n">AI</span> <span class="n">SETTINGS</span> <span class="o">***************************</span>
@@ -195,7 +204,7 @@
 <p>You can keep the default values most of the time, however if your map is hilly/mountainous, you might want to slightly up the values. If your map is urban and mostly flat, but has enterable buildings with upper floors, the angle of staircases leading to those floors also counts in. It’s preferable to keep the infantry angle high, so the said staircases do not cut off upper floors.</p>
 </section>
 <section id="setting-up-the-navmesh-area">
-<h3>Setting Up The Navmesh Area<a class="headerlink" href="#setting-up-the-navmesh-area" title="Permalink to this heading"></a></h3>
+<h2>Setting Up The Navmesh Area<a class="headerlink" href="#setting-up-the-navmesh-area" title="Permalink to this heading"></a></h2>
 <p>As much as you’d like to see the entire map being used, unfortunately navmesh comes with some limitations in size. Do not expect much if your map is:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -213,7 +222,7 @@
 <img alt="http://i.imgur.com/ZUBmw.jpg" src="http://i.imgur.com/ZUBmw.jpg" />
 </section>
 <section id="replacing-statics-with-nav-statics">
-<h3>Replacing Statics with Nav Statics<a class="headerlink" href="#replacing-statics-with-nav-statics" title="Permalink to this heading"></a></h3>
+<h2>Replacing Statics with Nav Statics<a class="headerlink" href="#replacing-statics-with-nav-statics" title="Permalink to this heading"></a></h2>
 <p>To replace a static, select the static.</p>
 <p>In the right side menu at the very top click <strong>Select all of the same type</strong>. This will select all of the objects identical to the one you’ve selected across the map. Then click <span class="guilabel">Replace object(s)</span> below the previous button. A list will pop up, navigate to the nav statics and find the one that corresponds with the original name, but with a <code class="docutils literal notranslate"><span class="pre">_nav</span></code> suffix.</p>
 <img alt="http://i.imgur.com/xxNBk.jpg" src="http://i.imgur.com/xxNBk.jpg" />
@@ -229,13 +238,13 @@
 </div>
 </section>
 <section id="snap-statics">
-<h3>“Snap” Statics<a class="headerlink" href="#snap-statics" title="Permalink to this heading"></a></h3>
+<h2>“Snap” Statics<a class="headerlink" href="#snap-statics" title="Permalink to this heading"></a></h2>
 <p>An issue with open areas is that navmesh will get oversimplified there, causing it to float and miss terrain completely. To avoid this, use a simple object, like a lightpole and place it around to snap the navmesh to ground.</p>
 <p>Best areas to place these are near or on roads or paths between areas. You can later weld together the holes created when editing the navmesh in 3ds Max.</p>
 <img alt="http://i.imgur.com/AfEZr.jpg" src="http://i.imgur.com/AfEZr.jpg" />
 </section>
 <section id="making-sure">
-<h3>Making Sure<a class="headerlink" href="#making-sure" title="Permalink to this heading"></a></h3>
+<h2>Making Sure<a class="headerlink" href="#making-sure" title="Permalink to this heading"></a></h2>
 <p>Before we export, it is good to check if we missed any object or any area that might need a snap static. Do this by clicking on <span class="menuselection">Render ‣ Toggle Draw Collision Meshes ‣ AI Mesh</span>. Your statics should now have colored shapes around them, like this:</p>
 <img alt="http://i.imgur.com/2sADY.jpg" src="http://i.imgur.com/2sADY.jpg" />
 <p><em>Look for objects that don’t.</em> Again, simple objects like walls do not need a <code class="docutils literal notranslate"><span class="pre">col3_nav</span></code> clone, however beware of wall sections that feature doors - the door won’t be recognized when exporting the info and the object will be exported as a box.</p>
@@ -244,14 +253,14 @@
 <p>Before you go to the next step, save your map.</p>
 </section>
 <section id="exporting-files-necceseary-for-navmesh-exe">
-<h3>Exporting Files Necceseary for <code class="docutils literal notranslate"><span class="pre">navmesh.exe</span></code><a class="headerlink" href="#exporting-files-necceseary-for-navmesh-exe" title="Permalink to this heading"></a></h3>
+<h2>Exporting Files Necceseary for <code class="docutils literal notranslate"><span class="pre">navmesh.exe</span></code><a class="headerlink" href="#exporting-files-necceseary-for-navmesh-exe" title="Permalink to this heading"></a></h2>
 <p><span class="menuselection">LevelEditor ‣ SinglePlayerEditor ‣ Generate PathFinding on the right-side menu</span></p>
 <img alt="http://i.imgur.com/IlT6x.jpg" src="http://i.imgur.com/IlT6x.jpg" />
 <p>You can now close the editor, but <strong>DO NOT SAVE.</strong></p>
 <p>Much like lightmapping, exporting the files will turn overgrowth into static objects, however while saving after lightmapping rarely saves the overgrowth as static objects, saving after this will do so every time.</p>
 </section>
 <section id="creating-the-navmesh">
-<h3>Creating The Navmesh<a class="headerlink" href="#creating-the-navmesh" title="Permalink to this heading"></a></h3>
+<h2>Creating The Navmesh<a class="headerlink" href="#creating-the-navmesh" title="Permalink to this heading"></a></h2>
 <p>The exported files can be found in your map’s folder as <code class="docutils literal notranslate"><span class="pre">GTSData</span></code> folder. Copy it, then go to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\EA</span> <span class="pre">GAMES\Battlefield</span> <span class="pre">2\NavMesh\</span></code>.</p>
 <p>There create a new folder called <code class="docutils literal notranslate"><span class="pre">work</span></code> (if it doesn’t exist already) and inside create a new folder with the map’s exact name. Paste the <code class="docutils literal notranslate"><span class="pre">GTSData</span></code> into that folder.</p>
 <img alt="http://i.imgur.com/dU1h1.jpg" src="http://i.imgur.com/dU1h1.jpg" />
@@ -271,7 +280,6 @@
 <p>Depending on your CPU power, come back in a few days or two weeks. You can still play PR/run BFeditor in the mean time or run other stuff, but check the Task Manager for resource usage, <code class="docutils literal notranslate"><span class="pre">navmesh.exe</span></code> will probably hog 40-50% of your CPU.</p>
 <p>Once the process is complete, navmesh.exe will run bfeditor by itself to export the navmesh to your map, so it’s a good idea not to have it open already or run BF2/PR during that time.</p>
 <p>Now you can move onto the next step - <a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/80921-tutorial-navmesh-editing-3ds-max-9-a.html">editing the navmesh.</a></p>
-</section>
 </section>
 </section>
 
