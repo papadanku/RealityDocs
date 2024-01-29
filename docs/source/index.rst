@@ -38,6 +38,6 @@ Roles
 ^^^^^
 
 ``:guilabel:``
-   For GUI elements such as its: titles, arguments, values, etc.
+   For GUI elements such as its: titles, selection items, values, etc.
 ``:menuselection:``
    GUI navigation sequences
