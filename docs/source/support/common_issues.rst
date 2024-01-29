@@ -86,20 +86,18 @@ Stuck on "Joining Server"
 -------------------------
 
 Stems from multiple possible issues:
-   #. Network issue on player's end
-
+   Network issue on player's end
       - Switch to wired ethernet
       - Try a VPN
       - Complain to your ISP
 
-   #. PR is placed on an external drive, that's not formatted in NTFS
-
+   PR is placed on an external drive, that's not formatted in NTFS
       Reformat your drive to NTFS or place it back to your internal drive
 
 ----
 
 Persistent Skipping/Stuttering
------------------------------
+------------------------------
 
 Possible Solutions:
    - Switch to wired ethernet
