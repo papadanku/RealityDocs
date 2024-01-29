@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. Importing Sun &amp; Preparing your Lights &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="12. Testing Light &amp; Lightmap Settings" href="page12.html" />
+    <link rel="prev" title="10. Sorting Statics for Lightmapping" href="page10.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">11. Importing Sun &amp; Preparing your Lights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ray-tracing">11.1. Ray-Tracing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-tutorial">11.2. Main Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Mapping</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Advanced 3DsMax Lightmapping</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">11. </span>Importing Sun &amp; Preparing your Lights</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modding/mapping/lightmapping/page11.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="importing-sun-preparing-your-lights">
+<h1><span class="section-number">11. </span>Importing Sun &amp; Preparing your Lights<a class="headerlink" href="#importing-sun-preparing-your-lights" title="Permalink to this heading"></a></h1>
+<p>Now its time to finally get some light in here.</p>
+<p>Lets first start off by loading your sun from your sky settings. Go to <span class="menuselection">BF2 ‣ BF2 Lightmapping ‣ Load Sun</span>. Then browse to your map folder and select your <code class="docutils literal notranslate"><span class="pre">sky.con</span></code> file and by magic a direct light will be created in the location your sun is ingame.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000171.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000171.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000172.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000172.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000173.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000173.jpg" />
+<p>Now since this is a 4km map the light has been created far too close to the terrain, since the script for making it was only designed for 2km and smaller maps, and as such, the far sides of the map are basically behind the sun and wont receive lighting from it. As such the first thing you need to do, if your working on a 4km or larger map, is to move the sun further away, but without affecting its rotation at all. To do this, first select your <span class="guilabel">BF2_SunLight</span>, then select the <span class="guilabel">Move Tool</span> <kbd class="kbd docutils literal notranslate">W</kbd> and then switch to <span class="guilabel">Local Transformation</span> mode in the dropdown box at the top. Now your “Gizmo” will be at the same rotation as your sun:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000175.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000175.jpg" />
+<p>Now what you want to do is in the bottom centre, click the <span class="guilabel">Absolute Mode Transform Type-In</span> until it turns yellow which means its in <span class="guilabel">Offset Mode Transform Type-In</span>. Then in the <span class="guilabel">Z</span> Axis box, type in <span class="guilabel">10000</span> (for a 4km map, larger maps will require more) and then your sun will be moved +10000 units (which is 1km) away along the Z Axis.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000178.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000178.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000179.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000179.jpg" />
+<p>Now to fix up your Sun’s Light Settings. There are two main types of shadow casting methods to use for your Sun Light <em>(and point light but we will come to that later)</em> in 3DsMax. These are <span class="guilabel">Ray Traced Shadows</span> and <span class="guilabel">Adv. Ray Traced</span>. I will go into more detail into these in a second but first, lets set up the common settings both of these methods use.</p>
+<ol class="arabic">
+<li><p>Select your sun and go into the <span class="guilabel">Modifier</span> tab. First Check the <span class="guilabel">On</span> box under <span class="guilabel">Shadows</span> and for now leave the drop-down box under that on <span class="guilabel">Shadow Map</span> <em>(we will be changing this in a bit t either “Ray Traced Shadows” and “Adv. Ray Traced”)</em>.</p></li>
+<li><p>Then under <span class="guilabel">Intensity/Color/Attenuation</span>, set your Sun’s <span class="guilabel">Light Multipler</span> to <span class="guilabel">2</span> if its a sunny map (like mine) or <span class="guilabel">1</span> if its a cloudy map, or anywhere in-between</p>
+<p>DO NOT go under <cite>1</cite> as you should never darken a map though lightmaps, when you can far more easily darken a map though the map’s light settings and if its a night map, with no moon, you can fully get rid of the sun light by just setting the sun light colour to 100% black.</p>
+</li>
+<li><p>Next we want to change the Sun <span class="guilabel">Light Colour</span> to <span class="guilabel">0, 255, 0</span> (RGB - aka 100% Green) in the box to the right of the multiplier, which will be white by default. This is because we are going to generate all the light types together and Sun Light uses the Green Channel in an RGB Lightmap Texture</p></li>
+<li><p>In <span class="guilabel">Directional</span> parameters, if your working with a 4km map, change the <span class="guilabel">hotspot/Beam</span> to have a value of <span class="guilabel">30000</span>, more if its a larger map so it include the entire map (note the big circle around the map) in the image below. Other than that you can leave the rest of the settings at default but check them against my settings in the image below, with the exception of the <span class="guilabel">Shadow</span> Drop Down Box setting which we will get into next:</p></li>
+</ol>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg" />
+<p>Now for the different shadow types and you will want to pick which ever works best for you and your map.</p>
+<section id="ray-tracing">
+<h2><span class="section-number">11.1. </span>Ray-Tracing<a class="headerlink" href="#ray-tracing" title="Permalink to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>BF2 Editor (Final Quality)</p></th>
+<th class="head"><p>3DsMax (Ray-Traced Shadows)</p></th>
+<th class="head"><p>3DsMax (Advanced Ray-Traced)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="image1" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg15_terrain_BF2Editor.jpg" /></p></td>
+<td><p><img alt="image2" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg15_terrain_RayTracedShadows.jpg" /></p></td>
+<td><p><img alt="image3" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg15_terrain_AdvRayTraced.jpg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="image4" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg17_terrain_BF2Editor.jpg" /></p></td>
+<td><p><img alt="image5" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg17_terrain_RayTracedShadows.jpg" /></p></td>
+<td><p><img alt="image6" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg17_terrain_AdvRayTraced.jpg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="image7" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg14_terrain_BF2Editor_LM.jpg" /></p></td>
+<td><p><img alt="image8" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg14_terrain_RayTracedShadows_LM.jpg" /></p></td>
+<td><p><img alt="image9" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/method_examples/Adv_3DsMax_LMing_eg14_terrain_AdvRayTraced_LM.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+<section id="ray-traced-shadows">
+<h3><span class="section-number">11.1.1. </span>Ray-Traced Shadows<a class="headerlink" href="#ray-traced-shadows" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><p>This is the “High Quality, Slow Rendering” option for anyone who has a really good computer and/or has a lot of time to be able to lightmap their map in, like if you have a spare computer sitting around which otherwise would not be used and can lightmap solidly for a week or so. It should be noted that I would only recommend using this setting if your map is truly 100% final, being fully tested before hand and your absolutely sure that no changes are needed for it that will affect its lightmaps.</p>
+<p>In this mode, object lightmaps take around <strong>6mins / object</strong> (and its LODs), when lightmapping a high rez lightmap for a complex object, and it takes around <strong>3x Longer than</strong> <span class="guilabel">Adv. Ray Traced</span> and around 2x as long as the BF2 Editor’s <span class="guilabel">Final Quality</span> lightmaps.</p>
+<p>But when it comes to Terrain, at least with a lot of overgrowth on it, guilabel`Ray Traced Shadow` takes only around <strong>5/7th</strong> of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax with guilabel`Ray Traced Shadows` took only <strong>8mins 20secs</strong> to Render the same patch.</p>
+<p>Having said that the quality of these shadows is far superior than <span class="guilabel">Adv. Ray Traced</span> shadows <em>(and the BF2 Editor)</em>, and if you can put the extra time in, the results are well worth it:</p>
+<p>For this setting all the above settings remain the same from above, with the exception of changing the <span class="guilabel">Shadows</span> drop down box to <span class="guilabel">Ray Traced Shadows</span> as per this image:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000181.jpg" />
+</div></blockquote>
+</section>
+<section id="adv-ray-traced-shadows">
+<h3><span class="section-number">11.1.2. </span>Adv. Ray-Traced Shadows<a class="headerlink" href="#adv-ray-traced-shadows" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><p>This is the “Medium Quality, Fast Rendering” option for anyone who doesn’t have the time or a decent enough computer to do <span class="guilabel">Ray Traced Shadows</span>. If you plan on changing your map in the future which will require the map to be totally re-lightmapped, then this is the option to pick.</p>
+<p>In this mode, lightmaps take around <strong>2mins 30secs / Object</strong> (and its LODs), when lightmapping a high resolution lightmap for a complex object, which is around <strong>1/3 of the time it takes to generate “Ray Traced Shadows”</strong> and almost 1/2 the time the BF2 Editor’s takes on <span class="guilabel">Final Quality</span> lightmaps.</p>
+<p>When it comes to Terrain lightmaps it is considerably faster taking only around <strong>2/9th</strong> of the time of the BF2 Editor with the BF2 Editor taking 11mins 41secs to render a patch, where 3DsMax in <span class="guilabel">Adv. Ray Traced</span> took only <strong>2mins 38secs</strong> to Render the same patch.</p>
+<p>But the quality of these shadows is isn’t as good as <span class="guilabel">Ray Traced Shadows</span> and with the exception of transparent leaf rendering, isn’t that much better than the BF2 Editor’s shadows and in some small cases, slightly worse, but that is mainly when the BF2 Editor generates a higher resolution than you’ve set in 3DsMax. Overall these are still better quality than the BF2 Editors, especially if you have lots of overgrowth.</p>
+<p>For this setting all the above common settings remain the same from above, with the exception of changing the <span class="guilabel">Shadows</span> Drop Down Box to <span class="guilabel">Adv. Ray Traced</span> and in the new <span class="guilabel">Optimizations</span> Roll out, turn on <span class="guilabel">Transparent Shadows</span> (to allow for the transparent leaf textures to work) and to set the <span class="guilabel">Antialasing Threshold Colour</span> to 100% Black.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000222.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000222.jpg" />
+</div></blockquote>
+</section>
+</section>
+<section id="main-tutorial">
+<h2><span class="section-number">11.2. </span>Main Tutorial<a class="headerlink" href="#main-tutorial" title="Permalink to this heading"></a></h2>
+<p>For this tutorial I will be using <span class="guilabel">Adv. Ray Traced</span> Shadows since I’m trying to get this map done in the shortest time possible and I may be updating it later on with a few changes that may require new lightmaps to be rendered.</p>
+<section id="import-lights">
+<h3><span class="section-number">11.2.1. </span>Import Lights<a class="headerlink" href="#import-lights" title="Permalink to this heading"></a></h3>
+<p>Now its time to import the Sky Lights we are going to use. Download this file here which has the recommend Sky Lights and Settings I’m going to be using in this tutorial and are at the very least a good base for your map for you to tweak from: <a class="reference download external" download="" href="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip"><code class="xref download docutils literal notranslate"><span class="pre">https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Sky_Light_Template.zip</span></code></a></p>
+<p>Then go to <span class="menuselection">File ‣ Merge</span> and browse to and select this file, and import all the lights inside of it into your map:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000182.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000182.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg" />
+</section>
+<section id="configure-lights">
+<h3><span class="section-number">11.2.2. </span>Configure Lights<a class="headerlink" href="#configure-lights" title="Permalink to this heading"></a></h3>
+<p>Now there are two lights in this:</p>
+<ul>
+<li><p><span class="guilabel">_Sky01</span></p>
+<blockquote>
+<div><p>Your main sky light and produces pretty realistic light bounding affects which light up the outside more but still allows some light to filter into rooms though windows, doorways etc.</p>
+</div></blockquote>
+</li>
+<li><p><span class="guilabel">_Ambient_Fill_light</span></p>
+<blockquote>
+<div><p>Casts a flat light all over your map, no matter if it,s at the bottom of the deepest darkest cave of your map, or on the roof of a skyscraper. This light is to ensure that the interiors of your buildings are not pitch black which if it was just the sky light working on its own, some areas inside would be.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Currently the <span class="guilabel">_Sky01</span> has a multiplier of <span class="guilabel">1</span> and the <span class="guilabel">_Ambient_Fill_light</span> has one of <span class="guilabel">0.4</span>. If you want brighter interiors increase the <span class="guilabel">_Ambient_Fill_light</span> multiplier, and decrease the <span class="guilabel">_Sky01</span> multiplier.</p>
+<blockquote>
+<div><p>Both of these Sky Lights have a colour of <span class="guilabel">0, 0, 255</span> (RGB - aka 100% Blue, a bit like the sunlight but Blue instead of Green), because we are generating all lights together and the sky light uses the blue channel in the light map texture.</p>
+</div></blockquote>
+<p>Finally its time to setup our “Point Lights”, which are basically man made lights from lamp posts etc. I’m not planning to have a “night layer” for this map which is the main place this type of light really comes in, other than also for deep dark caves etc, but for the purpose of this tutorial I’m going to put in a few. For the main example,</p>
+<p>I’m going to make a big Omni light in the Lighthouse by:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Going to the object creation button in the top right</p>
+<ol class="arabic">
+<li><p>Click the <span class="guilabel">light</span> icon</p></li>
+<li><p>Click the <span class="guilabel">Omni</span> button</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000185.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000185.jpg" />
+</li>
+<li><p>Place it in the Lighthouse</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000190.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000190.jpg" />
+</li>
+</ol>
+</li>
+<li><p>Turn on shadows</p>
+<ol class="arabic">
+<li><p>Give it the same type of Shadows your using for your Sun Light <em>(In my case, “Adv. Ray Traced”)</em></p></li>
+<li><p>Give it a multiplier of <span class="guilabel">1</span> and a light colour of <span class="guilabel">255, 0, 0</span> (RGB - aka 100% Red)</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000186.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000186.jpg" />
+</li>
+<li><p>Give it a decay type:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Inverse Square</span> and <span class="guilabel">starting</span> at 100 (10m)</p></li>
+<li><p><span class="guilabel">Far Attenuation</span> <span class="guilabel">starting</span> at 200 (20m) and <span class="guilabel">ending</span> at 1000 (100m)</p></li>
+<li><p>Everything else on default</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The last bunch of settings can be tweaked quite a bit depending on how powerful the light is and how far your want the light to travel etc.</p></li>
+<li><p>Getting it right will take a bit of trial and error and to get it right you can do a quick render of your viewport in max and/or do Test lightmap Renders which I’ll get into later in this tutorial.</p></li>
+</ul>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>I’m also going to apply my lighting template for the carrier that I’ve done for other maps since that takes me only a few seconds to apply and here are the settings of the three type of lights used on it, which are two types of <span class="guilabel">Spot Light</span> and one type of <span class="guilabel">Omni Light</span>, which are all instances of each other so changing the settings on one will change the settings on all the other instances (which is what you should also be doing for your lighting) and if you want to use this Carrier Light Template on your map you can download it here and just align it to the Bridge, note however this is setup for HMS Invincible and if used on the USS Essex there will be a few differences: <a class="reference download external" download="" href="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip"><code class="xref download docutils literal notranslate"><span class="pre">https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Lightmaps_Carrier_Lights_Template.zip</span></code></a></p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000188.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000188.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000189.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000189.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000191.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000191.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can setup templates of lights for a type of static, like for example a bunch of lights for each light bulb in a building, then setting each instance of that static to use that light template but this is pretty tricky so if someone really wants to know how to do this and can’t work it out for themselves let me know and I might look into adding it into this tutorial at a later date.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="page10.html" class="btn btn-neutral float-left" title="10. Sorting Statics for Lightmapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="page12.html" class="btn btn-neutral float-right" title="12. Testing Light &amp; Lightmap Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

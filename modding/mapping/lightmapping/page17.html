@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17. Optimizing “Flat” Lightmaps &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AASv4 Game Mode" href="../aasv4.html" />
+    <link rel="prev" title="16. Combining &amp; Splitting Terrain Lightmap" href="page16.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17. Optimizing “Flat” Lightmaps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Mapping</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Advanced 3DsMax Lightmapping</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">17. </span>Optimizing “Flat” Lightmaps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modding/mapping/lightmapping/page17.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="optimizing-flat-lightmaps">
+<h1><span class="section-number">17. </span>Optimizing “Flat” Lightmaps<a class="headerlink" href="#optimizing-flat-lightmaps" title="Permalink to this heading"></a></h1>
+<p>If you have a map with a lot of sea water like mine your bond to have a bunch of “flat” Lightmaps, which are basically lightmaps of a flat sea and nothing else on them like this for example:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000478.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000478.jpg" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Having a 683kb texture of just flat white is quite a waste, especially when you have multiple ones all adding up together which in my case I have a total of 46 blank patches, currently using a total memory of 30.6mb, on nothing…</p>
+<p>To state the obvious, wasted file space is not just about the maps/mods download size, while yes that is a small factor, its mainly about the Players RAM usage.</p>
+<p>All of these textures need to be loaded into the players RAM and for starters, there is a limit on how much a player can load on his RAM since BF2 is a 32bit game, but on top of that, having to process these large textures, even if they are blank, slows down FPS and overall simply just is not good for performance, where instead we can seriously optimize them without any ill affects since they are simply just blank images.</p>
+</div>
+<p>First to find out which patches are used and are not used the simplest way is to overlay a little patch grid over our terrain lightmap.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Take your complied terrain lightmap and resave it as a <code class="docutils literal notranslate"><span class="pre">.psd</span></code> under the name of something like <code class="docutils literal notranslate"><span class="pre">_TERRAINLightingMap_Patches.psd</span></code></p>
+<p>If your working with a 4km map and your terrain lightmap is at <span class="guilabel">8192x8192</span> you should resize it down to <span class="guilabel">4096x4096</span></p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000479.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000479.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000480.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000480.jpg" />
+</li>
+<li><p>Go to <span class="menuselection">Image ‣ Image Rotation ‣ Flip Canvas Vertical</span> to put your lightmap up in the same way as the game reads it and the patches are in order</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000481.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000481.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg" />
+</li>
+<li><p><a class="reference download external" download="" href="http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">The</span> <span class="pre">Terrain</span> <span class="pre">Patch</span> <span class="pre">Grid</span></code></a></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Right Click ‣ Save As</span></p></li>
+<li><p>Open it up with Photoshop</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000483.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000483.jpg" />
+</li>
+<li><p>Duplicate it over your <code class="docutils literal notranslate"><span class="pre">_TERRAINLightingMap_Patches.psd</span></code> image</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000484.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000484.jpg" />
+</li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+<p>You should end up with something like this:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000485.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000485.jpg" />
+<p>If your working with a 1km map and have a terrain lightmap size of <span class="guilabel">2048x2048</span> this patch should duplicate over your image correctly too, with its <span class="guilabel">4x4 (16)</span> Patch Setup:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000486.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000486.jpg" />
+<p>Now you can clearly see what goes in each patch and as you can see, a lot of my patches are just flat white images like the one I showed you above. Note down which patches are blank, in my case its easier to note down the ones which are used, which are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx02x03</span><span class="p">,</span> <span class="n">tx02x04</span><span class="p">,</span> <span class="n">tx03x03</span><span class="p">,</span> <span class="n">tx03x04</span><span class="p">,</span> <span class="n">tx03x06</span><span class="p">,</span> <span class="n">tx03x07</span><span class="p">,</span> <span class="n">tx04x02</span><span class="p">,</span> <span class="n">tx04x03</span><span class="p">,</span> <span class="n">tx04x04</span><span class="p">,</span> <span class="n">tx04x07</span><span class="p">,</span> <span class="n">tx05x03</span><span class="p">,</span> <span class="n">tx05x04</span><span class="p">,</span> <span class="n">tx05x07</span><span class="p">,</span> <span class="n">tx06x00</span><span class="p">,</span> <span class="n">tx06x03</span><span class="p">,</span> <span class="n">tx06x07</span><span class="p">,</span> <span class="n">tx07x00</span><span class="p">,</span> <span class="n">tx07x07</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though <code class="docutils literal notranslate"><span class="pre">tx05x04</span></code> and <code class="docutils literal notranslate"><span class="pre">tx06x03</span></code>, along with some others, are hardly used and being mostly blank, can’t be optimized since they are still somewhat used:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000487.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000487.jpg" />
+</div>
+<p>Some however like <code class="docutils literal notranslate"><span class="pre">tx06x02</span></code> which have tiny little specs of water transparency difference since they have some little hills under the water.</p>
+<blockquote>
+<div><p><em>In hindsight I should have probably totally removed them, since they are just small islands in real-life, which where part of the DEM data but are not above the surface of the water ingame after downsizing the DEMs scale to fit on the ingame map, but oh well</em></p>
+</div></blockquote>
+<p>I am going to optimize since it is not worth the tiny little difference in water transparency for them, which in their case is probably going to look odd if I keep them anyways:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000488.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000488.jpg" />
+<p>Once you have noted down all the files you want to optimize / do not want to optimize, close all images in Photoshop and then open up all the images you want to optimize:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000490.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000490.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000489.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000489.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000494.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000494.jpg" />
+<ol class="arabic">
+<li><p>Click on the <span class="guilabel">Actions</span> tab</p>
+<p><span class="menuselection">Windows ‣ Actions</span> if you can’t see it.</p>
+</li>
+<li><p>Click on the little <span class="guilabel">Create new set</span>, folder icon in the bottom</p>
+<p>Call the new set something like <span class="guilabel">Resie</span>.</p>
+</li>
+<li><p>Create the little <span class="guilabel">Create new Action</span> icon</p>
+<p>Call it something like <span class="guilabel">8x8 DDS DXT1</span></p>
+</li>
+<li><p>Hit the <span class="guilabel">Record</span> button</p>
+<p>Anything you do from here in Photoshop will be recoded in this action until you hit the stop recording button so do not do anything other than what I say.</p>
+</li>
+</ol>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000495.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000495.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000496.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000496.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000497.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000497.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000498.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000498.jpg" />
+<ol class="arabic">
+<li><p><span class="menuselection">Image ‣ Image Size</span></p>
+<p>Change the pixel dimensions to <span class="guilabel">8x8 px</span>.</p>
+</li>
+<li><p><span class="menuselection">File ‣ Save</span></p>
+<ul class="simple">
+<li><p>Save the image as a <span class="guilabel">DXT1 RGB 4bpp | no alpha</span> DDS Image with <span class="guilabel">Generate MIP Maps</span></p></li>
+<li><p>Make sure <span class="guilabel">All</span> is selected in the drop-down box next to it</p></li>
+</ul>
+</li>
+<li><p>Hit <span class="guilabel">Save</span></p></li>
+<li><p><span class="menuselection">File ‣ Close</span></p>
+<p>Finally hit the <span class="guilabel">Stop Recording</span> button to stop the action from recoding your actions.</p>
+</li>
+</ol>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000499.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000499.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000500.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000500.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000501.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000501.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000502.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000502.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000503.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000503.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000504.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000504.jpg" />
+<p>Now if you open up the image you just optimized/resized in NVIDIA WTV, you should now see its a 8x8 DXT1 DDS Image with 4 mips total and a total memory usage of <span class="guilabel">0.1kb</span>:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000505.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000505.jpg" />
+<p>Now if you select another opened image you want to optimize, select the header of your action <span class="guilabel">8x8 DDX DXT1 Action</span>, and hit <span class="guilabel">play</span>, it should now automatically resize this image, save it with the same DDS settings and close it. Ensure you open up the image in WTV after its done to check it is all good:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000506.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000506.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000507.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000507.jpg" />
+<p>Once you’ve confirmed your action is all good its time to apply this action to all opened files automatically.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><span class="menuselection">File ‣ Automate ‣ Batch</span></p></li>
+<li><p>In the <span class="guilabel">Play</span> section, make sure the correct set and action are selected, and for source have it set to <span class="guilabel">Opened Files</span></p>
+<p>Making sure of course you don’t have any other files opened in photoshop you don’t want to resize and are not <code class="docutils literal notranslate"><span class="pre">.dds</span></code> images</p>
+</li>
+<li><p>Hit <span class="guilabel">Ok</span> and it will apply this action to all opened files.</p></li>
+</ol>
+</div></blockquote>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000508.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000508.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000509.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000509.jpg" />
+<p>Now the same images that where using up a total of <strong>30.6mb</strong> are now using only <strong>8.26kb</strong> and are doing exactly the same job, but are far easier for the client to process and takes up only a tiny bit of RAM!</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000510.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000510.jpg" />
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="page16.html" class="btn btn-neutral float-left" title="16. Combining &amp; Splitting Terrain Lightmap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../aasv4.html" class="btn btn-neutral float-right" title="AASv4 Game Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

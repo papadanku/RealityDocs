@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. Testing Light &amp; Lightmap Settings &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="13. Full Object Lightmaps" href="page13.html" />
+    <link rel="prev" title="11. Importing Sun &amp; Preparing your Lights" href="page11.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page7.html">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Mapping</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Advanced 3DsMax Lightmapping</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>Testing Light &amp; Lightmap Settings</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modding/mapping/lightmapping/page12.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="testing-light-lightmap-settings">
+<h1><span class="section-number">12. </span>Testing Light &amp; Lightmap Settings<a class="headerlink" href="#testing-light-lightmap-settings" title="Permalink to this heading"></a></h1>
+<p>Before you go any further we should do some test lightmaps on some of our statics to ensure that everything is working as it should be and the settings are good.</p>
+<p>First thing to do is unhide your Overgrowth Layer/Objects and if they don’t have the leaf material applied to them its best to do that now, or at the very latest just before you render them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Its worth noting you can alternatively Freeze the layer which will have the same affect as removing its material and increasing FPS.</p>
+</div>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000194.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000194.jpg" />
+<p>Generally you want to pick a few large buildings with interiors etc and also some objects that trees will be casting shadows on, and some objects with point lights. Also if there are any objects your unsure about if you have set their lightmap size correctly you should include them in this test render. Just select the LOD0 of each of these objects.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000195.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000195.jpg" />
+<p>Then go to <span class="menuselection">BF2 ‣ BF2 Lightmapping`</span> and first we need to set folders for the tools to save our lightmaps in. First set a folder for your temp files, which is what the lightmaps generated by max will be saved into, I would recommend making a folder called <span class="guilabel">Temp</span> inside the same folder as your lightmapping scene, and then do the same for <span class="guilabel">Output</span> with making another <span class="guilabel">Output</span> folder for that:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000196.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000196.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000197.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000197.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000198.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000198.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000199.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000199.jpg" />
+<p>Once that is done and with your test objects selected, hit the <span class="guilabel">Render Selected Objects</span> button and it should render your selected objects:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000200.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000200.jpg" />
+<p>Once your lightmaps have finished rendering you will have a bunch of <code class="docutils literal notranslate"><span class="pre">.tga</span></code> files for each object lod you have generated:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000429.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000429.jpg" />
+<p>Now its time to convert them to <code class="docutils literal notranslate"><span class="pre">.dds</span></code> so that BF2 can read them.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Browse to your <code class="docutils literal notranslate"><span class="pre">\Autodesk\3ds</span> <span class="pre">Max</span> <span class="pre">9\Scripts\bf2</span></code> folder</p>
+<p>There you will find a <code class="docutils literal notranslate"><span class="pre">~convert.bat</span></code></p>
+</li>
+<li><p>Open up that file with a text editor</p>
+<p>In it you should see this code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@echo</span> <span class="n">off</span>
+<span class="s2">&quot;E:\Program Files (x86)\Autodesk</span><span class="se">\3</span><span class="s2">ds Max 9\scripts</span><span class="se">\b</span><span class="s2">f2</span><span class="se">\b</span><span class="s2">in\extern</span><span class="se">\n</span><span class="s2">vdxt.exe&quot;</span> <span class="o">-</span><span class="n">file</span> <span class="s2">&quot;F:\My Documents</span><span class="se">\3</span><span class="s2">dsmax\scenes\Project Reality\Statics\Afghan Compound Buildings v3\LM_Tests\Renders\Temp\*.tga&quot;</span> <span class="o">-</span><span class="n">dxt1a</span> <span class="o">-</span><span class="n">outdir</span> <span class="s2">&quot;F:\My Documents</span><span class="se">\3</span><span class="s2">dsmax\scenes\Project Reality\Statics\Afghan Compound Buildings v3\LM_Tests\Renders\Output&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>It’s now a matter of just changing these paths to match the files on your computer, with the first one just changing it to where you have 3DsMax9 and the PR:BF2 Max Tools installed, then for the second one ending in <code class="docutils literal notranslate"><span class="pre">\Temp\*.tga</span></code>, changing that to your map’s lightmaps’ <code class="docutils literal notranslate"><span class="pre">Temp</span></code> folder you crated above, and then finally changing the last path ending in <code class="docutils literal notranslate"><span class="pre">\Output</span></code> to the location of your maps lightmaps output folder you created above</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can make your output folder your levels <code class="docutils literal notranslate"><span class="pre">/lightmaps/objects/</span></code> folder, but I would advise against this since you may overwrite some lightmaps you may have wished not to and far safer to do it manually).</p>
+</div>
+<p>Mine ends up looking like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@echo</span> <span class="n">off</span>
+<span class="s2">&quot;E:\Program Files (x86)\Autodesk</span><span class="se">\3</span><span class="s2">ds Max 9\scripts</span><span class="se">\b</span><span class="s2">f2</span><span class="se">\b</span><span class="s2">in\extern</span><span class="se">\n</span><span class="s2">vdxt.exe&quot;</span> <span class="o">-</span><span class="n">file</span> <span class="s2">&quot;F:\My Documents</span><span class="se">\3</span><span class="s2">dsmax\scenes\Project Reality\LightMaps\Jamaica\Temp\*.tga&quot;</span> <span class="o">-</span><span class="n">dxt1a</span> <span class="o">-</span><span class="n">outdir</span> <span class="s2">&quot;F:\My Documents</span><span class="se">\3</span><span class="s2">dsmax\scenes\Project Reality\LightMaps\Jamaica\Output&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>After you have done that, run the <code class="docutils literal notranslate"><span class="pre">.bat</span></code> script and a little <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> window should pop up, showing you which files its currently converting. This may take some time if you’ve got a lot of files to convert.</p>
+<p>Once that has finished, browse to your maps lightmaps <span class="guilabel">Output</span> folder you set above and in there you should now see a bunch of <code class="docutils literal notranslate"><span class="pre">.dds</span></code> images, one for each lod of each static:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000431.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000431.jpg" />
+<p>Copy all of these into your <cite>pr_editlevels*YOUR MAP*LightmapsObjects</cite> folder and load up your map with the BF2 Editor and you should now see your lightmaps in your map.</p>
+<p>Here are the results of my test lightmaps:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000205.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000205.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000206.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000206.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000207.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000207.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000208.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000208.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000209.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000209.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000210.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000210.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000211.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000211.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000212.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000212.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000213.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000213.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000214.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000214.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000215.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000215.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000216.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000216.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000217.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000217.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000218.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000218.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000219.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000219.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000220.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000220.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221.jpg" />
+<p>It is also important to look at the textures themselves as they can tell you a lot:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221b.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221b.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221d.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221d.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221c.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221c.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each lightmap channel has its purpose:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Green<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sun</p>
+</dd>
+<dt class="field-even">Blue<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sky</p>
+</dd>
+<dt class="field-odd">Red<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Point</p>
+</dd>
+</dl>
+</div></blockquote>
+<ul>
+<li><p>Note the top of the first image which is the Sky of the big building with the trees on its patio thing:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>You can see on the top left of the texture, which is its roof, that there is a shadow around that little extra roof bit on top</p></li>
+<li><p>You can hardly see ingame, but the subconscious does notice this thing if it is not there</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221e.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221e.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221f.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221f.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221g.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221g.jpg" />
+<p>There have been two main changes I’ve made from this testing. The first was to increase the lightmap texture size of the <span class="guilabel">citybuilding_3a/b</span> from <span class="guilabel">128 64 32 16</span> to <span class="guilabel">256 128 64 32</span> since its shadows had quite a few errors etc, and to also increase the multiplier of the Lighthouse’s Omni Light to <span class="guilabel">2</span> from <span class="guilabel">1</span> since it was not quite powerful enough.</p>
+<p>Once you are happy with your light settings and you have tested any changes you have made then you can begin to lightmap your objects fully.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="page11.html" class="btn btn-neutral float-left" title="11. Importing Sun &amp; Preparing your Lights" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="page13.html" class="btn btn-neutral float-right" title="13. Full Object Lightmaps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Cleaning Up Objects &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="8. Creating Reference, Shadow Casting Objects" href="page8.html" />
+    <link rel="prev" title="6. Importing Overgrowth into 3DsMax" href="page6.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/modding/index.html">Modding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical/python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../factions/index.html">Community Factions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coop/index.html">CO-OP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced 3DsMax Lightmapping</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="page1.html">1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page2.html">2. Converting Overgrowth to Static</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page3.html">3. 3DsMax - Lightmapping Scene Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page4.html">4. Importing Terrain into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page5.html">5. Importing Statics into 3DsMax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page6.html">6. Importing Overgrowth into 3DsMax</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7. Cleaning Up Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page8.html">8. Creating Reference, Shadow Casting Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page9.html">9. Replacing Objects with Reference Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page10.html">10. Sorting Statics for Lightmapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page11.html">11. Importing Sun &amp; Preparing your Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page12.html">12. Testing Light &amp; Lightmap Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page13.html">13. Full Object Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page14.html">14. Terrain Sun &amp; Sky Lightmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minimap.html">How To Make The “Perfect” MiniMap</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Mapping</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Advanced 3DsMax Lightmapping</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>Cleaning Up Objects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modding/mapping/lightmapping/page7.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cleaning-up-objects">
+<h1><span class="section-number">7. </span>Cleaning Up Objects<a class="headerlink" href="#cleaning-up-objects" title="Permalink to this heading"></a></h1>
+<p>There are going to be a lot of objects in your files that you either don’t want to generate lightmaps for, can’t have them generated for, don’t want them to cast a shadow on the map and so on. As such we want to sort the wheat from the chaff and to do this we need to go though all your import object types. This sounds worse than it really is since we are only talking about each type of unique object and not each individual static.</p>
+<p>First hide all the objects on your map by simply not selecting anything then right click on the viewport and click “Hide Unselected”.</p>
+<p>Then right click on your viewport again and go <span class="guilabel">Unhide By Name</span> and go though your list, selecting objects to unhide which you want to change. For example this <span class="guilabel">Bundled Mesh</span> <span class="guilabel">civiliancar1</span>, can not be lightmapped, but we do want it casting a shadow, but it also has first person and wreck meshes ontop of its normal mesh. As such first we should unhide it so we can work with it.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000044.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000044.jpg" />
+<p>Next lets select and delete <span class="guilabel">geom0</span> and <span class="guilabel">geom2</span> and its sub tree by just typing in <span class="guilabel">geom0</span> (1p mesh) into the search first, with <span class="guilabel">select sub tree</span> selected, and do the same for <span class="guilabel">geom2</span> (wreck mesh), leaving just <span class="guilabel">geom1</span> which is actually the only thing players see ingame in this objects current setup.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000046.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000046.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000047.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000047.jpg" />
+<p>Now select the objects name, in this case “0” and then select <span class="guilabel">inverse</span>, which will select all the helpers, and delete them leaving only the mesh:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000048.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000048.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000049.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000049.jpg" />
+<p>Lastly because in this rare case, the mesh name is bugged we should select all the meshes and go to <span class="menuselection">Tools ‣ Rename</span> Objects and rename it to its proper name of <span class="guilabel">civiliancar1</span> like so:</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000050.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000050.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000051.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000051.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000053.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000053.jpg" />
+<p>Next example is I have a lot of static placed overgrowth in my <code class="docutils literal notranslate"><span class="pre">staticobjects.con</span></code> and as such I need to remove all the lods and helpers to ensure the script doesn’t try to lightmap them, since it can’t and because we don’t want the lods casting shadows.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000054.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000054.jpg" />
+<p>Same basic principles above I’ll show you in pics, although this time I select the helpers for deletion by unchecking geom from the selection list.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000055.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000055.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000056.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000056.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000057.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000057.jpg" />
+<p>Another example is the runway paving slabs which don’t need lightmaps nor to cast shadows so just totally delete them and its helpers.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000058.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000058.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000059.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000059.jpg" />
+<p>Last example is the wirefence series, since these can’t be lightmapped (well they can be the lightmaps are screwy on them from non-proper lightmap UVs) but we do want them casting shadows. We are also later going to set the wire up on them to be transparent so they don’t cast a solid shadow on the ground like they do in the Bf2editor and let some light pass though them. As such, we want to delete all but its <span class="guilabel">lod0</span> mesh.</p>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000060.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000060.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000061.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000061.jpg" />
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000062.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000062.jpg" />
+<p>Lastly for now I’m going to select all these objects we have unhidden that are left just to cast shadows and group them up into a group called <code class="docutils literal notranslate"><span class="pre">_OVERGROWTH</span></code>, since even though some objects like the civilian car in there are not overgrowth, most of it is.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This does not include the Overgrowth helpers we have imported earlier, this is just the overgrowth etc. we have sorted out from the main statics.</p>
+</div>
+<img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000063.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000063.jpg" />
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="page6.html" class="btn btn-neutral float-left" title="6. Importing Overgrowth into 3DsMax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="page8.html" class="btn btn-neutral float-right" title="8. Creating Reference, Shadow Casting Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
