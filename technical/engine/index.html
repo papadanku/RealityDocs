@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="BF2 Coordinates" href="coordinates.html" />
-    <link rel="prev" title="Reloading Modules at Runtime" href="../cookbook/reloadingmodules.html" /> 
+    <link rel="prev" title="Reloading Modules at Runtime" href="../cookbook/reloading_modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,8 +57,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Battlefield Engine</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="coordinates.html">BF2 Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="internals.html">BF2 Engine Internals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="objecttemplates.html">Game Engine Object Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html">Reverse Engineering Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object_templates.html">Game Engine Object Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html">Reverse Engineering Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time.html">Time in BF2</a></li>
 </ul>
 </li>
@@ -71,7 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/guidelines.html">Guidelines for Community Assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modding/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modding/objects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/factions/index.html">Community Factions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/mapping/index.html">Mapping</a></li>
 </ul>
@@ -116,17 +116,17 @@
 <li class="toctree-l2"><a class="reference internal" href="internals.html#io">IO</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="objecttemplates.html">Game Engine Object Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="objecttemplates.html#confirmed-objecttemplates">Confirmed ObjectTemplates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="objecttemplates.html#unconfirmed-objecttemplates">Unconfirmed ObjectTemplates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_templates.html">Game Engine Object Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="object_templates.html#confirmed-objecttemplates">Confirmed ObjectTemplates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object_templates.html#unconfirmed-objecttemplates">Unconfirmed ObjectTemplates</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reverseengineering.html">Reverse Engineering Tables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html#aidll-dll"><code class="docutils literal notranslate"><span class="pre">AIDLL.dll</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html#aidll-w32ded-dll"><code class="docutils literal notranslate"><span class="pre">AIDLL_w32ded.dll</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html#bf2audio-dll"><code class="docutils literal notranslate"><span class="pre">BF2Audio.dll</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html#bf2openal-dll"><code class="docutils literal notranslate"><span class="pre">BF2OpenAL.dll</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="reverseengineering.html#bf2voipserver-dll"><code class="docutils literal notranslate"><span class="pre">BF2VoipServer.dll</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="reverse_engineering.html">Reverse Engineering Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html#aidll-dll"><code class="docutils literal notranslate"><span class="pre">AIDLL.dll</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html#aidll-w32ded-dll"><code class="docutils literal notranslate"><span class="pre">AIDLL_w32ded.dll</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html#bf2audio-dll"><code class="docutils literal notranslate"><span class="pre">BF2Audio.dll</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html#bf2openal-dll"><code class="docutils literal notranslate"><span class="pre">BF2OpenAL.dll</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_engineering.html#bf2voipserver-dll"><code class="docutils literal notranslate"><span class="pre">BF2VoipServer.dll</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="time.html">Time in BF2</a></li>
@@ -138,7 +138,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../cookbook/reloadingmodules.html" class="btn btn-neutral float-left" title="Reloading Modules at Runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cookbook/reloading_modules.html" class="btn btn-neutral float-left" title="Reloading Modules at Runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="coordinates.html" class="btn btn-neutral float-right" title="BF2 Coordinates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

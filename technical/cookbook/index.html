@@ -21,7 +21,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Changing Objects At Runtime" href="changingobjects.html" />
+    <link rel="next" title="Changing Objects At Runtime" href="changing_objects.html" />
     <link rel="prev" title="The Administrative Module" href="../admin/module.html" /> 
 </head>
 
@@ -54,10 +54,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The Python Cookbook</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html">Changing Objects At Runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errorcatching.html">Better Error Catching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="newrcon.html">Adding New RCon Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html">Reloading Modules at Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error_catching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_rcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html">Reloading Modules at Runtime</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../engine/index.html">Battlefield Engine</a></li>
@@ -70,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/guidelines.html">Guidelines for Community Assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modding/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modding/objects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/factions/index.html">Community Factions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/mapping/index.html">Mapping</a></li>
 </ul>
@@ -103,31 +103,31 @@
 <h1>The Python Cookbook<a class="headerlink" href="#the-python-cookbook" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="changingobjects.html">Changing Objects At Runtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html#problem">Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html#solution">Solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html#example-adding-a-new-property-to-an-object">Example: Adding A New Property To An Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html#discussion">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing_objects.html">Changing Objects At Runtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html#problem">Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html#solution">Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html#example-adding-a-new-property-to-an-object">Example: Adding A New Property To An Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html#discussion">Discussion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="errorcatching.html">Better Error Catching</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="errorcatching.html#problem">Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errorcatching.html#solution">Solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errorcatching.html#discussion">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_catching.html">Better Error Catching</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="error_catching.html#problem">Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error_catching.html#solution">Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error_catching.html#discussion">Discussion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="newrcon.html">Adding New RCon Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="newrcon.html#problem">Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="newrcon.html#solution">Solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="newrcon.html#discussion">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_rcon.html">Adding New RCon Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_rcon.html#problem">Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_rcon.html#solution">Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_rcon.html#discussion">Discussion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reloadingmodules.html">Reloading Modules at Runtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html#problem">Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html#solution">Solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html#the-header-file">The Header File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html#the-module-file">The Module File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reloadingmodules.html#discussion">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reloading_modules.html">Reloading Modules at Runtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html#problem">Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html#solution">Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html#the-header-file">The Header File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html#the-module-file">The Module File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reloading_modules.html#discussion">Discussion</a></li>
 </ul>
 </li>
 </ul>
@@ -139,7 +139,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../admin/module.html" class="btn btn-neutral float-left" title="The Administrative Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="changingobjects.html" class="btn btn-neutral float-right" title="Changing Objects At Runtime" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="changing_objects.html" class="btn btn-neutral float-right" title="Changing Objects At Runtime" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

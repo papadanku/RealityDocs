@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Battlefield Engine" href="../engine/index.html" />
-    <link rel="prev" title="Adding New RCon Commands" href="newrcon.html" /> 
+    <link rel="prev" title="Adding New RCon Commands" href="new_rcon.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,9 +54,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">The Python Cookbook</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="changingobjects.html">Changing Objects At Runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errorcatching.html">Better Error Catching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="newrcon.html">Adding New RCon Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changing_objects.html">Changing Objects At Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error_catching.html">Better Error Catching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_rcon.html">Adding New RCon Commands</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reloading Modules at Runtime</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#problem">Problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a></li>
@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/guidelines.html">Guidelines for Community Assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modding/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modding/objects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/factions/index.html">Community Factions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/mapping/index.html">Mapping</a></li>
 </ul>
@@ -99,7 +99,7 @@
           <li class="breadcrumb-item"><a href="index.html">The Python Cookbook</a></li>
       <li class="breadcrumb-item active">Reloading Modules at Runtime</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/technical/cookbook/reloadingmodules.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/technical/cookbook/reloading_modules.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -186,7 +186,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In light of writing my cookbook receipe on better error catching, I’ve decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, <a class="reference internal" href="errorcatching.html"><span class="doc">click here</span></a></p>
+<p>In light of writing my cookbook receipe on better error catching, I’ve decided to update the reload function to output an error message if an error occurs on load. (I ran into a few of these errors on load while writing my recipie on better error catching, and they are very annoying. Yes I see the irony in running into errors while making better error catching.) Since the reload fails, your old code will still execute until you get a succesful reload. For more information on the error catching implented, <span class="xref std std-doc">click here</span></p>
 </div>
 </section>
 <section id="the-module-file">
@@ -220,7 +220,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="newrcon.html" class="btn btn-neutral float-left" title="Adding New RCon Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="new_rcon.html" class="btn btn-neutral float-left" title="Adding New RCon Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../engine/index.html" class="btn btn-neutral float-right" title="Battlefield Engine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

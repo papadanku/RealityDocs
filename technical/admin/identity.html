@@ -76,7 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/guidelines.html">Guidelines for Community Assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modding/makingobjects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modding/objects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/factions/index.html">Community Factions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modding/mapping/index.html">Mapping</a></li>
 </ul>
@@ -112,7 +112,7 @@
 <section id="player-id-index">
 <h2>Player ID (index)<a class="headerlink" href="#player-id-index" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Player</span> <span class="pre">ID</span></code> (“playerID”, also known as “index”) is the simplist and most basic way of identifying players, and is the most commonly used throughout the game. The first player to connect to the server is given a Player ID of “0”; the second gets a Player ID of “1”, and so on. At the beginning of the next round the server goes through and re-assigns Player IDs for each player, again beginning at 0, so as to fill in any “holes” in the numbering system created by players who have disconnected.</p>
-<p>Most <a class="reference internal" href="../modding/consolecommands.html"><span class="doc">console commands</span></a> that refer to players use Player ID: for example, <code class="docutils literal notranslate"><span class="pre">admin.kickPlayer</span></code> is followed by a Player ID number. The easiest way to find out which player has which Player ID from the console is to use the <code class="docutils literal notranslate"><span class="pre">admin.listplayers</span></code> command.</p>
+<p>Most <span class="xref std std-doc">console commands</span> that refer to players use Player ID: for example, <code class="docutils literal notranslate"><span class="pre">admin.kickPlayer</span></code> is followed by a Player ID number. The easiest way to find out which player has which Player ID from the console is to use the <code class="docutils literal notranslate"><span class="pre">admin.listplayers</span></code> command.</p>
 <p>From Python, several methods are available access information about a player based on Player ID, for example <code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.playerManager.getPlayerByIndex()</span></code> will take a playerID and return the associated playerObject.</p>
 </section>
 <section id="player-name">
