@@ -86,7 +86,6 @@
 <li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page18.html">18. Addendum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
@@ -130,58 +129,91 @@
 <p>If you wish to have Man Made (Point) Lighting on your terrain then the best way to go about it is to turn them Blue/Green and have them in your Sky/Sun Light Channel BUT, doing them this way means you can’t turn them off in day map layers and they will use the same light colour/intensity as your Sky/Sun light.</p>
 </div>
 <p>Next thing we need to do is create your “Sea Water Level” so that shadows cast on your water are cast on the sea water surface and not on the sea bed.</p>
-<p>Select your Terrain mesh <em>(_TERRAIN)</em> and add a <strong>Vol. Select</strong> modifier to it. Switch the <strong>Stack Selection Level</strong> to <strong>Vertex</strong> and <strong>Selection Method</strong> to <strong>Replace</strong> and check <strong>Invert</strong>. This means that any verts outside of this Volume Selection box will now be selected, which by default, is nothing since the box is created to the very limits of your object.</p>
+<ol class="arabic simple">
+<li><p>Select your Terrain mesh <span class="guilabel">_TERRAIN</span> and add a <span class="guilabel">Volume Select</span> modifier to it</p></li>
+<li><p>Switch <span class="menuselection">Stack Selection Level ‣ Vertex</span></p></li>
+<li><p>Switch <span class="menuselection">Selection Method ‣ Replace</span> and check <span class="guilabel">Invert</span></p></li>
+</ol>
+<p>This means that any verticess outside of this <span class="guilabel">Volume Selection</span> box will now be selected, which by default, is nothing since the box is created to the very limits of your object.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000266.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000266.jpg" />
-<p>Expand the modifier, selecting <strong>Gizmo</strong> and switching to <strong>Offset Mode Transform Type-in</strong> with the <strong>Move Tool</strong> selected, offset the <strong>Volume Selection</strong> box by the depth of your sea water of your map. My map has a sea water Level of 5m so I need to offset my <strong>Vol. Selection</strong> box by 50 Units (since 10 Units = 1m).</p>
+<ol class="arabic">
+<li><p>Expand the modifier, switch <span class="menuselection">Gizmo ‣ Offset Mode Transform Type-in</span> with the <span class="guilabel">Move Tool</span> selected</p></li>
+<li><p>Offset the <span class="guilabel">Volume Selection</span> box by the depth of your sea water of your map</p>
+<p>My map has a sea water level of <span class="guilabel">5m</span> so I need to offset my <span class="guilabel">Volume Selection</span> box by 50 Units (since 10 Units = 1m).</p>
+</li>
+</ol>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000270.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000270.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000271.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000271.jpg" />
-<p>Turn on <strong>Percentage Snapping</strong> and open up the <strong>Grid and Snap Settings</strong> window (Right click on the snapping button to open it or go to <strong>Customise &gt; Grid</strong> and Snap Settings…) and in the <strong>Options Tab</strong> set the <strong>Percent</strong> box to <code class="docutils literal notranslate"><span class="pre">100%</span></code>. Then add an <strong>Edit Poly</strong> modifier to your terrain and go into <strong>Vertex Selection</strong> mode and all the vertices selected by the <strong>Vol. Select</strong> modifier should now be selected for you in this new <strong>Edit Poly</strong> Modifier. Switch to the <strong>Scale</strong> Tool and with <strong>Percentage Snapping</strong> still enabled, select the <code class="docutils literal notranslate"><span class="pre">Z</span></code> Axis and scale it down to <code class="docutils literal notranslate"><span class="pre">0%</span></code>, which will make all the vertices in your selection totally flat.</p>
+<ol class="arabic simple">
+<li><p>Turn on <span class="guilabel">Percentage Snapping</span></p></li>
+<li><p>Open up the <span class="guilabel">Grid and Snap Settings</span> window. You have two choices to open:</p>
+<ol class="arabic simple">
+<li><p>Right click on the snapping button to open it</p></li>
+<li><p><span class="menuselection">Customise ‣ Grid and Snap Settings</span></p></li>
+</ol>
+</li>
+<li><p>In the <span class="guilabel">Options</span> Tab, set the <span class="guilabel">Percent</span> box to <span class="guilabel">100%</span></p></li>
+<li><p>Add an <span class="guilabel">Edit Poly</span> modifier to your terrain</p></li>
+<li><p>Go into <span class="guilabel">Vertex Selection`</span> mode and all the vertices selected by the <span class="guilabel">Volume Select</span> modifier should now be selected for you in this new <span class="guilabel">Edit Poly</span> modifier</p></li>
+<li><p>Switch to the <span class="guilabel">Scale</span> tool and with <span class="guilabel">Percentage Snapping</span> still enabled</p></li>
+<li><p>Select the <span class="guilabel">Z</span> Axis and scale it down to <span class="guilabel">0%</span>, which will make all the vertices in your selection totally flat</p></li>
+</ol>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000272.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000272.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000273.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000273.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000275.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000275.jpg" />
-<p>Finally switch to the <strong>Move</strong> tool and in <strong>Absolute Mode Transform Type-In</strong> set the Z amount for your vertices to that of your sea water level, which in my case is 5m, 50 Units:</p>
+<p>Finally switch to the <span class="guilabel">Move</span> tool and in <span class="guilabel">Absolute Mode Transform Type-In</span> set the <span class="guilabel">Z</span> amount for your vertices to that of your sea water level, which in my case is <span class="guilabel">5m</span>, 50 Units:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000277.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000277.jpg" />
 <p>Now if you look at your terrain where your sea water should be closely it should be all flat and at the level your sea water is ingame:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000278.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000278.jpg" />
-<p>And if we turn off the <strong>Edit Poly</strong> modifier, we still have our sea bed, which we will need later <em>(and if you plan on re-lightmapping any objects since you don’t want your sea water level to cast a shadow on your objects)</em></p>
+<p>And if we turn off the <span class="guilabel">Edit Poly</span> modifier, we still have our sea bed, which we will need later</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you plan on re-lightmapping any objects since you don’t want your sea water level to cast a shadow on your objects</p>
+</div>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000279.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000279.jpg" />
-<p>Now with your Terrain selected hit the <code class="docutils literal notranslate"><span class="pre">0</span></code> key on your keyboard to bring up the <strong>Render to Texture</strong> window ( alternatively, go to <strong>Render &gt; Render to Texture</strong>). At the top you, will see a little <strong>Output</strong> box under the <strong>General Settings</strong> rollout and next to <strong>Path</strong>, hit the <strong>…</strong> button, then browse to your lightmap scene folder and make a new <strong>Terrain</strong> folder and select it.</p>
+<p>Now with your <span class="guilabel">Terrain</span> selected hit <kbd class="kbd docutils literal notranslate">0</kbd> to bring up the <span class="guilabel">Render to Texture</span> window.</p>
+<blockquote>
+<div><p>Alternatively, go to <span class="menuselection">Render ‣ Render to Texture</span></p>
+</div></blockquote>
+<p>At the top you will see a little <span class="guilabel">Output</span> box under the <span class="guilabel">General Settings</span> rollout and next to <span class="guilabel">Path</span>,</p>
+<ol class="arabic simple">
+<li><p>Hit the <span class="guilabel">…</span> button</p></li>
+<li><p>Browse to your lightmap scene folder</p></li>
+<li><p>Make a new <span class="guilabel">Terrain</span> folder and select it</p></li>
+</ol>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000259.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000259.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000260.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000260.jpg" />
-<p>Next scroll down to the <strong>Output</strong> Rollout and hit the <strong>Add…</strong> button, then add a <strong>LightingMap</strong> element. By default it should be created as a <code class="docutils literal notranslate"><span class="pre">.tga</span></code>, which is what we want:</p>
+<p>Next,</p>
+<ol class="arabic simple">
+<li><p>Scroll down to the <span class="guilabel">Output</span> Rollout</p></li>
+<li><p>Hit the <span class="guilabel">Add</span> button</p></li>
+<li><p>Add a <span class="guilabel">LightingMap</span> element</p></li>
+</ol>
+<p>By default it should be created as a <code class="docutils literal notranslate"><span class="pre">.tga</span></code>, which is what we want:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000262.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000262.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000263.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000263.jpg" />
 <p>Next you need to change the element’s width and height settings. This depends on the size of your map, and/or how much detail you want on your terrain’s lightmap. Generally speaking, however, a normal map has a terrain lightmap ratio of 2px/meter and these are the normal width and height settings you should use for the following sizes of map:</p>
 <blockquote>
-<div><ul>
-<li><p><strong>1km x 1km:</strong> 2048 x 2048</p>
-<blockquote>
-<div><p>16 512x512 Patches</p>
-</div></blockquote>
-</li>
-<li><p><strong>2km x 2km:</strong> 4096 x 4096</p>
-<blockquote>
-<div><p>64 512x512 Patches</p>
-</div></blockquote>
-</li>
-<li><p><strong>4km x 4km:</strong> 8192 x 8192</p>
-<blockquote>
-<div><p>64 1024x1024 Patches</p>
-</div></blockquote>
-</li>
-</ul>
+<div><dl class="simple">
+<dt><strong>1km x 1km:</strong> 2048 x 2048</dt><dd><p>16 512x512 Patches</p>
+</dd>
+<dt><strong>2km x 2km:</strong> 4096 x 4096</dt><dd><p>64 512x512 Patches</p>
+</dd>
+<dt><strong>4km x 4km:</strong> 8192 x 8192</dt><dd><p>64 1024x1024 Patches</p>
+</dd>
+</dl>
 </div></blockquote>
 <p>Since I’m working on a 4km by 4km map, I’m going to be using a 8192 width and 8192 height:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000265.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000265.jpg" />
-<p>Now we just need to unhide any objects we want to cast shadows on our terrain. You should still have all your LOD0 Static Meshes unhidden but if not, unhide them <em>(by searching for “*=0” in unhide by name as before)</em> and unhide your Overgrowth layer/group and make sure it has the correct leaf material applied to it etc.</p>
-<p>Then once all that is done and your Sun and Sky lights are the only ones active, save your scene back it up, and save a separate scene to be loaded in a later version of 3DsMax if your using one (pretty much a requirement for an 8192 or above render).</p>
-<p>Then restart your PC, optimize it for lightmapping like you did before for your final object lightmaps and render away by clicking the <strong>Render</strong> button in the bottom left of the <strong>Render to Texture</strong> window.</p>
+<p>Now we just need to unhide any objects we want to cast shadows on our terrain. You should still have all your <span class="guilabel">LOD0</span> Static Meshes unhidden but if not, unhide them <em>(by searching for “*=0” in unhide by name as before)</em> and unhide your Overgrowth layer/group and make sure it has the correct leaf material applied to it etc.</p>
+<p>Then once all that is done and your sun and sky lights are the only ones active, save your scene back it up, and save a separate scene to be loaded in a later version of 3DsMax if your using one (pretty much a requirement for an <span class="guilabel">8192</span> or above render).</p>
+<p>Then restart your PC, optimize it for lightmapping like you did before for your final object lightmaps and render away by clicking the <span class="guilabel">Render</span> button in the bottom left of the <span class="guilabel">Render to Texture</span> window.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Small little tip for better render preview window, is to turn off your diffuse texture for your terrain material as it will only conflict with the render preview, but will not affect the final saved LM.</p>
+<p>Small little tip for better render preview window, is to turn off your diffuse texture for your terrain material as it will only conflict with the render preview, but will not affect the final saved lightmap.</p>
 </div>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000280.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000280.jpg" />
-<p>I lightmapped my Sun and Sky Terrain lightmaps in <strong>2hrs and 7mins</strong> with Adv. Ray Traced Shadows and once your done you should have something like this:</p>
+<p>I lightmapped my Sun and Sky Terrain lightmaps in <strong>2hrs and 7mins</strong> with <span class="guilabel">Adv. Ray Traced Shadows</span> and once your done you should have something like this:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sun_LM.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sun_LM.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sky_LM.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_Terrain_Sky_LM.jpg" />
 </section>

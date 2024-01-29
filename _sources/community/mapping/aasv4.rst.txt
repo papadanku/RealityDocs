@@ -14,13 +14,14 @@ Prerequisites
 
 - A map that has at least one gameplay layer created (i.e. AAS 64 etc.)
 - Creating combat zones, object spawners, and spawn points won't change from previous AAS versions so that won't be covered in this tutorial. For basic layer information, refer to:
+
    - `[Map Tutorial] Layers (16, 32 And 64 Size Maps etc) <https://www.realitymod.com/forum/f189-modding-tutorials/13937-map-tutorial-layers-16-32-64-size-maps-etc.html>`_
    - `Creating a Basic Level - BFEditor <http://www.bfeditor.org/wiki/index.php?title=Creating_a_Basic_Level>`_
 
 Setting Up Teams
 ----------------
 
-The CP capture order always starts with **Team 1**. So the closest control point to Team 1's main will be CP#1 and working it's way out from there. So the first thing you'll want to do it establish which team will be Team 1. You do this by editing the init.con, which is found in your map's main folder. Open it up and you'll see something like this:
+The CP capture order always starts with ``Team 1``. So the closest control point to ``Team 1``\'s main will be CP#1 and working it's way out from there. So the first thing you'll want to do it establish which team will be ``Team 1``. You do this by editing the init.con, which is found in your map's main folder. Open it up and you'll see something like this:
 
 .. code-block::
 
@@ -94,20 +95,20 @@ The CP capture order always starts with **Team 1**. So the closest control point
    gameLogic.setTicketLossPerMin 1 20
    gameLogic.setTicketLossPerMin 2 20
 
-Scroll to the section that starts with ``rem ------------------------------- LevelSettings -------------------------------``. That's where your teams are defined. The easiest thing to do is to check other maps' init.con for the team abbreviations that you want to use. Place Team 1 on the first line and Team 2 on the second, then re-save.
+Scroll to the section that starts with ``rem ------------------------------- LevelSettings -------------------------------``. That's where your teams are defined. The easiest thing to do is to check other maps' init.con for the team abbreviations that you want to use. Place ``Team 1`` on the first line and ``Team 2`` on the second, then re-save.
 
 Placing Control Points (CPs)
 ----------------------------
 
 As a quick refresher to the layer tutorial, here's how to create control points (CPs):
 
-   #. Open BF2 Editor in it's "Level" function.
-   #. In the right column of the Editor screen, select the layer you'd like to add a control point to.
-   #. Move the camera around in the map and locate where you want to put your control point.
-   #. Right-click on the spot where you want to place the control point and choose "Create ControlPoint" from the menu that pops up.
+   #. Open BF2 Editor in it's ``Level`` function
+   #. In the right column of the ``Editor`` screen, select the layer you'd like to add a control point to
+   #. Move the camera around in the map and locate where you want to put your control point
+   #. :kbd:`Right-Click` on the spot where you want to place the control point and choose :guilabel:`Create ControlPoint` from the menu that pops up.
    #. A window will pop up prompting you for a name.
 
-PR uses a specific naming convention. Ignore the suggestion that the editor recommends and use this naming template:
+Project Reality uses a specific naming convention. Ignore the suggestion that the editor recommends and use this naming template:
 
 .. code-block::
 
@@ -138,36 +139,35 @@ Using AASv4, you have a lot more options at your disposal on how you want your c
 
 .. image:: http://i.imgur.com/ZbOThdS.jpg
 
-In AASv4, we'll be changing the default SGID of -1 to a specific number, depending on what you want to do.
+In AASv4, we'll be changing the default ``SGID`` of ``-1`` to a specific number, depending on what you want to do.
 
-AASv4 gives you a LOT more options than ever before, so I'll explain each option and how to set up the SGIDs using an imaginary PR map.
+AASv4 gives you a LOT more options than ever before, so I'll explain each option and how to set up the ``SGID`` using an imaginary PR map.
 
 Main Bases
 ----------
 
 As you probably know, in PR the main bases are not usually in play. They are a safe haven for spawning, vehicle repairs, etc. In order to set up AAS, it's important to decide how you want your main bases to be set up. The most common is to make them uncappable and assigned to the team that has a main base there. So looking at the tweaker bar above, you would set:
 
-   Team = 1 (or 2)
-   Check the box for "unabletochangeteam"
+   :Team: ``1`` (or ``2``)
+   :unabletochangeteam: Check the box
+   :Team 1: ``1``
+   :Team 2: ``1``
 
-   SGIDs for main bases are as follows:
-   - Team 1 = 1
-   - Team 2 = -1
+   The only change to this is if you want a main base to be cappable. Then you would assign it a unique ``SGID`` based on the tutorial that follows.
 
-   The only change to this is if you want a main base to be cappable. Then you would assign it a unique SGID based on the tutorial that follows.
-
-   You can also delete the SGID for Team 2's main if you like by opening the text file and deleting the line ``ObjectTemplate.supplyGroupId -1``.
+   You can also delete the ``SGID`` for ``Team 2``'s main if you like by opening the text file and deleting the line ``ObjectTemplate.supplyGroupId -1``.
 
 Basic Randomization
 -------------------
 
 This is best for smaller (1km and 2km) maps with few control points.
 
-CPs are assigned a 2-digit SGID (AB) where:
-- A = Its order in the sequence (starting nearest to Team 1's main)
-- B = If more than one CP has the same A number, B tells the computer how many to pick to be in play.
+CPs are assigned a 2-digit ``SGID`` (AB) where:
 
-If you don't want a control point to be randomized, assign it a unique "A" digit and then make "B" a zero.
+   :A: Its order in the sequence (starting nearest to ``Team 1``'s main)
+   :B: If more than one CP has the same A number, ``B`` tells the computer how many to pick to be in play.
+
+If you don't want a control point to be randomized, assign it a unique ``A`` digit and then make ``B`` a ``0``.
 
 Example:
 
@@ -175,9 +175,9 @@ Example:
 
 In the photo, Team 1 is located on the carrier and Team 2's main is the hashed area. The CP layout is as such:
 
-   - **CP#1:** Village
-   - **CP#2:** Bridge and Farm both have an SGID number starting with 3, so the computer will look at the second (B) digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.
-   - **CP#3:** Junction
+   :CP#1: Village
+   :CP#2: Bridge and Farm both have an ``SGID`` number starting with 3, so the computer will look at the second ``B`` digit to determine that the mapper only wants 1 of them to be picked. This will happen randomly, so sometimes Bridge will show up and sometimes Farm will.
+   :CP#3: Junction
 
 As you can see, this is a basic layout. Team 1 will have to capture Village first, then *either* Farm or Bridge, then lastly Junction. Team 2 has to attack Junction first. Their second flag will be either Farm or Bridge, then their last flag will be Village.
 
@@ -190,16 +190,15 @@ AASv4 Attack Routes
 
 Attack routes are the heart and soul of AASv4. Basically what you'll be doing is adding a third digit to the ``SupplyGroupId``, so now you'll have "ABC", where:
 
-   - **A:** Its order in the sequence (starting nearest to Team 1's main)
-   - **B:** If more than one CP has the same A number, B tells the computer how many to pick to be in play.
-   - **C:** The route it belongs to
+   :A: Its order in the sequence (starting nearest to Team 1's main)
+   :B: If more than one CP has the same A number, B tells the computer how many to pick to be in play.
+   :C: The route it belongs to
 
 The third digit (or route number) tells the computer that before it does anything else, it should pick a route to use. Since I think showing is better than telling, let me show you some examples:
 
 .. image:: http://i.imgur.com/zequiL9.jpg
 
-
-Here you'll see two routes, Blue and Green. The first thing you should notice is that the SGIDs have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your SGIDs have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.
+Here you'll see two routes, Blue and Green. The first thing you should notice is that the ``SGID``\s have a third digit, where the Green route is designated as route #1 and the Blue route is designated as route #2. When the map loads, the computer will see that your ``SGID``\s have a third digit and will randomly pick a route. It may be Blue for one game and Green the next.
 
 You can have up to 9 routes on your map, which should be plenty.
 
@@ -207,11 +206,11 @@ Ok, so that's the basic route set-up. Using this information, you can now incorp
 
 .. image:: http://i.imgur.com/gW1DX0X.jpg
 
-In the above example, I've added another CP to the Blue route called Village. This new CP has the same SGID as Port, so let's break it down by its ABCs:
+In the above example, I've added another CP to the Blue route called Village. This new CP has the same ``SGID``\s as Port, so let's break it down by its ABCs:
 
-   ``A = 2``: Designating it second in the sequence. No change here.
-   ``B = 1``: Since Village and Port both start with an ``A = 2``, the computer needs to know how many of the flags should show up. In this case, setting ``B = 1`` tells the map to pick just one.
-   ``C = 2``: The route designation.
+   :A = 2: Designating it second in the sequence. No change here.
+   :B = 1: Since Village and Port both start with an ``A = 2``, the computer needs to know how many of the flags should show up. In this case, setting ``B = 1`` tells the map to pick just one.
+   :C = 2: The route designation.
 
 So, if the computer picks route #2, it will then pick *either* Port or Village (and not both) since you assigned ``B = 1``.
 
@@ -224,14 +223,14 @@ One of the features of AASv4 that has never been available before is having mult
 
 So why would we want to do this, you ask?
 
-Building on the Blue and Green route examples above, let's start with a simple example. Say you really like the "Village" CP area. It's fun, is in a great location, and will make for great battles... so you want it to be in more than one route. Solution: create another CP.
+Building on the Blue and Green route examples above, let's start with a simple example. Say you really like the ``Village`` CP area. It's fun, is in a great location, and will make for great battles... so you want it to be in more than one route. Solution: create another CP.
 
 .. image:: http://i.imgur.com/gri1avK.jpg
 
 Yes, that's right. Just create another CP and name it something slightly different. To avoid confusion, you can place the route number in the CPs name, such as:
 
-   - The Green route "Village" would be: ``cpname_mapname_aas64_1village``
-   - The Blue route "Village" would be: ``cpname_mapname_aas64_2village``
+   :Green Route "Village": ``cpname_mapname_aas64_1village``
+   :Blue Route "Village": ``cpname_mapname_aas64_2village``
 
 Simple! Now you can move/edit the CPs within Editor so they have the exact same radius or make them slightly different. Now regardless if route #1 or route #2 gets picked, Village will be a possible CP.
 
@@ -256,14 +255,14 @@ Depending on your map layout, you may want to include one CP on all of your rout
 
 You can see that CP#1 and CP#5 are on all of the routes. This often makes sense when the map has a final location that the armies have a "mission" to capture or defend... such as a missile silo, airfield, etc. When this is the case, you don't have to create separate CPs for each route but can instead assign it a single digit. If the CP is at the beginning of the route, it would have an ``SGID = 1``. You would then set both main bases to ``SGID = -1`` since neither is in a route. Basically, here's the way to look at it: The computer needs to see an ``SGID = 1``, so if your main base fulfills that role then great. If it doesn't, then the first flag needs to be ``SGID = 1``.
 
-Ok, so what if your shared CP is at the **end** of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit SGID that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.
+Ok, so what if your shared CP is at the **end** of the route? Now it gets slightly more complicated. You can either change your team assignments in the init.con so that it becomes the first flag, but that may not be possible based on the map layout. The second option is to assign it a single digit ``SGID`` that ends all of the routes. The drawback to option 2 is that all of your routes must end at the same number. For example, when you look at Fools Road, all of the routes end at flag #5.
 
-It's important to note here that you can't have a gap in the sequence. So if Fools Road had a route that only had SGIDs of ``1``, ``205``, ``305``, and ``5`` then there would be a gap between ``305`` and ``5`` and it wouldn't work. The map would load just fine, but neither team could cap the other out.
+It's important to note here that you can't have a gap in the sequence. So if Fools Road had a route that only had ``SGID``\s of ``1``, ``205``, ``305``, and ``5`` then there would be a gap between ``305`` and ``5`` and it wouldn't work. The map would load just fine, but neither team could cap the other out.
 
 A Few More Things about Main Bases
 ----------------------------------
 
--  I know we've talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit SGIDs with ``Team 1 = 1`` and ``Team 2 = the last number in the routes``. The reason behind this is that all of your **spawn points** and **objectspawners** are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn't picked. So the best thing to do is ensure your spawners are tied to a CP that isn't cappable and is not assigned to a route. The simplest way to do this is to assign ``Team 1 = 1`` and ``Team 2 = -1``. If you want your spawners to be associated with a CP that *is* cappable, so that the team loses it's ability to spawn, then you must give it a single digit SGID so that it is part of all routes.
+-  I know we've talked about main bases several times in this tutorial already, but there are still a few things to cover. If you make one (or both) of your main bases part of a route, then they must be single digit ``SGID``\s with ``Team 1 = 1`` and ``Team 2 = the last number in the routes``. The reason behind this is that all of your **spawn points** and **objectspawners** are linked to this CP and having the spawners assigned to one route causes a lot of issues if that route isn't picked. So the best thing to do is ensure your spawners are tied to a CP that isn't cappable and is not assigned to a route. The simplest way to do this is to assign ``Team 1 = 1`` and ``Team 2 = -1``. If you want your spawners to be associated with a CP that *is* cappable, so that the team loses it's ability to spawn, then you must give it a single digit ``SGID`` so that it is part of all routes.
 -  With the exception of CnC mode, 99% of main bases should be marked with a CP. This let's players know where the main bases are and thus where the domes of deaths are. So if your main is not cappable and not part of your routes, you'll still need to make sure the CP is marked on the map.
 
 Looking back at the Fools Road example, you could do it either way. You could set all of your spawners to the closest flag, which means it's cappable by the enemy and when it's lost, no one can spawn or repair, etc. Or you can create a uncappable CP for your spawns that is always active.

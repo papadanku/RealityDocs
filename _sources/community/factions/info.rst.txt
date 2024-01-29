@@ -6,7 +6,6 @@ Please read this entire post epically if you are part of or thinking of starting
 
 This is to clear up any questions any of you may have about the community factions, how they are going to work for mainly the teams working on them, but also for the public and new community faction teams that may be starting up.
 
-
 "What are Community Factions?"
 ------------------------------
 
@@ -15,18 +14,18 @@ They are Factions for the Project Reality Mod that are developed by our communit
 "How do I start making a Community Faction for PR?"
 ---------------------------------------------------
 
-1. Assemble a Team
-^^^^^^^^^^^^^^^^^^
+Assemble a Team
+^^^^^^^^^^^^^^^
 
 If you want to develop a Community Faction, you will need to assemble a team, unless you think you can do the entire mod on your own which is really not feasible unless for a small mini-mod based on PR, depending on how small the mini-mod is and the skill of the developer. The normal community faction will need a team because it would be a major addition of a team to PR, etc. Best way to go about recruiting a team is normally to go posting a single topic in the community modding forums about what you plan on doing, and on other forums you think you may be able to recruit from. Remember, "testers" for your mod don't count, in fact, you can not recruit any testers for your mod as will be explained later on. Only DEVs like modellers, skinners, mappers, coders etc.
 
-2. Design a Plan
-^^^^^^^^^^^^^^^^
+Design a Plan
+^^^^^^^^^^^^^
 
 Once you have a team, you will then need to assemble a design plan of what you want to do. If your making a new faction, your design plan should include all the vehicles, weapons, and general new content you will be adding such as maps, statics or w/e. The more complete your design plan is, the more seriously we will take you and the more likely your community mod will succeed.
 
-3. Submit Your Design Plan
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Submit Your Design Plan
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you have completed your design plan, you will need to submit it to a "Red Tag" Developer via a Private Message on these forums with info about the basics you want to do, a list of your current team members, examples of any work you may have done so far on it, models, textures etc and of course, your design plan. Again, the more complete your submissions are the more seriously we will take you. Modding is no easy task and it takes a huge amount of time and effort and we do not want to be wasting our team on a community mod that don't look like they have their sh*t together.
 

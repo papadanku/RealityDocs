@@ -9,11 +9,15 @@ First of all if you can, I would recommend you do your full lightmaps in a later
 
 I would then recommend you restart your computer and when it starts up close down all unnecessary programs you don't need to free up as much of your CPU and RAM as possible since even having something like Skype running in the background will use up some CPU and RAM and will ultimately take longer for your lightmaps to generate as a result.
 
-Once restarted and your system is optimized for lightmapping, start up the version of max your going to use for lightmapping and then like in the **Test Lightmaps** section, go to **BF2 > Bf2 Lightmapping**, but instead of hitting the **Render Selected Objects** button. you will want to press the **Render All Lightmaps** button. But before you do this, you should check that the **Light Pass** dropdown box is blank *(which means all lights pass, the other options are sun, sky or point light passes separately as done in the past)*, Specific LOD is set to All and if you want to keep/skip any previously generated lightmaps you can check the **Resume** button which will check if the objects lod its about to generate has a lightmap already *(In your Temp Folder)*, and if it dose, skip it and move onto the next object/lod. If your system crashes for whatever reason 1/2 way though lightmapping, this tool can be a life saver. Also ensure your temporary directory is correct and your lightmap size file is loaded. Once you've confirmed all the settings are good, render away!
+Once restarted and your system is optimized for lightmapping, start up the version of max your going to use for lightmapping and then like in the :guilabel:`Test Lightmaps` section, go to :guilabel:`BF2 --> Bf2 Lightmapping`, but instead of hitting the :guilabel:`Render Selected Objects` button. you will want to press the :guilabel:`Render All Lightmaps` button. But before you do this, you should check that the :guilabel:`Light Pass` dropdown box is blank *(which means all lights pass, the other options are sun, sky or point light passes separately as done in the past)*, Specific LOD is set to :guilabel:`All` and if you want to keep/skip any previously generated lightmaps you can check the :guilabel:`Resume` button which will check if the objects lod its about to generate has a lightmap already *(In your Temp Folder)*, and if it dose, skip it and move onto the next object/lod. If your system crashes for whatever reason 1/2 way though lightmapping, this tool can be a life saver.
+
+.. note::
+   
+   Ensure your temporary directory is correct and your lightmap size file is loaded. Once you've confirmed all the settings are good, render away!
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000255.jpg
 
-In all it took me under 7hrs to render the 200 objects in my map at around 2mins / object with **Adv. Ray Traced** Shadows. I can not be sure how long it actually took because I was asleep during this time and time **Total Time Taken** bugged out as it normally dose after rendering lots of objects and said it took something like 50hrs.
+In all it took me under 7hrs to render the 200 objects in my map at around 2mins / object with :guilabel:`Adv. Ray Traced` Shadows. I can not be sure how long it actually took because I was asleep during this time and time **Total Time Taken** bugged out as it normally dose after rendering lots of objects and said it took something like 50hrs.
 
 And here are the results of my Object LMing, note the terrain is still Medium Editor lightmaps:
 

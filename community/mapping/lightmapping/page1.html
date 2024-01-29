@@ -90,7 +90,6 @@
 <li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page18.html">18. Addendum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
@@ -181,7 +180,7 @@
 <div><ul>
 <li><p>Its a very complex process that for someone without any knowledge of 3DsMax and Rendering etc may struggle with but I aim to make this tutorial as straight forward as possible for any novices out there.</p></li>
 <li><p>The setup process prior to lightmapping can be pretty time consuming with having to import all the static meshes of your map etc, especially if your going to setup all your overgrowth etc with transparent leaves etc as per this tutorial.</p></li>
-<li><p>You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that are not on the <strong>Master Lightmap Sizes</strong> List you will need to define.</p></li>
+<li><p>You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that are not on the <span class="guilabel">Master Lightmap Sizes</span> List you will need to define.</p></li>
 <li><p>Child Objects such as Ladders will not be imported with their parent meshes and will need to be added manually into Max in order to cast a shadow <em>(and to lightmap them if they require that but you can’t lightmap Children in the BF2Editor either and Ladders shouldn’t be ladders)</em></p></li>
 <li><p>Destroyable Objects can not be lightmapped in 3DsMax, at least not without a big complex work around and its best to generate them in the BF2 Editor with settings similar to those of 3DsMax.</p>
 <blockquote>
@@ -198,20 +197,42 @@
 </section>
 <section id="requirements-tools">
 <h2><span class="section-number">1.2. </span>Requirements &amp; Tools<a class="headerlink" href="#requirements-tools" title="Permalink to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Battlefield 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p>v1.5</p>
+</dd>
+<dt class="field-even">BF2 Editor v1.3<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference download external" download="" href="http://files.ancientdev.com/prbf2/PREditor.zip"><code class="xref download docutils literal notranslate"><span class="pre">http://files.ancientdev.com/prbf2/PREditor.zip</span></code></a></p>
+</dd>
+<dt class="field-odd">Project Reality<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference download external" download="" href="https://www.realitymod.com/downloads"><code class="xref download docutils literal notranslate"><span class="pre">https://www.realitymod.com/downloads</span></code></a></p>
+</dd>
+<dt class="field-even">Working pr_edit Setup<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html">https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html</a></p>
+</dd>
+<dt class="field-odd">3DsMax9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Version 9+</p>
+</dd>
+<dt class="field-even">PR:BF2 3DsMax9 Tools<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://www.realitymod.com/forum/showthread.php?t=145720">https://www.realitymod.com/forum/showthread.php?t=145720</a></p>
+</dd>
+<dt class="field-odd">Adobe Photoshop<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.adobe.com/products/photoshop.html">https://www.adobe.com/products/photoshop.html</a></p>
+</dd>
+<dt class="field-even">Text Editor<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference download external" download="" href="https://notepad-plus-plus.org/downloads/"><code class="xref download docutils literal notranslate"><span class="pre">Notepad++</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://code.visualstudio.com/download"><code class="xref download docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 <ul>
-<li><p>Battlefield 2 v1.5</p></li>
-<li><p><a class="reference download external" download="" href="http://files.ancientdev.com/prbf2/PREditor.zip"><code class="xref download docutils literal notranslate"><span class="pre">BF2</span> <span class="pre">Editor</span> <span class="pre">v1.3</span></code></a></p></li>
-<li><p><a class="reference external" href="https://www.realitymod.com/downloads">Project Reality: BF2</a> with a <a class="reference external" href="https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html">pr_edit</a> (or equivalent) working mod setup and working.</p></li>
-<li><p>3DsMax9 (version 9 or later)</p></li>
-<li><p><a class="reference external" href="https://www.realitymod.com/forum/showthread.php?t=145720">PR:BF2 3DsMax9 Tools</a></p></li>
-<li><p><a class="reference external" href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a></p></li>
-<li><p>A text editor such as Notepad.</p></li>
-<li><p>A decent computer</p>
+<li><p>A Decent Computer</p>
 <blockquote>
 <div><p>The better the system, the faster the lightmap generation will be and the more RAM you have, the stabler it will be and will allow you to generate the super large terrain lightmaps.</p>
 </div></blockquote>
 </li>
-<li><p>A finalised map ready for lightmapping</p></li>
+<li><p>A Finalised Map Ready for Lightmapping</p></li>
 </ul>
 <p>Make sure all of the above are installed and working before you start this tutorial.</p>
 <div class="admonition note">

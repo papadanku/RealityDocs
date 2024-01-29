@@ -21,7 +21,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="18. Addendum" href="page18.html" />
+    <link rel="next" title="AASv4 Game Mode" href="../aasv4.html" />
     <link rel="prev" title="16. Combining &amp; Splitting Terrain Lightmap" href="page16.html" /> 
 </head>
 
@@ -86,7 +86,6 @@
 <li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">17. Optimizing “Flat” Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page18.html">18. Addendum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
@@ -135,17 +134,17 @@
 <blockquote>
 <div><ol class="arabic">
 <li><p>Take your complied terrain lightmap and resave it as a <code class="docutils literal notranslate"><span class="pre">.psd</span></code> under the name of something like <code class="docutils literal notranslate"><span class="pre">_TERRAINLightingMap_Patches.psd</span></code></p>
-<p>If your working with a 4km map and your terrain lightmap is at <code class="docutils literal notranslate"><span class="pre">8192x8192</span></code> you should resize it down to <code class="docutils literal notranslate"><span class="pre">4096x4096</span></code></p>
+<p>If your working with a 4km map and your terrain lightmap is at <span class="guilabel">8192x8192</span> you should resize it down to <span class="guilabel">4096x4096</span></p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000479.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000479.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000480.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000480.jpg" />
 </li>
-<li><p>Go to <strong>Image &gt; Image Rotation &gt; Flip Canvas Vertical</strong> to put your lightmap up in the same way as the game reads it and the patches are in order</p>
+<li><p>Go to <span class="menuselection">Image ‣ Image Rotation ‣ Flip Canvas Vertical</span> to put your lightmap up in the same way as the game reads it and the patches are in order</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000481.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000481.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg" />
 </li>
-<li><p><a class="reference download external" download="" href="http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png"><code class="xref download docutils literal notranslate"><span class="pre">terrain_patch_grid.png</span></code></a></p>
+<li><p><a class="reference download external" download="" href="http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">The</span> <span class="pre">Terrain</span> <span class="pre">Patch</span> <span class="pre">Grid</span></code></a></p>
 <ol class="arabic">
-<li><p><em>(Right Click, Save As)</em></p></li>
+<li><p><span class="menuselection">Right Click ‣ Save As</span></p></li>
 <li><p>Open it up with Photoshop</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000483.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000483.jpg" />
 </li>
@@ -158,7 +157,7 @@
 </div></blockquote>
 <p>You should end up with something like this:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000485.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000485.jpg" />
-<p>If your working with a 1km map and have a terrain lightmap size of 2048x2048 this patch should duplicate over your image correctly too, with its 4x4 (16) Patch Setup:</p>
+<p>If your working with a 1km map and have a terrain lightmap size of <span class="guilabel">2048x2048</span> this patch should duplicate over your image correctly too, with its <span class="guilabel">4x4 (16)</span> Patch Setup:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000486.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000486.jpg" />
 <p>Now you can clearly see what goes in each patch and as you can see, a lot of my patches are just flat white images like the one I showed you above. Note down which patches are blank, in my case its easier to note down the ones which are used, which are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx02x03</span><span class="p">,</span> <span class="n">tx02x04</span><span class="p">,</span> <span class="n">tx03x03</span><span class="p">,</span> <span class="n">tx03x04</span><span class="p">,</span> <span class="n">tx03x06</span><span class="p">,</span> <span class="n">tx03x07</span><span class="p">,</span> <span class="n">tx04x02</span><span class="p">,</span> <span class="n">tx04x03</span><span class="p">,</span> <span class="n">tx04x04</span><span class="p">,</span> <span class="n">tx04x07</span><span class="p">,</span> <span class="n">tx05x03</span><span class="p">,</span> <span class="n">tx05x04</span><span class="p">,</span> <span class="n">tx05x07</span><span class="p">,</span> <span class="n">tx06x00</span><span class="p">,</span> <span class="n">tx06x03</span><span class="p">,</span> <span class="n">tx06x07</span><span class="p">,</span> <span class="n">tx07x00</span><span class="p">,</span> <span class="n">tx07x07</span>
@@ -180,14 +179,16 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000489.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000489.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000494.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000494.jpg" />
 <ol class="arabic">
-<li><p>Click on the <strong>Actions</strong> tab (<strong>Windows &gt; Actions</strong> if you can’t see it)</p></li>
-<li><p>Click on the little <strong>Create new set</strong>, folder icon in the bottom</p>
-<p>Call the new set something like <code class="docutils literal notranslate"><span class="pre">Resie</span></code>.</p>
+<li><p>Click on the <span class="guilabel">Actions</span> tab</p>
+<p><span class="menuselection">Windows ‣ Actions</span> if you can’t see it.</p>
 </li>
-<li><p>Create the little <strong>Create new Action</strong> icon</p>
-<p>Call it something like <code class="docutils literal notranslate"><span class="pre">8x8</span> <span class="pre">DDS</span> <span class="pre">DXT1</span></code></p>
+<li><p>Click on the little <span class="guilabel">Create new set</span>, folder icon in the bottom</p>
+<p>Call the new set something like <span class="guilabel">Resie</span>.</p>
 </li>
-<li><p>Hit the <strong>Record</strong> button</p>
+<li><p>Create the little <span class="guilabel">Create new Action</span> icon</p>
+<p>Call it something like <span class="guilabel">8x8 DDS DXT1</span></p>
+</li>
+<li><p>Hit the <span class="guilabel">Record</span> button</p>
 <p>Anything you do from here in Photoshop will be recoded in this action until you hit the stop recording button so do not do anything other than what I say.</p>
 </li>
 </ol>
@@ -196,15 +197,18 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000497.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000497.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000498.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000498.jpg" />
 <ol class="arabic">
-<li><p>Go to <strong>Image &gt; Image Size</strong></p>
-<p>Change the pixel dimensions to <code class="docutils literal notranslate"><span class="pre">8x8</span> <span class="pre">px</span></code>.</p>
+<li><p><span class="menuselection">Image ‣ Image Size</span></p>
+<p>Change the pixel dimensions to <span class="guilabel">8x8 px</span>.</p>
 </li>
-<li><p>Go to <strong>File &gt; Save</strong></p>
-<p>Save the image as a <code class="docutils literal notranslate"><span class="pre">DXT1</span> <span class="pre">RGB</span> <span class="pre">4bpp</span> <span class="pre">|</span> <span class="pre">no</span> <span class="pre">alpha</span></code> DDS Image with <strong>Generate MIP Maps</strong> and make sure <strong>All</strong> is selected in the drop-down box next to it.</p>
+<li><p><span class="menuselection">File ‣ Save</span></p>
+<ul class="simple">
+<li><p>Save the image as a <span class="guilabel">DXT1 RGB 4bpp | no alpha</span> DDS Image with <span class="guilabel">Generate MIP Maps</span></p></li>
+<li><p>Make sure <span class="guilabel">All</span> is selected in the drop-down box next to it</p></li>
+</ul>
 </li>
-<li><p>Hit <strong>Save</strong></p></li>
-<li><p>Go to <strong>File &gt; Close</strong></p>
-<p>Finally hit the <strong>Stop Recording</strong> button to stop the action from recoding your actions.</p>
+<li><p>Hit <span class="guilabel">Save</span></p></li>
+<li><p><span class="menuselection">File ‣ Close</span></p>
+<p>Finally hit the <span class="guilabel">Stop Recording</span> button to stop the action from recoding your actions.</p>
 </li>
 </ol>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000499.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000499.jpg" />
@@ -213,24 +217,24 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000502.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000502.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000503.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000503.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000504.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000504.jpg" />
-<p>Now if you open up the image you just optimized/resized in NVIDA WTV, you should now see its a 8x8 DXT1 DDS Image with 4 mips total and a total memory usage of <code class="docutils literal notranslate"><span class="pre">0.1kb</span></code>:</p>
+<p>Now if you open up the image you just optimized/resized in NVIDIA WTV, you should now see its a 8x8 DXT1 DDS Image with 4 mips total and a total memory usage of <span class="guilabel">0.1kb</span>:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000505.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000505.jpg" />
-<p>Now if you select another opened image you want to optimize, select the header of your action <strong>8x8 DDX DXT1 Action</strong>, and hit play, it should now automatically resize this image, save it with the same DDS settings and close it. Ensure you open up the image in WTV after its done to check it is all good:</p>
+<p>Now if you select another opened image you want to optimize, select the header of your action <span class="guilabel">8x8 DDX DXT1 Action</span>, and hit <span class="guilabel">play</span>, it should now automatically resize this image, save it with the same DDS settings and close it. Ensure you open up the image in WTV after its done to check it is all good:</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000506.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000506.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000507.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000507.jpg" />
-<p>Once you’ve confirmed your Action is all good its time to apply this Action to all opened files automatically.</p>
+<p>Once you’ve confirmed your action is all good its time to apply this action to all opened files automatically.</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>Go to <strong>File &gt; Automate &gt; Batch</strong></p></li>
-<li><p>In the <strong>Play</strong> section, make sure the correct set and action are selected, and for Source have it set to <strong>Opened Files</strong></p>
+<li><p><span class="menuselection">File ‣ Automate ‣ Batch</span></p></li>
+<li><p>In the <span class="guilabel">Play</span> section, make sure the correct set and action are selected, and for source have it set to <span class="guilabel">Opened Files</span></p>
 <p>Making sure of course you don’t have any other files opened in photoshop you don’t want to resize and are not <code class="docutils literal notranslate"><span class="pre">.dds</span></code> images</p>
 </li>
-<li><p>Hit <strong>Ok</strong> and it will apply this action to all opened files.</p></li>
+<li><p>Hit <span class="guilabel">Ok</span> and it will apply this action to all opened files.</p></li>
 </ol>
 </div></blockquote>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000508.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000508.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000509.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000509.jpg" />
-<p>Now the same images that where using up a total of <code class="docutils literal notranslate"><span class="pre">30.6mb</span></code> are now using only <code class="docutils literal notranslate"><span class="pre">8.26kb</span></code> and are doing exactly the same job, but are far easier for the client to process and takes up only a tiny bit of RAM!</p>
+<p>Now the same images that where using up a total of <strong>30.6mb</strong> are now using only <strong>8.26kb</strong> and are doing exactly the same job, but are far easier for the client to process and takes up only a tiny bit of RAM!</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000510.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000510.jpg" />
 </section>
 
@@ -239,7 +243,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="page16.html" class="btn btn-neutral float-left" title="16. Combining &amp; Splitting Terrain Lightmap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="page18.html" class="btn btn-neutral float-right" title="18. Addendum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../aasv4.html" class="btn btn-neutral float-right" title="AASv4 Game Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

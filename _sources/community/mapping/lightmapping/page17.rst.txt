@@ -17,21 +17,21 @@ First to find out which patches are used and are not used the simplest way is to
 
    #. Take your complied terrain lightmap and resave it as a ``.psd`` under the name of something like ``_TERRAINLightingMap_Patches.psd``
 
-      If your working with a 4km map and your terrain lightmap is at ``8192x8192`` you should resize it down to ``4096x4096``
+      If your working with a 4km map and your terrain lightmap is at :guilabel:`8192x8192` you should resize it down to :guilabel:`4096x4096`
 
       .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000479.jpg
 
       .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000480.jpg
 
-   #. Go to **Image > Image Rotation > Flip Canvas Vertical** to put your lightmap up in the same way as the game reads it and the patches are in order
+   #. Go to :menuselection:`Image --> Image Rotation --> Flip Canvas Vertical` to put your lightmap up in the same way as the game reads it and the patches are in order
 
       .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000481.jpg
 
       .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000482.jpg
 
-   #. :download:`terrain_patch_grid.png <http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png>`
+   #. :download:`Download The Terrain Patch Grid <http://realitymodfiles.com/rhino/editor/terrain_patch_grid.png>`
 
-      #. *(Right Click, Save As)*
+      #. :menuselection:`Right Click --> Save As`
       #. Open it up with Photoshop
 
          .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000483.jpg
@@ -44,7 +44,7 @@ You should end up with something like this:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000485.jpg
 
-If your working with a 1km map and have a terrain lightmap size of 2048x2048 this patch should duplicate over your image correctly too, with its 4x4 (16) Patch Setup:
+If your working with a 1km map and have a terrain lightmap size of :guilabel:`2048x2048` this patch should duplicate over your image correctly too, with its :guilabel:`4x4 (16)` Patch Setup:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000486.jpg
 
@@ -76,16 +76,19 @@ Once you have noted down all the files you want to optimize / do not want to opt
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000494.jpg
 
-#. Click on the **Actions** tab (**Windows > Actions** if you can't see it)
-#. Click on the little **Create new set**, folder icon in the bottom
+#. Click on the :guilabel:`Actions` tab
 
-   Call the new set something like ``Resie``.
+   :menuselection:`Windows --> Actions` if you can't see it.
 
-#. Create the little **Create new Action** icon
+#. Click on the little :guilabel:`Create new set`, folder icon in the bottom
 
-   Call it something like ``8x8 DDS DXT1``
+   Call the new set something like :guilabel:`Resie`.
 
-#. Hit the **Record** button
+#. Create the little :guilabel:`Create new Action` icon
+
+   Call it something like :guilabel:`8x8 DDS DXT1`
+
+#. Hit the :guilabel:`Record` button
 
    Anything you do from here in Photoshop will be recoded in this action until you hit the stop recording button so do not do anything other than what I say.
 
@@ -97,18 +100,19 @@ Once you have noted down all the files you want to optimize / do not want to opt
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000498.jpg
 
-#. Go to **Image > Image Size**
+#. :menuselection:`Image --> Image Size`
 
-   Change the pixel dimensions to ``8x8 px``.
+   Change the pixel dimensions to :guilabel:`8x8 px`.
 
-#. Go to **File > Save**
+#. :menuselection:`File --> Save`
 
-   Save the image as a ``DXT1 RGB 4bpp | no alpha`` DDS Image with **Generate MIP Maps** and make sure **All** is selected in the drop-down box next to it.
+   - Save the image as a :guilabel:`DXT1 RGB 4bpp | no alpha` DDS Image with :guilabel:`Generate MIP Maps`
+   - Make sure :guilabel:`All` is selected in the drop-down box next to it
 
-#. Hit **Save**
-#. Go to **File > Close**
+#. Hit :guilabel:`Save`
+#. :menuselection:`File --> Close`
 
-   Finally hit the **Stop Recording** button to stop the action from recoding your actions.
+   Finally hit the :guilabel:`Stop Recording` button to stop the action from recoding your actions.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000499.jpg
 
@@ -122,29 +126,29 @@ Once you have noted down all the files you want to optimize / do not want to opt
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000504.jpg
 
-Now if you open up the image you just optimized/resized in NVIDA WTV, you should now see its a 8x8 DXT1 DDS Image with 4 mips total and a total memory usage of ``0.1kb``:
+Now if you open up the image you just optimized/resized in NVIDIA WTV, you should now see its a 8x8 DXT1 DDS Image with 4 mips total and a total memory usage of :guilabel:`0.1kb`:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000505.jpg
 
-Now if you select another opened image you want to optimize, select the header of your action **8x8 DDX DXT1 Action**, and hit play, it should now automatically resize this image, save it with the same DDS settings and close it. Ensure you open up the image in WTV after its done to check it is all good:
+Now if you select another opened image you want to optimize, select the header of your action :guilabel:`8x8 DDX DXT1 Action`, and hit :guilabel:`play`, it should now automatically resize this image, save it with the same DDS settings and close it. Ensure you open up the image in WTV after its done to check it is all good:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000506.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000507.jpg
 
-Once you've confirmed your Action is all good its time to apply this Action to all opened files automatically.
+Once you've confirmed your action is all good its time to apply this action to all opened files automatically.
 
-   #. Go to **File > Automate > Batch**
-   #. In the **Play** section, make sure the correct set and action are selected, and for Source have it set to **Opened Files**
+   #. :menuselection:`File --> Automate --> Batch`
+   #. In the :guilabel:`Play` section, make sure the correct set and action are selected, and for source have it set to :guilabel:`Opened Files`
 
       Making sure of course you don't have any other files opened in photoshop you don't want to resize and are not ``.dds`` images
 
-   #. Hit **Ok** and it will apply this action to all opened files.
+   #. Hit :guilabel:`Ok` and it will apply this action to all opened files.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000508.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000509.jpg
 
-Now the same images that where using up a total of ``30.6mb`` are now using only ``8.26kb`` and are doing exactly the same job, but are far easier for the client to process and takes up only a tiny bit of RAM!
+Now the same images that where using up a total of **30.6mb** are now using only **8.26kb** and are doing exactly the same job, but are far easier for the client to process and takes up only a tiny bit of RAM!
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000510.jpg

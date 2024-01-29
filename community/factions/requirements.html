@@ -67,16 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../makingobjects.html">Steps to Making Objects for BF2</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Community Factions</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="info.html">Official Information</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Faction Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#models">Models</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#soldiers-and-kits">Soldiers and Kits</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#weapons">Weapons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vehicles">Vehicles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sounds">Sounds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other">Other</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Faction Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../mapping/index.html">Mapping</a></li>
@@ -111,40 +102,57 @@
 <h1>Faction Requirements<a class="headerlink" href="#faction-requirements" title="Permalink to this heading"></a></h1>
 <p>Sometimes, Community Factions ask us what “requirements” the PR team has before we can label them “ready” (which means.. ready for implementation).</p>
 <p>Below are some guidelines we have set up to help you on your way a bit more. Please note that by meeting the requirements posted below, a faction is not automatically implemented in the first PR release. There’s more than just having everything done by the rulebook. And it takes time and planning before the next step can be made.</p>
-<section id="models">
-<h2>Models<a class="headerlink" href="#models" title="Permalink to this heading"></a></h2>
-<p>All max scenes must be exported as <code class="docutils literal notranslate"><span class="pre">.max</span></code> 9 format.</p>
-</section>
-<section id="soldiers-and-kits">
-<h2>Soldiers and Kits<a class="headerlink" href="#soldiers-and-kits" title="Permalink to this heading"></a></h2>
-<p>A complete set of soldier reskins. Don’t use custom made soldier models, stick to the vanilla soldiers. This is to prevent kit geometries from looking all weird on other soldier models. The kit geometries’ reskins also have to be completed.</p>
+<dl>
+<dt>Models</dt><dd><p>All max scenes must be exported as <code class="docutils literal notranslate"><span class="pre">.max</span></code> 9 format.</p>
+</dd>
+<dt>Soldiers and Kits</dt><dd><p>A complete set of soldier reskins. Don’t use custom made soldier models, stick to the vanilla soldiers. This is to prevent kit geometries from looking all weird on other soldier models. The kit geometries’ reskins also have to be completed.</p>
 <p>If you want to have your faction look different, create kit geometries. Make sure these kit geometries fit the vBF2 soldier models and work properly.</p>
 <p>All soldiers and kits have to be set up and named as it’s currently done in PR.</p>
-</section>
-<section id="weapons">
-<h2>Weapons<a class="headerlink" href="#weapons" title="Permalink to this heading"></a></h2>
-<p>Fully operating weapons, weapon sounds and animations.
-All weapons need to be named correctly to PR standards, and the textures need to be sized appropriately.</p>
-</section>
-<section id="vehicles">
-<h2>Vehicles<a class="headerlink" href="#vehicles" title="Permalink to this heading"></a></h2>
-<p>Fully imported and correctly functioning set of vehicles.
-All vehicles need to be named correctly to PR standards, and the textures need to be sized appropriately.</p>
-</section>
-<section id="maps">
-<h2>Maps<a class="headerlink" href="#maps" title="Permalink to this heading"></a></h2>
-<p><strong>At least two maps</strong>, created by/for your faction. All maps have to be completed and of course, should meet the PR standard.</p>
-</section>
-<section id="sounds">
-<h2>Sounds<a class="headerlink" href="#sounds" title="Permalink to this heading"></a></h2>
-<p>Localized voices for all “roles” (commander, squad leader, grunt), up to PR standards. They must be well recorded with good amplitude, completely dry with no room tone and the voice over acting must be believable (‘in character’).</p>
-</section>
-<section id="other">
-<h2>Other<a class="headerlink" href="#other" title="Permalink to this heading"></a></h2>
-<p>The whole faction must work properly and should be provided as a minimod which extends onto the current version of PR (like how PRSP was done up to now).</p>
-<p>The faction must have a full set of flags, rallypoints, spawners, logistics/support trucks, command posts, etc.</p>
+</dd>
+<dt>Weapons</dt><dd><ul class="simple">
+<li><p>Fully operating weapons, weapon sounds and, animations</p></li>
+<li><p>All weapons need to be named correctly to PR standards</p></li>
+<li><p>All weapon textures need to be sized appropriately</p></li>
+</ul>
+</dd>
+<dt>Vehicles</dt><dd><ul class="simple">
+<li><p>Fully imported and correctly functioning set of vehicles</p></li>
+<li><p>All vehicles need to be named correctly to PR standards</p></li>
+<li><p>All vehicle textures need to be sized appropriately</p></li>
+</ul>
+</dd>
+<dt>Maps</dt><dd><ul class="simple">
+<li><p><strong>At least two maps</strong>, created by/for your faction</p></li>
+<li><p>All maps have to be completed and of course, should meet the PR standard</p></li>
+</ul>
+</dd>
+<dt>Sounds</dt><dd><ul class="simple">
+<li><p>Localized voices for all “roles” (commander, squad leader, grunt), up to PR standards</p></li>
+<li><dl class="simple">
+<dt>They must be well recorded with good amplitude</dt><dd><ul>
+<li><p>Completely dry with no room tone</p></li>
+<li><p>Voice-over acting must be believable (‘in character’)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Other</dt><dd><p>The whole faction must work properly and should be provided as a minimod which extends onto the current version of PR (like how PRSP was done up to now).</p>
+<p>The faction must have a full set of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flags</p></li>
+<li><p>Rallypoints</p></li>
+<li><p>Spawners</p></li>
+<li><p>Logistics/support trucks</p></li>
+<li><p>Command posts</p></li>
+<li><p>etc.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
 <p><em>Made by AfterDune</em></p>
-</section>
 </section>
 
 

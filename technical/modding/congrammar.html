@@ -142,57 +142,39 @@
 <p><code class="docutils literal notranslate"><span class="pre">title=&quot;A</span> <span class="pre">CRD</span> <span class="pre">always</span> <span class="pre">has</span> <span class="pre">four</span> <span class="pre">sub-arguments&quot;</span> <span class="pre">CRD_NONE/3/0/0</span></code></p>
 <p>The first argument says what type of distribution should be used, the second and third depend on the type and the latter is called symmetry, and can affect any of the distributions; it will be explained later.</p>
 <p>The meaning of the second and third arguments, which are always ‘’’numbers’’’, varies depending on the type of distribution property specified. The four types for this first argument are:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">CRD_NONE</span></code></p>
 <blockquote>
-<div><p>Do not vary the argument at all, just return the first number.</p>
+<div><dl class="field-list simple">
+<dt class="field-odd">CRD_NONE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Do not vary the argument at all, just return the first number.</p>
+</dd>
+<dt class="field-even">CRD_UNIFORM<span class="colon">:</span></dt>
+<dd class="field-even"><p>Uniform random distribution, between the two numbers specified.</p>
+</dd>
+<dt class="field-odd">CRD_EXPONENTIAL<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exponential drop off, first number specifies the mean (average).</p>
+</dd>
+<dt class="field-even">CRD_NORMAL<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normal distribution, the first number is the mean, the second the variance.</p>
+</dd>
+</dl>
 </div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CRD_UNIFORM</span></code></p>
-<blockquote>
-<div><p>Uniform random distribution, between the two numbers specified.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CRD_EXPONENTIAL</span></code></p>
-<blockquote>
-<div><p>Exponential drop off, first number specifies the mean (average).</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CRD_NORMAL</span></code></p>
-<blockquote>
-<div><p>Normal distribution, the first number is the mean, the second the variance.</p>
-</div></blockquote>
-</li>
-</ul>
 <p>We just need the first three arguments to compute a random number, the final, fourth argument is a boolean and can affect the sign of this computed number: If this argument is 1 (true), then there is a 50/50 chance that the computed number will be negated. If 0 (false), no negation “coin-flip” takes place.</p>
 <p>Some examples:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.TimeToLive</span> <span class="pre">CRD_NONE/240/0/0</span></code></p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">TimeToLive</span></code> will be set to 240: no computation was performed we just returned the first argument. This sort of CRD can be directly replaced by the number itself.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.TimeToLive</span> <span class="pre">CRD_UNIFORM/2/7/0</span></code></p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">TimeToLive</span></code> can be one of [2, 3, 4, 5, 6, 7] and they have all the same chance.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.rotationalSpeedInDof</span> <span class="pre">CRD_EXPONENTIAL/-20/0/1</span></code></p>
-<blockquote>
-<div><p>The exponential distribution basically gives a distribution curve that drops off sharply and then levels out. It is computed by <code class="docutils literal notranslate"><span class="pre">-mean*ln(random(0,1))</span></code>. In other words, a random number between 0 and 1 (not including 0 or 1) is generated, the natural logarithm of this number is computed, and the result is multiplied by the negative of the mean (the average), the second argument (and first number) passed in. For example, if the random number generated was 0.1, the natural log is -2.3, so since the mean was -20, the final number returned would be -(-20)*-2.3 = -46. Since the symmetric flag, the last argument, is set to 1 (true), there is a 50/50 chance that this result will be negated, i.e. be returned as 46 instead of -46.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.TimeToLive</span> <span class="pre">CRD_NONE/240/0/0</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">TimeToLive</span></code> will be set to 240: no computation was performed we just returned the first argument. This sort of CRD can be directly replaced by the number itself.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.TimeToLive</span> <span class="pre">CRD_UNIFORM/2/7/0</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">TimeToLive</span></code> can be one of [2, 3, 4, 5, 6, 7] and they have all the same chance.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.rotationalSpeedInDof</span> <span class="pre">CRD_EXPONENTIAL/-20/0/1</span></code></dt><dd><p>The exponential distribution basically gives a distribution curve that drops off sharply and then levels out. It is computed by <code class="docutils literal notranslate"><span class="pre">-mean*ln(random(0,1))</span></code>. In other words, a random number between 0 and 1 (not including 0 or 1) is generated, the natural logarithm of this number is computed, and the result is multiplied by the negative of the mean (the average), the second argument (and first number) passed in. For example, if the random number generated was 0.1, the natural log is -2.3, so since the mean was -20, the final number returned would be -(-20)*-2.3 = -46. Since the symmetric flag, the last argument, is set to 1 (true), there is a 50/50 chance that this result will be negated, i.e. be returned as 46 instead of -46.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This distribution is often misused in the Battlefield code, e.g. <code class="docutils literal notranslate"><span class="pre">ObjectTemplate.initRotation</span> <span class="pre">CRD_EXPONENTIAL/0/180/1</span></code> is a common use. However, this setting actually always returns a value of 0, since that is the mean specified. The “180” argument is ignored.</p>
 </div>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.timeToLive</span> <span class="pre">CRD_NORMAL/2/3.5/0</span></code></p>
-<blockquote>
-<div><p>A normal distribution is a classic bell curve shape. The second argument is the mean, the average value, and the third argument is the variance, how fast the distribution curve drops off into its bell shape. The fourth argument again acts to force symmetry if set, though the bell curve has its own symmetry when the mean is 0.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ObjectTemplate.timeToLive</span> <span class="pre">CRD_NORMAL/2/3.5/0</span></code></dt><dd><p>A normal distribution is a classic bell curve shape. The second argument is the mean, the average value, and the third argument is the variance, how fast the distribution curve drops off into its bell shape. The fourth argument again acts to force symmetry if set, though the bell curve has its own symmetry when the mean is 0.</p>
 <p>Variance specifies the range in which about 4/5ths of the numbers generated will fall. In our example, the 2 is the average time to live desired, and a variance of 3.5 means that this value can vary fairly widely; about 4/5ths of the numbers generated will be in the range +3.5 to -3.5 from the mean of 2, i.e. -1.5 to 5.5, with 1/5th of the numbers appearing above and below this range.</p>
-</div></blockquote>
-</li>
-</ul>
+</dd>
+</dl>
 <p><a class="reference external" href="https://bfmods.com/mdt/scripting/CRD.html">Source</a></p>
 </section>
 </section>
@@ -201,15 +183,19 @@
 <p>Variables must be predefined, and have a strict naming system. All mutable variables must begin with <code class="docutils literal notranslate"><span class="pre">v_</span></code> whereas all immutable variables or <em>constants</em> must begin with <code class="docutils literal notranslate"><span class="pre">c_</span></code>. It’s a simple form of <a class="reference external" href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian Notation</a>.</p>
 <section id="mutable-variables">
 <h3>Mutable Variables<a class="headerlink" href="#mutable-variables" title="Permalink to this heading"></a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">v_dongs</span> <span class="pre">=</span> <span class="pre">test</span></code></p>
-<p>Defines a new variable called <code class="docutils literal notranslate"><span class="pre">dongs</span></code> or <code class="docutils literal notranslate"><span class="pre">v_dongs</span></code> depending on your point of view with the value “test”. When defining a variable you can omit the default value however:</p>
-<p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">v_dongs</span></code></p>
-<p>is a value construct for example.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">v_dongs</span> <span class="pre">=</span> <span class="pre">test</span></code></dt><dd><p>Defines a new variable called <code class="docutils literal notranslate"><span class="pre">dongs</span></code> or <code class="docutils literal notranslate"><span class="pre">v_dongs</span></code> depending on your point of view with the value “test”. When defining a variable you can omit the default value however:</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">v_dongs</span></code></dt><dd><p>is a value construct for example.</p>
+</dd>
+</dl>
 </section>
 <section id="immutable-variables">
 <h3>Immutable Variables<a class="headerlink" href="#immutable-variables" title="Permalink to this heading"></a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">c_butts</span> <span class="pre">=</span> <span class="pre">test</span></code></p>
-<p>Defines a constant called, again, <code class="docutils literal notranslate"><span class="pre">butts</span></code> or <code class="docutils literal notranslate"><span class="pre">c_butts</span></code> with the value “test”. Obviously, this variable cannot be changed.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">c_butts</span> <span class="pre">=</span> <span class="pre">test</span></code></dt><dd><p>Defines a constant called, again, <code class="docutils literal notranslate"><span class="pre">butts</span></code> or <code class="docutils literal notranslate"><span class="pre">c_butts</span></code> with the value “test”. Obviously, this variable cannot be changed.</p>
+</dd>
+</dl>
 </section>
 <section id="const-vs-var-and-assignments">
 <h3><code class="docutils literal notranslate"><span class="pre">const</span></code> vs. <code class="docutils literal notranslate"><span class="pre">var</span></code> and assignments<a class="headerlink" href="#const-vs-var-and-assignments" title="Permalink to this heading"></a></h3>
@@ -229,23 +215,14 @@
 <h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading"></a></h3>
 <p>The grammar of an expression is roughly:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span> <span class="pre">&lt;comparator&gt;</span> <span class="pre">&lt;value&gt;</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code></p>
-<blockquote>
-<div><p>Any variable name beginning with <code class="docutils literal notranslate"><span class="pre">v_</span></code> or <code class="docutils literal notranslate"><span class="pre">c_</span></code>.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">comparator</span></code></p>
-<blockquote>
-<div><p>One of <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> or their textual equivalents: <code class="docutils literal notranslate"><span class="pre">lessOrEqualThan</span></code>, <code class="docutils literal notranslate"><span class="pre">lessThan</span></code>, <code class="docutils literal notranslate"><span class="pre">greaterOrEqualThan</span></code>, <code class="docutils literal notranslate"><span class="pre">greaterThan</span></code>, <code class="docutils literal notranslate"><span class="pre">notEquals</span></code>, <code class="docutils literal notranslate"><span class="pre">equals</span></code>.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code></p>
-<blockquote>
-<div><p>Any literal string, quoted if neccessary.</p>
-</div></blockquote>
-</li>
-</ul>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">variable</span></code></dt><dd><p>Any variable name beginning with <code class="docutils literal notranslate"><span class="pre">v_</span></code> or <code class="docutils literal notranslate"><span class="pre">c_</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">comparator</span></code></dt><dd><p>One of <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> or their textual equivalents: <code class="docutils literal notranslate"><span class="pre">lessOrEqualThan</span></code>, <code class="docutils literal notranslate"><span class="pre">lessThan</span></code>, <code class="docutils literal notranslate"><span class="pre">greaterOrEqualThan</span></code>, <code class="docutils literal notranslate"><span class="pre">greaterThan</span></code>, <code class="docutils literal notranslate"><span class="pre">notEquals</span></code>, <code class="docutils literal notranslate"><span class="pre">equals</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>Any literal string, quoted if neccessary.</p>
+</dd>
+</dl>
 </section>
 </section>
 <section id="return">

@@ -86,7 +86,6 @@
 <li class="toctree-l3"><a class="reference internal" href="page15.html">15. Terrain Sea Water Depth/Transparency Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page16.html">16. Combining &amp; Splitting Terrain Lightmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="page17.html">17. Optimizing “Flat” Lightmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="page18.html">18. Addendum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../aasv4.html">AASv4 Game Mode</a></li>
@@ -123,25 +122,25 @@
              
   <section id="importing-terrain-into-3dsmax">
 <h1><span class="section-number">4. </span>Importing Terrain into 3DsMax<a class="headerlink" href="#importing-terrain-into-3dsmax" title="Permalink to this heading"></a></h1>
-<p>Once your 3DsMax scene is setup with the right units etc go to <strong>BF2 &gt; BF2 Lightmapping</strong> and click <strong>Load Land</strong>. Then browse to your map’s main folder in <strong>/pr_edit/levels/*your map*/</strong> and select/open your map’s <code class="docutils literal notranslate"><span class="pre">Heightdata.con</span></code> file. It should now start to import your terrain, this may take a little time.</p>
+<p>Once your 3DsMax scene is setup with the right units etc go to <span class="menuselection">BF2 ‣ BF2 Lightmapping</span> and click <span class="guilabel">Load Land</span>. Then browse to your map’s main folder in <code class="docutils literal notranslate"><span class="pre">/pr_edit/levels/*your</span> <span class="pre">map*/</span></code> and select/open your map’s <code class="docutils literal notranslate"><span class="pre">Heightdata.con</span></code> file. It should now start to import your terrain, this may take a little time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you get a <code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">scripter</span> <span class="pre">memory</span></code> error, Open up the Listener Window (F11) and type in <code class="docutils literal notranslate"><span class="pre">heapsize</span> <span class="pre">+=</span> <span class="pre">1000000000</span></code>, and you now should be able to import your terrain.</p>
+<p>If you get a <code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">scripter</span> <span class="pre">memory</span></code> error, Open up the <span class="guilabel">Listener Window (F11)</span> and type in <span class="guilabel">heapsize += 1000000000</span>, and you now should be able to import your terrain.</p>
 </div>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000013.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000013.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000014.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000014.jpg" />
 <p>Once its done you should end up with something like this.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000015.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000015.jpg" />
-<p>Now your terrain is imported, to help you distinguish and navigate it more easily, as well as a few things to help with lightmapping it later on, I would first recommend you first rename your terrain object from <code class="docutils literal notranslate"><span class="pre">Object01</span></code> (or something similar) to <code class="docutils literal notranslate"><span class="pre">_TERRAIN</span></code> and Convert your Terrain to an Edible Polygon.</p>
+<p>Now your terrain is imported, to help you distinguish and navigate it more easily, as well as a few things to help with lightmapping it later on, I would first recommend you first rename your terrain object from <code class="docutils literal notranslate"><span class="pre">Object01</span></code> (or something similar) to <code class="docutils literal notranslate"><span class="pre">_TERRAIN</span></code> and convert your terrain to an editable polygon.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000019.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000019.jpg" />
-<p>Next to make things easier to work with Apply an Optimize Modifier to your Terrain and set the <code class="docutils literal notranslate"><span class="pre">Face</span> <span class="pre">Fresh</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> to ensure it only optimizing the mesh without changing its shape.</p>
+<p>Next to make things easier to work with, apply an <span class="guilabel">Optimize Modifier</span> to your Terrain and set the <span class="guilabel">Face Fresh</span> to <span class="guilabel">1</span> to ensure it only optimizing the mesh without changing its shape.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000020.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000020.jpg" />
 <p>Now you may need to clean up the edges (and possibly some other areas) of your terrain manually which may have been imported “badly”, like these bits here in my case.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000315.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000315.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000316.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000316.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000319.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000319.jpg" />
 <p>Now you can either fix these up manually in in Max, but even though these errors may not be visible to your in the BF2Editor, they are on your heightmap and this is what causes these invisible walls choppers/jets etc crash into around the edges of a map. As such, its best to fix them at the source, on the heightmap itself.</p>
-<p>Load up Photoshop and open your map’s <code class="docutils literal notranslate"><span class="pre">HeightmapPrimary.raw</span></code> file (backing it up first) with a channels count of <code class="docutils literal notranslate"><span class="pre">1</span></code>, Depth in 16 Bits and the Byte Order to IBM PC like so.</p>
+<p>Load up Photoshop and open your map’s <code class="docutils literal notranslate"><span class="pre">HeightmapPrimary.raw</span></code> file (backing it up first) with a channels count of <span class="guilabel">1</span>, Depth in 16 Bits and the Byte Order to IBM PC like so.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000320.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000320.jpg" />
 <p>Then it should look something like this, with the whiter the colour, the higher the terrain and the darker, the lower etc, and if you look at the edges you can clearly see the errors on the edges of the map.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000321.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000321.jpg" />
@@ -152,13 +151,16 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000326.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000326.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000327.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000327.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000328.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000328.jpg" />
-<p>Once done, resave your HeightmapPrimary.raw (making sure you have a backup of the old one first) in IBM PC Byte Order (you will possibly want to also save it in .psd format with the extra layer you’ve got somewhere too) and check your heightmap in the editor to ensure its all still good.</p>
+<p>Once done, resave your <code class="docutils literal notranslate"><span class="pre">HeightmapPrimary.raw</span></code> (making sure you have a backup of the old one first) in IBM PC Byte Order (you will possibly want to also save it in <code class="docutils literal notranslate"><span class="pre">.psd</span></code> format with the extra layer you’ve got somewhere too) and check your heightmap in the editor to ensure its all still good.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000329.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000329.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000330.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000330.jpg" />
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000331.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000331.jpg" />
 <p>You may want to do a little bit of manual smoothing on some of the edges now to clean them up a little.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000332.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000332.jpg" />
-<p>Once done with your edits/checking, make sure you save your terrain and Complied Terrain (File Re-Save if you haven’t made any edits).</p>
+<p>Once done with your edits/checking, make sure you save your terrain and complied terrain</p>
+<blockquote>
+<div><p><span class="menuselection">File ‣ Re-Save</span> if you haven’t made any edits</p>
+</div></blockquote>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000333.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000333.jpg" />
 <p>Now if you repeat the above processes of importing your terrain (deleting your old one first) and your terrain should be mostly cleaned up now. Mine still has a tiny lip and a little bit I missed on the beach but nothing to really worry about.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000334.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000334.jpg" />
@@ -166,16 +168,16 @@
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000336.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000336.jpg" />
 <p>Remember to optimize and name your terrain again once your happy with your edits and if not, go back over them and fix them up again.</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000337.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000337.jpg" />
-<p>Convert your terrain back to an Edible Poly and then apply an <code class="docutils literal notranslate"><span class="pre">Unwrap</span> <span class="pre">UVW</span></code> Modifier to it.</p>
+<p>Convert your terrain back to an edible polygon and then apply an <span class="guilabel">Unwrap UVW</span> Modifier to it.</p>
 <ol class="arabic">
-<li><p>Click the Edit button in the modifier panel</p></li>
-<li><p>Go to face selection mode</p></li>
-<li><p>Select all faces (Ctrl+A)</p></li>
-<li><p>On the right in the modifier panel, in the Map Parameters rollout, hit the “Planar” button with “Normalized Map” Checked</p>
+<li><p><span class="menuselection">Modifier ‣ Edit</span></p></li>
+<li><p>Go to <span class="guilabel">Face Selection</span> Mode</p></li>
+<li><p>Select all faces <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></p></li>
+<li><p>On the right in the <span class="guilabel">Modifier</span> panel, in the <span class="guilabel">Map Parameters</span> rollout, hit the <span class="guilabel">Planar</span> button with <span class="guilabel">Normalized Map</span> checked</p>
 <p>It will UV your terrain in the same way it is in-game.</p>
 </li>
 <li><p>Make sure that the North of your map is in the top of the UV etc</p></li>
-<li><p>Once you are happy, click on the “Planar” button again and you can also uncheck “Show Pelt Seam” and “Show Map Seam” in the Display roll-out above it to make for easier viewing</p></li>
+<li><p>Once you are happy, click on the <span class="guilabel">Planar</span> button again and you can also uncheck <span class="guilabel">Show Pelt Seam</span> and <span class="guilabel">Show Map Seam</span> in the <span class="guilabel">Display</span> roll-out above it to make for easier viewing</p></li>
 <li><p>Double-check that your UVs extend all the way to the very edge of the UV box</p>
 <p>Best way to do this is to select the bottom left UV Vert, and ensure its at “U: 0.0, V: 0.0” and that the very top right vert is at “U: 1.0, V: 1.0”.</p>
 <p>If the UVs do not extend to the very edges of the UV Window, then your generated terrain shadows later will be slightly offset from the objects of the map, especially at the edges of your map, and there will be a big gap around your map edges of a missing generated lightmap.</p>
@@ -190,13 +192,13 @@
 <ol class="arabic">
 <li><p>Take a minimap render of your map in the editor</p></li>
 <li><p>Save the minimap render as a <code class="docutils literal notranslate"><span class="pre">.png</span></code></p></li>
-<li><p>Select an unused material slot</p></li>
-<li><p>Set the material slot to use a <strong>Standard Material</strong> (should be by default)</p></li>
-<li><p>Expand the <strong>Maps Rollout</strong></p></li>
-<li><p>Click on the <strong>None</strong> button next to <cite>Diffuse Color</cite></p>
+<li><p>Select an unused <span class="guilabel">Material</span> slot</p></li>
+<li><p>Set the <span class="guilabel">Material</span> slot to use a <span class="guilabel">Standard Material</span> (should be by default)</p></li>
+<li><p>Expand the <span class="guilabel">Maps Rollout</span></p></li>
+<li><p>Click on the <span class="guilabel">None</span> button next to <span class="guilabel">Diffuse Color</span></p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000022.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000022.jpg" />
 </li>
-<li><p>Select <code class="docutils literal notranslate"><span class="pre">Bitmap</span></code> at the top of the list</p>
+<li><p>Select <span class="guilabel">Bitmap</span> at the top of the list</p>
 <img alt="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000347.jpg" src="https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000347.jpg" />
 </li>
 <li><p>Browse to your minimap file</p>
@@ -205,7 +207,7 @@
 </ol>
 <p>Now,</p>
 <ol class="arabic simple">
-<li><p>Click <strong>Go to Parent</strong> in the top right, below the material slots, above the <strong>Bitmap</strong> button</p></li>
+<li><p>Click <span class="guilabel">Go to Parent</span> in the top right, below the material slots, above the <strong>Bitmap</strong> button</p></li>
 <li><p>Click the checkered-cube <strong>Show Map in Viewport</strong> button</p></li>
 <li><p>Rename the material to something like “Terrain”</p></li>
 <li><p>Apply this material to your terrain</p></li>

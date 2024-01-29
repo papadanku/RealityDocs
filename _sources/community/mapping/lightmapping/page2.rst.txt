@@ -24,7 +24,7 @@ You overgrowth will now be converted to staticobjects and should be selectable (
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000006.jpg
 
-Once all your OG is selected you will need to check ``IsSaveable`` box in the tweaker bar (green box = checked) and apply it to all objects in selection:
+Once all your OG is selected you will need to check :guilabel:`IsSaveable` box in the tweaker bar (green box = checked) and apply it to all objects in selection:
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000007.jpg
 
