@@ -128,12 +128,29 @@
 </pre></div>
 </div>
 <p>Within <code class="docutils literal notranslate"><span class="pre">.con</span></code> files these coordinates are written with slashes: <code class="docutils literal notranslate"><span class="pre">X/Y/Z</span></code>.</p>
-<p>These coordinates spell out a position along three axes:</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">X</span></code> value tells how far east or west an object is; moving further east causes <code class="docutils literal notranslate"><span class="pre">X</span></code> to increase, moving further west causes it to decrease.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">Y</span></code> value tells your altitude; as you go higher, <code class="docutils literal notranslate"><span class="pre">Y</span></code> increases.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">Z</span></code> value tells how far north or south an object is; moving further north causes <code class="docutils literal notranslate"><span class="pre">Z</span></code> to increase, moving further south causes it to decrease.</p></li>
+<dl class="simple">
+<dt>These coordinates spell out a position along three axes:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">X<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>How far East or West an object is</p></li>
+<li><p>Moving further East/West causes it to increase/decrease</p></li>
 </ul>
+</dd>
+<dt class="field-even">Y<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Your altitude</p></li>
+<li><p>Increases as you go higher</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Z<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>How far North or South an object is</p></li>
+<li><p>Increases/decreases as you move further North/South</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
 <p>In all BF2 maps, the origin of the coordinate system (0, 0) is at the point in the very center of the map. Each unit in the coordinate system equals approximately 1 meter in the game world. Therefore, the example coordinate listed above will be a point 160.96 meters east and 266.02 meters south of map center, at an altitude of 162.55 meters. Note, however, that this is an “absolute” altitude; the altitude relative to the ground will depend on how high the surface of the ground is at that point; “sea level” varies quite a bit from map to map.</p>
 <p>There are two sizes of map included with the basic Battlefield 2 game; the size of map may be determined by using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">bf2.gameLogic.getWorldSize()</span></code> method. This method returns a two-element tuple that gives the number of meters E/W and N/S along the edges of the map. All maps except Strike at Karkand return (2048, 2048), indicating the maps cover 4 square kilometers (2048x2048 meters), with coordinates running from -1024 to +1024 along each dimension. Strike at Karkand is the only map of a different size, and returns (1024, 1024), indicating a map covering 1 square kilometer, with coordinates running from -512 to +512 along each dimension.</p>
 <blockquote>
@@ -169,42 +186,62 @@
 </pre></div>
 </div>
 </div>
-<p>Within .con files, these angles are written with slashes: <code class="docutils literal notranslate"><span class="pre">A/P/R</span></code>.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> (“azimuth”, also known as “yaw”) gives rotation from due north going clockwise (if A is positive) or counter-clockwise (if A is negative), (or, the amount our viewpoint is rotated around a vertical axis passing through our viewpoint) measured in degrees:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">A=0</span></code> (due north)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A=90</span></code> (due east)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A=180</span></code> (due south)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A=270</span></code> (due west)</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> (“pitch”) tells how much we’re tilting down compared to horizontal, (or, the amount tilted up or down along the axis passing through our viewpoint from left to right) measured in degrees:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">P=0</span></code> (horizontal)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">P=45</span></code> (tilting down halfway between horizontal and vertical)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">P=90</span></code> (looking straight down)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">P=-45</span></code> (tilting up halfway between horizonal and vertical)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">P=-90</span></code> (looking straight up)</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> (“roll”) gives the amount the viewpoint has rolled around an axis passing from the back of our viewpoint through the front of the viewpoint, measured in degrees:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">R=0</span></code> (no roll)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R=45</span></code> (viewpoint is rolled counter-clockwise by 45 degrees)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R=-45</span></code> (viewpoint is rolled clockwise by 45 degrees)</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
+<dl class="simple">
+<dt>Within .con files, these angles are written with slashes: <code class="docutils literal notranslate"><span class="pre">A/P/R</span></code>.</dt><dd><dl class="simple">
+<dt>A</dt><dd><p>(“azimuth”, also known as “yaw”) gives rotation from due north going clockwise (if A is positive) or counter-clockwise (if A is negative), (or, the amount our viewpoint is rotated around a vertical axis passing through our viewpoint) measured in degrees:</p>
+<dl class="field-list simple">
+<dt class="field-odd">0<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Due North</p>
+</dd>
+<dt class="field-even">90<span class="colon">:</span></dt>
+<dd class="field-even"><p>Due East</p>
+</dd>
+<dt class="field-odd">180<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Due South</p>
+</dd>
+<dt class="field-even">270<span class="colon">:</span></dt>
+<dd class="field-even"><p>Due West</p>
+</dd>
+</dl>
+</dd>
+<dt>P</dt><dd><p>(“pitch”) tells how much we’re tilting down compared to horizontal, (or, the amount tilted up or down along the axis passing through our viewpoint from left to right) measured in degrees:</p>
+<dl class="field-list simple">
+<dt class="field-odd">-90<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Looking straight up</p>
+</dd>
+<dt class="field-even">-45<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tilting up halfway between horizonal and vertical</p>
+</dd>
+<dt class="field-odd">0<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Horizontal</p>
+</dd>
+<dt class="field-even">45<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tilting down halfway between horizontal and vertical</p>
+</dd>
+<dt class="field-odd">90<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Looking straight down</p>
+</dd>
+</dl>
+</dd>
+<dt>R</dt><dd><p>(“roll”) gives the amount the viewpoint has rolled around an axis passing from the back of our viewpoint through the front of the viewpoint, measured in degrees:</p>
+<dl class="field-list simple">
+<dt class="field-odd">-45<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Viewpoint is rolled clockwise by 45 degrees</p>
+</dd>
+<dt class="field-even">0<span class="colon">:</span></dt>
+<dd class="field-even"><p>No roll</p>
+</dd>
+<dt class="field-odd">45<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Viewpoint is rolled counter-clockwise by 45 degrees</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do <strong>not</strong> apply to players or vehicles on the ground. Ground players and vehicles <strong>always</strong> show <code class="docutils literal notranslate"><span class="pre">P</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code> to be 0, regardless of their actual attitude (a soldier looking straight up in the air will still have a <code class="docutils literal notranslate"><span class="pre">P</span></code> value of 0, for example).</p>
+<p>The pitch and roll rotational coordinates apply to aircraft and cameras in BF2, but do <strong>not</strong> apply to players or vehicles on the ground. Ground players and vehicles <strong>always</strong> show <code class="docutils literal notranslate"><span class="pre">P</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code> to be <code class="docutils literal notranslate"><span class="pre">0</span></code>, regardless of their actual attitude (a soldier looking straight up in the air will still have a <code class="docutils literal notranslate"><span class="pre">P</span></code> value of <code class="docutils literal notranslate"><span class="pre">0</span></code>, for example).</p>
 </div>
 </section>
 </section>
