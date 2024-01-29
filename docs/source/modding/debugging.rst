@@ -4,7 +4,7 @@ Running The Debugger in PR:BF2 v1.X
 
 The BF2/PR debugger is extremely helpful in tracking down bugs that don't give error messages, but it does require a bit of knowledge on how to read the log messages.
 
-#. :download:`Debugger files <https://files.realitymod.com/resources/Debugger_files.zip>` and :download:`menu files <https://drive.google.com/file/d/1ZWQdh90h0eTIO9okBuOxm7SRyMxavCNS/view?usp=sharing>` modified to work with the debugger (they are quite outdated compared to the release version but it doesn't really matter).
+#. Download :download:`debugger files <https://files.realitymod.com/resources/Debugger_files.zip>` and :download:`menu files <https://drive.google.com/file/d/1ZWQdh90h0eTIO9okBuOxm7SRyMxavCNS/view?usp=sharing>` modified to work with the debugger (they are quite outdated compared to the release version but it doesn't really matter).
 #. Extract Debugger files into your root Project Reality folder (i.e. ``C:\Program Files (x86)\Project Reality\Project Reality BF2\``) and modified menu files into ``mods/pr_edit/content``.
 
     Do it AFTER you have completed step 4 from the editor setup tutorial.
