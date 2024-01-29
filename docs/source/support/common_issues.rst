@@ -68,6 +68,7 @@ Low Performance on Ryzen CPUs
 
 #. :menuselection:`BIOS' advanced menu --> AMD CBS --> Zen/CPU common options menu`
 #. Enable the following:
+
    - :guilabel:`L1` & :guilabel:`L2` Cache Hardware Prefetcher
    - :guilabel:`Streaming Stores Control`
    - :guilabel:`OPcache Control`
