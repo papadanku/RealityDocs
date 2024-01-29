@@ -20,7 +20,7 @@ Importing Overgrowth into 3DsMax
    Mine is called ``Jamaica_Overgrowth.max``
 
 #. Back it up and finally move the ``vegitation`` folder you just moved out of your ``\pr_edit\Objects`` folder, back into it where it belongs.
-#. Open up your normal Lightmapping scene with your terrain and statics in and then go to **File > Merge** and select your scene with your imported Overgrowth Helpers in. Then click the **All** button in the bottom left to select everything and click ok and it will import all the selected files into your current scene.
+#. Open up your normal Lightmapping scene with your terrain and statics in and then go to :menuselection:`File --> Merge` and select your scene with your imported Overgrowth Helpers in. Then click the :guilabel:`All` button in the bottom left to select everything and click :guilabel:`Ok` and it will import all the selected files into your current scene.
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000037.jpg
 
@@ -30,7 +30,7 @@ Importing Overgrowth into 3DsMax
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000041.jpg
 
-I would then recommend adding the selected to a new "Overgrowth Helpers" Layer.
+I would then recommend adding the selected to a new :guilabel:`Overgrowth Helpers` Layer.
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000042.jpg
 

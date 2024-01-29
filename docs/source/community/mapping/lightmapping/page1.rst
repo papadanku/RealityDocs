@@ -57,7 +57,7 @@ However there are a few disadvantages that you should be aware of:
 
    - Its a very complex process that for someone without any knowledge of 3DsMax and Rendering etc may struggle with but I aim to make this tutorial as straight forward as possible for any novices out there.
    - The setup process prior to lightmapping can be pretty time consuming with having to import all the static meshes of your map etc, especially if your going to setup all your overgrowth etc with transparent leaves etc as per this tutorial.
-   - You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that are not on the **Master Lightmap Sizes** List you will need to define.
+   - You need to manually set the lightmap sizes for each object, however pretty much all the statics in PR have been defined previously by other PR mappers and its only objects that are not on the :guilabel:`Master Lightmap Sizes` List you will need to define.
    - Child Objects such as Ladders will not be imported with their parent meshes and will need to be added manually into Max in order to cast a shadow *(and to lightmap them if they require that but you can't lightmap Children in the BF2Editor either and Ladders shouldn't be ladders)*
    - Destroyable Objects can not be lightmapped in 3DsMax, at least not without a big complex work around and its best to generate them in the BF2 Editor with settings similar to those of 3DsMax.
 
@@ -75,18 +75,23 @@ As such, just be aware of what your getting yourself into before you start this 
 Requirements & Tools
 --------------------
 
-- Battlefield 2 v1.5
-- :download:`BF2 Editor v1.3 <http://files.ancientdev.com/prbf2/PREditor.zip>`
-- `Project Reality: BF2 <https://www.realitymod.com/downloads>`_ with a `pr_edit <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_ (or equivalent) working mod setup and working.
-- 3DsMax9 (version 9 or later)
-- `PR:BF2 3DsMax9 Tools <https://www.realitymod.com/forum/showthread.php?t=145720>`_
-- `Adobe Photoshop <https://www.adobe.com/products/photoshop.html>`_
-- A text editor such as Notepad.
-- A decent computer
+:Battlefield 2: v1.5
+:BF2 Editor v1.3: :download:`http://files.ancientdev.com/prbf2/PREditor.zip`
+:Project Reality: :download:`https://www.realitymod.com/downloads`
+:Working pr_edit Setup: `<https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
+:3DsMax9: Version 9+
+:PR:BF2 3DsMax9 Tools: `<https://www.realitymod.com/forum/showthread.php?t=145720>`_
+:Adobe Photoshop: `<https://www.adobe.com/products/photoshop.html>`_
+:Text Editor:
+   - :download:`Notepad++ <https://notepad-plus-plus.org/downloads/>`
+   - :download:`Visual Studio Code <https://code.visualstudio.com/download>`
+
+
+- A Decent Computer
 
    The better the system, the faster the lightmap generation will be and the more RAM you have, the stabler it will be and will allow you to generate the super large terrain lightmaps.
 
-- A finalised map ready for lightmapping
+- A Finalised Map Ready for Lightmapping
 
 Make sure all of the above are installed and working before you start this tutorial.
 

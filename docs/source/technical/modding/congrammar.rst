@@ -35,44 +35,29 @@ The first argument says what type of distribution should be used, the second and
 
 The meaning of the second and third arguments, which are always '''numbers''', varies depending on the type of distribution property specified. The four types for this first argument are:
 
-- ``CRD_NONE``
-
-   Do not vary the argument at all, just return the first number.
-
-- ``CRD_UNIFORM``
-
-   Uniform random distribution, between the two numbers specified.
-
-- ``CRD_EXPONENTIAL``
-
-   Exponential drop off, first number specifies the mean (average).
-
-- ``CRD_NORMAL``
-
-   Normal distribution, the first number is the mean, the second the variance.
+   :CRD_NONE: Do not vary the argument at all, just return the first number.
+   :CRD_UNIFORM: Uniform random distribution, between the two numbers specified.
+   :CRD_EXPONENTIAL: Exponential drop off, first number specifies the mean (average).
+   :CRD_NORMAL: Normal distribution, the first number is the mean, the second the variance.
 
 We just need the first three arguments to compute a random number, the final, fourth argument is a boolean and can affect the sign of this computed number: If this argument is 1 (true), then there is a 50/50 chance that the computed number will be negated. If 0 (false), no negation “coin-flip” takes place.
 
 Some examples:
 
-- ``ObjectTemplate.TimeToLive CRD_NONE/240/0/0``
-
+``ObjectTemplate.TimeToLive CRD_NONE/240/0/0``
    ``TimeToLive`` will be set to 240: no computation was performed we just returned the first argument. This sort of CRD can be directly replaced by the number itself.
 
-- ``ObjectTemplate.TimeToLive CRD_UNIFORM/2/7/0``
-
+``ObjectTemplate.TimeToLive CRD_UNIFORM/2/7/0``
    ``TimeToLive`` can be one of [2, 3, 4, 5, 6, 7] and they have all the same chance.
 
-- ``ObjectTemplate.rotationalSpeedInDof CRD_EXPONENTIAL/-20/0/1``
-
+``ObjectTemplate.rotationalSpeedInDof CRD_EXPONENTIAL/-20/0/1``
    The exponential distribution basically gives a distribution curve that drops off sharply and then levels out. It is computed by ``-mean*ln(random(0,1))``. In other words, a random number between 0 and 1 (not including 0 or 1) is generated, the natural logarithm of this number is computed, and the result is multiplied by the negative of the mean (the average), the second argument (and first number) passed in. For example, if the random number generated was 0.1, the natural log is -2.3, so since the mean was -20, the final number returned would be -(-20)\*-2.3 = -46. Since the symmetric flag, the last argument, is set to 1 (true), there is a 50/50 chance that this result will be negated, i.e. be returned as 46 instead of -46.
 
    .. note::
 
       This distribution is often misused in the Battlefield code, e.g. ``ObjectTemplate.initRotation CRD_EXPONENTIAL/0/180/1`` is a common use. However, this setting actually always returns a value of 0, since that is the mean specified. The “180” argument is ignored.
 
-- ``ObjectTemplate.timeToLive CRD_NORMAL/2/3.5/0``
-
+``ObjectTemplate.timeToLive CRD_NORMAL/2/3.5/0``
    A normal distribution is a classic bell curve shape. The second argument is the mean, the average value, and the third argument is the variance, how fast the distribution curve drops off into its bell shape. The fourth argument again acts to force symmetry if set, though the bell curve has its own symmetry when the mean is 0.
 
    Variance specifies the range in which about 4/5ths of the numbers generated will fall. In our example, the 2 is the average time to live desired, and a variance of 3.5 means that this value can vary fairly widely; about 4/5ths of the numbers generated will be in the range +3.5 to -3.5 from the mean of 2, i.e. -1.5 to 5.5, with 1/5th of the numbers appearing above and below this range.
@@ -88,19 +73,16 @@ Mutable Variables
 ~~~~~~~~~~~~~~~~~
 
 ``var v_dongs = test``
-
-Defines a new variable called ``dongs`` or ``v_dongs`` depending on your point of view with the value “test”. When defining a variable you can omit the default value however:
+   Defines a new variable called ``dongs`` or ``v_dongs`` depending on your point of view with the value “test”. When defining a variable you can omit the default value however:
 
 ``var v_dongs``
-
-is a value construct for example.
+   is a value construct for example.
 
 Immutable Variables
 ~~~~~~~~~~~~~~~~~~~
 
 ``const c_butts = test``
-
-Defines a constant called, again, ``butts`` or ``c_butts`` with the value “test”. Obviously, this variable cannot be changed.
+   Defines a constant called, again, ``butts`` or ``c_butts`` with the value “test”. Obviously, this variable cannot be changed.
 
 ``const`` vs. ``var`` and assignments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,16 +107,13 @@ The grammar of an expression is roughly:
 
 ``<variable> <comparator> <value>``
 
-- ``variable``
-
+``variable``
    Any variable name beginning with ``v_`` or ``c_``.
 
-- ``comparator``
-
+``comparator``
    One of ``==``, ``!=``, ``>``, ``>=``, ``<`` or ``<=`` or their textual equivalents: ``lessOrEqualThan``, ``lessThan``, ``greaterOrEqualThan``, ``greaterThan``, ``notEquals``, ``equals``.
 
-- ``value``
-
+``value``
    Any literal string, quoted if neccessary.
 
 ``Return``

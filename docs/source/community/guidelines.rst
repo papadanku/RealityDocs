@@ -15,11 +15,11 @@ Posting for Feedback
 
 We need the following type of shots below in able for us and other users to give you as much feedback on your model as possible. Keep in mind the more good shots you can give us of your model the more feedback someone can give you but dont go about taking lots of crappy shots as too many rubbish shots will more likley put someone off from giving you feedback rather than help them giving you feedback, so take what shots you need to and make sure they all show vital parts of the model that you need feedback on and are clear and use as much space on the shot as possible.
 
-- Wireframe screenshot **(shortcut: F3)**
+- Wireframe screenshot :kbd:`F3`
 
    So we can see if the model has errors in the mesh. **These are best taken from the top, side and front views**... though sometimes a perspective view is good too.
 
-- Edged faces screenshot **(shortcut: F4)**
+- Edged faces screenshot :kbd:`F4`
 
    So we can see if the model has errors in the mesh.
 
@@ -87,20 +87,16 @@ You need to have your objects UV mapped before we will consider using it.
 UV Mapping Guidelines
 ^^^^^^^^^^^^^^^^^^^^^
 
-- Use an appropriate aspect.
-
+Use an appropriate aspect.
    For instance, if you are making a RPG tube it might not be wise using a 1:1 aspect map, but more suitable to use a 1:2 aspect (1024x2048 instead of 2048x2048) since the tube is very long and very thin and as such, will take up more width than height when UVing it but you also need to account for all the points on the model, if its a rifle a 1:1 aspect ratio may be required to fit on all the other bits like the magazine etc.
 
-- Maximize the space used on the sheets.
-
+Maximize the space used on the sheets.
    In principle, every pixel you do not use on the UV map is wasted memory and also wasted detail. Maximize the UVs so that you can put more detail into the textures. Beware of grouping the UV groups too close together so that it causes pixel bleeding.
 
-- Proximity to the player.
-
+Proximity to the player.
    Be mindful of which parts of the object are close to the player. A scope is closer to the player than a barrel. Or a cockpit texture where you need detail on the instruments and screens is more important than having nice frames around them. Scale your UV groups accordingly to their function and proximity.
 
-- When UVing an object, use as few texture sheets as possible as the more texture sheets are used, the bigger impact the textures have on performance.
-
+When UVing an object, use as few texture sheets as possible as the more texture sheets are used, the bigger impact the textures have on performance.
    For example, 4x 1024x1024 sheets (adding upto 2048x2048 pixels) has a much larger overhead on the engine than one single 2048x2048 texture sheet.
 
    The only time when you will want to consider using other texture sheets is if its such a large object that you can not fit all of the detail onto a single 2048x2048 sheet without it impacting on the look drastically (such as the Chinook) or when a common object is made for the object like a weapon scope like the ACOG which is used on (and can be used on in the future) many other objects that are not using the main textures of the weapon or w/e your UVing, so having the ACOG on its own texture sheet helps when the ACOG is placed onto anouther rifle other than a M16 or M4 and instead say an L85A2, so that when playing on the British Faction with a L85A2 with an ACOG, the player dose not need to load all the M16 and M4 textures that wouldn't be used anywhere in order to have that ACOG on his rifle. Another example would be the M203 UGL which is also used on many other weapons and as such, is best on its own texture sheet.
