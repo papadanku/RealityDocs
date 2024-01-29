@@ -23,6 +23,8 @@ Materials
 
 - Completion of `Setting Up The BF2 Editor for PR Mapping/Modding <https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
 
+----
+
 Getting Started
 ---------------
 
@@ -90,7 +92,6 @@ The following steps we are about to take will make your minimap look that little
    Do Not save any of these map changes made from this point, they are only made to make the minimap look better, and will not necessarily make your map look better.
 
 First tweak that needs to be made is with your roads.
-
    Switch to the Roads Tool and then in the Editor bar too the right, click on the :guilabel:`Build All Final Roads` Button.
 
    This will "snap" your road texture dead onto the terrain without effecting the splines, and how the road will look in-game. It is just much slower for the editor to edit the splines when its like this, why it doesn't do it by default. This basically means that none of your roads on the minimap will be going under the terrain, and will always be on top.
@@ -98,7 +99,6 @@ First tweak that needs to be made is with your roads.
    After that's done come out of the road tool, back into something like the move tool.
 
 Second tweak we need to make is to the water.
-
    For some reason when rendering the minimap the water virtually rises by :guilabel:`1m` (or about), so to keep the same water level on the minimap as it is in-game, we need to move all the water down by :guilabel:`1m`.
 
    #. Go to your :menuselection:`Tweaker Bar --> Map Settings --> Water Settings``
@@ -111,7 +111,6 @@ Second tweak we need to make is to the water.
    Now if you have any waterplanes in your map, you need to move these down by :guilabel:`1m` as well. Best way to do this is to select all your water planes on the map, then in the tweaker bar check what the :guilabel:`y` position is (as in x, y and z cordints) and just drag it as close as you can get to :guilabel:`1m` below where it was.
 
 Third tweak we must do is to make all the overgrowth show up on the map as static objects.
-
    This means they will draw on your minimap in the positions they really are, tweaking your overgrowth draw distance will rearrange the positions of all your overgrowth, and then your overgrowth wont line up with the shadows on the terrain.
 
    To do this, all we need to do is lightmap one object in the map. This does not work for all users, but I think what you need is some sample files in your mod path which if you have the PR lightmap samples installed, it wont be a problem.
@@ -125,7 +124,6 @@ Third tweak we must do is to make all the overgrowth show up on the map as stati
       Good way to check is to drag a selection box around it, if you can select it and you did not place it before, then thats good news and you are all set
 
 Forth thing we need to do depending on your map is too run its texture mode.
-
    - Lots of statics like tents have Desert and Woodland textures and maybe others that you will want to show on your minimap as it will in game
    - Some maps may also use there own custom textures which if they are for big objects that will show on the minimap and will make a difference you will want to load
 

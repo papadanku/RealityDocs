@@ -110,6 +110,8 @@ These are all the statics and their LODs in your map that can now be lightmapped
 
 Now we need to sort all our objects by Alphabetical order and the simplest way I know to do this with also keeping each object using its LODs is to import this list into a Spreadsheet and for this tut I'm going to use Google Docs/Drive since most people should have that already and if not can use it, if nothing else.
 
+----
+
 First Create a new Spreadsheet on your Google Drive, then go to :menuselection:`File --> Import` and select the ``.txt`` file you just saved and in the import file settings I would recommend you use :guilabel:`Replace spreadsheet` and for separator character you need to set it to use a " " (a Space, without the quotes) as the separator then hit import and you should have something like this.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000147.jpg

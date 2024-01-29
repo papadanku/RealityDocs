@@ -75,23 +75,24 @@ As such, just be aware of what your getting yourself into before you start this 
 Requirements & Tools
 --------------------
 
-:Battlefield 2: v1.5
-:BF2 Editor v1.3: :download:`http://files.ancientdev.com/prbf2/PREditor.zip`
-:Project Reality: :download:`https://www.realitymod.com/downloads`
-:Working pr_edit Setup: `<https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
-:3DsMax9: Version 9+
-:PR:BF2 3DsMax9 Tools: `<https://www.realitymod.com/forum/showthread.php?t=145720>`_
-:Adobe Photoshop: `<https://www.adobe.com/products/photoshop.html>`_
-:Text Editor:
-   - :download:`Notepad++ <https://notepad-plus-plus.org/downloads/>`
-   - :download:`Visual Studio Code <https://code.visualstudio.com/download>`
+Tools
+   :Battlefield 2: v1.5
+   :BF2 Editor v1.3: :download:`http://files.ancientdev.com/prbf2/PREditor.zip`
+   :Project Reality: :download:`https://www.realitymod.com/downloads`
+   :Working pr_edit Setup: `<https://www.realitymod.com/forum/f189-modding-tutorials/14468-setting-up-bf2-editor-pr-mapping-modding.html>`_
+   :3DsMax9: Version 9+
+   :PR:BF2 3DsMax9 Tools: `<https://www.realitymod.com/forum/showthread.php?t=145720>`_
+   :Adobe Photoshop: `<https://www.adobe.com/products/photoshop.html>`_
+   :Text Editor:
+      - :download:`Notepad++ <https://notepad-plus-plus.org/downloads/>`
+      - :download:`Visual Studio Code <https://code.visualstudio.com/download>`
 
+Materials
+   - A Decent Computer
 
-- A Decent Computer
+      The better the system, the faster the lightmap generation will be and the more RAM you have, the stabler it will be and will allow you to generate the super large terrain lightmaps.
 
-   The better the system, the faster the lightmap generation will be and the more RAM you have, the stabler it will be and will allow you to generate the super large terrain lightmaps.
-
-- A Finalised Map Ready for Lightmapping
+   - A Finalised Map Ready for Lightmapping
 
 Make sure all of the above are installed and working before you start this tutorial.
 

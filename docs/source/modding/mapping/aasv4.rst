@@ -18,6 +18,8 @@ Prerequisites
    - `[Map Tutorial] Layers (16, 32 And 64 Size Maps etc) <https://www.realitymod.com/forum/f189-modding-tutorials/13937-map-tutorial-layers-16-32-64-size-maps-etc.html>`_
    - `Creating a Basic Level - BFEditor <http://www.bfeditor.org/wiki/index.php?title=Creating_a_Basic_Level>`_
 
+----
+
 Setting Up Teams
 ----------------
 
@@ -101,7 +103,6 @@ Placing Control Points (CPs)
 ----------------------------
 
 As a quick refresher to the layer tutorial, here's how to create control points (CPs):
-
    #. Open BF2 Editor in it's ``Level`` function
    #. In the right column of the ``Editor`` screen, select the layer you'd like to add a control point to
    #. Move the camera around in the map and locate where you want to put your control point

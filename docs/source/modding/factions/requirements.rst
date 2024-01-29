@@ -6,6 +6,8 @@ Sometimes, Community Factions ask us what "requirements" the PR team has before 
 
 Below are some guidelines we have set up to help you on your way a bit more. Please note that by meeting the requirements posted below, a faction is not automatically implemented in the first PR release. There's more than just having everything done by the rulebook. And it takes time and planning before the next step can be made.
 
+----
+
 Models
    All max scenes must be exported as ``.max`` 9 format.
 
@@ -39,8 +41,7 @@ Sounds
 Other
    The whole faction must work properly and should be provided as a minimod which extends onto the current version of PR (like how PRSP was done up to now).
    
-   The faction must have a full set of:
-
+   The faction must have a full set of
       - Flags
       - Rallypoints
       - Spawners

@@ -133,6 +133,8 @@ It is also important to look at the textures themselves as they can tell you a l
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000221g.jpg
 
-There have been two main changes I've made from this testing. The first was to increase the lightmap texture size of the :guilabel:`citybuilding_3a/b` from :guilabel:`128 64 32 16` to :guilabel:`256 128 64 32` since its shadows had quite a few errors etc, and to also increase the multiplier of the Lighthouse's Omni Light to :guilabel:`2` from :guilabel:`1` since it was not quite powerful enough.
+.. note::
+
+   There have been two main changes I've made from this testing. The first was to increase the lightmap texture size of the :guilabel:`citybuilding_3a/b` from :guilabel:`128 64 32 16` to :guilabel:`256 128 64 32` since its shadows had quite a few errors etc, and to also increase the multiplier of the Lighthouse's Omni Light to :guilabel:`2` from :guilabel:`1` since it was not quite powerful enough.
 
 Once you are happy with your light settings and you have tested any changes you have made then you can begin to lightmap your objects fully.

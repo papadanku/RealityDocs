@@ -36,6 +36,8 @@ Now to fix up your Sun's Light Settings. There are two main types of shadow cast
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000180.jpg
 
+----
+
 Now for the different shadow types and you will want to pick which ever works best for you and your map.
 
 Ray-Tracing
@@ -99,10 +101,14 @@ Adv. Ray-Traced Shadows
 
    .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000222.jpg
 
-Main Tutorial
--------------
+----
 
 For this tutorial I will be using :guilabel:`Adv. Ray Traced` Shadows since I'm trying to get this map done in the shortest time possible and I may be updating it later on with a few changes that may require new lightmaps to be rendered.
+
+----
+
+Main Tutorial
+-------------
 
 Import Lights
 ^^^^^^^^^^^^^
@@ -116,6 +122,8 @@ Then go to :menuselection:`File --> Merge` and browse to and select this file, a
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000183.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000184.jpg
+
+----
 
 Configure Lights
 ^^^^^^^^^^^^^^^^
@@ -133,6 +141,8 @@ Now there are two lights in this:
 Currently the :guilabel:`_Sky01` has a multiplier of :guilabel:`1` and the :guilabel:`_Ambient_Fill_light` has one of :guilabel:`0.4`. If you want brighter interiors increase the :guilabel:`_Ambient_Fill_light` multiplier, and decrease the :guilabel:`_Sky01` multiplier.
 
    Both of these Sky Lights have a colour of :guilabel:`0, 0, 255` (RGB - aka 100% Blue, a bit like the sunlight but Blue instead of Green), because we are generating all lights together and the sky light uses the blue channel in the light map texture.
+
+----
 
 Finally its time to setup our "Point Lights", which are basically man made lights from lamp posts etc. I'm not planning to have a "night layer" for this map which is the main place this type of light really comes in, other than also for deep dark caves etc, but for the purpose of this tutorial I'm going to put in a few. For the main example,
 

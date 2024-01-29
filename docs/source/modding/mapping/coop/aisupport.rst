@@ -47,17 +47,15 @@ For this tutorial you'll need default editor install, the necessary files come w
    Unzip this file to ``mods/pr_edit/objects``. All of the ``_nav`` versions can then be found at ``mods/pr_edit/objects/staticobjects/_stuff``. If your static doesn't have a ``_nav`` there then it's probably already got one as part of its original file.
 
 You'll need to to **copy** two files from the Navmesh folder to the main Battlefield folder.
-
    - ``exportGTS.con``
    - ``saveQuadNoP4.con``
 
 .. image:: https://i.imgur.com/ybc8t.jpg
 
-Main tutorial
--------------
+----
 
 AI Folder
-^^^^^^^^^
+---------
 
 Before you load up your map in editor, copypaste the ``AI`` folder out of another PR map with coop support.
 
@@ -84,7 +82,7 @@ We're only interested in the ``maxSlope`` strings as those control the maximum a
 You can keep the default values most of the time, however if your map is hilly/mountainous, you might want to slightly up the values. If your map is urban and mostly flat, but has enterable buildings with upper floors, the angle of staircases leading to those floors also counts in. It's preferable to keep the infantry angle high, so the said staircases do not cut off upper floors.
 
 Setting Up The Navmesh Area
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 As much as you'd like to see the entire map being used, unfortunately navmesh comes with some limitations in size. Do not expect much if your map is:
 
@@ -108,7 +106,7 @@ As I've said, navmesh is limited in size, so on 4km maps it is advisable to only
 .. image:: http://i.imgur.com/ZUBmw.jpg
 
 Replacing Statics with Nav Statics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 To replace a static, select the static.
 
@@ -129,7 +127,7 @@ Continue replacing other objects the same way.
    If your map uses ``_nl`` (no ladder) versions of BF2 statics (mostly ``MiddleEast`` urban maps), replace all those with the original ones, otherwise they will not navmesh. If your map uses ``_roofwalls`` statics which are placed on top of existing buildings, delete them as they will interfere and also cause the buildings not to navmesh.
 
 "Snap" Statics
-^^^^^^^^^^^^^^
+--------------
 
 An issue with open areas is that navmesh will get oversimplified there, causing it to float and miss terrain completely. To avoid this, use a simple object, like a lightpole and place it around to snap the navmesh to ground.
 
@@ -138,7 +136,7 @@ Best areas to place these are near or on roads or paths between areas. You can l
 .. image:: http://i.imgur.com/AfEZr.jpg
 
 Making Sure
-^^^^^^^^^^^
+-----------
 
 Before we export, it is good to check if we missed any object or any area that might need a snap static. Do this by clicking on :menuselection:`Render --> Toggle Draw Collision Meshes --> AI Mesh`. Your statics should now have colored shapes around them, like this:
 
@@ -153,7 +151,7 @@ Another issue can be corner wall objects like this, which will again be turned i
 Before you go to the next step, save your map.
 
 Exporting Files Necceseary for ``navmesh.exe``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 :menuselection:`LevelEditor --> SinglePlayerEditor --> Generate PathFinding on the right-side menu`
 
@@ -164,7 +162,7 @@ You can now close the editor, but **DO NOT SAVE.**
 Much like lightmapping, exporting the files will turn overgrowth into static objects, however while saving after lightmapping rarely saves the overgrowth as static objects, saving after this will do so every time.
 
 Creating The Navmesh
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 The exported files can be found in your map's folder as ``GTSData`` folder. Copy it, then go to ``C:\Program Files\EA GAMES\Battlefield 2\NavMesh\``.
 

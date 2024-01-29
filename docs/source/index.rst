@@ -11,6 +11,12 @@ Welcome to Project Reality's Official Documentation!
    YouTube <https://www.youtube.com/@ProjectRealityMod>
 
 .. toctree::
+   :caption: Project Reality: Technical Support
+   :hidden:
+
+   support/common_issues
+
+.. toctree::
    :caption: Technical Documentation
    :glob:
    :hidden:
@@ -41,3 +47,17 @@ Roles
    For GUI elements such as its: titles, selection items, values, etc.
 ``:menuselection:``
    GUI navigation sequences
+
+Other
+^^^^^
+
+Creating Titled Lists
+"""""""""""""""""""""
+
+List Title
+   - Item 1
+   - Item 2
+
+      Item 2 description.
+
+   - Item 3

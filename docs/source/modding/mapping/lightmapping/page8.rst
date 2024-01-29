@@ -8,6 +8,8 @@ Note that after reading this section, it's worth reading post 2 in this thread a
 
 `https://www.realitymod.com/forum/f18...ml#post2096455 <https://www.realitymod.com/forum/f189-modding-tutorials/134649-advanced-3dsmax-lightmapping.html#post2096455>`_
 
+----
+
 For my first example I'm going to fix up ``af_palmbush_01``. First we need to import the proper mesh so go to :menuselection:`Bf2 --> Bf2 Utilities` and hit the :guilabel:`Mesh Import` button. Then browse to the location of the object and select its main ``.con`` file and it will import the mesh and its lods.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000064.jpg
@@ -28,7 +30,7 @@ Now we need to setup the materials. If you struggle with this next bit I would a
 
 First we need to find out what textures this object is using so browse to the mesh and open it with BfMeshView, or a similar program, and we can see that this OG object only has one leaf material, which is what we are interested in here, and its uses the :guilabel:`leaf_af_palmtree_b_de.dds` texture.
 
-Next select an unused material slot and click the "Standard" button in the top right, then select "Multi/Sub-Object" to change the material to that part. Click ok on the window that pops up and rename your new material to something like :guilabel:`Overgrowth`.
+Next, select an unused material slot and click the :guilabel:`Standard` button in the top right, then select :guilabel:`Multi/Sub-Object` to change the material to that part. Click ok on the window that pops up and rename your new material to something like :guilabel:`Overgrowth`.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000074.jpg
 
@@ -46,7 +48,7 @@ Go to parent and call this material the name of the texture its using, which in 
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000080.jpg
 
-Now before we go any further we should just look at what Material IDs this object uses, go into face selection mode, scroll down to Polygon Properies on the right and open up the drop down box and you will see that it has two materials, 1 being bark and 2 being the left as we want so this doesn't need any changes.
+Now, before we go any further, we should just look at what :guilabel:`Material ID`\s this object uses, go into :guilabel:`Face Selection` mode, scroll down to :guilabel:`Polygon Properies` on the right and open up the drop down box and you will see that it has two materials, :guilabel:`1` being bark and :guilabel:`2` being the left as we want so this doesn't need any changes.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000082.jpg
 
@@ -84,6 +86,8 @@ Then I would recommend renaming these fixed up OG objects to have a prefix of :g
 
 Then continue to do this for all your overgrowth object types and other objects with transparent materials etc you have in your map and if other objects use the same textures, assign them to both use the same materials to save you time setting them up.
 
+----
+
 Next object I'm going to fix up is the :guilabel:`jungle_palm_small_01`.
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000088.jpg
@@ -105,6 +109,8 @@ Now for the :guilabel:`kentia_palm_cluster01`, its materials are a little odder 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000094.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000095.jpg
+
+----
 
 For the Wire Fence series, which are not overgrowth objects but statics with transparent materials, the process is more or less the same but with a few differences. The biggest difference is that because its not an Overgrowth object, it already has the back faces for the transparent materials so we do not need to clone and flip the transparent faces like we needed to do for the OG Objects.
 
@@ -141,6 +147,8 @@ One other thing you may want to consider is deleting the tiny bits of barb wire 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000113.jpg
 
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000114.jpg
+
+----
 
 For the Civi Car, for its reference I'm not going to bother applying any transparent materials to it since the only transparent materials it has on it, is the windows and for them, its simplest we just 100% delete them as the light difference passing though is marginal, but far easier to process no faces than a transparent material. But you may wish to make sure that all the faces on the object are using MatID1 so if you do apply the material to it, it will only be the Bark Material:
 

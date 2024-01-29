@@ -28,7 +28,9 @@ The BF2/PR debugger is extremely helpful in tracking down bugs that don't give e
 #. Depending on what you want to do, you may want to go back to the :guilabel:`Options` menu through the launcher, select debugger profile in order to lower resolution and disable fullscreen. That's because fullscreen only produces logs while windowed mode also shows error windows for more important errors.
 #. Go back to the debugger screen :menuselection:`Right-click PLAY --> Launch debugger --> Select your new profile --> log in`
 
-When you're running the debugger in windowed mode, you'll get error messages popping up all the time when loading. Generally, these are messages about texture coordinates, which can be ignored. Simply press Continue through them all.
+.. note::
+    
+    When you're running the debugger in windowed mode, you'll get error messages popping up all the time when loading. Generally, these are messages about texture coordinates, which can be ignored. Simply press Continue through them all.
 
 Log messages are output to ``mods/pr/logs``.
 

@@ -10,7 +10,7 @@ You want to create your own RCon command(s) to add administrative features to BF
 Solution
 --------
 
-Use the dynamic object modification technique explained in :doc:`this recipe <changingobjects>`. Just import the following function from one of the main modules:
+Use the dynamic object modification technique explained in :doc:`this recipe <changing_objects>`. Just import the following function from one of the main modules:
 
 .. py:function:: registerRConCommand(command, function)
 
