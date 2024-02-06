@@ -17,7 +17,7 @@ Intel Core
    
    .. warning::
 
-      Issue prevelant on the following
+      Issue prevalent on the following
          - Intel Core 11th gen and newer
          - Intel N100 and other N-series
          - Pentium G7xxx series
