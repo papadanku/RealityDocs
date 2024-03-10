@@ -9,18 +9,16 @@ Taking advantage of this ability to integrate with other languages, the Battlefi
 Python Language Resources
 -------------------------
 
-- `python.org <https://python.org/>`_
-
+`python.org <https://python.org/>`_
    The main Python website, and includes lots of information and links to other useful sites, including:
 
    - `Beginner's Guide to Python <https://wiki.python.org/moin/BeginnersGuide>`_
    - `Python Tutorial <https://python.org/doc/2.3.4/tut/tut.html>`_
 
-- `Dive Into Python <https://diveintopython.org/>`_
-
+`Dive Into Python <https://diveintopython.org/>`_
    Full text of a good intro to Python for people who are already fluent in another programming language.
-
-- `Google's Python Class <https://code.google.com/edu/languages/google-python-class/>`_
+`Google's Python Class <https://code.google.com/edu/languages/google-python-class/>`_
+   Full Python class by Google.
 
 Python cookbooks, idioms, and design patterns
 ---------------------------------------------
@@ -52,18 +50,11 @@ Python IDEs
 
 There are quite a few good `Integrated Development Environments <https://en.wikipedia.org/wiki/Integrated_development_environment>`_ (IDEs) for Python. IDEs are (highly) glorified text editors that offer lots of features that are especially useful to programmers, such as integrated debuggers, class browsers, language documentation, automatic color-coding and line completion, etc. Some of the more noteworthy ones designed for use with Python:
 
-- `IDLE <https://docs.python.org/3/library/idle.html>`_
-
+`IDLE <https://docs.python.org/3/library/idle.html>`_
    Included with the standard Python distribution; pretty basic, but fine if you're just starting out.
-
-- `Visual Studio Code <https://code.visualstudio.com/>`_
-
+`Visual Studio Code <https://code.visualstudio.com/>`_
    A full-featured open source IDE with Python support.
-
-- `PyCharm <https://www.jetbrains.com/pycharm/>`_
-
+`PyCharm <https://www.jetbrains.com/pycharm/>`_
    Another full-featured open source Python IDE.
-
-- `Komodo IDE <https://www.activestate.com/products/komodo-ide/>`_
-
+`Komodo IDE <https://www.activestate.com/products/komodo-ide/>`_
    A very good open-source IDE (previously commercial, now retired).
