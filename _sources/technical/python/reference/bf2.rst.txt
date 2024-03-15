@@ -100,7 +100,7 @@ bf2
 
 .. py:class:: bf2.ObjectManager.ObjectManager
 
-   During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found :doc:`here <../../engine/objecttemplates>`.
+   During its initialization the bf2 class instantiates this class as the singleton object ``bf2.objectManager``. This object can be used by Python to get access to internal game engine C++ objects. A list of the available object types can be found :doc:`here <../../engine/object_templates>`.
 
    You must ``import bf2`` to access the methods and attributes of this object.
 
@@ -149,38 +149,39 @@ bf2
    .. py:attribute:: skillScore
    .. py:attribute:: cmdScore
 
-Class attributes stored in the BF2 engine
+   ::
+      Class attributes stored in the BF2 engine
 
-- ``deaths``
-- ``kills``
-- ``TKs``
-- ``score``
-- ``skillScore``
-- ``rplScore``
-- ``cmdScore``
-- ``fracScore``
-- ``rank``
-- ``firstPlace``
-- ``secondPlace``
-- ``thirdPlace``
-- ``bulletsFired``
+         - ``deaths``
+         - ``kills``
+         - ``TKs``
+         - ``score``
+         - ``skillScore``
+         - ``rplScore``
+         - ``cmdScore``
+         - ``fracScore``
+         - ``rank``
+         - ``firstPlace``
+         - ``secondPlace``
+         - ``thirdPlace``
+         - ``bulletsFired``
 
-   Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
+            Gives a tuple, each element of which is a 2-tuple consisting of the name of a weapon the player has fired, and the number of shots they fired from that weapon. As the player uses more weapons, more of the 2-tuples are added to the list. An example tuple returned:
 
-   ``(("uspi-m16", 30), ("knife", 3))``
+            ``(("uspi-m16", 30), ("knife", 3))``
 
-   Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
+            Before the first weapon is fired, this may be ``None`` or an empty tuple. The first weapon fired will not always be the first 2-tuple on the list returned.
 
-- ``bulletsGivingDamage``
+         - ``bulletsGivingDamage``
 
-   Same as above, but only with bullets giving damage
+            Same as above, but only with bullets giving damage
 
-- ``bulletsFiredAndClear``
+         - ``bulletsFiredAndClear``
 
-   The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
+            The “AndClear” resets the engine counter. polling this will only give new bullets. However having more than one module polling them is not a good idea.
 
-- ``bulletsGivingDamageAndClear``
-- ``dkRatio``
+         - ``bulletsGivingDamageAndClear``
+         - ``dkRatio``
 
 .. py:class:: bf2.PlayerManager.Player
 
@@ -401,6 +402,6 @@ Class attributes stored in the BF2 engine
 
       Traverses the containment for physicalObject all the way to the top
 
-      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the :doc:`Game Engine Object Templates <../../engine/objecttemplates>` page.
+      For example, ``getWeaponType("usrif_m16a2")`` looks up an M16 rifle in a dictionary called ``weaponTypeMap`` (also defined in :py:class:`bf2.stats.constants`) and returns the constant ``WEAPON_TYPE_ASSAULT``\ … which, too, is defined in :py:class:`bf2.stats.constants`, as having a numeric value of “0”. A list of template names used in some of these functions can be found in the :doc:`Game Engine Object Templates <../../engine/object_templates>` page.
 
       :return: The outermost (topmost?) containing object
