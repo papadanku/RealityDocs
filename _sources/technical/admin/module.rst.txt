@@ -22,7 +22,7 @@ Any administrative module, including ``default``, has three methods which are ca
 
 - ``init()``
 
-   The game engine calls this method while it is :doc:`starting up <../python/bigpicture>`; in the ``default`` module, this method reads the admin configuration file (``default.cfg``), initializes the admin system, registers to receive :doc:`RemoteCommand events <../python/reference/events>`, etc.
+   The game engine calls this method while it is :doc:`starting up <../python/big_picture>`; in the ``default`` module, this method reads the admin configuration file (``default.cfg``), initializes the admin system, registers to receive :doc:`RemoteCommand events <../python/reference/events>`, etc.
 
 - ``shutdown()``
 
@@ -39,7 +39,7 @@ BF2 includes an ``RCon`` (Remote Console) function that allows many administrati
 
 The ``RCon`` interface is implemented completely in Python, with the code in the ``Battlefield 2 Server/admin`` directory. The game engine provides five facilities that this Python code uses:
 
-- As part of it's :doc:`start-up procedure <../python/bigpicture>`, the server imports the Python module in the ``admin`` directory specified by the ``sv.adminScript`` directive. This is normally the ``default`` module, but the fact that it's imported based on a configuration directive means that it could easily be changed to a custom module.
+- As part of it's :doc:`start-up procedure <../python/big_picture>`, the server imports the Python module in the ``admin`` directory specified by the ``sv.adminScript`` directive. This is normally the ``default`` module, but the fact that it's imported based on a configuration directive means that it could easily be changed to a custom module.
 - The game engine provides an event, :doc:`RemoteCommand <../python/reference/events>`, that fires whenever an in-game player accesses their console and types any line beginning with “rcon”. The event passes any registered callback handlers the actual command typed by the player. This is how the ``default`` module receives ``RCon`` commands from players (but it can be used by other Python code, as well).
 - The game engine provides a method, ``host.rcon_feedback``, that can be used to send messages to a player's in-game console. This is what the ``default`` module uses to send responses to players' ``RCon`` commands back to them (but it can be used by other Python code, also).
 - The game engine calls the ``update`` method of the ``default`` module (or whatever module has been specified by ``sv.adminScript``) repeatedly, generally about every 30 milliseconds (roughly 30 times per second). The ``default`` module uses this to run a fast check for input on a TCP port (normally port 4711) for ``RCon`` commands-this is how the network ``RCon`` interface receives commands. More information about the ``RCon`` protocol the ``default`` module implements can be found in the :doc:`RCon Protocol Specification <../networking/protocols_rcon>`.

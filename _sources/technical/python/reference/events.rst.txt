@@ -227,7 +227,7 @@ Command Events
 
 .. py:function:: ConsoleSendCommand(command, args)
 
-   This event is triggered by someone using the ``pythonHost.sendCommand`` console command. Unfortunately, this command/event mechanism appears to be disabled in non-ranked servers. (As a workaround, you can achieve a similar effect :doc:`creating and registering your own custom RCon commands <../../cookbook/newrcon>`.
+   This event is triggered by someone using the ``pythonHost.sendCommand`` console command. Unfortunately, this command/event mechanism appears to be disabled in non-ranked servers. (As a workaround, you can achieve a similar effect :doc:`creating and registering your own custom RCon commands <../../cookbook/new_rcon>`.
 
 .. py:function:: RemoteCommand(playerId, cmd)
 

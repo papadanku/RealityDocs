@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vars.set &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Networking" href="../../networking/index.html" />
+    <link rel="prev" title="sv" href="sv.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ai_code.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd_options.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../con_grammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">Server System Requirements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Console Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="animation.html"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="audio.html"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sound.html"><code class="docutils literal notranslate"><span class="pre">sound</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="portal.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="combatarea.html"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="commander.html"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="game.html">Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ingame.html">In-Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html"><code class="docutils literal notranslate"><span class="pre">physics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="radio.html">Radio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spawnmanager.html"><code class="docutils literal notranslate"><span class="pre">spawnManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="squad.html">Squad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="decal.html"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="effecttweak.html"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="envmapmanager.html"><code class="docutils literal notranslate"><span class="pre">envmapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="heightmap.html">Heightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hemimap.html"><code class="docutils literal notranslate"><span class="pre">hemiMapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightmanager.html"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="overgrowth.html"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="meshrenderer.html">Mesh Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="particles.html">Particles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="renderer.html"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadermanager.html"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadowmanager.html"><code class="docutils literal notranslate"><span class="pre">shadowManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="skydome.html"><code class="docutils literal notranslate"><span class="pre">skyDome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="terrain.html">Terrain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texturemanager.html"><code class="docutils literal notranslate"><span class="pre">texturemanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="undergrowth.html"><code class="docutils literal notranslate"><span class="pre">undergrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="weather.html">Weather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="local.html">Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maplist.html"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile.html"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html">In-Game Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometrytemplate.html"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="material.html"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="networkables.html"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="objecttemplate.html"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ragdoll.html"><code class="docutils literal notranslate"><span class="pre">ragDoll</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlmap.html"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generalsettings.html"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="globalsettings.html"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hapticsettings.html"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="settingsmanager.html"><code class="docutils literal notranslate"><span class="pre">SettingsManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="videosettings.html"><code class="docutils literal notranslate"><span class="pre">videoSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="editor.html"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filemanager.html"><code class="docutils literal notranslate"><span class="pre">fileManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pythonhost.html"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="swiffhost.html"><code class="docutils literal notranslate"><span class="pre">swiffHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sv.html"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vars.set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/objects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/mapping/index.html">Mapping</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Modding</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Console Commands</a></li>
+      <li class="breadcrumb-item active">Vars.set</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/technical/modding/console/vars.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vars-set">
+<h1>Vars.set<a class="headerlink" href="#vars-set" title="Permalink to this heading"></a></h1>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Vars.set</span></code></dt><dd><p>std::string std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">EngineRunningTimer</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim-soldier-1p-speed-crouch</span></code></dt><dd><p>1.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim-soldier-1p-speed-prone</span></code></dt><dd><p>3.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim-soldier-spring-clamp</span></code></dt><dd><p>0.001000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim-soldier-spring-zoom-factor</span></code></dt><dd><p>6.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_offsetBackwardTime</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_playCameraAnimations</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_playSoldierAnimations</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_playSoldierPostAnimations</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_playVehicleAnimations</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_playWeaponAnimations</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_skipSync</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_smoothSet</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_startJumpAtSpeed</span></code></dt><dd><p>2.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_startLandAtHeight</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_startLandAtSpeed</span></code></dt><dd><p>-0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_startLeftOffset</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_startRightOffset</span></code></dt><dd><p>0.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anim_test</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">armor-invunerable-time</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">armor-invunerable-time-afterwreck</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">armor-max-soldier-wrecktime</span></code></dt><dd><p>60.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">armor-water-safetycheck-time</span></code></dt><dd><p>2.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cFric</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cRest</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-dist</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-fast</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-interpolate-attachobject</span></code></dt><dd><p>1.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-normal</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-slow</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam-stiffness</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cam_use_acc</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-check-closevehicle-freq</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-expshake-amp</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-expshake-freq</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-expshake-insidevehicle-mod</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-expshake-time</span></code></dt><dd><p>0.400000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-movement-speed-on-crouch</span></code></dt><dd><p>0.150000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-movement-speed-on-prone</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-movement-speed-on-stand</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-recoil-amplitude</span></code></dt><dd><p>0.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-recoil-speedmod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-recoil-type</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-amp</span></code></dt><dd><p>2.0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-amplitude</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-distance</span></code></dt><dd><p>7.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-freq</span></code></dt><dd><p>10.0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-frequency</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-shake-time</span></code></dt><dd><p>0.2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">camera-surface-snap-offset</span></code></dt><dd><p>0.090000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-cull-sphere-obb</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-depth</span></code></dt><dd><p>3.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-cyl</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-int</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-line-width</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-lines</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-point-physics-radius</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-soldier</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-draw-tested_faces</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-dump-all-tests</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-edge</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-edge-limit</span></code></dt><dd><p>0.866000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-forceOff-debugmeshes</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-load-debugmeshes</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-normal-limit</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-obb-cull-mode</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-obb-cull-radius</span></code></dt><dd><p>0.577350</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-obb-cull-vertex-limit</span></code></dt><dd><p>10</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-collision-adjust-mod</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-collision-test-count</span></code></dt><dd><p>8</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-collision-test-count-start-backAt</span></code></dt><dd><p>3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-collision-test-radius-mod</span></code></dt><dd><p>0.999000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-crouch-height</span></code></dt><dd><p>1.400000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-crush-depth</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-debug-proj-hit</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-extend-ray</span></code></dt><dd><p>0.900000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-overrun-impact-mod</span></code></dt><dd><p>2.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-pivot-height</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-prone-height</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-radius</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-soldier-stand-height</span></code></dt><dd><p>1.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-static-vertex-limit</span></code></dt><dd><p>20</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-use-cyl</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-use-cyl-normal</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-use-face</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-use-fast-sphere-at-length</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">coll-vel-dot-norm</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-debug-default-terrain</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-impact-speed-limit</span></code></dt><dd><p>4.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-skip-multcolls</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-skip-multcolls-debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-skip-multcolls-th</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-test-lod-distance-factor</span></code></dt><dd><p>0.060000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-test-lod-min-distance</span></code></dt><dd><p>25.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-test-projectile-lod-distance-factor</span></code></dt><dd><p>3.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-use-cubic-speedmod</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">collision-use-mod-on-soldier</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">conn-packetsize-override</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">damage-angle-mod-choke</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">deathcam-terrainoffset</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">debug-draw-test-ray</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">debug-engine</span></code></dt><dd><p>0 bool -&gt; bool</p>
+<ul class="simple">
+<li><p>Activate in Console in Debugger</p></li>
+<li><p>Shows the RPM, Speed, Acceleration in a 3d text</p></li>
+<li><p>May need !restart to work and is somewhat buggy</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">debug-outputNewObject</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">debug-spring</span></code></dt><dd><p>0 bool -&gt; bool</p>
+<ul class="simple">
+<li><p>Activate in Console in Debugger and normal</p></li>
+<li><p>Shows lines when approaching a vehicle.</p></li>
+<li><p>You can see what direction the vehicle will go when turning and has a bunch of other information regarding wheels”</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-360-capture</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-360-capture-move</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-mouse-wheel-scale</span></code></dt><dd><p>0.850000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-offset</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-offset-min</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-offset-slow</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-cam-offset-speed</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-fspeed</span></code></dt><dd><p>100.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">demo-slomo-cam</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">detonation-collface-offset</span></code></dt><dd><p>0.070000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">detonation-collface-offset-speedmod</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">detonation-collface-offset-speedmod-max</span></code></dt><dd><p>500.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-material-tweak</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-amplitude-first</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-amplitude-last</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-frequency-first</span></code></dt><dd><p>80.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-frequency-last</span></code></dt><dd><p>35.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-time-first</span></code></dt><dd><p>0.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-audio-sway-time-last</span></code></dt><dd><p>0.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-inertia</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-inertia2</span></code></dt><dd><p>0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-inertia3</span></code></dt><dd><p>0.960000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-slope-no-gear-up-limit</span></code></dt><dd><p>0.174000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-slope-torque-mod-1st-gear</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engine-sound-smooth-time</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">event-delay</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">event-delay-ticks</span></code></dt><dd><p>32</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-camshake-insidevehicle-mod</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-camshake-maxdamage</span></code></dt><dd><p>150.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-camshake-maxforce</span></code></dt><dd><p>20.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-camshake-mod</span></code></dt><dd><p>4.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-camshake-ownvehicle-mod</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-hotspot</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-hotspot-ray</span></code></dt><dd><p>0.020000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-hotspot-ray-max</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-latencyComp</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">explosion-soldier-expforce-ymod</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fb-mod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">feedback-mod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fire-delay-after-jump</span></code></dt><dd><p>1.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fire-delay-from-prone</span></code></dt><dd><p>0.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">flying_height</span></code></dt><dd><p>110.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">follow-component-prediction-factor</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">force-reg-limit</span></code></dt><dd><p>20.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hack-ignore-asserts</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hc_dump</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hc_freeze</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hc_normals</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hc_water</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ignoreFriendlyTimer</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">jump-delay-after-prone</span></code></dt><dd><p>1.200000</p>
+<p>Delay in seconds after prone to block the jump input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">0<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Allows jumping when pressing space while moving from prone to standing</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-bottom-marginal</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-climb-speed-mod</span></code></dt><dd><p>0.045000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-down-angle-limit</span></code></dt><dd><p>35.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-down-ray-mag</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-down-ray-mag-skid</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-end-camera-offset</span></code></dt><dd><p>0.400000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-exit-offset</span></code></dt><dd><p>0.750000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-getoff-ray-min</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-getoff-speed-mod</span></code></dt><dd><p>1.150000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-offset-top</span></code></dt><dd><p>0.360000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-ray-debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-ray-debug2</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-skid-speed-mod</span></code></dt><dd><p>4.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-soldier-dist</span></code></dt><dd><p>0.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-soldier-start-getoff</span></code></dt><dd><p>1.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-step-size</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-top-exit-offset</span></code></dt><dd><p>0.750000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-up-ray-mag-skid</span></code></dt><dd><p>1.700000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ladder-water-limit</span></code></dt><dd><p>1.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">local-prediction</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">local-prediction-confirmtime</span></code></dt><dd><p>30</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">local-prediction-lerpTime</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">local-prediction-minDelay</span></code></dt><dd><p>0.150000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">maxDistKillMissile</span></code></dt><dd><p>15.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">network-engine-fullPrecision</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">network-spring-fullPrecision</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">objectManager-cullHandleUpdateOnClientFactor</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">objectspawner-draw-lines</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">objectspawner-inner-circle</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">objectspawner-num-tries</span></code></dt><dd><p>7</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">old-turn-limit</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">old-turn-mod</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">opt-late-loading</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">opt-nosound</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">overheadCamera-acceleration</span></code></dt><dd><p>250.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">overheadCamera-maxPositionDelta</span></code></dt><dd><p>7.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">p-pos-damp</span></code></dt><dd><p>0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">p-pos-damp-water</span></code></dt><dd><p>0.900000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">p-rot-damp</span></code></dt><dd><p>0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">p-rot-damp-water</span></code></dt><dd><p>0.900000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-collapse-angle</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-collapse-time</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-collapse-time-water</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-spawn-debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parachute-start-landing-height</span></code></dt><dd><p>8.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pco-exitpos-testlod</span></code></dt><dd><p>2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pco-min-playing-ticks</span></code></dt><dd><p>20</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pco-show-gcs-stats</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pco-unmanned-max-minor-axis</span></code></dt><dd><p>0.400000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pco-unmanned-min-major-axis</span></code></dt><dd><p>0.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-ang-vel</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-break-mod</span></code></dt><dd><p>0.950000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-bsp-stats</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-contact-adjust-gravity-count</span></code></dt><dd><p>2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-convert-collision-meshes</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-damage-frame-count</span></code></dt><dd><p>3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-damage-scale</span></code></dt><dd><p>100.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-damage-scale-limit</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-draw-soldier-bullet-collision</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-engine-inertia</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-engine-slope</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-force-awake</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-force-sleeping</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-dyn</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-exp</span></code></dt><dd><p>3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-lat</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-mod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-mul</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-stat</span></code></dt><dd><p>1.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-wheel</span></code></dt><dd><p>0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-fri-wheel2</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-gas</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-gravity-compensation-size</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-gravity-contact-mod</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-hand-break-adjust</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-hand-break-release</span></code></dt><dd><p>10</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-hand-break-rpm</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-i-mod</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-imp-mod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-imp-wakeup</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-impulse-limit</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-debug</span></code></dt><dd><p>-1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-default</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-max</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-maxRenderAheadTime</span></code></dt><dd><p>0.033333</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-pingFactor</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-useClientWindow</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-useInput</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-latencyComp-useRenderAhead</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-lin-acc</span></code></dt><dd><p>1.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-lin-mod</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-lin-vel</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-list-physics-nodes</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-list-response-physics</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-max-imp</span></code></dt><dd><p>1000.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-max-speed</span></code></dt><dd><p>1500.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-new-collision-meshes</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-print</span></code></dt><dd><p>-1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-proj-collision-count</span></code></dt><dd><p>3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-proj-collision-depth</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-proj-precision</span></code></dt><dd><p>0.001000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-proj-spring-on-up-axis</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-sep-fifty-fifty</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-acceleration</span></code></dt><dd><p>0.120000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-air-movement-factor</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-crawl-speed</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-crouch-speed</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-crush-minposspeedsqr</span></code></dt><dd><p>12.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-crush-minrotspeedsqr</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-crush-minvehicleposspeedsqr</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-deceleration</span></code></dt><dd><p>0.350000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-elasticity</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-feet-contact-normal</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-feet-level</span></code></dt><dd><p>-0.040000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-friction</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-imp-feet</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-inair-speed</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-jump-factor</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-jump-length-factor</span></code></dt><dd><p>0.980000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-look-factor-x</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-look-factor-y</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-resistance</span></code></dt><dd><p>0.020000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-run-speed</span></code></dt><dd><p>3.900000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-skydive-speed</span></code></dt><dd><p>15.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-skydiveat-speed</span></code></dt><dd><p>-10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-speed-factor</span></code></dt><dd><p>0.850000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-sprint-dissipation-time</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-sprint-limit</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-sprint-recover-time</span></code></dt><dd><p>120.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-sprint-speed</span></code></dt><dd><p>7.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-start-float</span></code></dt><dd><p>0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-stop-float</span></code></dt><dd><p>0.900000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-swim-speed</span></code></dt><dd><p>2.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-swimcrawl-speed</span></code></dt><dd><p>3.645000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-take-fall-damage</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-soldier-walk-speed</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-spring-client-debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-spring-server-debug</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-tank-engine-inertia</span></code></dt><dd><p>0.070000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-turn</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-wing-water-mod</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">phy-wreck</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-crouch</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-run</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-sprint</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-swim</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-swimCrawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crawl-walk</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-crawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-run</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-sprint</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-swim</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-swimCrawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-crouch-walk</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-crawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-crouch</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-sprint</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-swim</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-swimCrawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-run-walk</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-crawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-crouch</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-run</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-swim</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-swimCrawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-sprint-walk</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-crawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-crouch</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-run</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-sprint</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-swim</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pose-walk-swimCrawl</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">prone-delay-after-jump</span></code></dt><dd><p>1.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">prone-delay-from-stand</span></code></dt><dd><p>1.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll-max-inherit-speed</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_bodyBoneSize</span></code></dt><dd><p>0.120000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_boneSize</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_clientMaxUpdateTime</span></code></dt><dd><p>0.002000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_collMid</span></code></dt><dd><p>0.999900</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_completeCollRadius</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_dT</span></code></dt><dd><p>0.011111</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_enableForce</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_expRotateForce</span></code></dt><dd><p>13.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_gravityOverTime</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_iterations</span></code></dt><dd><p>2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_kneeBoneSize</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_legBackAngle</span></code></dt><dd><p>-0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_legForwardAngle</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_legForwardFactor</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_legPointForwardAngle</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_legPointForwardFactor</span></code></dt><dd><p>0.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_net_boneEnable</span></code></dt><dd><p>15</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_net_debug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_net_interpolate</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_sleep</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_sleepDelta</span></code></dt><dd><p>0.020000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_slowMotion</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_useAngularConstraints</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_useCapsuleCollision</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_useConstraints</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_useLandCollision</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ragdoll_useObjectCollision</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rd_dieForce</span></code></dt><dd><p>0.0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rd_dieInVehicleForce</span></code></dt><dd><p>100.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rd_expForceMod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rd_hitForce</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rd_hitUp</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">replenish-checkaim-freq</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">replenish-checkaim-maint-freq</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">replenish-ignoreteam</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rot-use-old</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rotationalbundle-max-speed-mod</span></code></dt><dd><p>30.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rotationalbundle-sound-smooth-time</span></code></dt><dd><p>0.150000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rpm-k</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rpm-wheel</span></code></dt><dd><p>0.060000</p>
+<p>No effect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">server-sleep-overhead-time</span></code></dt><dd><p>0.005000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">shoot-mag</span></code></dt><dd><p>10.000000</p>
+<p>No effect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">show-damage-ndicator-for-all</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">show-engine</span></code></dt><dd><p>0</p>
+<p>No effect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-drop-max</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-drop-min</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-drown-damage</span></code></dt><dd><p>8.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-footstep-effect-cull-distance</span></code></dt><dd><p>20.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-footstep-offset-dof-prone</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-footstep-offset-dof-stand</span></code></dt><dd><p>0.130000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-footstep-offset-y</span></code></dt><dd><p>-0.990000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-fov1p</span></code></dt><dd><p>0.820000</p>
+<p>No effect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-impact-speed-limit</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-impact-speed-limit-2</span></code></dt><dd><p>3.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-lookDown</span></code></dt><dd><p>70.000000</p>
+<p>No effect</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-lookMaxAngle</span></code></dt><dd><p>40.000000/85.000000/0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-lookSideRestore</span></code></dt><dd><p>4.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-lookUp</span></code></dt><dd><p>-70.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-mandown-rotspeed</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-mandown-speed</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-prone-inwater-limit</span></code></dt><dd><p>1.100000</p>
+<p>The number referenced is the angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">0.0<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Allows you to prone into water. Can shoot walls when it’s in water, but not walls from the surface.</p>
+</dd>
+<dt class="field-even">2.0<span class="colon">:</span></dt>
+<dd class="field-even"><p>Prevents you from proning near water in which you automatically go to the standing position</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-proneLookDown</span></code></dt><dd><p>5.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-proneLookUp</span></code></dt><dd><p>-30.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-revive-disableinputtime</span></code></dt><dd><p>2.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-terrain-speed-limit</span></code></dt><dd><p>9.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier-timeToEnableWeapon</span></code></dt><dd><p>1.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_lookIdleAngle</span></code></dt><dd><p>15.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_lookIdleTime</span></code></dt><dd><p>2.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_lookSmooth</span></code></dt><dd><p>10.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_throwGun</span></code></dt><dd><p>0.025000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_throwGunForward</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_throwHelmet</span></code></dt><dd><p>0.025000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">soldier_throwKitPartsDelay</span></code></dt><dd><p>0.300000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-listener-radius</span></code></dt><dd><p>0.200000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-disable</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-max</span></code></dt><dd><p>0.800000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-max-reuse-frames</span></code></dt><dd><p>15</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-opt0</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-opt1</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-radius</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-obstruction-reuse-frames</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound-tinnitus-range</span></code></dt><dd><p>0.600000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">spawnpoint-scatter-maxdist</span></code></dt><dd><p>9.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">spawnpoint-scatter-mindist</span></code></dt><dd><p>3.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">spawnpoint-scatter-testlod</span></code></dt><dd><p>2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">spawnpoint-terrain-offset</span></code></dt><dd><p>1.010000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sprint-recharge-delay-after-jump</span></code></dt><dd><p>2.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stand-delay-from-prone</span></code></dt><dd><p>1.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stick-default-distance</span></code></dt><dd><p>0.050000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tank-square</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">targetYOffset</span></code></dt><dd><p>0.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">use-loading-profiler</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">weapon-detonationDebug</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">weapon-detonationTriggerFreq</span></code></dt><dd><p>0.250000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wh-torque-mult</span></code></dt><dd><p>0.500000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wh-torque-offs</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wh-use-slip-ratio</span></code></dt><dd><p>0</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wheel-inertia</span></code></dt><dd><p>0.100000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wheel-mod</span></code></dt><dd><p>1.000000</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wp-delay-pingfactor</span></code></dt><dd><p>2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wp-delay-reloadfactor</span></code></dt><dd><p>1</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wp-delay-ticks</span></code></dt><dd><p>15</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">zipline-soldier-height</span></code></dt><dd><p>1.490000</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sv.html" class="btn btn-neutral float-left" title="sv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../networking/index.html" class="btn btn-neutral float-right" title="Networking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

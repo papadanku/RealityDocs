@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hapticSettings &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SettingsManager" href="settingsmanager.html" />
+    <link rel="prev" title="globalSettings" href="globalsettings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ai_code.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd_options.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../con_grammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">Server System Requirements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Console Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="animation.html"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="audio.html"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sound.html"><code class="docutils literal notranslate"><span class="pre">sound</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="portal.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="combatarea.html"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="commander.html"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="game.html">Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ingame.html">In-Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html"><code class="docutils literal notranslate"><span class="pre">physics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="radio.html">Radio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spawnmanager.html"><code class="docutils literal notranslate"><span class="pre">spawnManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="squad.html">Squad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="decal.html"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="effecttweak.html"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="envmapmanager.html"><code class="docutils literal notranslate"><span class="pre">envmapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="heightmap.html">Heightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hemimap.html"><code class="docutils literal notranslate"><span class="pre">hemiMapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightmanager.html"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="overgrowth.html"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="meshrenderer.html">Mesh Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="particles.html">Particles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="renderer.html"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadermanager.html"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadowmanager.html"><code class="docutils literal notranslate"><span class="pre">shadowManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="skydome.html"><code class="docutils literal notranslate"><span class="pre">skyDome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="terrain.html">Terrain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texturemanager.html"><code class="docutils literal notranslate"><span class="pre">texturemanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="undergrowth.html"><code class="docutils literal notranslate"><span class="pre">undergrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="weather.html">Weather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="local.html">Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maplist.html"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile.html"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html">In-Game Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometrytemplate.html"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="material.html"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="networkables.html"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="objecttemplate.html"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ragdoll.html"><code class="docutils literal notranslate"><span class="pre">ragDoll</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlmap.html"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generalsettings.html"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="globalsettings.html"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="settingsmanager.html"><code class="docutils literal notranslate"><span class="pre">SettingsManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="videosettings.html"><code class="docutils literal notranslate"><span class="pre">videoSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="editor.html"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filemanager.html"><code class="docutils literal notranslate"><span class="pre">fileManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pythonhost.html"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="swiffhost.html"><code class="docutils literal notranslate"><span class="pre">swiffHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sv.html"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vars.html">Vars.set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/objects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/mapping/index.html">Mapping</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Modding</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Console Commands</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/technical/modding/console/hapticsettings.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hapticsettings">
+<h1><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code><a class="headerlink" href="#hapticsettings" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.addWeaponClassMap</span></code></dt><dd><p>std::string int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.load</span></code></dt><dd><p>-&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivity</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityAIR</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityHELI</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLAND</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLength</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLengthAIR</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLengthHELI</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLengthLAND</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLengthSEA</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivityLengthSOLDIER</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivitySEA</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setAimSensitivitySOLDIER</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLength</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLengthAIR</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLengthHELI</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLengthLAND</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLengthSEA</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxLengthSOLDIER</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffness</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffnessAIR</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffnessHELI</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffnessLAND</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffnessSEA</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setControlBoxStiffnessSOLDIER</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setDamageScale</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setExplosionShakeScale</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setForceCapX</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setForceCapY</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setForceCapZ</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setGeneralShakeScale</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScale</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleXHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleXLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleXMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleYHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleYLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleYMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleZHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleZLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRScaleZMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeXHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeXLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeXMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeYHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeYLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeYMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeZHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeZLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRSmoothTimeZMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRTransitionValueHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsAIRTransitionValueMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScale</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleXHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleXLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleXMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleYHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleYLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleYMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleZHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleZLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELIScaleZMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeXHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeXLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeXMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeYHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeYLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeYMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeZHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeZLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELISmoothTimeZMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELITransitionValueHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsHELITransitionValueMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScale</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleXHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleXLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleXMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleYHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleYLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleYMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleZHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleZLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDScaleZMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeXHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeXLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeXMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeYHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeYLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeYMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeZHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeZLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDSmoothTimeZMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDTransitionValueHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsLANDTransitionValueMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScale</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleXHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleXLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleXMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleYHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleYLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleYMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleZHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleZLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEAScaleZMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeXHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeXLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeXMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeYHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeYLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeYMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeZHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeZLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEASmoothTimeZMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEATransitionValueHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSEATransitionValueMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScale</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleXHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleXLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleXMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleYHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleYLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleYMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleZHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleZLow</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERScaleZMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeXHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeXLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeXMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeYHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeYLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeYMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeZHigh</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeZLow</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERSmoothTimeZMed</span></code></dt><dd><p>int -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERTransitionValueHigh</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setPhysicsSOLDIERTransitionValueMed</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleCARBINE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleDEFIB</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleDROP</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleKNIFE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleLAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleLMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScalePISTOL</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleRIFLE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleRIFLELAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleSHOTGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleSMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleSNIPER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleTHROWN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_AIRGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_ARMORCANNON</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_COAXIALGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_HELIGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_HMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_LMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPitchScaleV_MISSILE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleCARBINE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleDEFIB</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleDROP</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleKNIFE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleLAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleLMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScalePISTOL</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleRIFLE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleRIFLELAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleSHOTGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleSMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleSNIPER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleTHROWN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_AIRGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_ARMORCANNON</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_COAXIALGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_HELIGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_HMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_LMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchScaleV_MISSILE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeCARBINE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeDEFIB</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeDROP</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeKNIFE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeLAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeLMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimePISTOL</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeRIFLE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeRIFLELAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeSHOTGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeSMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeSNIPER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeTHROWN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_AIRGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_ARMORCANNON</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_COAXIALGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_HELIGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_HMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_LMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilPunchTimeV_MISSILE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleCARBINE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleDEFIB</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleDROP</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleKNIFE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleLAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleLMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScalePISTOL</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleRIFLE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleRIFLELAUNCHER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleSHOTGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleSMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleSNIPER</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleTHROWN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_AIRGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_ARMORCANNON</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_COAXIALGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_HELIGUN</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_HMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_LMG</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setRecoilYawScaleV_MISSILE</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setSpeedShakeScale</span></code></dt><dd><p>float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivity</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivityAIR</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivityHELI</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivityLAND</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivitySEA</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hapticSettings.setTurnSensitivitySOLDIER</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="globalsettings.html" class="btn btn-neutral float-left" title="globalSettings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="settingsmanager.html" class="btn btn-neutral float-right" title="SettingsManager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

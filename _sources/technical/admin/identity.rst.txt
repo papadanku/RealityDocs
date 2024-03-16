@@ -9,7 +9,7 @@ Player ID (index)
 
 ``Player ID`` ("playerID", also known as "index") is the simplist and most basic way of identifying players, and is the most commonly used throughout the game. The first player to connect to the server is given a Player ID of "0"; the second gets a Player ID of "1", and so on. At the beginning of the next round the server goes through and re-assigns Player IDs for each player, again beginning at 0, so as to fill in any "holes" in the numbering system created by players who have disconnected.
 
-Most :doc:`console commands <../modding/consolecommands>` that refer to players use Player ID: for example, ``admin.kickPlayer`` is followed by a Player ID number. The easiest way to find out which player has which Player ID from the console is to use the ``admin.listplayers`` command.
+Most :doc:`console commands <../modding/console/index>` that refer to players use Player ID: for example, ``admin.kickPlayer`` is followed by a Player ID number. The easiest way to find out which player has which Player ID from the console is to use the ``admin.listplayers`` command.
 
 From Python, several methods are available access information about a player based on Player ID, for example :py:meth:`bf2.playerManager.getPlayerByIndex` will take a playerID and return the associated playerObject.
 

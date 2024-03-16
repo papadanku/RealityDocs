@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animation &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="audioSettings" href="audio.html" />
+    <link rel="prev" title="Console Commands" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ai_code.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd_options.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../con_grammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">Server System Requirements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Console Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#animationbundle"><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animationmanager"><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animationsystem"><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animationtrigger"><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animationvalueholder"><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="audio.html"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sound.html"><code class="docutils literal notranslate"><span class="pre">sound</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="portal.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="combatarea.html"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="commander.html"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="game.html">Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ingame.html">In-Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html"><code class="docutils literal notranslate"><span class="pre">physics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="radio.html">Radio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spawnmanager.html"><code class="docutils literal notranslate"><span class="pre">spawnManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="squad.html">Squad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="decal.html"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="effecttweak.html"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="envmapmanager.html"><code class="docutils literal notranslate"><span class="pre">envmapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="heightmap.html">Heightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hemimap.html"><code class="docutils literal notranslate"><span class="pre">hemiMapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightmanager.html"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="overgrowth.html"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="meshrenderer.html">Mesh Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="particles.html">Particles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="renderer.html"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadermanager.html"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadowmanager.html"><code class="docutils literal notranslate"><span class="pre">shadowManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="skydome.html"><code class="docutils literal notranslate"><span class="pre">skyDome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="terrain.html">Terrain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texturemanager.html"><code class="docutils literal notranslate"><span class="pre">texturemanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="undergrowth.html"><code class="docutils literal notranslate"><span class="pre">undergrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="weather.html">Weather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="local.html">Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maplist.html"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile.html"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html">In-Game Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometrytemplate.html"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="material.html"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="networkables.html"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="objecttemplate.html"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ragdoll.html"><code class="docutils literal notranslate"><span class="pre">ragDoll</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlmap.html"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generalsettings.html"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="globalsettings.html"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hapticsettings.html"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="settingsmanager.html"><code class="docutils literal notranslate"><span class="pre">SettingsManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="videosettings.html"><code class="docutils literal notranslate"><span class="pre">videoSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="editor.html"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filemanager.html"><code class="docutils literal notranslate"><span class="pre">fileManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pythonhost.html"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="swiffhost.html"><code class="docutils literal notranslate"><span class="pre">swiffHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sv.html"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vars.html">Vars.set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/objects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/mapping/index.html">Mapping</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Modding</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Console Commands</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/technical/modding/console/animation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="animation">
+<h1><code class="docutils literal notranslate"><span class="pre">Animation</span></code><a class="headerlink" href="#animation" title="Permalink to this heading"></a></h1>
+<section id="animationbundle">
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationBundle</span></code><a class="headerlink" href="#animationbundle" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.abruptPlayback</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.addAnimation</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.addEvent</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.fadeInTime</span></code></dt><dd><p>float -&gt; float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Used in<span class="colon">:</span></dt>
+<dd class="field-odd"><p>AnimationSystem1p and 3p <code class="file docutils literal notranslate"><span class="pre">.inc</span></code> files</p>
+</dd>
+<dt class="field-even">Fade-in<span class="colon">:</span></dt>
+<dd class="field-even"><p>Animation Start. Allows a smooth transition between animations.</p>
+<ul class="simple">
+<li><p>The lower it is, the quicker it is.</p></li>
+<li><p>A high value makes the transition slower and longer.</p></li>
+<li><p>Fade in 0.01.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Idle/Walking to Sprinting</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.fadeOutTime</span></code></dt><dd><p>float -&gt; float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Used in<span class="colon">:</span></dt>
+<dd class="field-odd"><p>AnimationSystem1p and 3p <code class="file docutils literal notranslate"><span class="pre">.inc</span></code> files</p>
+</dd>
+<dt class="field-even">Fade out<span class="colon">:</span></dt>
+<dd class="field-even"><p>Animation End.</p>
+<ul class="simple">
+<li><p>Same as above, Fadeout <code class="docutils literal notranslate"><span class="pre">0.1</span></code>.</p></li>
+<li><p>Fadeout <code class="docutils literal notranslate"><span class="pre">0.4</span></code> would make it take <code class="docutils literal notranslate"><span class="pre">0.4</span></code> seconds to finish an animation</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>From Sprinting to Walk/Idle</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.getAnimationLength</span></code></dt><dd><p>std::string -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.getAnimationStartTime</span></code></dt><dd><p>std::string -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.getEventStartTime</span></code></dt><dd><p>std::string -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.isLooping</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.jumpToLastAnimationAtStop</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.length</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.listAnimations</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.listEvents</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.playBackward</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.playForever</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.removeAnimation</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.removeEvent</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.setAnimationLength</span></code></dt><dd><p>std::string float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.setAnimationStartTime</span></code></dt><dd><p>std::string float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.setEventStartTime</span></code></dt><dd><p>std::string float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationBundle.useSpeedAsTime</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+</dl>
+</section>
+<section id="animationmanager">
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationManager</span></code><a class="headerlink" href="#animationmanager" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.fadeInTime</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.ignoreMotherOrientation</span></code></dt><dd><p>int -&gt; int</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.length</span></code></dt><dd><p>float -&gt; float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Description<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The length of the animation. Must match up with <code class="docutils literal notranslate"><span class="pre">ObjectTemplate.ammo.reloadTime</span></code> to sync.</p>
+</dd>
+<dt class="field-even">Used in<span class="colon">:</span></dt>
+<dd class="field-even"><p>“AnimationSystem1p, AnimationSystem3p.inc”</p>
+</dd>
+<dt class="field-odd">Lower value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Animation will be sped up.</p>
+</dd>
+<dt class="field-even">Higher value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Animation will be slowed down.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.looping</span></code></dt><dd><p>bool -&gt; bool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Used in<span class="colon">:</span></dt>
+<dd class="field-odd"><p>“AnimationSystem1p, AnimationSystem3p.inc”</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.noiceAmplitude</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.noiceFreq</span></code></dt><dd><p>int -&gt; int</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationManager.originalLength</span></code></dt><dd><p>-&gt; float</p>
+</dd>
+</dl>
+</section>
+<section id="animationsystem">
+<h2><code class="docutils literal notranslate"><span class="pre">AnimationSystem</span></code><a class="headerlink" href="#animationsystem" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.activestd::string</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.activeAnimation</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.activeBundle</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.activeTrigger</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.activeValueHolder</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.amplitude</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.fire</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.hit</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.look</span></code></dt><dd><p>Vec2 -&gt; Vec2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.move</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.stiffness</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.use</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.cameraSpring.zoomDamping</span></code></dt><dd><p>Vec3 -&gt; Vec3</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.create</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.createAnimation</span></code></dt><dd><p>std::string -&gt; anim.BoneAnimation*</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.createBundle</span></code></dt><dd><p>std::string -&gt; anim.Bundle*</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.createTrigger</span></code></dt><dd><p>std::string std::string -&gt; anim.Trigger*</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.createValueHolder</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.deleteActiveBundle</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.deleteActiveTrigger</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.hide</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.list</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.listAnimations</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.listBundles</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.listTriggers</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">AnimationSystem.listTriggerTypes</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.listValueHolders</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.playbackModifier</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.reloadScript</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.save</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.saveActive</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationSystem.saveValueHolders</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+</dl>
+</section>
+<section id="animationtrigger">
+<h2><code class="docutils literal notranslate"><span class="pre">animationTrigger</span></code><a class="headerlink" href="#animationtrigger" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.addBundle</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.addChild</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.clearValueHolder</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.fadeInTime</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.getTypeName</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.idleTime</span></code></dt><dd><p>Vec2 -&gt; Vec2</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.listBundles</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.message</span></code></dt><dd><p>int -&gt; int</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.removeBundle</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.removeChild</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.triggerOnAcceleration</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.useDirection</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationTrigger.valueHolder</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+</dl>
+</section>
+<section id="animationvalueholder">
+<h2><code class="docutils literal notranslate"><span class="pre">animationValueHolder</span></code><a class="headerlink" href="#animationvalueholder" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.getFilename</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.max</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.min</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.normal</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.passOnMessage</span></code></dt><dd><p>unsigned int -&gt; unsigned int</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.stopOnMessage</span></code></dt><dd><p>unsigned int -&gt; unsigned int</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">animationValueHolder.values</span></code></dt><dd><p>float float float -&gt; void</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Console Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audio.html" class="btn btn-neutral float-right" title="audioSettings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

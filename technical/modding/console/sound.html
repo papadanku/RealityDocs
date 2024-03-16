@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sound &mdash; RealityDocs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="portal" href="portal.html" />
+    <link rel="prev" title="audioSettings" href="audio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            RealityDocs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.realitymod.com/">Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/realitymod">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/&#64;ProjectRealityMod">YouTube</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/common_issues.html">Common Issues</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/index.html">The Python Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../engine/index.html">Battlefield Engine</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ai_code.html">All AI Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd_options.html">Command Line Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../con_grammar.html"><code class="docutils literal notranslate"><span class="pre">.con</span></code> File Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system_requirements.html">Server System Requirements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Console Commands</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="animation.html"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="audio.html"><code class="docutils literal notranslate"><span class="pre">audioSettings</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">sound</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="portal.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="combatarea.html"><code class="docutils literal notranslate"><span class="pre">combatArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="commander.html"><code class="docutils literal notranslate"><span class="pre">commander</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="game.html">Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ingame.html">In-Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player.html"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html"><code class="docutils literal notranslate"><span class="pre">physics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="radio.html">Radio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spawnmanager.html"><code class="docutils literal notranslate"><span class="pre">spawnManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="squad.html">Squad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html"><code class="docutils literal notranslate"><span class="pre">collisionManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="decal.html"><code class="docutils literal notranslate"><span class="pre">DecalManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="effecttweak.html"><code class="docutils literal notranslate"><span class="pre">effectTweak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="envmapmanager.html"><code class="docutils literal notranslate"><span class="pre">envmapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="heightmap.html">Heightmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hemimap.html"><code class="docutils literal notranslate"><span class="pre">hemiMapManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightmanager.html"><code class="docutils literal notranslate"><span class="pre">lightManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="overgrowth.html"><code class="docutils literal notranslate"><span class="pre">overgrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="meshrenderer.html">Mesh Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="particles.html">Particles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="renderer.html"><code class="docutils literal notranslate"><span class="pre">renderer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadermanager.html"><code class="docutils literal notranslate"><span class="pre">shadermanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="shadowmanager.html"><code class="docutils literal notranslate"><span class="pre">shadowManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="skydome.html"><code class="docutils literal notranslate"><span class="pre">skyDome</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="terrain.html">Terrain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texturemanager.html"><code class="docutils literal notranslate"><span class="pre">texturemanager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="undergrowth.html"><code class="docutils literal notranslate"><span class="pre">undergrowth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="weather.html">Weather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="local.html">Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maplist.html"><code class="docutils literal notranslate"><span class="pre">maplist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile.html"><code class="docutils literal notranslate"><span class="pre">profile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scoring.html">Scoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hud.html">HUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html">In-Game Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometrytemplate.html"><code class="docutils literal notranslate"><span class="pre">geometryTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="material.html"><code class="docutils literal notranslate"><span class="pre">material</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="networkables.html"><code class="docutils literal notranslate"><span class="pre">networkableInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="objecttemplate.html"><code class="docutils literal notranslate"><span class="pre">objectTemplate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ragdoll.html"><code class="docutils literal notranslate"><span class="pre">ragDoll</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlmap.html"><code class="docutils literal notranslate"><span class="pre">controlMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generalsettings.html"><code class="docutils literal notranslate"><span class="pre">generalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="globalsettings.html"><code class="docutils literal notranslate"><span class="pre">globalSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hapticsettings.html"><code class="docutils literal notranslate"><span class="pre">hapticSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="settingsmanager.html"><code class="docutils literal notranslate"><span class="pre">SettingsManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="videosettings.html"><code class="docutils literal notranslate"><span class="pre">videoSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="console.html"><code class="docutils literal notranslate"><span class="pre">Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html"><code class="docutils literal notranslate"><span class="pre">demo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="editor.html"><code class="docutils literal notranslate"><span class="pre">Editor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filemanager.html"><code class="docutils literal notranslate"><span class="pre">fileManager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pythonhost.html"><code class="docutils literal notranslate"><span class="pre">pythonHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="swiffhost.html"><code class="docutils literal notranslate"><span class="pre">swiffHost</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sv.html"><code class="docutils literal notranslate"><span class="pre">sv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vars.html">Vars.set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Battlefield Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community Modding Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/attribution.html">Requesting &amp; Trading Assets with Other Mod Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/debugging.html">Running The Debugger in PR:BF2 v1.X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/guidelines.html">Guidelines for Community Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/objects.html">Steps to Making Objects for BF2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/factions/index.html">Community Factions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modding/mapping/index.html">Mapping</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RealityDocs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Modding</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Console Commands</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">sound</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/technical/modding/console/sound.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sound">
+<h1><code class="docutils literal notranslate"><span class="pre">sound</span></code><a class="headerlink" href="#sound" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">sound.addMenuSound</span></code></dt><dd><p>std::string std::string float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.addSound</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.addTrigger</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.dopplerEffect</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.getAllSoundTemplates</span></code></dt><dd><p>-&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.getProperty</span></code></dt><dd><p>std::string -&gt; std::string</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.getVolumeForGroup</span></code></dt><dd><p>int -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.initialize</span></code></dt><dd><p>int std::string int -&gt; SoundInitResult</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.interactiveMode</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.listenerReverb</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.loadMusic</span></code></dt><dd><p>std::string -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.masterVolume</span></code></dt><dd><p>float -&gt; float</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.playMusic</span></code></dt><dd><p>-&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.playSound</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.removeAllTriggers</span></code></dt><dd><p>-&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.setProperty</span></code></dt><dd><p>std::string float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.setReverb</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.setVolumeForGroup</span></code></dt><dd><p>int float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.showSoundSources</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.showStats</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Sound.startEngines</span></code></dt><dd><p>bool -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.stopMusic</span></code></dt><dd><p>float -&gt; bool</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.stopSound</span></code></dt><dd><p>std::string -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.tinnitusSetup</span></code></dt><dd><p>std::string float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.tweakTemplate</span></code></dt><dd><p>std::string float float -&gt; void</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sound.windSetup</span></code></dt><dd><p>std::string float -&gt; void</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio.html" class="btn btn-neutral float-left" title="audioSettings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="portal.html" class="btn btn-neutral float-right" title="portal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, The Project Reality Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
