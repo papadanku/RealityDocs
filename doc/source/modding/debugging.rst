@@ -6,8 +6,9 @@ The BF2/PR debugger is extremely helpful in tracking down bugs that don't give e
 
 #. Download the following files modified to work with the debugger (they are quite outdated compared to the release version but it doesn't really matter):
 
-    - :download:`Debugger Files <https://files.realitymod.com/resources/Debugger_files.zip>`
-    - :download:`Menu Files <https://drive.google.com/file/d/1ZWQdh90h0eTIO9okBuOxm7SRyMxavCNS/view?usp=sharing>` 
+    :download:`Debugger Files <https://files.realitymod.com/resources/Debugger_files.zip>`
+
+    :download:`Menu Files <https://drive.google.com/file/d/1ZWQdh90h0eTIO9okBuOxm7SRyMxavCNS/view?usp=sharing>` 
 
 #. Extract Debugger files into your root Project Reality folder (i.e. ``C:\Program Files (x86)\Project Reality\Project Reality BF2\``) and modified menu files into ``mods/pr_edit/content``.
 
@@ -26,6 +27,7 @@ The BF2/PR debugger is extremely helpful in tracking down bugs that don't give e
     :menuselection:`Your profile --> Convert Profile`
 
 #. Depending on what you want to do, you may want to go back to the :guilabel:`Options` menu through the launcher, select debugger profile in order to lower resolution and disable fullscreen. That's because fullscreen only produces logs while windowed mode also shows error windows for more important errors.
+
 #. Go back to the debugger screen :menuselection:`Right-click PLAY --> Launch debugger --> Select your new profile --> log in`
 
 .. note::
