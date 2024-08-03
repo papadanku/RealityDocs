@@ -7,9 +7,9 @@ pages:
   before_script:
     - apt-get update && apt-get install make --no-install-recommends -y
   script:
-    - cd docs && make html
+    - cd doc && make html
   after_script:
-    - mv docs/build/html/ ./public/
+    - mv doc/_build/html/ ./public/
   artifacts:
     paths:
     - public
