@@ -11,7 +11,7 @@ First we are going to replace our :guilabel:`af_palmbush_01`, since it is the fi
 .. image:: https://media.realitymod.com/tutorials/Adv_3DsMax_LMing/Adv_3DsMax_LMing_000120.jpg
 
 #. Go to :menuselection:`MaxScript --> Run Script`
-#. Go into the ``bf2`` folder in your scripts folder and select the :menuselection:`instance replace.ms` script that is included in the PR:BF2 3DsMax9 v0.40 Tools and hit open
+#. Go into the ``bf2`` folder in your scripts folder and select the :guilabel:`instance replace.ms` script that is included in the PR:BF2 3DsMax9 v0.40 Tools and hit open
 #. A small window will pop up, hit :guilabel:`Pick Master` and then hit :kbd:`H` to select by name
 #. Select the Reference object you want to replace all selected objects with, which in this case is the :guilabel:`_REF_af_palmbush_01` mesh
 #. Hit **Make Instances** and it will replace our entire selection of :guilabel:`af_palmbush_01` with the :guilabel:`_REF_af_palmbush_01` mesh

@@ -89,7 +89,7 @@ Then when you want to find out what static uses what textures
     #. Open ``citybuilding_4a.staticmesh`` up with BFMeshView by:
 
       #. Dragging and dropping it into the BFMeshView window
-      #. :kbd:`RMB` on it, go to open with then select the bfmeshview.exe in the :menuselection:`Choose Default Program` list (will need to manually browse to where you have installed it and select it).
+      #. :kbd:`RMB` on it, go to open with then select the bfmeshview.exe in the :guilabel:`Choose Default Program` list (will need to manually browse to where you have installed it and select it).
 
 Once you have the static open in BFMeshView, you should have a list of geoms, lods and materials on the left hand side, right click, expand all to expand all the materials and geoms and then it should look something like this:
 

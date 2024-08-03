@@ -164,7 +164,7 @@ Now depending on what size map you have, you will have some different paths to t
       This is where you require the ram as here you are in fact generating **4** different minimaps.
 
       All you need to do (providing you have set them up already which you should have in Step 1):
-      
+
       :menuselection:`Tools --> Custom Action --> Execute Custom Command File 2 [C:\bla bla bla\makeMegaMap_1024_2.con]`
 
 1024x4 (4km²) Sized Maps
@@ -175,7 +175,7 @@ Now depending on what size map you have, you will have some different paths to t
       This is where you require the RAM as here you are in fact generating **16** different minimaps.
 
       All you need to do (providing you have set them up already which you should have in Step 1):
-      
+
       :menuselection:`Tools --> Custom Action --> Execute Custom Command File 1 [C:\bla bla bla\makeMegaMap_1024_4.con]`
 
 Editing The MiniMaps
@@ -200,7 +200,7 @@ Going to have to split this up into a a, b and c again due to different map size
 
    With Photoshop open (with also the Action files installed which you should have done in step 1). Open up or crate a small file. Any file will do as long as its open and then you need to do is go to :menuselection:`File --> Automate --> Batch`. After that, you should save up what you have done and go onto Step 6.
 
-   Then once that is all set, click :menuselection:`Ok` and let it run its magic
+   Then once that is all set, click :guilabel:`Ok` and let it run its magic
 
 1024x4 (4km²) Sized Maps
    For this size, you need to combined the **16** minimaps you have generated with my Photoshop batch files (or you can do it by hand) and then any water on the map you will need to blend in.
