@@ -19,22 +19,21 @@ The 3 things that need to be created in order are:
 --------------
 
 ``ObjectTemplate.create Trigger [Object] -> object.Create``
-
-The purpose of ``ObjectTemplate.create Trigger`` is to define the Trigger ID, and the properties of the soldier trigger.
-    ``objectTemplate.triggerId`` (int -> int)
-        The trigger identification number created in the game. Must be defined in the Trigger and the ``[Object]_AmbientObject``. The same number can be used for an ``_AmbientObject`` to trigger another effect as long as the naming is the same. For example: Sandstorm -> ``Sandstorm_AmbientObject_1``, ``Sandstorm_AmbientObject_2``
-    ``objectTemplate.radius`` (float -> float)
-        The dome to detect the soldiers collision and execute the ``AmbientEffectArea`` which can be viewed in the BF2Editor.
-    ``objectTemplate.events`` (int -> int)
-        The command in which the ``Trigger`` Type number is entered. See ``Trigger`` Types
-    ``objectTemplate.averageTimeBetweenTests`` (float -> float)
-        The time the effect lasts for. Used primarily for sound effects like dogs. Value must be a minimum of ``1``.
-    ``objectTemplate.chance`` (float -> float)
-        The chance of the effect being played. It ranges from ``0`` to ``1``, with ``1`` being always, and ``0`` being never. Setting it to ``0.5`` makes the effect have a five in ``10`` chance to play.
-    ``objectTemplate.minimumTimeBetweenTriggering`` (float -> float)
-        After an effect plays, the number of seconds needed for the effect to recharge again.
-    ``objectTemplate.create``
-        The effect position, used for both the ``Trigger`` and ``AmbientObject``. Use the BF2Editor to set the effect.
+    The purpose of ``ObjectTemplate.create Trigger`` is to define the Trigger ID, and the properties of the soldier trigger.
+``objectTemplate.triggerId (int -> int)``
+    The trigger identification number created in the game. Must be defined in the Trigger and the ``[Object]_AmbientObject``. The same number can be used for an ``_AmbientObject`` to trigger another effect as long as the naming is the same. For example: Sandstorm -> ``Sandstorm_AmbientObject_1``, ``Sandstorm_AmbientObject_2``.
+``objectTemplate.radius (float -> float)``
+    The dome to detect the soldiers collision and execute the ``AmbientEffectArea`` which can be viewed in the BF2Editor.
+``objectTemplate.events (int -> int)``
+    The command in which the ``Trigger`` Type number is entered. See ``Trigger`` Types.
+``objectTemplate.averageTimeBetweenTests (float -> float)``
+    The time the effect lasts for. Used primarily for sound effects like dogs. Value must be a minimum of ``1``.
+``objectTemplate.chance (float -> float)``
+    The chance of the effect being played. It ranges from ``0`` to ``1``, with ``1`` being always, and ``0`` being never. Setting it to ``0.5`` makes the effect have a five in ``10`` chance to play.
+``objectTemplate.minimumTimeBetweenTriggering (float -> float)``
+    After an effect plays, the number of seconds needed for the effect to recharge again.
+``objectTemplate.create``
+    The effect position, used for both the ``Trigger`` and ``AmbientObject``. Use the BF2Editor to set the effect.
 
 Trigger Types
 -------------
@@ -76,23 +75,21 @@ After the Trigger is defined, the object needs to be created with Object.create 
 2. ``AmbientEffectArea``
 ------------------------
 
-- ``ObjectTemplate.create AmbientEffectArea [Object]_AmbientEffect_# (Where # is the number in order)``
-- ``object.Create``
+``ObjectTemplate.create AmbientEffectArea [Object]_AmbientEffect_# (Where # is the number in order)``, ``object.Create``
+    The purpose of ``AmbientEffectArea`` is to define the radius of the effect, what effect is used, the properties of the effect.
+``objectTemplate.numNetworkedEffects``
+    For a trigger that plays multiple effects at once.
+``objectTemplate.projectOnHeightmap``
+    Makes the effect come off the ground. Set with 1. If 0, the effect will play relative to the position of the effect (Default).
 
-The purpose of ``AmbientEffectArea`` is to define the radius of the effect, what effect is used, the properties of the effect.
-    ``objectTemplate.numNetworkedEffects``
-        For a trigger that plays multiple effects at once.
-    ``objectTemplate.projectOnHeightmap``
-        Makes the effect come off the ground. Set with 1. If 0, the effect will play relative to the position of the effect (Default).
+``objectTemplate.playAtEventPosition``
 
-    ``objectTemplate.playAtEventPosition``
+``objectTemplate.playAtPlayerPosition``
 
-    ``objectTemplate.playAtPlayerPosition``
-
-    ``objectTemplate.radius`` (float -> float)
-        The dome that stops the effect once it reaches the boundaries. (I think).
-    ``objectTemplate.linkedEffectContainer`` (std::string -> std::string)
-        The effect that will play when a soldier triggers the radius of the ``AmbientEffectArea`` i.e. ``e_dAmb_bird``.
+``objectTemplate.radius (float -> float)``
+    The dome that stops the effect once it reaches the boundaries. (I think).
+``objectTemplate.linkedEffectContainer (std::string -> std::string)``
+    The effect that will play when a soldier triggers the radius of the ``AmbientEffectArea`` i.e. ``e_dAmb_bird``.
 
 .. note::
 
@@ -130,45 +127,41 @@ It uses the absolute position, rotation and the layer the trigger is for.
 3. AmbientSounds
 ----------------
 
-- ``ObjectTemplate.create Sound S_``
-- ``ObjectTemplate.activeSafe Sound S_``
-- ``Sound.addTrigger S_``
-- ``Object.create S_``
+``ObjectTemplate.create Sound S_``, ``ObjectTemplate.activeSafe Sound S_``, ``Sound.addTrigger S_``, ``Object.create S_``
+    The purpose of Ambient Sounds is to define both the sound effects to play throughout the map, like a wind or rain sound and the sound to play at specific areas.
+``objectTemplate.lowSamples (int -> int)``
+    The low sample audio bitrate. Shouldn't be touched.
+``objectTemplate.mediumSamples (int -> int)``
+    The medium sample audio bitrate. Shouldn't be touched.
+``objectTemplate.soundFilename (std::string -> std::string)``
+    The filepath of the sound. The BF2Editor is useful for finding these.
+``objectTemplate.loopCount (int -> int)``
+    :0: Endless loops
+    :1: Play once
+    :2: Play twice and so on
 
-The purpose of Ambient Sounds is to define both the sound effects to play throughout the map, like a wind or rain sound and the sound to play at specific areas.
-    ``objectTemplate.lowSamples`` (int -> int)
-        The low sample audio bitrate. Shouldn't be touched.
-    ``objectTemplate.mediumSamples`` (int -> int)
-        The medium sample audio bitrate. Shouldn't be touched.
-    ``objectTemplate.soundFilename`` (std::string -> std::string)
-        The filepath of the sound. The BF2Editor is useful for finding these.
-    ``objectTemplate.loopCount`` (int -> int)
-        The number of loops of the song.
+    The number of loops of the song.
+``objectTemplate.is3dSound (bool -> bool)``
+    Only enable this if the sound file is mono, and it needs to be played in both speakers. If it is enabled for a stereo sound file, the sound will play all over the map.
+``objectTemplate.volume (float -> float)``
+    Sets the volume of the sound.
+``objectTemplate.pan (float -> float)``
+    :0: Left
+    :1: Right
 
-        :0: Endless loops
-        :1: Play once
-        :2: Play twice and so on
-    ``objectTemplate.is3dSound`` (bool -> bool)
-        Only enable this if the sound file is mono, and it needs to be played in both speakers. If it is enabled for a stereo sound file, the sound will play all over the map.
-    ``objectTemplate.volume`` (float -> float)
-        Sets the volume of the sound.
-    ``objectTemplate.pan`` (float -> float)
-        Default is 0.5. The value at which the sound will be directed to the left or right speaker.
-
-        :0: Left
-        :1: Right
-    ``objectTemplate.reverbLevel`` (float -> float)
-        Default is 0. Reverberation level is set between 0 and 1.
-    ``objectTemplate.pitch`` (float -> float)
-        Sets the pitch of the sound. Default is 1 for normal pitch.
-    ``objectTemplate.minDistance`` (float -> float)
-        The minimum distance of the sound to be heard from the set position. Needs to be set otherwise the sound will not play.
-    ``objectTemplate.soundRadius`` (float -> float)
-        The radius in which the sound will start playing when a player moves inside. Needs to be set along with minDistance.
-    ``objectTemplate.stopType`` (int -> int)
-        (stopType 0, 1, 2). Recommended: Set to 0 for ambient weather sounds and large areas. These sounds are in the ``common/sound/levelambients`` folder outside of Objects. The sound will play again and overlap each other when entering and exiting the radius. Set to 1 for ambient sound effects like chimes, birds, swamp creeks, anything.
-    ``objectTemplate.position`` (Vec3 -> Vec3)
-        The position of the sound effect. Must be the same value as the ``ObjectTemplate.absolutePosition`` set in ``Object.create``.
+    Default is 0.5. The value at which the sound will be directed to the left or right speaker.
+``objectTemplate.reverbLevel (float -> float)``
+    Default is 0. Reverberation level is set between 0 and 1.
+``objectTemplate.pitch (float -> float)``
+    Sets the pitch of the sound. Default is 1 for normal pitch.
+``objectTemplate.minDistance (float -> float)``
+    The minimum distance of the sound to be heard from the set position. Needs to be set otherwise the sound will not play.
+``objectTemplate.soundRadius (float -> float)``
+    The radius in which the sound will start playing when a player moves inside. Needs to be set along with minDistance.
+``objectTemplate.stopType (int -> int)``
+    (stopType 0, 1, 2). Recommended: Set to 0 for ambient weather sounds and large areas. These sounds are in the ``common/sound/levelambients`` folder outside of Objects. The sound will play again and overlap each other when entering and exiting the radius. Set to 1 for ambient sound effects like chimes, birds, swamp creeks, anything.
+``objectTemplate.position (Vec3 -> Vec3)``
+    The position of the sound effect. Must be the same value as the ``ObjectTemplate.absolutePosition`` set in ``Object.create``.
 
 .. code-block::
     :caption: Example
