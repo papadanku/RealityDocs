@@ -23,8 +23,6 @@ Intel Core
          - Pentium G7xxx series
          - Intel ARC Alchemist dGPUs
 
-----
-
 ``memory.dll`` Crashes After Play Sessions
 ------------------------------------------
 
@@ -34,8 +32,6 @@ Experimental Fix
    Use DXVK and enable the config ``d3d9.deviceLossOnFocusLoss = True``. DXVK has a built in mapped memory, making longer session less prone to crashes but there are still some bugs with DXVK hence why this is marked as experimental.
 
    :download:`https://github.com/doitsujin/dxvk`
-
-----
 
 Cannot Hear Anything
 --------------------
@@ -49,15 +45,11 @@ Cannot Hear Anything
 
    I personally recommend cheap Chinese in-ear monitors for PR
 
-----
-
 Performance Slowly Degrades Overtime
 ------------------------------------
 
 - Your PC might need a thorough cleaning and a repaste
 - Set a more aggressive fan curve to keep CPU turbo clocks high
-
-----
 
 Low Performance on Ryzen CPUs
 -----------------------------
@@ -72,15 +64,11 @@ Low Performance on Ryzen CPUs
    - :guilabel:`Streaming Stores Control`
    - :guilabel:`OPcache Control`
 
-----
-
 Launched Into an Infinite Black Screen
 --------------------------------------
 
 - Make sure that there's no 3rd party antivirus that's blocking PR
 - Launch PR with an offline profile, if it works then something is wrong with your network, try a VPN or consult to your ISP
-
-----
 
 Stuck on "Joining Server"
 -------------------------
@@ -93,8 +81,6 @@ Stems from multiple possible issues:
 
    PR is placed on an external drive, that's not formatted in NTFS
       Reformat your drive to NTFS or place it back to your internal drive
-
-----
 
 Persistent Skipping/Stuttering
 ------------------------------
