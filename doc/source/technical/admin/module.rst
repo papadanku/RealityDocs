@@ -32,8 +32,8 @@ Any administrative module, including ``default``, has three methods which are ca
 
    The game engine calls this method roughly every 30ms; in the ``default`` module, this method checks for any new input arriving over the network TCP RCon socket.
 
-``RCon``
---------
+RCon
+----
 
 BF2 includes an ``RCon`` (Remote Console) function that allows many administrative functions that can be done from the regular console (the black-and-white curses interface on the machine running the BF2 server) to be done from a “remote console”-either from within a BF2 game client (accessed by a player pressing the ``~`` key), or via a TCP network interface.
 

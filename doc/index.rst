@@ -4,6 +4,7 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: External Links
+   :titlesonly:
    :hidden:
 
    Website <https://www.realitymod.com/>
@@ -12,12 +13,14 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Technical Support
+   :titlesonly:
    :hidden:
 
    source/support/common_issues
 
 .. toctree::
    :caption: Technical Documentation
+   :titlesonly:
    :glob:
    :hidden:
 
@@ -25,6 +28,7 @@ Welcome to Project Reality's Official Documentation!
 
 .. toctree::
    :caption: Community Modding Guide
+   :titlesonly:
    :glob:
    :hidden:
 
